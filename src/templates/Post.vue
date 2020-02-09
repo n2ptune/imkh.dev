@@ -10,9 +10,6 @@ import Layout from '@/layouts/Default.vue'
 export default {
   components: {
     Layout
-  },
-  mounted() {
-    console.log(this.$page.post)
   }
 }
 </script>
