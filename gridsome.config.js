@@ -3,11 +3,6 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const tailwindcss = require('tailwindcss')
-const cssnano = require('cssnano')({
-  preset: 'defaults'
-})
-
 module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: '개인 웹 기술/개발 블로그',
@@ -41,6 +36,12 @@ module.exports = {
           }
         }
       }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        tailwindConfig: './tailwind.config.js'
+      }
     }
   ],
 
@@ -53,21 +54,6 @@ module.exports = {
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
       plugins: ['@gridsome/remark-prismjs']
-    }
-  },
-
-  /**
-   * @tailwindcss
-   * @cssnano postcss loader와 연결
-   */
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: [
-          tailwindcss,
-          process.env.NODE_ENV === 'production' ? cssnano : ''
-        ]
-      }
     }
   }
 }
