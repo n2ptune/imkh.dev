@@ -8,6 +8,16 @@ module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: '개인 웹 기술/개발 블로그',
   siteUrl: '',
+
+  templates: {
+    /**
+     * @templates 정적 페이지 경로를 만들어내기 위한 메타데이터 같은 느낌
+     * src/templates/*.vue 의 이름과 동일해야 할듯
+     */
+    Post: '/:title',
+    Tag: '/tag/:id'
+  },
+
   plugins: [
     /**
      * @markdown 로컬 파일을 기준으로 데이터를 읽어들이기 위한 플러그인 설치
