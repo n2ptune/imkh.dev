@@ -5,10 +5,13 @@
       :src="post.cover_image"
       :style="{ minWidth: '100%' }"
       class="rounded-t-lg"
+      blur="4"
     />
     <div class="flex justify-center flex-col p-12">
       <div class="text-white-800 text-2xl">
-        {{ post.title }}
+        <g-link :to="post.path">
+          {{ post.title }}
+        </g-link>
       </div>
       <div class="text-white-500 text-lg">
         {{ post.date }} · {{ timeToRead }}
