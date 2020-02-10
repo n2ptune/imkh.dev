@@ -1,5 +1,5 @@
 <template>
-  <div class="layout bg-sea h-full">
+  <div class="layout h-full">
     <Header />
     <slot />
   </div>
