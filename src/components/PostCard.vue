@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto text-center bg-sea-low card rounded-lg shadow-xl">
+  <div class="mx-auto text-center bg-white-f card rounded-lg shadow-xl">
     <g-image
       v-if="post.cover_image"
       :src="post.cover_image"
@@ -8,15 +8,13 @@
       blur="4"
     />
     <div class="flex justify-center flex-col p-12">
-      <div class="text-white-800 text-2xl">
+      <div class="text-2xl">
         <g-link :to="post.path">
           {{ post.title }}
         </g-link>
       </div>
-      <div class="text-white-500 text-lg">
-        {{ post.date }} · {{ timeToRead }}
-      </div>
-      <div class="text-white-700 mt-8">
+      <div class="text-lg">{{ post.date }} · {{ timeToRead }}</div>
+      <div class="mt-8">
         {{ post.description }}
       </div>
     </div>

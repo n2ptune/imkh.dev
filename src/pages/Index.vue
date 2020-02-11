@@ -1,8 +1,6 @@
 <template>
   <Layout class="font-display">
-    <div
-      class="bg-transparent my-12 py-12 container mx-auto px-4 justify-center"
-    >
+    <div class="my-12 py-12 container mx-auto px-4 justify-center">
       <PostCard
         v-for="post in $page.posts.edges"
         :key="post.node.id"
