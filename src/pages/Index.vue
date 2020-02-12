@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import PostCard from '@/components/PostCard.vue'
+import PostCard from '@/components/post/PostCard.vue'
 import Profile from '@/components/Profile.vue'
 
 export default {

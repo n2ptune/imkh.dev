@@ -1,18 +1,18 @@
 <template>
   <Layout>
     <div class="container flex justfiy-center mx-auto my-12 flex-col">
-      <PostLogo :post="$page.post" />
-      <div
-        v-html="$page.post.content"
-        class="post-content mx-6 md:mx-auto"
-      ></div>
+      <!-- <PostLogo :post="$page.post" /> -->
+      <div class="post-content mx-6 md:mx-auto">
+        {{ 'Post MetaData Component' }}
+        <div v-html="$page.post.content"></div>
+      </div>
     </div>
   </Layout>
 </template>
 
 <script>
 import Layout from '@/layouts/Default.vue'
-import PostLogo from '@/components/PostLogo.vue'
+import PostLogo from '@/components/post/PostLogo.vue'
 
 export default {
   components: {
@@ -42,8 +42,8 @@ query Post ($id: ID!) {
 
 <style lang="postcss">
 .post-content {
-  max-width: 800px;
-  @apply px-12 py-16 bg-sea-low shadow-xl rounded-lg mt-12 text-white-700;
+  max-width: var(--content-post);
+  @apply px-12 py-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content *:first-child {
   @apply mt-0 !important;
