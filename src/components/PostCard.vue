@@ -10,12 +10,14 @@
       />
     </g-link>
     <div class="flex justify-center flex-col p-12">
-      <div class="text-2xl">
+      <div class="text-2xl font-semibold">
         <g-link :to="post.path">
           {{ post.title }}
         </g-link>
       </div>
-      <div class="text-lg">{{ post.date }} · {{ timeToRead }}</div>
+      <div class="text-lg text-gray-600">
+        {{ post.date }} · {{ timeToRead }}
+      </div>
       <div class="mt-8">
         {{ post.description }}
       </div>
