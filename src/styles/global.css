@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Noto+Sans:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
-html,
-body {
-  @apply bg-gray-300;
-}
-
 :root {
   --content-max: 650px;
   --content-post: 950px;
