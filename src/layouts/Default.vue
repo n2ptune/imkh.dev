@@ -1,5 +1,5 @@
 <template>
-  <div class="layout h-full">
+  <div class="font-display">
     <Header />
     <slot />
   </div>

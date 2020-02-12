@@ -1,6 +1,7 @@
 <template>
   <Layout class="font-display">
-    <div class="my-12 py-12 container mx-auto px-4 justify-center">
+    <div class="my-6 py-12 container mx-auto px-4 justify-center">
+      <Profile class="mx-auto" />
       <PostCard
         v-for="post in $page.posts.edges"
         :key="post.node.id"
@@ -12,10 +13,12 @@
 
 <script>
 import PostCard from '@/components/PostCard.vue'
+import Profile from '@/components/Profile.vue'
 
 export default {
   components: {
-    PostCard
+    PostCard,
+    Profile
   },
   metaInfo: {
     title: 'Hello, world!'

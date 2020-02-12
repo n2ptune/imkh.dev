@@ -1,12 +1,14 @@
 <template>
-  <div class="mx-auto text-center bg-white-f card rounded-lg shadow-xl">
-    <g-image
-      v-if="post.cover_image"
-      :src="post.cover_image"
-      :style="{ minWidth: '100%' }"
-      class="rounded-t-lg"
-      blur="4"
-    />
+  <div class="mx-auto text-center bg-white-f card rounded-lg">
+    <g-link :to="post.path">
+      <g-image
+        v-if="post.cover_image"
+        :src="post.cover_image"
+        :style="{ minWidth: '100%' }"
+        class="rounded-t-lg"
+        blur="4"
+      />
+    </g-link>
     <div class="flex justify-center flex-col p-12">
       <div class="text-2xl">
         <g-link :to="post.path">
@@ -39,6 +41,13 @@ export default {
 
 <style lang="postcss" scoped>
 .card {
-  max-width: 860px;
+  transition-property: box-shadow, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in;
+  max-width: var(--content-max);
+}
+.card:hover {
+  transform: translateY(-0.8%);
+  @apply shadow-xl;
 }
 </style>

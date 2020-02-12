@@ -3,5 +3,9 @@
 
 html,
 body {
-  background-color: whitesmoke;
+  @apply bg-gray-300;
+}
+
+:root {
+  --content-max: 650px;
 }
