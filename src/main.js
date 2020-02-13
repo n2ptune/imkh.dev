@@ -8,6 +8,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 // import {  } from '@fortawesome/free-solid-svg-icons'
 // import {  } from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import '@/styles/prism-code.css'
 
 config.autoAddCss = false
 library.add(faGithub)
