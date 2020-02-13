@@ -81,8 +81,7 @@ module.exports = {
           ]
         )
 
-        // if (process.env.NODE_ENV === 'production') {
-        if (true) {
+        if (process.env.NODE_ENV === 'production') {
           options.plugins.push(
             ...[
               require('@fullhuman/postcss-purgecss')({
