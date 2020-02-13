@@ -1,4 +1,4 @@
-/* purgecss start ignore */
+/* purgecss ignore */
 @import url('//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
 @import url('//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css');
 
@@ -207,4 +207,3 @@ pre[class*='language-'] {
 .token.variable {
   color: #ff6666;
 }
-/* purgecss end ignore */
