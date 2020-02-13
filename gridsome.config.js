@@ -7,7 +7,7 @@
 module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: 'Personal blog for Web Dev/Tech',
-  siteUrl: '',
+  siteUrl: 'https://blog.n2ptune.xyz',
 
   templates: {
     /**

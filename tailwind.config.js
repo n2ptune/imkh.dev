@@ -1,6 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
+      mono: ['Hack', 'D2Coding', 'monospace'],
       display: [
         '-apple-system',
         'BlinkMacSystemFont',
