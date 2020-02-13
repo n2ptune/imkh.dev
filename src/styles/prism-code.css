@@ -10,8 +10,8 @@ pre[class*='language-'] {
   word-wrap: normal;
   color: #eee;
   background: #2f2f2f;
-  font-family: Hack, D2Coding monospace;
-  font-size: 0.9rem;
+  /* font-family: Hack, D2Coding monospace; */
+  font-size: 1rem;
   line-height: 1.5em;
 
   -moz-tab-size: 2;
@@ -47,7 +47,7 @@ pre[class*='language-'] ::selection {
 pre[class*='language-'] {
   overflow: auto;
   position: relative;
-  margin: 0.5em 0;
+  /* margin: 0.5em 0; */
   padding: 1.25em 1em;
 }
 

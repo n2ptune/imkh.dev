@@ -42,6 +42,9 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="postcss">
+pre[class*='language-'] {
+  margin: 0 -1.5rem;
+}
 .post-content {
   max-width: var(--content-post);
   @apply px-6 py-16 bg-white-f shadow-md rounded-lg mt-12;
@@ -77,6 +80,9 @@ p {
   .post-content img {
     max-width: calc(100% + 6rem);
     margin-left: -3rem;
+  }
+  pre[class*='language-'] {
+    margin: 0 -3rem;
   }
 }
 </style>
