@@ -81,11 +81,17 @@ module.exports = {
           ]
         )
 
-        if (process.env.NODE_ENV === 'production') {
+        // if (process.env.NODE_ENV === 'production') {
+        if (true) {
           options.plugins.push(
             ...[
               require('@fullhuman/postcss-purgecss')({
-                content: ['src/assets/**/*.css', 'src/**/*.vue', 'src/**/*.js'],
+                content: [
+                  'src/assets/**/*.css',
+                  'src/styles/**/*.css',
+                  'src/**/*.vue',
+                  'src/**/*.js'
+                ],
                 extractors: [
                   {
                     extractor: content =>

@@ -1,4 +1,3 @@
-/* purgecss ignore */
 @import url('//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
 @import url('//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css');
 
@@ -11,8 +10,8 @@ pre[class*='language-'] {
   word-wrap: normal;
   color: #eee;
   background: #2f2f2f;
-  /* font-family: Hack, D2Coding monospace; */
-  font-size: 1rem;
+  font-family: Hack, D2Coding, monospace !important;
+  font-size: 0.94rem;
   line-height: 1.5em;
 
   -moz-tab-size: 2;
@@ -48,8 +47,7 @@ pre[class*='language-'] ::selection {
 pre[class*='language-'] {
   overflow: auto;
   position: relative;
-  /* margin: 0.5em 0; */
-  padding: 1.25em 1em;
+  padding: 1.25em 3rem;
 }
 
 .language-css > code,
