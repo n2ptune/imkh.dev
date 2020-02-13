@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <div class="container flex justfiy-center mx-auto my-12 flex-col">
-      <!-- <PostLogo :post="$page.post" /> -->
       <div class="post-content mx-6 md:mx-auto">
         {{ 'Post MetaData Component' }}
         <div v-html="$page.post.content"></div>
@@ -43,14 +42,14 @@ query Post ($id: ID!) {
 <style lang="postcss">
 .post-content {
   max-width: var(--content-post);
-  @apply px-12 py-16 bg-white-f shadow-md rounded-lg mt-12;
+  @apply px-6 py-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content *:first-child {
   @apply mt-0 !important;
 }
 .post-content img {
-  max-width: calc(100% + 6rem);
-  margin-left: -3rem;
+  max-width: calc(100% + 3rem);
+  margin-left: -1.5rem;
 }
 h1,
 h2,
@@ -71,5 +70,14 @@ h3 {
 }
 p {
   @apply my-6;
+}
+@screen sm {
+  .post-content {
+    @apply px-12;
+  }
+  .post-content img {
+    max-width: calc(100% + 6rem);
+    margin-left: -3rem;
+  }
 }
 </style>
