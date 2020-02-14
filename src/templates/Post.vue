@@ -42,6 +42,11 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="postcss">
+ul,
+ol {
+  list-style-type: square;
+  padding: 0 0 0 20px;
+}
 pre[class*='language-'] {
   margin: 0 -1.5rem;
 }

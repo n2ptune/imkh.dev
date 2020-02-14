@@ -6,6 +6,7 @@
         v-for="post in $page.posts.edges"
         :key="post.node.id"
         :post="post.node"
+        class="my-6"
       />
     </div>
   </Layout>
