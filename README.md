@@ -1,14 +1,5 @@
-# Default starter for Gridsome
+# Dev Blog With Gridsome(Default starter)
 
-This is the project you get when you run `gridsome create new-project`.
+Gridsome Default Starter로 만든 개발 블로그입니다.
 
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+[default starter](https://github.com/gridsome/gridsome-starter-default)에서 해당 내용을 확인하실 수 있습니다.
