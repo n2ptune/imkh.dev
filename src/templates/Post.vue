@@ -9,20 +9,6 @@
   </Layout>
 </template>
 
-<script>
-import Layout from '@/layouts/Default.vue'
-import PostLogo from '@/components/post/PostLogo.vue'
-import PostMetadata from '@/components/post/PostMetadata.vue'
-
-export default {
-  components: {
-    Layout,
-    PostLogo,
-    PostMetadata
-  }
-}
-</script>
-
 <page-query>
 query Post ($id: ID!) {
   post: post (id: $id) {
@@ -37,9 +23,47 @@ query Post ($id: ID!) {
     }
     description
     content
+    cover_image
   }
 }
 </page-query>
+
+<script>
+import Layout from '@/layouts/Default.vue'
+import PostLogo from '@/components/post/PostLogo.vue'
+import PostMetadata from '@/components/post/PostMetadata.vue'
+
+export default {
+  components: {
+    Layout,
+    PostLogo,
+    PostMetadata
+  },
+  metaInfo() {
+    return {
+      title: this.$page.post.title,
+      meta: [
+        {
+          name: 'description',
+          conetnt: this.$page.post.description
+        },
+        {
+          property: 'og:title',
+          content: this.$page.post.title
+        },
+        {
+          property: 'og:description',
+          content: this.$page.post.description
+        },
+        {
+          property: 'og:image',
+          content: this.$page.post.cover_image.src || ''
+        }
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="postcss">
 ul,

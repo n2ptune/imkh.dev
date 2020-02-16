@@ -22,7 +22,7 @@ export default {
     Profile
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Blog Home'
   }
 }
 </script>
