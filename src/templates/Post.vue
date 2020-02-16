@@ -82,10 +82,10 @@ pre[class*='language-'] {
   max-width: calc(100% + 3rem);
   margin-left: -1.5rem;
 }
-.post-content a {
+.post-content a[rel='nofollow noopener noreferrer'] {
   @apply text-purple-600;
 }
-.post-content a:hover {
+.post-content a[rel='nofollow noopener noreferrer']:hover {
   @apply text-purple-700 underline;
 }
 h1,
