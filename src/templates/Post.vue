@@ -82,6 +82,12 @@ pre[class*='language-'] {
   max-width: calc(100% + 3rem);
   margin-left: -1.5rem;
 }
+.post-content a {
+  @apply text-purple-600;
+}
+.post-content a:hover {
+  @apply text-purple-700 underline;
+}
 h1,
 h2,
 h3,
