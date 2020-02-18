@@ -12,6 +12,8 @@
         :key="tag.id"
         :name="tag.title"
         :path="tag.path"
+        bg-color-class="bg-red-200"
+        hover-color-class="hover:bg-red-300"
       />
     </div>
   </div>

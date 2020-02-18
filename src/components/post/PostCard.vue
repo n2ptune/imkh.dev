@@ -18,6 +18,16 @@
       <div class="text-lg text-gray-600">
         {{ post.date }} · {{ timeToRead }}
       </div>
+      <div class="mt-3">
+        <linked-tag
+          v-for="tag in post.tags"
+          :key="tag.id"
+          :name="tag.title"
+          :path="tag.path"
+          bg-color-class="bg-red-200"
+          hover-color-class="hover:bg-red-300"
+        />
+      </div>
       <div class="mt-8">
         {{ post.description }}
       </div>
@@ -26,7 +36,12 @@
 </template>
 
 <script>
+import LinkedTag from '@/components/post/LinkedTag.vue'
+
 export default {
+  components: {
+    LinkedTag
+  },
   props: {
     post: {
       type: Object,
@@ -35,7 +50,7 @@ export default {
   },
   computed: {
     timeToRead() {
-      return `${this.post.timeToRead} Read`
+      return `${this.post.timeToRead} min read`
     }
   }
 }
