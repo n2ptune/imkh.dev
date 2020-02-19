@@ -1,5 +1,5 @@
 <template>
-  <div
+  <header
     class="header flex items-center bg-white-f font-head justify-center sm:justify-start"
   >
     <div class="px-6 header-content flex flex-row items-center">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <static-query>

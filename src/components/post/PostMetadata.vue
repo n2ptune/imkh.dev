@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col flex-wrap mx-auto items-center leading-tight mb-8">
+  <article
+    class="flex flex-col flex-wrap mx-auto items-center leading-tight mb-8"
+  >
     <div class="text-2xl sm:text-4xl font-bold text-center">
       {{ post.title }}
     </div>
@@ -16,7 +18,7 @@
         hover-color-class="hover:bg-red-300"
       />
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

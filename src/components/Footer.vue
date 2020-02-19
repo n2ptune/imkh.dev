@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="flex flex-col justify-center items-center absolute b-0 w-full bg-gray-800 px-2 py-4 sm:px-6"
+    class="flex flex-col justify-center items-center relative bottom-0 w-full bg-gray-800 px-2 py-4 sm:px-6"
   >
     <div class="text-white-f text-base my-2">
       (C) 2020. n2ptune

@@ -1,9 +1,9 @@
 <template>
-  <div class="font-display">
+  <main class="font-display">
     <Header />
     <slot />
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto text-center bg-white-f card rounded-lg">
+  <article class="mx-auto text-center bg-white-f card rounded-lg">
     <g-link :to="post.path">
       <g-image
         v-if="post.cover_image"
@@ -32,7 +32,7 @@
         {{ post.description }}
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

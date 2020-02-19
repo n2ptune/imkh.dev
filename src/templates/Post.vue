@@ -1,12 +1,12 @@
 <template>
   <Layout>
     <transition name="fade" appear>
-      <div class="container flex justfiy-center mx-auto mb-32 flex-col">
+      <section class="container flex justfiy-center mx-auto mb-32 flex-col">
         <div class="post-content mx-3 md:mx-auto">
           <post-metadata :post="$page.post" />
-          <div v-html="$page.post.content"></div>
+          <article v-html="$page.post.content"></article>
         </div>
-      </div>
+      </section>
     </transition>
   </Layout>
 </template>

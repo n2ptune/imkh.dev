@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="profile flex items-start mb-12 bg-white-f rounded-lg px-8 py-4 flex-wrap flex-col shadow-xl"
   >
     <div class="text-2xl text-left font-bold mb-4">
@@ -33,7 +33,7 @@
         <font-awesome :icon="['fab', 'github']" size="2x" />
       </a>
     </div>
-  </div>
+  </section>
 </template>
 
 <static-query>
