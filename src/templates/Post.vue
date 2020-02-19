@@ -1,11 +1,13 @@
 <template>
   <Layout>
-    <div class="container flex justfiy-center mx-auto mb-32 flex-col">
-      <div class="post-content mx-6 md:mx-auto">
-        <post-metadata :post="$page.post" />
-        <div v-html="$page.post.content"></div>
+    <transition name="fade" appear>
+      <div class="container flex justfiy-center mx-auto mb-32 flex-col">
+        <div class="post-content mx-3 md:mx-auto">
+          <post-metadata :post="$page.post" />
+          <div v-html="$page.post.content"></div>
+        </div>
       </div>
-    </div>
+    </transition>
   </Layout>
 </template>
 
@@ -66,6 +68,12 @@ export default {
 </script>
 
 <style lang="postcss">
+.fade-enter-active {
+  transition: opacity 0.44s ease-in;
+}
+.fade-enter {
+  opacity: 0;
+}
 ul,
 ol {
   list-style-type: square;
@@ -83,6 +91,7 @@ pre[class*='language-'] {
   margin-left: -1.5rem;
 }
 .post-content a[rel='nofollow noopener noreferrer'] {
+  word-break: break-all;
   @apply text-purple-600;
 }
 .post-content a[rel='nofollow noopener noreferrer']:hover {
