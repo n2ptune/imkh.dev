@@ -10,7 +10,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/styles/prism-code.css'
 
-config.autoAddCss = false
 library.add(faGithub)
 
 export default function(Vue, { router, head, isClient }) {
