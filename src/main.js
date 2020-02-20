@@ -14,6 +14,10 @@ library.add(faGithub)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
+  head.meta.push({
+    name: 'google-site-verification',
+    content: 'Apvl3CGBeJfNwha8SQ4DbDVYem4yZTHeLQ-ckfH4FSw'
+  })
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
