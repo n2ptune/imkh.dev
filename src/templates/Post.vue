@@ -71,6 +71,11 @@ export default {
           key: 'og:image:width',
           property: 'og:image:width',
           content: '700'
+        },
+        {
+          key: 'og:url',
+          property: 'og:url',
+          content: `https://blog.n2ptune.xyz${this.$page.post.path}`
         }
       ]
     }
