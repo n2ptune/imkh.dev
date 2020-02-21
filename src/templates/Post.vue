@@ -46,20 +46,31 @@ export default {
       title: this.$page.post.title,
       meta: [
         {
+          key: 'description',
           name: 'description',
           conetnt: this.$page.post.description
         },
         {
+          key: 'og:title',
           property: 'og:title',
           content: this.$page.post.title
         },
         {
+          key: 'og:description',
           property: 'og:description',
           content: this.$page.post.description
         },
         {
+          key: 'og:image',
           property: 'og:image',
-          content: this.$page.post.cover_image.src || ''
+          content: this.$page.post.cover_image.src
+            ? `https://blog.n2ptune.xyz${this.$page.post.cover_image.src}`
+            : ''
+        },
+        {
+          key: 'og:image:width',
+          property: 'og:image:width',
+          content: '700'
         }
       ]
     }
