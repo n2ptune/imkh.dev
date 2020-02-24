@@ -5,12 +5,13 @@ import DefaultLayout from '~/layouts/Default.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-// import {  } from '@fortawesome/free-solid-svg-icons'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 // import {  } from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/styles/prism-code.css'
+import VueInfiniteLoading from 'vue-infinite-loading'
 
-library.add(faGithub)
+library.add(faGithub, faTimesCircle)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
@@ -59,4 +60,7 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.component('font-awesome', FontAwesomeIcon)
+
+  // Set plugins
+  Vue.use(VueInfiniteLoading)
 }
