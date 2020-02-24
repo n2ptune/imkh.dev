@@ -38,7 +38,7 @@ query {
         timeToRead
         description
         path
-        cover_image (width: 770, height: 380, blur: 10)
+        cover_image (width: 770, height: 380, blur: 4)
         tags {
           id
           title
