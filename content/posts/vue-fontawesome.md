@@ -1,6 +1,6 @@
 ---
 title: Vue 프로젝트에서 Font Awesome Icon 사용하기
-date: 2020-02-07
+date: 2020-02-27
 published: true
 tags: ['vue']
 cover_image: ./images/vue-fontawesome-thumbnail.png
