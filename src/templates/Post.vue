@@ -4,7 +4,7 @@
       <section class="container flex justfiy-center mx-auto mb-32 flex-col">
         <div class="post-content mx-3 md:mx-auto">
           <post-metadata :post="$page.post" />
-          <article v-html="$page.post.content"></article>
+          <article class="md" v-html="$page.post.content"></article>
         </div>
       </section>
     </transition>
@@ -106,11 +106,11 @@ pre[class*='language-'] {
   max-width: calc(100% + 3rem);
   margin-left: -1.5rem;
 }
-.post-content a[rel='nofollow noopener noreferrer'] {
+.md a {
   word-break: break-all;
   @apply text-purple-600;
 }
-.post-content a[rel='nofollow noopener noreferrer']:hover {
+.md a:hover {
   @apply text-purple-700 underline;
 }
 h1,
