@@ -70,7 +70,7 @@ SVG CORE 라이브러리에서 `library` 객체를 가져온다. 이 객체가 �
 
 ## 컴포넌트에서 사용
 
-```vue
+```html
 <template>
   <div>
     <fa :icon="['fab', 'github']" />
