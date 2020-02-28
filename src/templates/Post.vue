@@ -92,8 +92,13 @@ export default {
 }
 ul,
 ol {
-  list-style-type: square;
   padding: 0 0 0 20px;
+}
+ol {
+  list-style-type: decimal;
+}
+ul {
+  list-style-type: square;
 }
 pre[class*='language-'] {
   margin: 0 -1.5rem;
