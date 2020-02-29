@@ -8,6 +8,7 @@
         </div>
       </section>
     </transition>
+    <scrolling v-if="scroll" />
   </Layout>
 </template>
 
@@ -34,12 +35,17 @@ query Post ($id: ID!) {
 import Layout from '@/layouts/Default.vue'
 import PostLogo from '@/components/post/PostLogo.vue'
 import PostMetadata from '@/components/post/PostMetadata.vue'
+import Scrolling from '@/components/post/Scrolling.vue'
 
 export default {
+  data: () => ({
+    scroll: false
+  }),
   components: {
     Layout,
     PostLogo,
-    PostMetadata
+    PostMetadata,
+    Scrolling
   },
   metaInfo() {
     return {
@@ -79,6 +85,17 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    const postContentTop = document.querySelector('.post-content').offsetTop
+
+    window.addEventListener('scroll', () => {
+      if (postContentTop < window.scrollY) {
+        this.scroll = true
+      } else {
+        this.scroll = false
+      }
+    })
   }
 }
 </script>
