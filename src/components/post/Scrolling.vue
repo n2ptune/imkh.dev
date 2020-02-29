@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import SmoothScroll from 'smooth-scroll'
-
 export default {
   data: () => ({
     color: {
@@ -27,6 +25,8 @@ export default {
 
   methods: {
     scrollTop() {
+      const SmoothScroll = require('smooth-scroll')
+
       const ss = new SmoothScroll()
       ss.animateScroll(document.querySelector('.header'))
     }
