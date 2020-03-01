@@ -1,13 +1,11 @@
 <template>
   <Layout>
-    <transition name="fade" appear>
-      <section class="container flex justfiy-center mx-auto mb-32 flex-col">
-        <div class="post-content mx-3 md:mx-auto">
-          <post-metadata :post="$page.post" />
-          <article class="md" v-html="$page.post.content"></article>
-        </div>
-      </section>
-    </transition>
+    <section class="container flex justfiy-center mx-auto mb-32 flex-col">
+      <div class="post-content mx-3 md:mx-auto">
+        <post-metadata :post="$page.post" />
+        <article class="md" v-html="$page.post.content"></article>
+      </div>
+    </section>
     <scrolling v-if="scroll" />
   </Layout>
 </template>
@@ -101,12 +99,6 @@ export default {
 </script>
 
 <style lang="postcss">
-.fade-enter-active {
-  transition: opacity 0.44s ease-in;
-}
-.fade-enter {
-  opacity: 0;
-}
 ul,
 ol {
   padding: 0 0 0 20px;

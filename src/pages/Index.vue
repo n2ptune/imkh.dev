@@ -2,12 +2,14 @@
   <Layout class="font-display">
     <div class="my-6 py-12 container mx-auto px-4 justify-center">
       <Profile class="mx-auto" />
-      <PostCard
-        v-for="post in posts"
-        :key="post.node.id"
-        :post="post.node"
-        class="my-6"
-      />
+      <section id="card-wrap">
+        <PostCard
+          v-for="post in posts"
+          :key="post.node.id"
+          :post="post.node"
+          class="my-6"
+        />
+      </section>
       <ClientOnly>
         <infinite-loading @infinite="loadingHandler" spinner="bubbles">
           <div class="flex items-center justify-center" slot="no-more">
