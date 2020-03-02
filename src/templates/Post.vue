@@ -7,6 +7,9 @@
       </div>
     </section>
     <scrolling v-if="scroll" />
+    <ClientOnly>
+      <gallery-slide :images="images" :index="index" @close="index = null" />
+    </ClientOnly>
   </Layout>
 </template>
 
@@ -34,16 +37,20 @@ import Layout from '@/layouts/Default.vue'
 import PostLogo from '@/components/post/PostLogo.vue'
 import PostMetadata from '@/components/post/PostMetadata.vue'
 import Scrolling from '@/components/post/Scrolling.vue'
+import GallerySlide from 'vue-gallery-slideshow'
 
 export default {
   data: () => ({
-    scroll: false
+    scroll: false,
+    index: null,
+    images: []
   }),
   components: {
     Layout,
     PostLogo,
     PostMetadata,
-    Scrolling
+    Scrolling,
+    GallerySlide
   },
   metaInfo() {
     return {
@@ -94,6 +101,15 @@ export default {
         this.scroll = false
       }
     })
+
+    const allImages = document.querySelectorAll('.post-content img')
+
+    allImages.forEach((img, key) => {
+      this.images.push(img.dataset.src)
+      img.addEventListener('click', () => {
+        this.index = key
+      })
+    })
   }
 }
 </script>
@@ -119,6 +135,7 @@ pre[class*='language-'] {
 .post-content img {
   max-width: calc(100% + 3rem);
   margin-left: -1.5rem;
+  cursor: pointer;
 }
 .md a {
   word-break: break-all;

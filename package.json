@@ -10,7 +10,9 @@
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "gridsome": "^0.7.0",
     "smooth-scroll": "^16.1.2",
-    "vue-infinite-loading": "^2.4.4"
+    "vue-gallery-slideshow": "^1.5.0",
+    "vue-infinite-loading": "^2.4.4",
+    "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
