@@ -1,6 +1,6 @@
 <template>
   <Layout class="font-display">
-    <section class="my-6 py-12 container mx-auto">
+    <section class="mb-12 mt-4 py-4 container mx-auto">
       <section class="flex flex-col md:flex-row justify-center">
         <section class="level-left mx-2">
           <Profile />
@@ -8,6 +8,7 @@
             :countOfPost="$page.posts.pageInfo.totalItems"
             :countOfTag="$page.tags.totalCount"
           />
+          <Archive :archive="archive" />
         </section>
         <section id="card-wrap" class="mx-2">
           <PostCard
@@ -17,7 +18,10 @@
           />
           <ClientOnly>
             <infinite-loading @infinite="loadingHandler" spinner="bubbles">
-              <div class="flex items-center justify-center" slot="no-more">
+              <div
+                class="flex items-center justify-center mt-12"
+                slot="no-more"
+              >
                 <font-awesome
                   :icon="['fas', 'times-circle']"
                   size="lg"
@@ -41,23 +45,42 @@ import PostCard from '@/components/post/PostCard.vue'
 import Profile from '@/components/Profile.vue'
 import TagList from '@/components/TagList.vue'
 import StatusInfo from '@/components/StatusInfo.vue'
+import Archive from '@/components/Archive.vue'
 
 export default {
   components: {
     PostCard,
     Profile,
     TagList,
-    StatusInfo
+    StatusInfo,
+    Archive
   },
   metaInfo: {
     title: 'Blog Home'
   },
   data: () => ({
     posts: [],
-    currentPage: 1
+    currentPage: 1,
+    archive: null
   }),
   created() {
     this.posts.push(...this.$page.posts.edges)
+
+    const dates = this.$page.dateOfPosts.edges.map(post => post.node.date)
+    const archive = new Object()
+
+    dates.forEach(date => {
+      const _d = new Date(date)
+      const yearAndMonth = [_d.getFullYear(), _d.getMonth() + 1].join('_')
+
+      if (archive.hasOwnProperty(yearAndMonth)) {
+        archive[yearAndMonth] += 1
+      } else {
+        archive[yearAndMonth] = 1
+      }
+    })
+
+    this.archive = archive
   },
   methods: {
     async loadingHandler($state) {
@@ -105,6 +128,13 @@ query ($page: Int) {
   }
   tags: allTag {
     totalCount
+  }
+  dateOfPosts: allPost {
+    edges {
+      node {
+        date
+      }
+    }
   }
 }
 </page-query>

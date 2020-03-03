@@ -19,9 +19,6 @@ export default {
   components: {
     Layout,
     PostCard
-  },
-  created() {
-    console.log(this.$page)
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
-  <section class="card-component mb-8">
+  <section class="card-component mb-4">
     <article class="px-8 py-4 flex flex-col">
-      <div class="text-lg font-bold text-center mb-4">
-        Blog Info
+      <div class="text-lg font-medium mb-4">
+        블로그 정보
       </div>
       <article class="flex justify-center">
         <div class="level title">
@@ -20,11 +20,7 @@
 
 <script>
 export default {
-  props: ['countOfPost', 'countOfTag'],
-
-  created() {
-    console.log(this.countOfPost, this.countOfTag)
-  }
+  props: ['countOfPost', 'countOfTag']
 }
 </script>
 

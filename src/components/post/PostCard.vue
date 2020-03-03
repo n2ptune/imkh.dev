@@ -10,7 +10,7 @@
       />
     </g-link>
     <div class="flex justify-center flex-col py-12 px-8">
-      <div class="text-2xl font-semibold">
+      <div class="text-2xl font-medium">
         <g-link :to="post.path">
           {{ post.title }}
         </g-link>
