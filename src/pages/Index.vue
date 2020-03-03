@@ -1,8 +1,14 @@
 <template>
   <Layout class="font-display">
-    <div class="my-6 py-12 container mx-auto">
-      <div class="flex flex-col md:flex-row justify-center">
-        <Profile class="mx-2" />
+    <section class="my-6 py-12 container mx-auto">
+      <section class="flex flex-col md:flex-row justify-center">
+        <section class="level-left mx-2">
+          <Profile />
+          <StatusInfo
+            :countOfPost="$page.posts.pageInfo.totalItems"
+            :countOfTag="$page.tags.totalCount"
+          />
+        </section>
         <section id="card-wrap" class="mx-2">
           <PostCard
             v-for="post in posts"
@@ -22,9 +28,11 @@
             </infinite-loading>
           </ClientOnly>
         </section>
-        <TagList class="mx-2" />
-      </div>
-    </div>
+        <section class="level-right mx-2">
+          <TagList v-if="false" />
+        </section>
+      </section>
+    </section>
   </Layout>
 </template>
 
@@ -32,12 +40,14 @@
 import PostCard from '@/components/post/PostCard.vue'
 import Profile from '@/components/Profile.vue'
 import TagList from '@/components/TagList.vue'
+import StatusInfo from '@/components/StatusInfo.vue'
 
 export default {
   components: {
     PostCard,
     Profile,
-    TagList
+    TagList,
+    StatusInfo
   },
   metaInfo: {
     title: 'Blog Home'
@@ -74,6 +84,7 @@ query ($page: Int) {
     pageInfo {
       totalPages
       currentPage
+      totalItems
     }
     edges {
       node {
@@ -91,6 +102,9 @@ query ($page: Int) {
         }
       }
     }
+  }
+  tags: allTag {
+    totalCount
   }
 }
 </page-query>

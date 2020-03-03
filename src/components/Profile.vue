@@ -1,6 +1,6 @@
 <template>
   <section
-    class="profile flex mb-12 px-8 py-4 flex-wrap flex-col self-center w-auto md:self-start md:max-w-sm card-component"
+    class="profile flex mb-8 px-8 py-4 flex-wrap flex-col self-center w-auto md:self-start md:max-w-sm card-component"
   >
     <div class="mb-4">
       <g-image
