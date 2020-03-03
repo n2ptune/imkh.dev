@@ -1,5 +1,5 @@
 <template>
-  <article class="mx-auto text-center bg-white-f card rounded-lg">
+  <article class="mx-auto max-w-3xl text-center bg-white-f card-component mb-4">
     <g-link :to="post.path">
       <g-image
         v-if="post.cover_image"
@@ -9,7 +9,7 @@
         blur="4"
       />
     </g-link>
-    <div class="flex justify-center flex-col p-12">
+    <div class="flex justify-center flex-col py-12 px-8">
       <div class="text-2xl font-semibold">
         <g-link :to="post.path">
           {{ post.title }}
@@ -55,16 +55,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.card {
-  transition-property: box-shadow, transform;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-in;
-  max-width: var(--content-max);
-}
-.card:hover {
-  transform: translateY(-0.8%);
-  @apply shadow-xl;
-}
-</style>

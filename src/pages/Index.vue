@@ -1,27 +1,29 @@
 <template>
   <Layout class="font-display">
-    <div class="my-6 py-12 container mx-auto px-4 justify-center">
-      <Profile class="mx-auto" />
-      <section id="card-wrap">
-        <PostCard
-          v-for="post in posts"
-          :key="post.node.id"
-          :post="post.node"
-          class="my-6"
-        />
-      </section>
-      <ClientOnly>
-        <infinite-loading @infinite="loadingHandler" spinner="bubbles">
-          <div class="flex items-center justify-center" slot="no-more">
-            <font-awesome
-              :icon="['fas', 'times-circle']"
-              size="lg"
-              class="mr-2"
-            />
-            더이상 포스트가 없습니다 T^T
-          </div>
-        </infinite-loading>
-      </ClientOnly>
+    <div class="my-6 py-12 container mx-auto">
+      <div class="flex flex-col md:flex-row justify-center">
+        <Profile class="mx-2" />
+        <section id="card-wrap" class="mx-2">
+          <PostCard
+            v-for="post in posts"
+            :key="post.node.id"
+            :post="post.node"
+          />
+          <ClientOnly>
+            <infinite-loading @infinite="loadingHandler" spinner="bubbles">
+              <div class="flex items-center justify-center" slot="no-more">
+                <font-awesome
+                  :icon="['fas', 'times-circle']"
+                  size="lg"
+                  class="mr-2"
+                />
+                더이상 포스트가 없습니다 T^T
+              </div>
+            </infinite-loading>
+          </ClientOnly>
+        </section>
+        <TagList class="mx-2" />
+      </div>
     </div>
   </Layout>
 </template>
@@ -29,11 +31,13 @@
 <script>
 import PostCard from '@/components/post/PostCard.vue'
 import Profile from '@/components/Profile.vue'
+import TagList from '@/components/TagList.vue'
 
 export default {
   components: {
     PostCard,
-    Profile
+    Profile,
+    TagList
   },
   metaInfo: {
     title: 'Blog Home'
@@ -90,3 +94,5 @@ query ($page: Int) {
   }
 }
 </page-query>
+
+<style lang="postcss" scoped></style>
