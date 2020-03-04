@@ -33,7 +33,7 @@
           </ClientOnly>
         </section>
         <section class="level-right mx-2">
-          <TagList v-if="false" />
+          <TagList v-if="true" :tags="$page.tags.edges" />
         </section>
       </section>
     </section>
@@ -128,6 +128,12 @@ query ($page: Int) {
   }
   tags: allTag {
     totalCount
+    edges {
+      node {
+        title
+        path
+      }
+    }
   }
   dateOfPosts: allPost {
     edges {

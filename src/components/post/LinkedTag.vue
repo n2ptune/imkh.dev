@@ -4,7 +4,7 @@
     :class="[bgColorClass, hoverColorClass]"
     :to="path"
   >
-    #{{ name }}
+    {{ prefix ? '#' : '' }}{{ name }}
   </g-link>
 </template>
 
@@ -28,6 +28,11 @@ export default {
       type: String,
       required: false,
       default: 'hover:bg-blue-300'
+    },
+    prefix: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   }
 }
