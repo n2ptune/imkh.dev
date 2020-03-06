@@ -10,7 +10,10 @@
             <div class="text-gray-600">
               {{ convertDateFromString(itemProp) }}
             </div>
-            <div class="text-gray-800 font-bold">{{ itemValue }}개</div>
+            <div class="text-gray-800 font-bold">
+              <span class="text-purple-600 text-xl">{{ itemValue }}</span
+              >개
+            </div>
           </div>
         </li>
       </ul>
@@ -33,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.archive {
+  list-style: none !important;
+}
+</style>
