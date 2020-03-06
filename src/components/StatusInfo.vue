@@ -32,6 +32,6 @@ export default {
   @apply text-sm;
 }
 .level .item {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold text-purple-600;
 }
 </style>
