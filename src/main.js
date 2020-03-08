@@ -7,7 +7,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faTimesCircle,
-  faAngleDoubleUp
+  faAngleDoubleUp,
+  faHighlighter
 } from '@fortawesome/free-solid-svg-icons'
 // import {  } from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -15,7 +16,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 import '@/styles/prism-custom.css'
 import VueInfiniteLoading from 'vue-infinite-loading'
 
-library.add(faGithub, faTimesCircle, faAngleDoubleUp)
+library.add(faGithub, faTimesCircle, faAngleDoubleUp, faHighlighter)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }

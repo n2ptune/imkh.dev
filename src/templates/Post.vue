@@ -3,6 +3,7 @@
     <section class="container flex justfiy-center mx-auto mb-32 flex-col">
       <div class="post-content mx-3 md:mx-auto">
         <post-metadata :post="$page.post" />
+        <post-description :des="$page.post.description" />
         <article class="md" v-html="$page.post.content"></article>
       </div>
     </section>
@@ -36,6 +37,7 @@ query Post ($id: ID!) {
 import Layout from '@/layouts/Default.vue'
 import PostLogo from '@/components/post/PostLogo.vue'
 import PostMetadata from '@/components/post/PostMetadata.vue'
+import PostDescription from '@/components/post/PostDescription.vue'
 import Scrolling from '@/components/post/Scrolling.vue'
 import GallerySlide from 'vue-gallery-slideshow'
 
@@ -49,6 +51,7 @@ export default {
     Layout,
     PostLogo,
     PostMetadata,
+    PostDescription,
     Scrolling,
     GallerySlide
   },
@@ -142,6 +145,11 @@ pre[class*='language-'] {
   margin-left: -1.5rem;
   cursor: pointer;
 }
+.full-width {
+  max-width: calc(100% + 6rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
 .md a {
   word-break: break-all;
   @apply text-purple-600;
@@ -176,6 +184,11 @@ p {
   .post-content img {
     max-width: calc(100% + 6rem);
     margin-left: -3rem;
+  }
+  .full-width {
+    max-width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
   }
   pre[class*='language-'] {
     margin: 0 -3rem;
