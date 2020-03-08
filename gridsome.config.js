@@ -8,6 +8,7 @@ module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: 'Personal blog for Web Dev/Tech',
   siteUrl: 'https://blog.n2ptune.xyz',
+  port: 4001,
 
   templates: {
     /**
@@ -98,29 +99,31 @@ module.exports = {
           ]
         )
 
-        if (process.env.NODE_ENV === 'production') {
-          options.plugins.push(
-            ...[
-              require('@fullhuman/postcss-purgecss')({
-                content: [
-                  'src/assets/**/*.css',
-                  'src/styles/**/*.css',
-                  'src/**/*.vue',
-                  'src/**/*.js'
-                ],
-                extractors: [
-                  {
-                    extractor: content =>
-                      content.match(/[A-Za-z0-9-_:\/]+/g) || [],
-                    extensions: ['css', 'vue', 'js']
-                  }
-                ],
-                whitelist: ['svg-inline--fa'],
-                whitelistPatterns: [/shiki/, /fa-$/]
-              })
-            ]
-          )
-        }
+        // if (process.env.NODE_ENV === 'production') {
+        options.plugins.push(
+          ...[
+            require('@fullhuman/postcss-purgecss')({
+              content: [
+                'src/assets/**/*.css',
+                'src/styles/**/*.css',
+                'src/**/*.vue',
+                'src/**/*.js',
+                'node_modules/prismjs/**/*.js'
+              ],
+              extractors: [
+                {
+                  extractor: content =>
+                    content.match(/[A-Za-z0-9-_:\/]+/g) || [],
+                  extensions: ['vue', 'js', 'css']
+                }
+              ],
+              whitelist: ['svg-inline--fa'],
+              whitelistPatterns: [/shiki/, /fa-$/]
+            })
+          ]
+        )
+        // }
+
         return options
       })
   }
