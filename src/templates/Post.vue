@@ -128,7 +128,7 @@ ol {
   list-style-type: decimal;
 }
 ul {
-  list-style-type: square;
+  list-style-type: disc;
 }
 pre[class*='language-'] {
   margin: 0 -1.5rem;
