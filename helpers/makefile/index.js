@@ -29,7 +29,7 @@ for (const prop in template) {
           now.getMonth() + 1 > 9
             ? now.getMonth() + 1
             : `0${now.getMonth() + 1}`,
-        day: now.getDate() + 1 > 9 ? now.getDate() + 1 : `0${now.getDate() + 1}`
+        day: now.getDate() + 1 > 9 ? now.getDate() : `0${now.getDate()}`
       }
 
       result.unshift(`date: ${date.year}-${date.month}-${date.day}`)
