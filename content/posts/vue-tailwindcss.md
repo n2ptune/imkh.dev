@@ -83,7 +83,7 @@ yarn add tailwindcss
 
 설치를 한 뒤에 `npx`로 tailwindcss 설정 파일을 생성하는 스크립트를 실행한다.
 
-```sh
+```bash
 npx tailwind init --full
 ```
 

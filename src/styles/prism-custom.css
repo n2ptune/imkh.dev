@@ -1,0 +1,22 @@
+/* purgecss start ignore */
+
+@import url('//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+@import url('//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css');
+
+pre,
+code {
+  font-family: Hack, D2Coding, monospace !important;
+}
+
+pre[class*='language-'],
+code[class*='language-'] {
+  font-size: 0.95rem;
+}
+
+pre[class*='language-'] {
+  overflow: auto;
+  position: relative;
+  padding: 1.25em 3rem;
+}
+
+/* purgecss end ignore */

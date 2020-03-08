@@ -11,7 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 // import {  } from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@/styles/prism-code.css'
+import 'prismjs/themes/prism-tomorrow.css'
+import '@/styles/prism-custom.css'
 import VueInfiniteLoading from 'vue-infinite-loading'
 
 library.add(faGithub, faTimesCircle, faAngleDoubleUp)
