@@ -55,6 +55,11 @@ export default {
   metaInfo() {
     return {
       title: this.$page.post.title,
+      script: [
+        {
+          src: 'https://static.codepen.io/assets/embed/ei.js'
+        }
+      ],
       meta: [
         {
           key: 'description',
@@ -74,7 +79,7 @@ export default {
         {
           key: 'og:image',
           property: 'og:image',
-          content: this.$page.post.cover_image.src
+          content: this.$page.post.cover_image
             ? `https://blog.n2ptune.xyz${this.$page.post.cover_image.src}`
             : ''
         },

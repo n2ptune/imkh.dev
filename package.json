@@ -25,8 +25,10 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
+    "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome-plugin-tailwindcss": "^2.2.34",
     "minimist": "^1.2.0",
-    "prismjs": "^1.19.0"
+    "prismjs": "^1.19.0",
+    "sharp": "^0.25.1"
   }
 }

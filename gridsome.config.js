@@ -69,7 +69,18 @@ module.exports = {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
-      plugins: ['@gridsome/remark-prismjs']
+      plugins: [
+        ['@gridsome/remark-prismjs'],
+        [
+          '@noxify/gridsome-plugin-remark-embed',
+          {
+            enabledProviders: ['Codepen'],
+            Codepen: {
+              height: 500
+            }
+          }
+        ]
+      ]
     }
   },
 
