@@ -107,8 +107,7 @@ module.exports = {
                   'src/assets/**/*.css',
                   'src/styles/**/*.css',
                   'src/**/*.vue',
-                  'src/**/*.js',
-                  'node_modules/prismjs/**/*.js'
+                  'src/**/*.js'
                 ],
                 extractors: [
                   {
