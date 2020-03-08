@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "makefile": "node helpers/makefile/index.js"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
@@ -25,6 +26,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome-plugin-tailwindcss": "^2.2.34",
+    "minimist": "^1.2.0",
     "prismjs": "^1.19.0"
   }
 }
