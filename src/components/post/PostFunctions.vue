@@ -1,5 +1,5 @@
 <template>
-  <article class="flex flex-row justify-end mt-1 mb-6">
+  <article class="flex flex-row justify-end mt-6 mb-6">
     <font-awesome
       :icon="['fas', 'clipboard']"
       class="text-gray-500 hover:text-gray-700 cursor-pointer focus:outline-none icon"

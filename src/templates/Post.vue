@@ -2,6 +2,13 @@
   <Layout>
     <section class="container flex justfiy-center mx-auto mb-32 flex-col">
       <div class="post-content mx-2 md:mx-auto">
+        <g-image
+          v-if="$page.post.cover_image.size.width >= 950"
+          :src="$page.post.cover_image"
+          class="rounded-t-lg shadow-lg post-cover-image"
+          blur="4"
+          contain
+        />
         <post-functions :path="$page.post.path" :date="$page.origin.date" />
         <post-metadata :post="$page.post" />
         <post-description :des="$page.post.description" />
@@ -52,6 +59,7 @@ export default {
     index: null,
     images: []
   }),
+
   components: {
     Layout,
     PostLogo,
@@ -61,6 +69,7 @@ export default {
     Scrolling,
     GallerySlide
   },
+
   metaInfo() {
     return {
       title: this.$page.post.title,
@@ -105,6 +114,7 @@ export default {
       ]
     }
   },
+
   mounted() {
     const postContentTop = document.querySelector('.post-content').offsetTop
 
@@ -142,9 +152,12 @@ ul {
 pre[class*='language-'] {
   margin: 0 -1.5rem;
 }
+.post-cover-image {
+  max-height: 500px;
+}
 .post-content {
   max-width: var(--content-post);
-  @apply px-6 pt-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
+  @apply px-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content img {
   max-width: calc(100% + 3rem);
