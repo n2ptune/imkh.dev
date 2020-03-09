@@ -1,7 +1,8 @@
 <template>
   <Layout>
     <section class="container flex justfiy-center mx-auto mb-32 flex-col">
-      <div class="post-content mx-3 md:mx-auto">
+      <div class="post-content mx-2 md:mx-auto">
+        <post-functions :path="$page.post.path" :date="$page.origin.date" />
         <post-metadata :post="$page.post" />
         <post-description :des="$page.post.description" />
         <article class="md" v-html="$page.post.content"></article>
@@ -30,6 +31,9 @@ query Post ($id: ID!) {
     content
     cover_image
   }
+  origin: post (id: $id) {
+    date
+  }
 }
 </page-query>
 
@@ -38,6 +42,7 @@ import Layout from '@/layouts/Default.vue'
 import PostLogo from '@/components/post/PostLogo.vue'
 import PostMetadata from '@/components/post/PostMetadata.vue'
 import PostDescription from '@/components/post/PostDescription.vue'
+import PostFunctions from '@/components/post/PostFunctions.vue'
 import Scrolling from '@/components/post/Scrolling.vue'
 import GallerySlide from 'vue-gallery-slideshow'
 
@@ -52,6 +57,7 @@ export default {
     PostLogo,
     PostMetadata,
     PostDescription,
+    PostFunctions,
     Scrolling,
     GallerySlide
   },
@@ -138,7 +144,7 @@ pre[class*='language-'] {
 }
 .post-content {
   max-width: var(--content-post);
-  @apply px-6 py-16 bg-white-f shadow-md rounded-lg mt-12;
+  @apply px-6 pt-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content img {
   max-width: calc(100% + 3rem);

@@ -1,22 +1,36 @@
-// This is the main.js file. Import global CSS and scripts here.
-// The Client API can be used here. Learn more: gridsome.org/docs/client-api
+/** global-css-layout */
 import '@/styles/global.css'
 import DefaultLayout from '~/layouts/Default.vue'
+
+/** FontAwesomeIcon */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faTimesCircle,
   faAngleDoubleUp,
-  faHighlighter
+  faHighlighter,
+  faClipboard,
+  faCalendarAlt
 } from '@fortawesome/free-solid-svg-icons'
-// import {  } from '@fortawesome/free-regular-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
+/** prismjs-theme */
 import 'prismjs/themes/prism-tomorrow.css'
 import '@/styles/prism-custom.css'
-import VueInfiniteLoading from 'vue-infinite-loading'
 
-library.add(faGithub, faTimesCircle, faAngleDoubleUp, faHighlighter)
+/** plugins */
+import VueInfiniteLoading from 'vue-infinite-loading'
+import { VTooltip } from 'v-tooltip'
+
+library.add(
+  faGithub,
+  faTimesCircle,
+  faAngleDoubleUp,
+  faHighlighter,
+  faClipboard,
+  faCalendarAlt
+)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
@@ -68,4 +82,5 @@ export default function(Vue, { router, head, isClient }) {
 
   // Set plugins
   Vue.use(VueInfiniteLoading)
+  Vue.directive('tooltip', VTooltip)
 }
