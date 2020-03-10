@@ -104,7 +104,16 @@ export default {
         {
           key: 'og:image:width',
           property: 'og:image:width',
-          content: '700'
+          content: this.$page.post.cover_image
+            ? this.$page.post.cover_image.size.width
+            : ''
+        },
+        {
+          key: 'og:image:height',
+          property: 'og:image:height',
+          content: this.$page.post.cover_image
+            ? this.$page.post.cover_image.size.height
+            : ''
         },
         {
           key: 'og:url',

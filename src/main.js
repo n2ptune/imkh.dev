@@ -73,6 +73,11 @@ export default function(Vue, { router, head, isClient }) {
       key: 'og:url',
       property: 'og:url',
       content: 'https://blog.n2ptune.xyz/'
+    },
+    {
+      key: 'fb:app_id',
+      property: 'fb:app_id',
+      content: 3111093142448463
     }
   )
 
