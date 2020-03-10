@@ -3,7 +3,7 @@
     <header class="py-2 px-4 bg-red-300">
       <font-awesome
         :icon="['fas', 'highlighter']"
-        size="sm"
+        :style="{ fontSize: '0.875em' }"
         class="text-gray-800"
       />
       <span class="text-sm font-semibold ml-2 text-gray-800">Description</span>
