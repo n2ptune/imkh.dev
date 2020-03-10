@@ -17,7 +17,7 @@
           <div class="block text-2xl font-bold text-gray-800">
             {{ $static.metadata.siteName }}
           </div>
-          <div class="block text-gray-700 font-display">
+          <div class="block text-gray-600 font-display">
             웹 기술/개발 개인 블로그
           </div>
         </div>
