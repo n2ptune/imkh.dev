@@ -81,8 +81,8 @@ button.addEventListener('click', function() {
 
 <https://codepen.io/n2ptune/pen/XWbVXMM>
 
-- [Clipboard API 브라우저 호환성](https://developer.mozilla.org/ko/docs/Web/API/Clipboard#Browser_Compatibility)
-- [ClipboardEvent API](https://developer.mozilla.org/ko/docs/Web/API/ClipboardEvent)
+[Clipboard API 브라우저 호환성](https://developer.mozilla.org/ko/docs/Web/API/Clipboard#Browser_Compatibility)  
+[ClipboardEvent API](https://developer.mozilla.org/ko/docs/Web/API/ClipboardEvent)
 
 ## clipboard.js
 
