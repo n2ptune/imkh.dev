@@ -60,6 +60,24 @@ module.exports = {
       options: {
         id: 'UA-158765885-1'
       }
+    },
+    {
+      use: 'gridsome-plugin-rss',
+      options: {
+        contentTypeName: 'Post',
+        feedOptions: {
+          title: 'n2ptune Dev Blog',
+          feed_url: 'https://blog.n2ptune.xyz/rss.xml',
+          site_url: 'https://blog.n2ptune.xyz'
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          date: node.date,
+          url: 'https://blog.n2ptune.xyz' + node.path,
+          author: 'n2ptune'
+        })
+      }
     }
   ],
 
