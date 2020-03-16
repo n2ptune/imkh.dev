@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="container flex justfiy-center mx-auto mb-32">
+    <section class="container flex justify-center mx-auto mb-20">
       <div class="post-content mx-2 md:mx-auto">
         <g-image
           v-if="$page.post.cover_image.size.width >= 950"
@@ -14,7 +14,7 @@
         <post-description :des="$page.post.description" />
         <article class="md" v-html="$page.post.content"></article>
       </div>
-      <a-side />
+      <!-- <a-side :aside="aside" /> -->
     </section>
     <scrolling v-if="scroll" />
     <ClientOnly>
@@ -163,14 +163,14 @@ export default {
 </script>
 
 <style lang="postcss">
-ul,
-ol {
+.post-content ul,
+.post-content ol {
   padding: 0 0 0 20px;
 }
-ol {
+.post-content ol {
   list-style-type: decimal;
 }
-ul {
+.post-content ul {
   list-style-type: disc;
 }
 pre[class*='language-'] {

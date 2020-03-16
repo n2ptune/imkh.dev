@@ -12,7 +12,8 @@ import {
   faHighlighter,
   faClipboard,
   faCalendarAlt,
-  faChevronLeft
+  faChevronLeft,
+  faStream
 } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
@@ -31,7 +32,8 @@ library.add(
   faHighlighter,
   faClipboard,
   faCalendarAlt,
-  faChevronLeft
+  faChevronLeft,
+  faStream
 )
 
 export default function(Vue, { router, head, isClient }) {
