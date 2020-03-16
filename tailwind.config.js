@@ -12,6 +12,9 @@ module.exports = {
       head: ['Ubuntu', 'sans-serif']
     },
     extend: {
+      screens: {
+        '2xl': '1480px'
+      },
       colors: {
         /**
          * @colors https://flatuicolors.com/palette/nl

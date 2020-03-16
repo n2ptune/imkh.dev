@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="container flex justfiy-center mx-auto mb-32 flex-col">
+    <section class="container flex justfiy-center mx-auto mb-32">
       <div class="post-content mx-2 md:mx-auto">
         <g-image
           v-if="$page.post.cover_image.size.width >= 950"
@@ -14,6 +14,7 @@
         <post-description :des="$page.post.description" />
         <article class="md" v-html="$page.post.content"></article>
       </div>
+      <a-side />
     </section>
     <scrolling v-if="scroll" />
     <ClientOnly>
@@ -57,7 +58,8 @@ export default {
   data: () => ({
     scroll: false,
     index: null,
-    images: []
+    images: [],
+    aside: []
   }),
 
   components: {
@@ -67,7 +69,8 @@ export default {
     PostDescription,
     PostFunctions,
     Scrolling,
-    GallerySlide
+    GallerySlide,
+    ASide: () => import('@/components/post/ASide.vue')
   },
 
   metaInfo() {
@@ -143,6 +146,18 @@ export default {
         this.index = key
       })
     })
+
+    const postContentH2s = document.querySelectorAll('.post-content h2')
+    const collection = []
+
+    postContentH2s.forEach(el =>
+      collection.push({
+        id: el.id,
+        title: el.innerText
+      })
+    )
+
+    this.aside = collection
   }
 }
 </script>
