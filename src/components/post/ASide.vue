@@ -3,11 +3,11 @@
     <aside
       class="hidden 2xl:block absolute side"
       :class="isFixed ? 'is-fixed' : ''"
-      :style="{ right: `${contentWidth}px`, width: 'auto' }"
+      :style="{ right: `${contentWidth}px` }"
     >
       <header class="mb-1 font-bold">
         <font-awesome :icon="['fas', 'stream']" :style="{ fontSize: '12px' }" />
-        목록
+        목록 네비게이션
       </header>
       <ul class="">
         <li v-for="content in aside" :key="content.title">
@@ -85,7 +85,7 @@ aside {
   @apply mt-16 w-auto;
 }
 aside.is-fixed {
-  top: 0.25rem;
+  top: 0.3rem;
   @apply fixed;
 }
 </style>

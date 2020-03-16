@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    <section class="container flex justify-center mx-auto mb-20">
+    <section
+      class="container flex justify-center mx-auto mb-20 flex-col 2xl:flex-row"
+    >
       <div class="post-content mx-2 md:mx-auto">
         <g-image
           v-if="$page.post.cover_image.size.width >= 950"
@@ -14,7 +16,7 @@
         <post-description :des="$page.post.description" />
         <article class="md" v-html="$page.post.content"></article>
       </div>
-      <!-- <a-side :aside="aside" /> -->
+      <a-side :aside="aside" />
     </section>
     <scrolling v-if="scroll" />
     <ClientOnly>
