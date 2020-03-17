@@ -11,7 +11,9 @@
       </header>
       <ul class="">
         <li v-for="content in aside" :key="content.title">
-          <a :href="`#${content.id}`" @click="anchor">{{ content.title }}</a>
+          <a :href="`#${content.id}`" @click="anchor" class="navigate">{{
+            content.title
+          }}</a>
         </li>
       </ul>
     </aside>
@@ -43,7 +45,26 @@ export default {
         this.isFixed = false
       }
 
-      this.aside.forEach(el => {})
+      this.aside.forEach(el => {
+        const activeNavigate = tag => {
+          const navigateEL = document.querySelector(`.navigate[href='#${tag}']`)
+          const navigateAll = document.querySelectorAll('.navigate')
+
+          navigateAll.forEach(_nav => _nav.classList.remove('active'))
+          navigateEL.classList.toggle('active')
+        }
+
+        // null 체크
+        if (!el.nextTop) {
+          if (currentY >= el.top) {
+            activeNavigate(el.id)
+          }
+        } else {
+          if (currentY >= el.top && currentY <= el.nextTop) {
+            activeNavigate(el.id)
+          }
+        }
+      })
     },
     resizingEvent() {
       const side = document.querySelector('.side')
@@ -99,5 +120,11 @@ aside {
 aside.is-fixed {
   top: 0.3rem;
   @apply fixed;
+}
+.navigate {
+  transition: all 0.25s ease;
+}
+.navigate.active {
+  @apply font-bold text-purple-600;
 }
 </style>
