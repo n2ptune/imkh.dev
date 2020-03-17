@@ -152,12 +152,17 @@ export default {
     const postContentH2s = document.querySelectorAll('.post-content h2')
     const collection = []
 
-    postContentH2s.forEach(el =>
+    postContentH2s.forEach((el, i) => {
+      const top = el.offsetTop
+      const nextTop =
+        postContentH2s.length - 1 === i ? null : postContentH2s[i + 1].offsetTop
       collection.push({
         id: el.id,
-        title: el.innerText
+        title: el.innerText,
+        top,
+        nextTop
       })
-    )
+    })
 
     this.aside = collection
   }

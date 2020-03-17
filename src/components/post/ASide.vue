@@ -11,7 +11,7 @@
       </header>
       <ul class="">
         <li v-for="content in aside" :key="content.title">
-          {{ content.title }}
+          <a :href="`#${content.id}`" @click="anchor">{{ content.title }}</a>
         </li>
       </ul>
     </aside>
@@ -42,11 +42,23 @@ export default {
       } else {
         this.isFixed = false
       }
+
+      this.aside.forEach(el => {})
     },
     resizingEvent() {
       const side = document.querySelector('.side')
       this.contentWidth =
         (document.body.clientWidth - 950) / 2 - side.clientWidth - 15
+    },
+    anchor(event) {
+      event.preventDefault()
+
+      const targetID = event.target.attributes.href.value.slice(1)
+      const targetElem = document.getElementById(targetID)
+      const targetElemTop = targetElem.offsetTop
+
+      window.scrollTo(0, targetElemTop)
+      window.history.pushState({}, '', '#' + targetID)
     }
   },
 
