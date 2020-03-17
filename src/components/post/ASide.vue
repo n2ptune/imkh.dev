@@ -125,6 +125,8 @@ aside.is-fixed {
   transition: all 0.25s ease;
 }
 .navigate.active {
-  @apply font-bold text-purple-600;
+  --color: #805ad5;
+  text-shadow: 0 0 1px var(--color);
+  @apply text-purple-600;
 }
 </style>
