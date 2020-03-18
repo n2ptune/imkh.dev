@@ -31,7 +31,7 @@
     "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome-plugin-tailwindcss": "^2.2.34",
     "mini-css-extract-plugin": "^0.9.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "sharp": "^0.25.1"
   }
 }
