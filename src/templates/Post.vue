@@ -5,7 +5,11 @@
     >
       <div class="post-content mx-2 md:mx-auto">
         <g-image
-          v-if="$page.post.cover_image.size.width >= 950"
+          v-if="
+            $page.post.cover_image
+              ? $page.post.cover_image.size.width >= 950
+              : false
+          "
           :src="$page.post.cover_image"
           class="rounded-t-lg shadow-lg post-cover-image"
           blur="4"
@@ -109,16 +113,18 @@ export default {
         {
           key: 'og:image:width',
           property: 'og:image:width',
-          content: this.$page.post.cover_image
-            ? this.$page.post.cover_image.size.width
-            : ''
+          content:
+            this.$page.post.cover_image !== null
+              ? this.$page.post.cover_image.size.width
+              : ''
         },
         {
           key: 'og:image:height',
           property: 'og:image:height',
-          content: this.$page.post.cover_image
-            ? this.$page.post.cover_image.size.height
-            : ''
+          content:
+            this.$page.post.cover_image !== null
+              ? this.$page.post.cover_image.size.height
+              : ''
         },
         {
           key: 'og:url',
