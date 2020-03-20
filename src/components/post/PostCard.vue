@@ -1,11 +1,13 @@
 <template>
-  <article class="mx-auto max-w-3xl text-center bg-white-f card-component mb-4">
+  <article
+    class="mx-auto max-w-3xl text-center bg-white-f card-component mb-4 overflow-hidden"
+  >
     <g-link :to="post.path">
       <g-image
         v-if="post.cover_image"
         :src="post.cover_image"
         :style="{ minWidth: '100%' }"
-        class="rounded-t-lg"
+        class="rounded-t-lg card-thumbnail"
         blur="4"
       />
     </g-link>
@@ -55,3 +57,12 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.card-thumbnail {
+  transition: transform 0.25s ease;
+}
+.card-thumbnail:hover {
+  transform: scale(1.05);
+}
+</style>
