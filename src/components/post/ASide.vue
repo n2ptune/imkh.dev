@@ -124,7 +124,8 @@ aside.is-fixed {
 .navigate {
   transition: all 0.25s ease;
 }
-.navigate.active {
+.navigate.active,
+.navigate:hover {
   --color: #805ad5;
   text-shadow: 0 0 1px var(--color);
   @apply text-purple-600;
