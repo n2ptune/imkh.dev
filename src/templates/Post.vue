@@ -11,7 +11,7 @@
               : false
           "
           :src="$page.post.cover_image"
-          class="rounded-t-lg shadow-lg post-cover-image"
+          class="rounded-t-lg post-cover-image"
           blur="4"
           contain
         />
@@ -147,8 +147,14 @@ export default {
     })
 
     const allImages = document.querySelectorAll('.post-content img')
+    const contentSize = 950
 
     allImages.forEach((img, key) => {
+      // 마진 조정
+      if (contentSize > img.width) {
+        img.style.margin = '0 auto'
+      }
+
       this.images.push(img.dataset.src)
       img.addEventListener('click', () => {
         this.index = key
