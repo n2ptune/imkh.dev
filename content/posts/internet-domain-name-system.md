@@ -21,7 +21,7 @@ title: DNS와 작동 원리 (Domain Name System)
 
 ## 작동 원리
 
-![Tree Domain](./images/Tree_Domain.png)
+![Tree Domain](./images/Tree_domain.png)
 
 - Local DNS 서버에 요청이 온 도메인에 대해 IP 주소 요청 있으면 IP 주소 반환하고 이동 없으면 다음 단계
 - Root Name Server에게 해당 도메인에 대해 질의
