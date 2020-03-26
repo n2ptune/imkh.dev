@@ -170,6 +170,7 @@ unsplash 공식 홈페이지에 들어가보면 해당 이미지에 마우스를
 
 ## 참고
 
+- [해당 포스트로 구현된 데모 페이지](https://n2ptune.github.io/masonry-layout-with-vue/)
 - [https://github.com/shershen08/vue-masonry](https://github.com/shershen08/vue-masonry)
 - [https://unsplash.com/](https://unsplash.com/)
 - [https://heropy.blog/2019/08/17/css-grid/](https://heropy.blog/2019/08/17/css-grid/)
