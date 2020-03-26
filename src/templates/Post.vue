@@ -196,7 +196,7 @@ pre[class*='language-'] {
   margin: 0 -1.5rem;
 }
 .post-cover-image {
-  max-height: 500px;
+  /* max-height: 500px; */
 }
 .post-content {
   max-width: var(--content-post);
