@@ -203,8 +203,6 @@ pre[class*='language-'] {
   @apply px-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content img {
-  max-width: calc(100% + 3rem);
-  margin-left: -1.5rem;
   cursor: pointer;
 }
 .full-width {
