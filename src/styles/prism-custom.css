@@ -19,11 +19,6 @@ pre[class*='language-'] {
   padding: 1.25em 3rem;
 }
 
-:not(pre) > code {
-  @apply text-purple-600;
-  font-weight: 900;
-}
-
 .token.comment,
 .token.block-comment,
 .token.prolog,

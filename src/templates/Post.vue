@@ -217,6 +217,11 @@ pre[class*='language-'] {
 .md a:hover {
   @apply text-purple-700 underline;
 }
+/* purgecss start ignore */
+:not(pre) > code {
+  @apply text-purple-600 font-semibold;
+}
+/* purgecss end ignore */
 h1,
 h2,
 h3,
