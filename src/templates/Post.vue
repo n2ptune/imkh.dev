@@ -108,7 +108,7 @@ export default {
           property: 'og:image',
           content: this.$page.post.cover_image
             ? `https://blog.n2ptune.xyz${this.$page.post.cover_image.src}`
-            : ''
+            : `https://blog.n2ptune.xyz${require('@/assets/default-thumbnail.jpg')}`
         },
         {
           key: 'og:image:width',
@@ -116,7 +116,7 @@ export default {
           content:
             this.$page.post.cover_image !== null
               ? this.$page.post.cover_image.size.width
-              : ''
+              : 900
         },
         {
           key: 'og:image:height',
@@ -124,7 +124,7 @@ export default {
           content:
             this.$page.post.cover_image !== null
               ? this.$page.post.cover_image.size.height
-              : ''
+              : 400
         },
         {
           key: 'og:url',
