@@ -4,11 +4,19 @@
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "makefile": "node helpers/makefile/index.js"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
-    "gridsome": "^0.7.0"
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-rss": "^1.2.0",
+    "prismjs": "^1.19.0",
+    "smooth-scroll": "^16.1.2",
+    "v-tooltip": "^2.0.3",
+    "vue-gallery-slideshow": "^1.5.0",
+    "vue-infinite-loading": "^2.4.4",
+    "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -20,7 +28,9 @@
     "@gridsome/remark-prismjs": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
+    "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome-plugin-tailwindcss": "^2.2.34",
-    "prismjs": "^1.19.0"
+    "mini-css-extract-plugin": "^0.9.0",
+    "sharp": "^0.25.1"
   }
 }

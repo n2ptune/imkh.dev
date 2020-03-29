@@ -3,11 +3,13 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: 'Personal blog for Web Dev/Tech',
   siteUrl: 'https://blog.n2ptune.xyz',
+  port: 4001,
 
   templates: {
     /**
@@ -58,6 +60,24 @@ module.exports = {
       options: {
         id: 'UA-158765885-1'
       }
+    },
+    {
+      use: 'gridsome-plugin-rss',
+      options: {
+        contentTypeName: 'Post',
+        feedOptions: {
+          title: 'n2ptune Dev Blog',
+          feed_url: 'https://blog.n2ptune.xyz/rss.xml',
+          site_url: 'https://blog.n2ptune.xyz'
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          date: node.date,
+          url: 'https://blog.n2ptune.xyz' + node.path,
+          author: 'n2ptune'
+        })
+      }
     }
   ],
 
@@ -68,9 +88,23 @@ module.exports = {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
-      plugins: ['@gridsome/remark-prismjs']
+      plugins: [
+        ['@gridsome/remark-prismjs'],
+        [
+          '@noxify/gridsome-plugin-remark-embed',
+          {
+            enabledProviders: ['Codepen'],
+            Codepen: {
+              height: 500
+            }
+          }
+        ]
+      ]
     }
+  },
+
+  css: {
+    split: true
   },
 
   chainWebpack: config => {
@@ -101,7 +135,7 @@ module.exports = {
                   {
                     extractor: content =>
                       content.match(/[A-Za-z0-9-_:\/]+/g) || [],
-                    extensions: ['css', 'vue', 'js']
+                    extensions: ['vue', 'js', 'css']
                   }
                 ],
                 whitelist: ['svg-inline--fa'],
@@ -110,6 +144,7 @@ module.exports = {
             ]
           )
         }
+
         return options
       })
   }

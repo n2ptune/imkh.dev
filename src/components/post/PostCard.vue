@@ -1,16 +1,17 @@
 <template>
-  <article class="mx-auto text-center bg-white-f card rounded-lg">
+  <article
+    class="mx-auto max-w-3xl text-center bg-white-f card-component mb-4 overflow-hidden"
+  >
     <g-link :to="post.path">
       <g-image
-        v-if="post.cover_image"
-        :src="post.cover_image"
+        :src="post.cover_image || require('@/assets/default-thumbnail.jpg')"
         :style="{ minWidth: '100%' }"
-        class="rounded-t-lg"
+        class="rounded-t-lg card-thumbnail"
         blur="4"
       />
     </g-link>
-    <div class="flex justify-center flex-col p-12">
-      <div class="text-2xl font-semibold">
+    <div class="flex justify-center flex-col py-12 px-8">
+      <div class="text-2xl font-medium">
         <g-link :to="post.path">
           {{ post.title }}
         </g-link>
@@ -57,14 +58,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.card {
-  transition-property: box-shadow, transform;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-in;
-  max-width: var(--content-max);
+.card-thumbnail {
+  transition: transform 0.25s ease;
 }
-.card:hover {
-  transform: translateY(-0.8%);
-  @apply shadow-xl;
+.card-thumbnail:hover {
+  transform: scale(1.05);
 }
 </style>

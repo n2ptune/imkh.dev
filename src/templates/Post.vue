@@ -1,13 +1,31 @@
 <template>
   <Layout>
-    <transition name="fade" appear>
-      <section class="container flex justfiy-center mx-auto mb-32 flex-col">
-        <div class="post-content mx-3 md:mx-auto">
-          <post-metadata :post="$page.post" />
-          <article v-html="$page.post.content"></article>
-        </div>
-      </section>
-    </transition>
+    <section
+      class="container flex justify-center mx-auto mb-20 flex-col 2xl:flex-row"
+    >
+      <div class="post-content mx-2 md:mx-auto">
+        <g-image
+          v-if="
+            $page.post.cover_image
+              ? $page.post.cover_image.size.width >= 950
+              : false
+          "
+          :src="$page.post.cover_image"
+          class="rounded-t-lg post-cover-image"
+          blur="4"
+          contain
+        />
+        <post-functions :path="$page.post.path" :date="$page.origin.date" />
+        <post-metadata :post="$page.post" />
+        <post-description :des="$page.post.description" />
+        <article class="md" v-html="$page.post.content"></article>
+      </div>
+      <a-side :aside="aside" />
+    </section>
+    <scrolling v-if="scroll" />
+    <ClientOnly>
+      <gallery-slide :images="images" :index="index" @close="index = null" />
+    </ClientOnly>
   </Layout>
 </template>
 
@@ -27,6 +45,9 @@ query Post ($id: ID!) {
     content
     cover_image
   }
+  origin: post (id: $id) {
+    date
+  }
 }
 </page-query>
 
@@ -34,16 +55,38 @@ query Post ($id: ID!) {
 import Layout from '@/layouts/Default.vue'
 import PostLogo from '@/components/post/PostLogo.vue'
 import PostMetadata from '@/components/post/PostMetadata.vue'
+import PostDescription from '@/components/post/PostDescription.vue'
+import PostFunctions from '@/components/post/PostFunctions.vue'
+import Scrolling from '@/components/post/Scrolling.vue'
+import GallerySlide from 'vue-gallery-slideshow'
 
 export default {
+  data: () => ({
+    scroll: false,
+    index: null,
+    images: [],
+    aside: []
+  }),
+
   components: {
     Layout,
     PostLogo,
-    PostMetadata
+    PostMetadata,
+    PostDescription,
+    PostFunctions,
+    Scrolling,
+    GallerySlide,
+    ASide: () => import('@/components/post/ASide.vue')
   },
+
   metaInfo() {
     return {
       title: this.$page.post.title,
+      script: [
+        {
+          src: 'https://static.codepen.io/assets/embed/ei.js'
+        }
+      ],
       meta: [
         {
           key: 'description',
@@ -63,51 +106,122 @@ export default {
         {
           key: 'og:image',
           property: 'og:image',
-          content: this.$page.post.cover_image.src
+          content: this.$page.post.cover_image
             ? `https://blog.n2ptune.xyz${this.$page.post.cover_image.src}`
-            : ''
+            : `https://blog.n2ptune.xyz${require('@/assets/default-thumbnail.jpg')}`
         },
         {
           key: 'og:image:width',
           property: 'og:image:width',
-          content: '700'
+          content:
+            this.$page.post.cover_image !== null
+              ? this.$page.post.cover_image.size.width
+              : 900
+        },
+        {
+          key: 'og:image:height',
+          property: 'og:image:height',
+          content:
+            this.$page.post.cover_image !== null
+              ? this.$page.post.cover_image.size.height
+              : 400
+        },
+        {
+          key: 'og:url',
+          property: 'og:url',
+          content: `https://blog.n2ptune.xyz${this.$page.post.path}`
         }
       ]
     }
+  },
+
+  mounted() {
+    const postContentTop = document.querySelector('.post-content').offsetTop
+
+    window.addEventListener('scroll', () => {
+      if (postContentTop < window.scrollY) {
+        this.scroll = true
+      } else {
+        this.scroll = false
+      }
+    })
+
+    const allImages = document.querySelectorAll('.post-content img')
+    const contentSize = 950
+
+    allImages.forEach((img, key) => {
+      // 마진 조정
+      if (contentSize > img.width) {
+        img.style.margin = '0 auto'
+      }
+
+      this.images.push(img.dataset.src)
+      img.addEventListener('click', () => {
+        this.index = key
+      })
+    })
+
+    const postContentH2s = document.querySelectorAll('.post-content h2')
+    const collection = []
+
+    postContentH2s.forEach((el, i) => {
+      const top = el.offsetTop
+      const nextTop =
+        postContentH2s.length - 1 === i ? null : postContentH2s[i + 1].offsetTop
+      collection.push({
+        id: el.id,
+        title: el.innerText,
+        top,
+        nextTop
+      })
+    })
+
+    this.aside = collection
   }
 }
 </script>
 
 <style lang="postcss">
-.fade-enter-active {
-  transition: opacity 0.44s ease-in;
-}
-.fade-enter {
-  opacity: 0;
-}
-ul,
-ol {
-  list-style-type: square;
+.post-content ul,
+.post-content ol {
   padding: 0 0 0 20px;
+}
+.post-content ol {
+  list-style-type: decimal;
+}
+.post-content ul {
+  list-style-type: disc;
 }
 pre[class*='language-'] {
   margin: 0 -1.5rem;
 }
+.post-cover-image {
+  /* max-height: 500px; */
+}
 .post-content {
   max-width: var(--content-post);
-  @apply px-6 py-16 bg-white-f shadow-md rounded-lg mt-12;
+  @apply px-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
 }
 .post-content img {
-  max-width: calc(100% + 3rem);
-  margin-left: -1.5rem;
+  cursor: pointer;
 }
-.post-content a[rel='nofollow noopener noreferrer'] {
+.full-width {
+  max-width: calc(100% + 6rem);
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+.md a {
   word-break: break-all;
   @apply text-purple-600;
 }
-.post-content a[rel='nofollow noopener noreferrer']:hover {
+.md a:hover {
   @apply text-purple-700 underline;
 }
+/* purgecss start ignore */
+:not(pre) > code {
+  @apply text-purple-600 font-semibold;
+}
+/* purgecss end ignore */
 h1,
 h2,
 h3,
@@ -135,6 +249,11 @@ p {
   .post-content img {
     max-width: calc(100% + 6rem);
     margin-left: -3rem;
+  }
+  .full-width {
+    max-width: calc(100% + 6rem);
+    margin-left: -3rem;
+    margin-right: -3rem;
   }
   pre[class*='language-'] {
     margin: 0 -3rem;

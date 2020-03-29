@@ -1,16 +1,40 @@
-// This is the main.js file. Import global CSS and scripts here.
-// The Client API can be used here. Learn more: gridsome.org/docs/client-api
+/** global-css-layout */
 import '@/styles/global.css'
 import DefaultLayout from '~/layouts/Default.vue'
+
+/** FontAwesomeIcon */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-// import {  } from '@fortawesome/free-solid-svg-icons'
-// import {  } from '@fortawesome/free-regular-svg-icons'
+import {
+  faTimesCircle,
+  faAngleDoubleUp,
+  faHighlighter,
+  faClipboard,
+  faCalendarAlt,
+  faChevronLeft,
+  faStream
+} from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@/styles/prism-code.css'
 
-library.add(faGithub)
+/** prismjs-theme */
+import 'prismjs/themes/prism-tomorrow.css'
+import '@/styles/prism-custom.css'
+
+/** plugins */
+import VueInfiniteLoading from 'vue-infinite-loading'
+import { VTooltip } from 'v-tooltip'
+
+library.add(
+  faGithub,
+  faTimesCircle,
+  faAngleDoubleUp,
+  faHighlighter,
+  faClipboard,
+  faCalendarAlt,
+  faChevronLeft,
+  faStream
+)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
@@ -53,10 +77,19 @@ export default function(Vue, { router, head, isClient }) {
       key: 'og:url',
       property: 'og:url',
       content: 'https://blog.n2ptune.xyz/'
+    },
+    {
+      key: 'fb:app_id',
+      property: 'fb:app_id',
+      content: 3111093142448463
     }
   )
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.component('font-awesome', FontAwesomeIcon)
+
+  // Set plugins
+  Vue.use(VueInfiniteLoading)
+  Vue.directive('tooltip', VTooltip)
 }
