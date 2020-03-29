@@ -4,7 +4,15 @@
   >
     <g-link :to="post.path">
       <g-image
-        :src="post.cover_image || require('@/assets/default-thumbnail.jpg')"
+        v-if="post.cover_image"
+        :src="post.cover_image"
+        :style="{ minWidth: '100%' }"
+        class="rounded-t-lg card-thumbnail"
+        blur="4"
+      />
+      <g-image
+        v-else
+        src="@/assets/default-thumbnail.jpg"
         :style="{ minWidth: '100%' }"
         class="rounded-t-lg card-thumbnail"
         blur="4"
