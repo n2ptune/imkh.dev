@@ -62,15 +62,25 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-rss',
+      use: '@microflash/gridsome-plugin-feed',
       options: {
-        contentTypeName: 'Post',
+        contentTypes: ['Post'],
         feedOptions: {
           title: 'n2ptune Dev Blog',
-          feed_url: siteUrl + '/rss.xml',
-          site_url: siteUrl
+          description: 'Personal Web Tech/Dev Blog',
+          id: siteUrl,
+          link: siteUrl,
+          language: 'ko',
+          copyright: 'All rights reserved 2020, n2ptune',
+          feedLinks: {
+            rss: siteUrl + '/rss.xml'
+          }
         },
-        feedItemOptions: node => ({
+        rss: {
+          enabled: true,
+          output: '/rss.xml'
+        },
+        nodeToFeedItem: node => ({
           title: node.title,
           description: node.description,
           date: node.date,

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
+    "@microflash/gridsome-plugin-feed": "^1.0.4",
     "gridsome": "^0.7.0",
     "gridsome-plugin-rss": "^1.2.0",
     "prismjs": "^1.19.0",
