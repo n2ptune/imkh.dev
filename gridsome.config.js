@@ -3,7 +3,6 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   siteName: `I Don't Know Web`,
