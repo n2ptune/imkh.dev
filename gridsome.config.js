@@ -3,11 +3,12 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const siteUrl = 'https://blog.n2ptune.xyz'
 
 module.exports = {
   siteName: `I Don't Know Web`,
   siteDescription: 'Personal blog for Web Dev/Tech',
-  siteUrl: 'https://blog.n2ptune.xyz',
+  siteUrl,
   port: 4001,
 
   templates: {
@@ -66,14 +67,14 @@ module.exports = {
         contentTypeName: 'Post',
         feedOptions: {
           title: 'n2ptune Dev Blog',
-          feed_url: 'https://blog.n2ptune.xyz/rss.xml',
-          site_url: 'https://blog.n2ptune.xyz'
+          feed_url: siteUrl + '/rss.xml',
+          site_url: siteUrl
         },
         feedItemOptions: node => ({
           title: node.title,
           description: node.description,
           date: node.date,
-          url: 'https://blog.n2ptune.xyz' + node.path,
+          url: siteUrl + node.path,
           author: 'n2ptune'
         })
       }
