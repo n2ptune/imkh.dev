@@ -4,7 +4,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 
 /** FontAwesomeIcon */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faTimesCircle,
@@ -24,6 +24,8 @@ import '@/styles/prism-custom.css'
 /** plugins */
 import VueInfiniteLoading from 'vue-infinite-loading'
 import { VTooltip } from 'v-tooltip'
+
+config.autoAddCss = false
 
 library.add(
   faGithub,

@@ -1,5 +1,5 @@
 ---
-description: 자바스크립트 기본 개념인 호이스팅, 이벤트 버블링, 스코프, 프로토타입 등을 이해하고 정리하기
+description: 자바스크립트 기본 개념인 호이스팅, 이벤트 버블링, 스코프 등을 이해하고 정리하기
 cover_image:
 tags: ['javascript']
 published: true
