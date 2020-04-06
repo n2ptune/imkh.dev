@@ -3,6 +3,7 @@ import '@/styles/global.css'
 import DefaultLayout from '~/layouts/Default.vue'
 
 /** FontAwesomeIcon */
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -15,7 +16,6 @@ import {
   faChevronLeft,
   faStream
 } from '@fortawesome/free-solid-svg-icons'
-import '@fortawesome/fontawesome-svg-core/styles.css'
 
 /** prismjs-theme */
 import 'prismjs/themes/prism-tomorrow.css'
@@ -25,7 +25,7 @@ import '@/styles/prism-custom.css'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import { VTooltip } from 'v-tooltip'
 
-config.autoAddCss = false
+config.autoAddCss = process.env.NODE_ENV === 'production'
 
 library.add(
   faGithub,
@@ -38,7 +38,7 @@ library.add(
   faStream
 )
 
-export default function(Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
 
   // Add meta tag
