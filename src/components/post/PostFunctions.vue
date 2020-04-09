@@ -44,7 +44,7 @@ export default {
     clipboard() {
       const ct = document.createElement('textarea')
       document.body.appendChild(ct)
-      ct.value = `https://blog.n2ptune.xyz${this.path}`
+      ct.value = `https://imkh.dev${this.path}`
       ct.select()
 
       document.execCommand('copy')

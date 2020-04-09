@@ -7,7 +7,7 @@ date: 2020-04-03
 title: 자바스크립트 기본 개념(프로토타입, Shadow DOM) 이해하고 정리하기 (js-organize-concept)
 ---
 
-자바스크립트 기본 개념(프로토타입, Shadow DOM)에 대해 설명한다. 호이스팅과 이벤트 버블링, 스코프를 참고하려면 [여기](https://blog.n2ptune.xyz/js-organize-concept)에서 참고한다.
+자바스크립트 기본 개념(프로토타입, Shadow DOM)에 대해 설명한다. 호이스팅과 이벤트 버블링, 스코프를 참고하려면 [여기](https://imkh.dev/js-organize-concept)에서 참고한다.
 
 ## 프로토타입
 

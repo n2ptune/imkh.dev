@@ -3,7 +3,7 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const siteUrl = 'https://blog.n2ptune.xyz'
+const siteUrl = 'https://imkh.dev'
 
 module.exports = {
   siteName: `I Don't Know Web`,
@@ -80,7 +80,7 @@ module.exports = {
           enabled: true,
           output: '/rss.xml'
         },
-        nodeToFeedItem: (node) => ({
+        nodeToFeedItem: node => ({
           title: node.title,
           description: node.description,
           date: node.date,
@@ -117,12 +117,12 @@ module.exports = {
     split: true
   },
 
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.module
       .rule('css')
       .oneOf('normal')
       .use('postcss-loader')
-      .tap((options) => {
+      .tap(options => {
         options.plugins.unshift(
           ...[
             require('postcss-import'),
@@ -143,7 +143,7 @@ module.exports = {
                 ],
                 extractors: [
                   {
-                    extractor: (content) =>
+                    extractor: content =>
                       content.match(/[A-Za-z0-9-_:\/]+/g) || [],
                     extensions: ['vue', 'js', 'css']
                   }

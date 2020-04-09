@@ -107,8 +107,8 @@ export default {
           key: 'og:image',
           property: 'og:image',
           content: this.$page.post.cover_image
-            ? `https://blog.n2ptune.xyz${this.$page.post.cover_image.src}`
-            : `https://blog.n2ptune.xyz${require('@/assets/default-thumbnail.jpg')}`
+            ? `https://imkh.dev${this.$page.post.cover_image.src}`
+            : `https://imkh.dev${require('@/assets/default-thumbnail.jpg')}`
         },
         {
           key: 'og:image:width',
@@ -129,7 +129,7 @@ export default {
         {
           key: 'og:url',
           property: 'og:url',
-          content: `https://blog.n2ptune.xyz${this.$page.post.path}`
+          content: `https://imkh.dev${this.$page.post.path}`
         }
       ]
     }

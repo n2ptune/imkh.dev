@@ -38,7 +38,7 @@ library.add(
   faStream
 )
 
-export default function (Vue, { router, head, isClient }) {
+export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
 
   // Add meta tag
@@ -78,7 +78,7 @@ export default function (Vue, { router, head, isClient }) {
     {
       key: 'og:url',
       property: 'og:url',
-      content: 'https://blog.n2ptune.xyz/'
+      content: 'https://imkh.dev/'
     },
     {
       key: 'fb:app_id',
