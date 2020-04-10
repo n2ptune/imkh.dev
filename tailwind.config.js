@@ -9,7 +9,7 @@ module.exports = {
         '"Noto Sans KR"',
         'sans-serif'
       ],
-      head: ['Ubuntu', 'sans-serif']
+      head: ['Herbarium']
     },
     extend: {
       screens: {

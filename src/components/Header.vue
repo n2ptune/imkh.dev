@@ -1,25 +1,11 @@
 <template>
   <header
-    class="header flex items-center bg-white-f font-head justify-center sm:justify-start"
+    class="header font-display flex items-center bg-white-f justify-center sm:justify-start"
   >
     <router-link to="/">
       <div class="px-6 header-content flex flex-row items-center">
-        <div class="mx-2">
-          <g-image
-            src="@/assets/profile.jpg"
-            blur="4"
-            width="60"
-            contain
-            class="rounded-full"
-          />
-        </div>
-        <div class="flex flex-col">
-          <div class="block text-2xl font-bold text-gray-800">
-            {{ $static.metadata.siteName }}
-          </div>
-          <div class="block text-gray-600 font-display">
-            웹 기술/개발 개인 블로그
-          </div>
+        <div class="block text-4xl font-bold text-purple-900 font-head mt-2">
+          {{ $static.metadata.siteName }}
         </div>
       </div>
     </router-link>
@@ -30,16 +16,15 @@
 query {
   metadata {
     siteName
-    siteDescription
   }
 }
 </static-query>
 
 .<style lang="postcss" scoped>
 .header {
-  height: 5rem;
+  height: 4rem;
 }
 .header-content > div {
-  line-height: 1.2rem;
+  line-height: 1.4rem;
 }
 </style>

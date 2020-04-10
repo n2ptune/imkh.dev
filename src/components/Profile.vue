@@ -7,15 +7,15 @@
         src="@/assets/profile.jpg"
         blur="4"
         class="mx-auto rounded-full"
-        width="400"
+        width="150"
       ></g-image>
     </div>
     <div class="mb-4 text-center">
       <div class="text-lg font-bold">
-        n2ptune@outlook.com
+        vue2598@gmail.com
       </div>
       <div class="text-gray-600 text-base">
-        '웹'이 뭘까
+        Front-End Developer
       </div>
     </div>
     <div>
