@@ -64,7 +64,7 @@ export default function(Vue, { router, head, isClient }) {
     {
       key: 'og:title',
       property: 'og:title',
-      content: "I Don't Know Web"
+      content: 'imkh.dev'
     },
     {
       key: 'og:description',

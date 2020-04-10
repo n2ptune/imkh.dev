@@ -6,7 +6,7 @@
 const siteUrl = 'https://imkh.dev'
 
 module.exports = {
-  siteName: `I Don't Know Web`,
+  siteName: `imkh.dev`,
   siteDescription: 'Personal blog for Web Dev/Tech',
   siteUrl,
   port: 4001,
