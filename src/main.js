@@ -6,7 +6,11 @@ import DefaultLayout from '~/layouts/Default.vue'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faInstagram,
+  faFacebook
+} from '@fortawesome/free-brands-svg-icons'
 import {
   faTimesCircle,
   faAngleDoubleUp,
@@ -14,7 +18,8 @@ import {
   faClipboard,
   faCalendarAlt,
   faChevronLeft,
-  faStream
+  faStream,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
@@ -35,7 +40,10 @@ library.add(
   faClipboard,
   faCalendarAlt,
   faChevronLeft,
-  faStream
+  faStream,
+  faEnvelope,
+  faInstagram,
+  faFacebook
 )
 
 export default function(Vue, { router, head, isClient }) {
