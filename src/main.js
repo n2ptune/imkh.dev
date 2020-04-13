@@ -41,6 +41,23 @@ library.add(
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
 
+  // Loading font
+  head.link.push(
+    {
+      rel: 'stylesheet',
+      href:
+        'https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Noto+Sans:400,500,600,700&display=swap'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css'
+    }
+  )
+
   // Add meta tag
   head.meta.push(
     {
