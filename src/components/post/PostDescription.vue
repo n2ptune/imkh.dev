@@ -5,6 +5,7 @@
         :icon="['fas', 'highlighter']"
         :style="{ fontSize: '0.875em' }"
         class="text-gray-800"
+        size="sm"
       />
       <span class="text-sm font-semibold ml-2 text-gray-800">Description</span>
     </header>

@@ -7,6 +7,7 @@
         content: !copied ? 'URL 복사' : 'URL 복사 완료',
         hideOnTargetClick: false
       }"
+      size="sm"
       @click="clipboard"
     />
     <font-awesome
@@ -16,6 +17,7 @@
         content: convertDate,
         hideOnTargetClick: false
       }"
+      size="sm"
     />
   </article>
 </template>
