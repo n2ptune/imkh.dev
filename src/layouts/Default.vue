@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style lang="postcss">
-html,
+/* html,
 body {
   @apply bg-gray-300;
-}
+} */
 </style>
