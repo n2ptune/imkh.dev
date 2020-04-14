@@ -39,7 +39,7 @@ header {
 .title {
   font-family: 'Hack', monospace;
   letter-spacing: -1px;
-  @apply font-bold text-base;
+  @apply font-bold text-base text-red-700;
 }
 @screen lg {
   header {
