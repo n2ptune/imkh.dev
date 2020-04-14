@@ -1,11 +1,13 @@
 <template>
   <div class="post">
     <div class="post-cover-image">
-      <g-image
-        :src="post.cover_image || require('@/assets/default-thumbnail.jpg')"
-        cover
-        class="rounded-lg mb-3"
-      />
+      <g-link :to="post.path">
+        <g-image
+          :src="post.cover_image || require('@/assets/default-thumbnail.jpg')"
+          cover
+          class="rounded-lg mb-3"
+        />
+      </g-link>
     </div>
     <div class="post-head font-bold text-lg lg:text-2xl">
       <g-link :to="post.path">
@@ -61,12 +63,15 @@ export default {
   @apply text-lg;
 }
 .tags {
-  @apply text-base text-gray-700 flex flex-wrap;
+  @apply text-base text-purple-700 flex flex-wrap;
 }
 .tags > * {
   @apply m-1 underline;
 }
 .tags > *:first-child {
   @apply ml-0;
+}
+.tags > *:hover {
+  @apply font-bold;
 }
 </style>

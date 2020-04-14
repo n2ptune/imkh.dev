@@ -19,7 +19,9 @@ import {
   faCalendarAlt,
   faChevronLeft,
   faStream,
-  faEnvelope
+  faEnvelope,
+  faEllipsisH,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
@@ -43,7 +45,9 @@ library.add(
   faStream,
   faEnvelope,
   faInstagram,
-  faFacebook
+  faFacebook,
+  faEllipsisH,
+  faTimes
 )
 
 export default function(Vue, { router, head, isClient }) {
