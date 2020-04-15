@@ -82,11 +82,6 @@ export default {
   metaInfo() {
     return {
       title: this.$page.post.title,
-      script: [
-        {
-          src: 'https://static.codepen.io/assets/embed/ei.js'
-        }
-      ],
       meta: [
         {
           key: 'description',
@@ -177,6 +172,11 @@ export default {
     })
 
     this.aside = collection
+
+    const codepen = document.createElement('script')
+    codepen.src = 'https://static.codepen.io/assets/embed/ei.js'
+
+    this.$el.appendChild(codepen)
   }
 }
 </script>

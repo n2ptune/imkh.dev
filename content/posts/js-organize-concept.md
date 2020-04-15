@@ -218,7 +218,7 @@ generateEvent()
 
 ### Codepen Example
 
-<https://codepen.io/n2ptune/pen/NWqmpVJ?editors=1111>
+<https://codepen.io/n2ptune/pen/NWqmpVJ?tabs=js,result>
 
 (예제에서는 캡처링의 흐름대로 실행되고 확인하기 위해 `alert`을 이용했다)
 
