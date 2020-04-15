@@ -10,7 +10,6 @@
         <font-awesome :icon="['fas', 'times']" />
       </button>
     </div>
-    <div class="overlay"></div>
   </aside>
 </template>
 
@@ -30,12 +29,10 @@ export default {
   },
 
   mounted() {
-    document.body.style.overflow = 'hidden'
     document.addEventListener('click', this.closeWhenClickOutside)
   },
 
   beforeDestroy() {
-    document.body.style.overflow = 'auto'
     document.removeEventListener('click', this.closeWhenClickOutside)
   }
 }
@@ -43,17 +40,14 @@ export default {
 
 <style lang="postcss" scoped>
 aside {
+  z-index: 1;
   @apply fixed right-0 top-0 h-full;
+  --sidebar-max-width: 250px;
 }
 .content {
-  width: 250px;
+  width: var(--sidebar-max-width);
   z-index: 1;
   @apply flex h-full p-3 bg-white-f;
-}
-.overlay {
-  z-index: -100;
-  background-color: rgba(0, 0, 0, 0.6);
-  @apply fixed top-0 left-0 w-full h-full;
 }
 .closeBtn {
   top: 15px;
