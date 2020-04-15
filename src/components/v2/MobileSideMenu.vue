@@ -24,19 +24,19 @@ export default {
     closeSideMenu() {
       this.$emit('closeSideMenu')
     },
-    tEL(event) {
+    closeWhenClickOutside(event) {
       if (event.target.classList.contains('overlay')) this.closeSideMenu()
     }
   },
 
   mounted() {
     document.body.style.overflow = 'hidden'
-    document.addEventListener('click', this.tEL)
+    document.addEventListener('click', this.closeWhenClickOutside)
   },
 
   beforeDestroy() {
     document.body.style.overflow = 'auto'
-    document.removeEventListener('click', this.tEL)
+    document.removeEventListener('click', this.closeWhenClickOutside)
   }
 }
 </script>
