@@ -1,6 +1,7 @@
 /** global-css-layout */
 import '@/styles/global.css'
 import DefaultLayout from '~/layouts/Default.vue'
+import VLayout from '~/layouts/VLayout.vue'
 
 /** FontAwesomeIcon */
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -118,6 +119,7 @@ export default function(Vue, { router, head, isClient }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.component('VLayout', VLayout)
   Vue.component('font-awesome', FontAwesomeIcon)
 
   // Set plugins

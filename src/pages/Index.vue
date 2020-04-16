@@ -1,5 +1,5 @@
 <template>
-  <Layout class="font-display">
+  <VLayout class="font-display">
     <section class="mb-12 mt-4 py-4 container mx-auto">
       <section class="flex flex-col md:flex-row justify-center">
         <section class="level-left mx-2">
@@ -37,11 +37,11 @@
         </section>
       </section>
     </section>
-  </Layout>
+  </VLayout>
 </template>
 
 <script>
-import PostCard from '@/components/post/PostCard.vue'
+import PostCard from '@/components/v2/PostCard.vue'
 import Profile from '@/components/Profile.vue'
 import TagList from '@/components/TagList.vue'
 import StatusInfo from '@/components/StatusInfo.vue'

@@ -40,13 +40,13 @@ export default {
 
       _switchOverflow(current)
     }
-  },
-
-  watch: {
-    isVisibleSideMenu: {
-      handler: 'documentOverflowHandler'
-    }
   }
+
+  // watch: {
+  //   isVisibleSideMenu: {
+  //     handler: 'documentOverflowHandler'
+  //   }
+  // }
 }
 </script>
 
