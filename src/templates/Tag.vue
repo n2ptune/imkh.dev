@@ -17,21 +17,15 @@
 </template>
 
 <script>
-import VLayout from '@/layouts/VLayout.vue'
 import PostCard from '@/components/v2/PostCard.vue'
 import PostSection from '@/components/v2/PostSection.vue'
 import CardsHeader from '@/components/v2/CardsHeader.vue'
 
 export default {
   components: {
-    VLayout,
     PostCard,
     PostSection,
     CardsHeader
-  },
-
-  created() {
-    console.log(this.$route)
   }
 }
 </script>

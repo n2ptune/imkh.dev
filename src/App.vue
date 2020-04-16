@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <transition name="opacity" appear mode="out-in">
+    <router-view />
+  </transition>
 </template>
 
 <script>
@@ -30,8 +32,17 @@ export default {
 }
 </script>
 
-<style lang="postcss">
-.card-component {
-  @apply bg-white-f rounded-lg shadow-xl;
+<style scoped>
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: opacity 0.5s ease;
+}
+.opacity-enter,
+.opacity-leave-to {
+  opacity: 0.1;
+}
+.opacity-enter-to,
+.opacity-leave {
+  opacity: 1;
 }
 </style>
