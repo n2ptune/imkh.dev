@@ -1,19 +1,19 @@
 <template>
   <VLayout>
-    <section class="section-1">
-      <!-- Post List -->
-      <div class="posts-wrap">
-        <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
-        <ClientOnly>
-          <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
-        </ClientOnly>
-      </div>
-    </section>
+    <PostSection>
+      <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+      <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
+      <ClientOnly>
+        <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
+      </ClientOnly>
+    </PostSection>
   </VLayout>
 </template>
 
 <script>
 import PostCard from '@/components/v2/PostCard.vue'
+import CardsHeader from '@/components/v2/CardsHeader.vue'
+import PostSection from '@/components/v2/PostSection.vue'
 
 export default {
   data: () => ({
@@ -22,7 +22,9 @@ export default {
   }),
 
   components: {
-    PostCard
+    PostCard,
+    CardsHeader,
+    PostSection
   },
 
   created() {
@@ -75,27 +77,3 @@ query ($page: Int) {
   }
 }
 </page-query>
-
-<style lang="postcss" scoped>
-.section-1 {
-  @apply flex justify-center p-6 relative;
-}
-
-.posts-wrap {
-  max-width: 800px;
-  @apply flex flex-col;
-}
-
-@screen lg {
-  .section-1 {
-    width: calc(100% - var(--aside-lg-size));
-    @apply float-right;
-  }
-}
-
-@screen xl {
-  .section-1 {
-    width: calc(100% - var(--aside-xl-size));
-  }
-}
-</style>

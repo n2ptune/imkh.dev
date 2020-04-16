@@ -1,7 +1,8 @@
 <template>
   <aside>
-    <div class="content">
+    <div class="content overflow-y-auto">
       <SidebarProfile
+        :tags="tags"
         :isSide="true"
         :style="{ top: '2.7rem' }"
         class="relative"
@@ -17,6 +18,13 @@
 import SidebarProfile from '@/components/v2/SidebarProfile'
 
 export default {
+  props: {
+    tags: {
+      type: Array,
+      required: true
+    }
+  },
+
   components: {
     SidebarProfile
   },

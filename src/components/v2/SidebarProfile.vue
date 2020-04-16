@@ -47,6 +47,38 @@
         />
       </a>
     </div>
+    <div class="mx-auto mt-4">
+      <div class="text-center text-base my-2" :class="classBindingDescriptor">
+        태그 모아보기
+      </div>
+      <transition-group
+        name="scale"
+        appear
+        tag="div"
+        class="flex flex-wrap justify-center px-6 xl:px-12 tag-wrapper"
+        :class="classBindingMobile"
+      >
+        <!-- <div
+          v-for="tag in tags"
+          :key="tag.node.id"
+          class="tag"
+          :class="classBindingMobile"
+        >
+          <g-link :to="tag.node.path">
+            {{ tag.node.title }}
+          </g-link>
+        </div> -->
+        <g-link
+          v-for="tag in tags"
+          :key="tag.node.id"
+          :class="classBindingMobile"
+          :to="tag.node.path"
+          class="tag"
+        >
+          {{ tag.node.title }}
+        </g-link>
+      </transition-group>
+    </div>
   </div>
 </template>
 
@@ -57,6 +89,10 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    tags: {
+      type: Array,
+      required: true
     }
   },
 
@@ -68,6 +104,9 @@ export default {
       return this.isSide
         ? 'text-gray-600 focus:text-black'
         : 'text-white-600 hover:text-white-f'
+    },
+    classBindingMobile() {
+      return this.isSide ? 'mobile' : ''
     }
   }
 }
@@ -82,5 +121,32 @@ export default {
 }
 .links > *:not(:last-child) {
   @apply mr-2;
+}
+.tag-wrapper.mobile {
+  @apply px-0 !important;
+}
+.tag {
+  @apply py-1 px-2 bg-white-600 
+  text-gray-800 rounded-lg cursor-pointer transition-colors duration-500
+  mr-1 mb-1;
+}
+.tag.mobile {
+  @apply bg-gray-600 text-white-800;
+}
+.tag:not(.mobile):hover {
+  @apply bg-white-f text-black;
+}
+.scale-enter-active {
+  transition: transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    opacity 0.75s ease;
+  transform-origin: bottom center;
+}
+.scale-enter {
+  opacity: 0;
+  transform: scale(0);
+}
+.scale-enter-to {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>

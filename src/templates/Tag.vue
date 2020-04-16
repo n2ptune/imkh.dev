@@ -1,24 +1,33 @@
 <template>
-  <Layout class="font-display">
-    <div class="my-6 py-12 container mx-auto px-4 justify-center">
+  <VLayout class="font-display">
+    <PostSection>
+      <CardsHeader
+        title="tag"
+        :tagName="$page.tag.title"
+        :count="$page.tag.belongsTo.totalCount"
+      />
       <PostCard
         v-for="post in $page.tag.belongsTo.edges"
         :key="post.node.id"
         :post="post.node"
         class="my-6"
       />
-    </div>
-  </Layout>
+    </PostSection>
+  </VLayout>
 </template>
 
 <script>
-import Layout from '@/layouts/Default.vue'
-import PostCard from '@/components/post/PostCard.vue'
+import VLayout from '@/layouts/VLayout.vue'
+import PostCard from '@/components/v2/PostCard.vue'
+import PostSection from '@/components/v2/PostSection.vue'
+import CardsHeader from '@/components/v2/CardsHeader.vue'
 
 export default {
   components: {
-    Layout,
-    PostCard
+    VLayout,
+    PostCard,
+    PostSection,
+    CardsHeader
   }
 }
 </script>
@@ -28,6 +37,7 @@ query Tag ($id: ID!) {
   tag (id: $id) {
     title
     belongsTo {
+      totalCount
       edges {
         node {
           ...on Post {

@@ -1,7 +1,7 @@
 <template>
   <aside>
     <div class="wrapper-before">
-      <SidebarProfile />
+      <SidebarProfile :tags="tags" />
     </div>
   </aside>
 </template>
@@ -10,6 +10,13 @@
 import SidebarProfile from '@/components/v2/SidebarProfile'
 
 export default {
+  props: {
+    tags: {
+      type: Array,
+      required: true
+    }
+  },
+
   components: {
     SidebarProfile
   }

@@ -1,12 +1,13 @@
 <template>
   <main class="font-display">
     <Header @openSideMenu="openSideMenuHandler" />
-    <Sidebar />
+    <Sidebar :tags="tags" />
     <slot />
     <transition name="slide">
       <MobileSideMenu
         v-show="isVisibleSideMenu"
         @closeSideMenu="closeSideMenuHandler"
+        :tags="tags"
       />
     </transition>
     <transition name="opacity">
@@ -28,8 +29,13 @@ export default {
   },
 
   data: () => ({
-    isVisibleSideMenu: false
+    isVisibleSideMenu: false,
+    tags: []
   }),
+
+  created() {
+    this.tags = this.$static.tags.edges
+  },
 
   methods: {
     openSideMenuHandler() {
@@ -53,6 +59,20 @@ export default {
   }
 }
 </script>
+
+<static-query>
+query {
+  tags: allTag {
+    edges {
+      node {
+        id
+        path
+        title
+      }
+    }
+  }
+}
+</static-query>
 
 <style lang="postcss" scoped>
 html,
