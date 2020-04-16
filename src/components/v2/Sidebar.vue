@@ -7,9 +7,11 @@
 </template>
 
 <script>
+import SidebarProfile from '@/components/v2/SidebarProfile'
+
 export default {
   components: {
-    SidebarProfile: () => import('@/components/v2/SidebarProfile')
+    SidebarProfile
   }
 }
 </script>

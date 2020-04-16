@@ -16,11 +16,15 @@
 </template>
 
 <script>
+import Header from '@/components/v2/Header'
+import Sidebar from '@/components/v2/Sidebar'
+import MobileSideMenu from '@/components/v2/MobileSideMenu'
+
 export default {
   components: {
-    Header: () => import('@/components/v2/Header'),
-    Sidebar: () => import('@/components/v2/Sidebar'),
-    MobileSideMenu: () => import('@/components/v2/MobileSideMenu')
+    Header,
+    Sidebar,
+    MobileSideMenu
   },
 
   data: () => ({
@@ -40,13 +44,13 @@ export default {
 
       _switchOverflow(current)
     }
-  }
+  },
 
-  // watch: {
-  //   isVisibleSideMenu: {
-  //     handler: 'documentOverflowHandler'
-  //   }
-  // }
+  watch: {
+    isVisibleSideMenu: {
+      handler: 'documentOverflowHandler'
+    }
+  }
 }
 </script>
 

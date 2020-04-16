@@ -59,6 +59,7 @@ import PostDescription from '@/components/post/PostDescription.vue'
 import PostFunctions from '@/components/post/PostFunctions.vue'
 import Scrolling from '@/components/post/Scrolling.vue'
 import GallerySlide from 'vue-gallery-slideshow'
+import ASide from '@/components/post/ASide.vue'
 
 export default {
   data: () => ({
@@ -76,7 +77,7 @@ export default {
     PostFunctions,
     Scrolling,
     GallerySlide,
-    ASide: () => import('@/components/post/ASide.vue')
+    ASide
   },
 
   metaInfo() {

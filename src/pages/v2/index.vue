@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import PostCard from '@/components/v2/PostCard.vue'
+
 export default {
   data: () => ({
     currentPage: 1,
@@ -20,8 +22,7 @@ export default {
   }),
 
   components: {
-    VLayout: () => import('@/layouts/VLayout'),
-    PostCard: () => import('@/components/v2/PostCard')
+    PostCard
   },
 
   created() {

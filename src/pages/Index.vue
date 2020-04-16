@@ -1,5 +1,5 @@
 <template>
-  <VLayout class="font-display">
+  <Layout class="font-display">
     <section class="mb-12 mt-4 py-4 container mx-auto">
       <section class="flex flex-col md:flex-row justify-center">
         <section class="level-left mx-2">
@@ -37,7 +37,7 @@
         </section>
       </section>
     </section>
-  </VLayout>
+  </Layout>
 </template>
 
 <script>
