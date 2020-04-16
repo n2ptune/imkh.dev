@@ -28,6 +28,10 @@ export default {
     PostCard,
     PostSection,
     CardsHeader
+  },
+
+  created() {
+    console.log(this.$route)
   }
 }
 </script>
