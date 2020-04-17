@@ -13,7 +13,8 @@ code[class*='language-'] {
 pre[class*='language-'] {
   overflow: auto;
   position: relative;
-  padding: 1.25em 3rem;
+  padding: 2rem 1.5rem;
+  @apply rounded-lg;
 }
 
 .token.comment,

@@ -8,17 +8,42 @@
         {{ $page.post.description }}
       </div>
       <!-- <div v-html="$page.post.content" class="content" /> -->
-      <PostContent :contentHTML="$page.post.content" />
+      <PostContent
+        :contentHTML="$page.post.content"
+        @resolved="generateGallery"
+      />
+      <ClientOnly>
+        <GallerySide :images="images" :index="index" @close="index = null" />
+      </ClientOnly>
     </section>
   </PostLayout>
 </template>
 
 <script>
 import PostContent from '@/components/v2/layouts/PostContent.vue'
+import GallerySide from 'vue-gallery-slideshow'
 
 export default {
+  data: () => ({
+    index: null,
+    images: []
+  }),
+
   components: {
-    PostContent
+    PostContent,
+    GallerySide
+  },
+
+  methods: {
+    /**
+     * @param {HTMLElement[]} data
+     */
+    generateGallery(data) {
+      data.images.map((img, key) => {
+        this.images.push(img.dataset.src)
+        img.addEventListener('click', () => (this.index = key))
+      })
+    }
   },
 
   mounted() {
@@ -51,11 +76,13 @@ query Post ($id: ID!) {
 
 <style lang="postcss" scoped>
 .wrapper {
+  --contents-max-width: 800px;
+
   overflow-x: hidden;
   overflow-wrap: break-word;
-  max-width: 800px;
+  max-width: var(--contents-max-width);
   padding-top: 2rem;
   top: 3rem;
-  @apply relative mx-auto;
+  @apply relative mx-auto px-3;
 }
 </style>
