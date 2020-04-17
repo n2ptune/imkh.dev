@@ -33,6 +33,7 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome-plugin-tailwindcss": "^2.2.34",
+    "postcss-for": "^2.1.1",
     "serve": "^11.3.0",
     "sharp": "^0.25.1"
   }

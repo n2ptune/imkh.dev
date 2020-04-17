@@ -7,13 +7,20 @@
       <div class="description">
         {{ $page.post.description }}
       </div>
-      <div v-html="$page.post.content" class="content" />
+      <!-- <div v-html="$page.post.content" class="content" /> -->
+      <PostContent :contentHTML="$page.post.content" />
     </section>
   </PostLayout>
 </template>
 
 <script>
+import PostContent from '@/components/v2/layouts/PostContent.vue'
+
 export default {
+  components: {
+    PostContent
+  },
+
   mounted() {
     this.$emit('test', this.$page.post.title)
   }
@@ -44,7 +51,9 @@ query Post ($id: ID!) {
 
 <style lang="postcss" scoped>
 .wrapper {
-  max-width: 700px;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  max-width: 800px;
   padding-top: 2rem;
   top: 3rem;
   @apply relative mx-auto;
