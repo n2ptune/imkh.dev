@@ -1,12 +1,7 @@
 <template>
   <aside>
-    <div class="content overflow-y-auto">
-      <SidebarProfile
-        :tags="tags"
-        :isSide="true"
-        :style="{ top: '2.7rem' }"
-        class="relative"
-      />
+    <div class="content">
+      <SidebarProfile :tags="tags" :isSide="true" class="relative" />
       <button class="closeBtn" @click="closeSideMenu">
         <font-awesome :icon="['fas', 'times']" />
       </button>
@@ -53,15 +48,17 @@ aside {
   z-index: 1;
   @apply fixed right-0 top-0 h-full;
   --sidebar-max-width: 250px;
+  --close-distance-x: 13px;
+  --close-distance-y: 10px;
 }
 .content {
   width: var(--sidebar-max-width);
   z-index: 1;
-  @apply flex h-full p-3 bg-white-f;
+  @apply flex h-full p-3 bg-white-f overflow-y-auto;
 }
 .closeBtn {
-  top: 15px;
-  right: 15px;
+  top: var(--close-distance-y);
+  right: var(--close-distance-x);
   @apply absolute;
 }
 </style>
