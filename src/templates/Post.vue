@@ -44,6 +44,7 @@ query Post ($id: ID!) {
 
 <style lang="postcss" scoped>
 .wrapper {
+  max-width: 700px;
   padding-top: 2rem;
   top: 3rem;
   @apply relative mx-auto;

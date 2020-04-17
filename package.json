@@ -6,7 +6,8 @@
     "dev": "gridsome develop",
     "explore": "gridsome explore",
     "makefile": "node helpers/makefile/index.js",
-    "serve": "serve -n -l 8887"
+    "serve": "serve -n -l 8887",
+    "lint": "prettier --write '**/*.{vue,js}'"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",

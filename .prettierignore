@@ -1,0 +1,6 @@
+.cache
+content
+dist
+static
+
+src/.temp
