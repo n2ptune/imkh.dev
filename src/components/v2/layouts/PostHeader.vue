@@ -8,7 +8,7 @@
       />
       <PostLeftSide v-if="isShowLeft" />
     </div>
-    <div class="text-xs lg:text-sm font-bold">{{ title }}</div>
+    <div class="text-sm lg:text-base font-bold">{{ splitedTitle }}</div>
     <div>
       <font-awesome
         :icon="['fas', 'ellipsis-h']"
@@ -28,7 +28,20 @@ export default {
     PostLeftSide
   },
 
-  props: ['title'],
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
+
+  computed: {
+    splitedTitle() {
+      return this.title.length > 30
+        ? this.title.substring(0, 30) + '...'
+        : this.title
+    }
+  },
 
   data: () => ({
     isOpenMenu: false,

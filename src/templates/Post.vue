@@ -1,6 +1,6 @@
 <template>
   <PostLayout :title="$page.post.title">
-    <div class="container mx-auto">
+    <section class="wrapper">
       <div class="title">
         {{ $page.post.title }}
       </div>
@@ -8,7 +8,7 @@
         {{ $page.post.description }}
       </div>
       <div v-html="$page.post.content" class="content" />
-    </div>
+    </section>
   </PostLayout>
 </template>
 
@@ -43,8 +43,9 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="postcss" scoped>
-div {
+.wrapper {
+  padding-top: 2rem;
   top: 3rem;
-  @apply relative;
+  @apply relative mx-auto;
 }
 </style>
