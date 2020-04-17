@@ -1,12 +1,14 @@
 <template>
-  <aside>
-    <div class="content">
-      <SidebarProfile :tags="tags" :isSide="true" class="relative" />
-      <button class="closeBtn" @click="closeSideMenu">
-        <font-awesome :icon="['fas', 'times']" />
-      </button>
-    </div>
-  </aside>
+  <transition name="slide" appear>
+    <aside>
+      <div class="content">
+        <SidebarProfile :tags="tags" :isSide="true" class="relative" />
+        <button class="closeBtn" @click="closeSideMenu">
+          <font-awesome :icon="['fas', 'times']" />
+        </button>
+      </div>
+    </aside>
+  </transition>
 </template>
 
 <script>
@@ -27,18 +29,7 @@ export default {
   methods: {
     closeSideMenu() {
       this.$emit('closeSideMenu')
-    },
-    closeWhenClickOutside(event) {
-      if (event.target.classList.contains('overlay')) this.closeSideMenu()
     }
-  },
-
-  mounted() {
-    document.addEventListener('click', this.closeWhenClickOutside)
-  },
-
-  beforeDestroy() {
-    document.removeEventListener('click', this.closeWhenClickOutside)
   }
 }
 </script>
@@ -60,5 +51,24 @@ aside {
   top: var(--close-distance-y);
   right: var(--close-distance-x);
   @apply absolute;
+}
+.slide-enter-active,
+.slide-leave-active {
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+  -webkit-transform: translateX(250px);
+  transform: translateX(250px);
+}
+.slide-enter-to {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.slide-leave-to {
+  opacity: 0;
+  -webkit-transform: translateX(250px);
+  transform: translateX(250px);
 }
 </style>

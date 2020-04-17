@@ -1,11 +1,23 @@
 <template>
-  <PostLayout>
-    {{ $page.post.title }}
+  <PostLayout :title="$page.post.title">
+    <div class="container mx-auto">
+      <div class="title">
+        {{ $page.post.title }}
+      </div>
+      <div class="description">
+        {{ $page.post.description }}
+      </div>
+      <div v-html="$page.post.content" class="content" />
+    </div>
   </PostLayout>
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    this.$emit('test', this.$page.post.title)
+  }
+}
 </script>
 
 <page-query>
@@ -29,3 +41,10 @@ query Post ($id: ID!) {
   }
 }
 </page-query>
+
+<style lang="postcss" scoped>
+div {
+  top: 3rem;
+  @apply relative;
+}
+</style>

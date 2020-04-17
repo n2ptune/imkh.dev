@@ -23,7 +23,8 @@ import {
   faStream,
   faEnvelope,
   faEllipsisH,
-  faTimes
+  faTimes,
+  faBars
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
@@ -31,6 +32,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 import '@/styles/prism-custom.css'
 
 /** plugins */
+import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import { VTooltip } from 'v-tooltip'
 
@@ -49,7 +51,8 @@ library.add(
   faInstagram,
   faFacebook,
   faEllipsisH,
-  faTimes
+  faTimes,
+  faBars
 )
 
 export default function(Vue, { router, head, isClient }) {
@@ -123,6 +126,7 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('VLayout', VLayout)
   Vue.component('PostLayout', PostLayout)
   Vue.component('font-awesome', FontAwesomeIcon)
+  Vue.component('Overlay', Overlay)
 
   // Set plugins
   Vue.use(VueInfiniteLoading)
