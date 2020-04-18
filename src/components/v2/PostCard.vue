@@ -3,8 +3,12 @@
     <div class="post-cover-image">
       <g-link :to="post.path">
         <g-image
-          :src="post.cover_image || require('@/assets/default-thumbnail.jpg')"
+          :src="
+            post.cover_image ||
+              require('!!assets-loader?!@/assets/default-thumbnail.jpg')
+          "
           cover
+          blur="4"
           class="rounded-lg mb-3"
         />
       </g-link>
