@@ -15,26 +15,47 @@ export default {
     }
   },
 
-  mounted() {
-    // get max width variable of content wrapper
-    const MAX_WIDTH = parseInt(
-      getComputedStyle(document.querySelector('.wrapper'))
-        .getPropertyValue('--contents-max-width')
-        .replace('px', '')
-    )
-    const images = [...this.$el.getElementsByTagName('img')]
-    this.galleryImages.push(...images)
-    // emit event to parent component after loaded all images
-    this.$emit('resolved', {
-      images: this.galleryImages
-    })
+  methods: {
+    resizingImages() {
+      this.$nextTick(() => {
+        // initialize galleryImages
+        this.galleryImages = []
 
-    // add class 'not-overflow-width' if image's width
-    // less than max width(content wrapper)
-    if (images.length) {
-      const lessThanWidthImages = images.filter(img => img.width < MAX_WIDTH)
-      lessThanWidthImages.map(img => img.classList.add('not-overflow-width'))
+        // get max width variable of content wrapper
+        const MAX_WIDTH = parseInt(
+          getComputedStyle(document.querySelector('.wrapper'))
+            .getPropertyValue('--contents-max-width')
+            .replace('px', '')
+        )
+        const images = [...this.$el.getElementsByTagName('img')]
+        this.galleryImages.push(...images)
+        // emit event to parent component after loaded all images
+        this.$emit('resolved', {
+          images: this.galleryImages
+        })
+
+        // add class 'not-overflow-width' if image's width
+        // less than max width(content wrapper)
+        if (images.length) {
+          const lessThanWidthImages = images.filter(
+            img => img.width < MAX_WIDTH
+          )
+          lessThanWidthImages.map(img =>
+            img.classList.add('not-overflow-width')
+          )
+        }
+      })
     }
+  },
+
+  watch: {
+    $route(c, p) {
+      this.resizingImages()
+    }
+  },
+
+  mounted() {
+    this.resizingImages()
   }
 }
 </script>

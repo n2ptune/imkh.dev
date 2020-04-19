@@ -7,7 +7,6 @@
       <div class="description">
         {{ $page.post.description }}
       </div>
-      <!-- <div v-html="$page.post.content" class="content" /> -->
       <PostContent
         :contentHTML="$page.post.content"
         @resolved="generateGallery"
@@ -34,6 +33,17 @@ export default {
     GallerySide
   },
 
+  watch: {
+    $route(c, p) {
+      ;(function(overlay) {
+        if (overlay) overlay.click()
+      })(document.querySelector('.overlay'))
+
+      this.index = null
+      this.images = []
+    }
+  },
+
   methods: {
     /**
      * @param {HTMLElement[]} data
@@ -44,10 +54,6 @@ export default {
         img.addEventListener('click', () => (this.index = key))
       })
     }
-  },
-
-  mounted() {
-    this.$emit('test', this.$page.post.title)
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="mb-4 text-lg">
     <div v-if="tagName" class="inline-block mr-5">
-      <g-link to="/v2">
+      <g-link to="/">
         <font-awesome
           :icon="['fas', 'chevron-left']"
           class="cursor-pointer transition-colors duration-500 text-gray-700 hover:text-black"

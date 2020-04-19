@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div>
+    <div class="flex items-center">
       <font-awesome
         :icon="['fas', 'bars']"
         class="header-icon"

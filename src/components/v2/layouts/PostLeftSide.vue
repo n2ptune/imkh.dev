@@ -1,10 +1,16 @@
 <template>
   <transition name="slide" appear>
     <div class="left side">
-      test
+      <div class="flex p-2 flex-col">
+        <g-link to="/js-module/">test</g-link>
+      </div>
     </div>
   </transition>
 </template>
+
+<script>
+export default {}
+</script>
 
 <style lang="postcss" scoped>
 .left {

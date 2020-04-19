@@ -26,6 +26,10 @@ export default {
     }
   },
 
+  beforeDestroy() {
+    this.handleOverlay(false, true)
+  },
+
   watch: {
     handler: {
       handler: 'handleOverlay'
