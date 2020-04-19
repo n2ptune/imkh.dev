@@ -35,9 +35,11 @@ export default {
 
   watch: {
     $route(c, p) {
-      ;(function(overlay) {
-        if (overlay) overlay.click()
-      })(document.querySelector('.overlay'))
+      if (process.isClient) {
+        ;(function(overlay) {
+          if (overlay) overlay.click()
+        })(document.querySelector('.overlay'))
+      }
 
       this.index = null
       this.images = []

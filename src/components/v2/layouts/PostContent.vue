@@ -50,12 +50,16 @@ export default {
 
   watch: {
     $route(c, p) {
-      this.resizingImages()
+      if (process.isClient) {
+        this.resizingImages()
+      }
     }
   },
 
   mounted() {
-    this.resizingImages()
+    if (process.isClient) {
+      this.resizingImages()
+    }
   }
 }
 </script>
