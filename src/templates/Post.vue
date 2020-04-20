@@ -115,12 +115,9 @@ export default {
     }
   },
 
-  created() {
-    this.parseHeading()
-  },
-
   mounted() {
     if (process.isClient) {
+      this.parseHeading()
       require('intersection-observer')
     }
   },
