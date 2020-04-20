@@ -1,11 +1,18 @@
 <template>
   <PostLayout :title="$page.post.title">
     <section class="wrapper">
-      <div class="title">
-        {{ $page.post.title }}
-      </div>
-      <div class="description">
-        {{ $page.post.description }}
+      <div class="head-wrap border-b-4 border-gray-300 pb-6 text-center">
+        <div class="text-2xl font-bold mb-1">
+          {{ $page.post.title }}
+        </div>
+        <div class="text-sm text-gray-700 mb-1">
+          {{ $page.post.date }} / 읽는데
+          <span class="font-bold">{{ $page.post.timeToRead }}</span
+          >분!
+        </div>
+        <div class="text-base text-gray-700">
+          {{ $page.post.description }}
+        </div>
       </div>
       <PostContent
         :contentHTML="$page.post.content"
@@ -55,6 +62,12 @@ export default {
         this.images.push(img.dataset.src)
         img.addEventListener('click', () => (this.index = key))
       })
+    }
+  },
+
+  mounted() {
+    if (process.isClient) {
+      require('intersection-observer')
     }
   }
 }

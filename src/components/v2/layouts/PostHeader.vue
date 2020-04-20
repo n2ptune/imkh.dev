@@ -8,7 +8,11 @@
       />
       <PostLeftSide v-if="isShowLeft" />
     </div>
-    <div class="text-sm lg:text-base font-bold">{{ splitedTitle }}</div>
+    <transition name="h-slide">
+      <div v-if="isShowTitle" class="text-sm lg:text-base font-bold">
+        {{ splitedTitle }}
+      </div>
+    </transition>
     <div>
       <font-awesome
         :icon="['fas', 'ellipsis-h']"
@@ -46,7 +50,9 @@ export default {
   data: () => ({
     isOpenMenu: false,
     isShowLeft: false,
-    isShowRight: false
+    isShowRight: false,
+    isShowTitle: false,
+    ioRef: null
   }),
 
   methods: {
@@ -63,6 +69,33 @@ export default {
       if (this.isShowLeft) this.isShowLeft = false
       else if (this.isShowRight) this.isShowRight = false
     }
+  },
+
+  mounted() {
+    if (process.isClient) {
+      const headWrap = document.querySelector('.head-wrap')
+
+      const io = new IntersectionObserver(
+        entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            this.isShowTitle = false
+          } else {
+            this.isShowTitle = true
+          }
+        },
+        {
+          threshold: 1
+        }
+      )
+
+      io.observe(headWrap)
+      this.ioRef = io
+    }
+  },
+
+  beforeDestroy() {
+    const headWrap = document.querySelector('.head-wrap')
+    this.ioRef.unobserve(headWrap)
   }
 }
 </script>
@@ -83,5 +116,19 @@ header {
 /* side */
 .side {
   @apply fixed h-full bg-white-f;
+}
+.h-slide-enter-active,
+.h-slide-leave-active {
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.h-slide-enter,
+.h-slide-leave-to {
+  transform: translateY(50%);
+  opacity: 0;
+}
+.h-slide-enter-to,
+.h-slide-leave {
+  transform: translateY(0%);
+  opacity: 1;
 }
 </style>
