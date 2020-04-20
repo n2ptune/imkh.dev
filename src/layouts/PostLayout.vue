@@ -1,5 +1,5 @@
 <template>
-  <main class="font-display">
+  <main class="font-display relative">
     <PostHeader :title="title" :postByTag="postByTag" />
     <slot />
   </main>

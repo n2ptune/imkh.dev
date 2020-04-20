@@ -1,9 +1,18 @@
 <template>
-  <section v-html="contentHTML"></section>
+  <div class="relative">
+    <section v-html="contentHTML" data-target-content></section>
+    <Navigation :navi="navi" />
+  </div>
 </template>
 
 <script>
+import Navigation from '@/components/v2/layouts/Navigation.vue'
+
 export default {
+  components: {
+    Navigation
+  },
+
   data: () => ({
     galleryImages: []
   }),
@@ -11,6 +20,10 @@ export default {
   props: {
     contentHTML: {
       type: String,
+      required: true
+    },
+    navi: {
+      type: Array,
       required: true
     }
   },
@@ -110,5 +123,15 @@ section {
     @apply cursor-pointer;
   }
   /* Image End */
+  /* Link Start */
+  & >>> a:before {
+  }
+  & >>> a {
+    @apply text-blue-600 underline;
+  }
+  & >>> a:hover {
+    @apply font-bold;
+  }
+  /* Link End */
 }
 </style>

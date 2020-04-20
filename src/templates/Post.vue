@@ -25,6 +25,7 @@
         </div>
       </div>
       <PostContent
+        :navi="headings"
         :contentHTML="$page.post.content"
         @resolved="generateGallery"
       />
@@ -42,7 +43,8 @@ import GallerySide from 'vue-gallery-slideshow'
 export default {
   data: () => ({
     index: null,
-    images: []
+    images: [],
+    headings: []
   }),
 
   components: {
@@ -95,6 +97,25 @@ export default {
     }
   },
 
+  created() {
+    const domParser = new DOMParser()
+    const _document = domParser.parseFromString(
+      this.$page.post.content,
+      'text/html'
+    )
+
+    const headings = Array.from(_document.querySelectorAll('h2, h3'))
+    const result = headings.map(heading => {
+      return {
+        path: heading.id,
+        title: heading.innerText,
+        level: heading.tagName.toLowerCase() === 'h2' ? 0 : 1
+      }
+    })
+
+    this.headings = result
+  },
+
   mounted() {
     if (process.isClient) {
       require('intersection-observer')
@@ -142,7 +163,7 @@ query Post ($id: ID!) {
 .wrapper {
   --contents-max-width: 800px;
 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   overflow-wrap: break-word;
   max-width: var(--contents-max-width);
   padding-top: 2rem;

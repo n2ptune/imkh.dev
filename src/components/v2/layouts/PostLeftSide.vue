@@ -6,7 +6,7 @@
           {{
             tags.title[0].toUpperCase() + tags.title.slice(1, tags.title.length)
           }}
-          태그와 관련된 포스트
+          태그와 관련된 포스트({{ tags.node.length }}개)
         </li>
         <div class="mt-2">
           <li v-for="edge in tags.node" :key="edge.node.id" class="pl-2 my-6">
