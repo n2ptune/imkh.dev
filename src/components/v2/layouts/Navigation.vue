@@ -1,13 +1,13 @@
 <template>
   <!-- <transition> -->
   <aside
-    v-show="isFixed"
+    v-if="isFixed"
     :style="{
       left: isFixed ? offsetAside + leftMargin + 'px' : 0
     }"
   >
-    <ul>
-      <li class="text-sm pl-3">목차</li>
+    <ul class="text-sm">
+      <li class="pl-3">목차</li>
       <li
         v-for="heading in navi"
         :key="heading.path"
@@ -55,6 +55,17 @@ export default {
 
       const { right } = this.target.getBoundingClientRect()
       this.offsetAside = right
+    },
+    naviActive() {
+      const selector = this.navi.map(heading => '#' + heading.path).join(',')
+      const headings = Array.from(document.querySelectorAll(selector))
+
+      const getFilterHeadings = t => el => el.tagName.toLowerCase() === t
+
+      const h2s = headings.filter(getFilterHeadings('h2'))
+      const h3s = headings.filter(getFilterHeadings('h3'))
+
+      console.log(h2s, h3s)
     }
   },
 
@@ -68,6 +79,8 @@ export default {
 
     window.addEventListener('resize', this.resizingAside, { passive: true })
     window.addEventListener('scroll', this.fixedAside, { passive: true })
+
+    this.naviActive()
   },
 
   beforeDestroy() {
@@ -90,7 +103,8 @@ aside {
   aside ul li {
     @apply border-l-4 border-gray-300;
   }
-  aside ul li.active {
+  aside ul li.active,
+  aside ul li.sub-active {
     @apply border-purple-300 text-purple-600 font-bold;
   }
 }
