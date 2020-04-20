@@ -5,13 +5,15 @@ module.exports = {
       display: [
         '-apple-system',
         'BlinkMacSystemFont',
-        '"Noto Sans"',
-        '"Noto Sans KR"',
+        '"NanumBarunGothic"',
         'sans-serif'
       ],
       head: ['Herbarium']
     },
     extend: {
+      fontSize: {
+        xl: '1.3rem'
+      },
       screens: {
         '2xl': '1480px'
       },

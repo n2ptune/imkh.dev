@@ -1,6 +1,6 @@
 <template>
   <main class="font-display">
-    <PostHeader :title="title" />
+    <PostHeader :title="title" :postByTag="postByTag" />
     <slot />
   </main>
 </template>
@@ -13,6 +13,6 @@ export default {
     PostHeader
   },
 
-  props: ['title']
+  props: ['title', 'postByTag']
 }
 </script>

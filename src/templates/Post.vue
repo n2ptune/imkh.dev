@@ -1,17 +1,27 @@
 <template>
-  <PostLayout :title="$page.post.title">
+  <PostLayout :title="$page.post.title" :postByTag="filterWithoutCurrentPost">
     <section class="wrapper">
-      <div class="head-wrap border-b-4 border-gray-300 pb-6 text-center">
-        <div class="text-2xl font-bold mb-1">
+      <div
+        class="head-wrap border-b-4 border-t-4 border-gray-300 border-dashed py-6 text-center"
+      >
+        <div class="text-2xl font-bold">
           {{ $page.post.title }}
         </div>
         <div class="text-sm text-gray-700 mb-1">
-          {{ $page.post.date }} / 읽는데
-          <span class="font-bold">{{ $page.post.timeToRead }}</span
-          >분!
+          {{ $page.post.date }}
         </div>
         <div class="text-base text-gray-700">
           {{ $page.post.description }}
+        </div>
+        <div class="flex mt-3 justify-center">
+          <g-link
+            v-for="tag in $page.post.tags"
+            :to="tag.path"
+            :key="tag.id"
+            class="py-1 px-2 mr-2 bg-purple-200 rounded-lg cursor-pointer transition-colors duration-500 hover:bg-purple-300"
+          >
+            #{{ tag.title }}
+          </g-link>
         </div>
       </div>
       <PostContent
@@ -38,6 +48,26 @@ export default {
   components: {
     PostContent,
     GallerySide
+  },
+
+  computed: {
+    filterWithoutCurrentPost() {
+      const current = this.$page.post.id
+      /** @type {object[]} */
+      const tags = this.$page.post.tags
+      const result = []
+
+      for (let i = 0; i < tags.length; i++) {
+        result.push({
+          id: tags[i].id,
+          title: tags[i].title,
+          path: tags[i].path,
+          node: tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
+        })
+      }
+
+      return result.filter(n => n.node.length)
+    }
   },
 
   watch: {
@@ -76,14 +106,27 @@ export default {
 <page-query>
 query Post ($id: ID!) {
   post: post (id: $id) {
+    id
     title
     path
-    date (format: "D. MMMM. YYYY")
+    date (format: "YYYY년 MM월 DD일", locale: "ko")
     timeToRead
     tags {
       id
       title
       path
+      belongsTo {
+        edges {
+          node {
+            ...on Post {
+              id
+              title
+              path
+              date (format: "YYYY년 MM월 DD일", locale: "ko")
+            }
+          }
+        }
+      }
     }
     description
     content

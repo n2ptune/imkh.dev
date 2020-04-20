@@ -6,7 +6,7 @@
         class="header-icon"
         @click="leftHandle"
       />
-      <PostLeftSide v-if="isShowLeft" />
+      <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
     </div>
     <transition name="h-slide">
       <div v-if="isShowTitle" class="text-sm lg:text-base font-bold">
@@ -36,6 +36,11 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    postByTag: {
+      type: Array,
+      required: false,
+      default: () => []
     }
   },
 

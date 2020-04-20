@@ -24,7 +24,8 @@ import {
   faEnvelope,
   faEllipsisH,
   faTimes,
-  faBars
+  faBars,
+  faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
@@ -52,7 +53,8 @@ library.add(
   faFacebook,
   faEllipsisH,
   faTimes,
-  faBars
+  faBars,
+  faExternalLinkAlt
 )
 
 export default function(Vue, { router, head, isClient }) {
@@ -62,16 +64,17 @@ export default function(Vue, { router, head, isClient }) {
   head.link.push(
     {
       rel: 'stylesheet',
-      href:
-        'https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Noto+Sans:400,500,600,700&display=swap'
-    },
-    {
-      rel: 'stylesheet',
       href: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'
     },
     {
       rel: 'stylesheet',
       href: 'https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css'
+    },
+    {
+      rel: 'stylesheet',
+      type: 'text/css',
+      href:
+        'https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css'
     }
   )
 
