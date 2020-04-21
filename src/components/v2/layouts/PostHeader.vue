@@ -9,7 +9,10 @@
       <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
     </div>
     <transition name="h-slide">
-      <div v-if="isShowTitle" class="text-sm lg:text-base font-bold">
+      <div
+        v-if="isShowTitle"
+        class="text-sm lg:text-base font-bold text-white-700"
+      >
         {{ splitedTitle }}
       </div>
     </transition>
@@ -46,8 +49,14 @@ export default {
 
   computed: {
     splitedTitle() {
+      let subLength = 30
+
+      if (window.innerWidth) {
+        subLength = window.innerWidth > 870 ? undefined : subLength
+      }
+
       return this.title.length > 30
-        ? this.title.substring(0, 30) + '...'
+        ? this.title.substring(0, subLength) + (subLength ? '...' : '')
         : this.title
     }
   },
@@ -109,14 +118,14 @@ export default {
 header {
   height: 3rem;
   z-index: 10;
-  @apply flex fixed w-full bg-white-f border-b border-gray-300
-  justify-between items-center px-3;
+  background-color: #242424;
+  @apply flex fixed w-full justify-between items-center px-3;
 }
 .header-icon {
-  @apply text-gray-500 cursor-pointer transition-colors duration-500;
+  @apply text-white-600 cursor-pointer transition-colors duration-500;
 }
 .header-icon:hover {
-  @apply text-black;
+  @apply text-white-f;
 }
 /* side */
 .side {
