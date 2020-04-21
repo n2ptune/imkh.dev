@@ -141,7 +141,9 @@ export default {
 
   watch: {
     $route(c, p) {
-      this.parseHeading()
+      if (process.isClient) {
+        this.parseHeading()
+      }
     }
   }
 }
