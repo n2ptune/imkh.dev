@@ -29,6 +29,7 @@
         @resolved="generateGallery"
       />
       <ClientOnly>
+        <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
@@ -37,6 +38,7 @@
 
 <script>
 import PostContent from '@/components/v2/layouts/PostContent.vue'
+import CommentsPlugin from '@/components/v2/CommentsPlugin.vue'
 import GallerySide from 'vue-gallery-slideshow'
 
 export default {
@@ -47,6 +49,7 @@ export default {
 
   components: {
     PostContent,
+    CommentsPlugin,
     GallerySide
   },
 
@@ -93,36 +96,13 @@ export default {
         img.addEventListener('click', () => (this.index = key))
       })
     }
-    // parseHeading() {
-    //   const domParser = new DOMParser()
-    //   const _document = domParser.parseFromString(
-    //     this.$page.post.content,
-    //     'text/html'
-    //   )
-
-    //   const headings = Array.from(_document.querySelectorAll('h2, h3'))
-    //   const result = headings.map(heading => {
-    //     return {
-    //       path: heading.id,
-    //       title: heading.innerText,
-    //       level: heading.tagName.toLowerCase() === 'h2' ? 0 : 1
-    //     }
-    //   })
-
-    //   this.headings = result
-    // }
   },
 
   mounted() {
     if (process.isClient) {
-      // this.parseHeading()
       require('intersection-observer')
     }
   }
-
-  // beforeUpdate() {
-  //   this.parseHeading()
-  // }
 }
 </script>
 

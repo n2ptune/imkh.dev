@@ -18,6 +18,7 @@
     "prismjs": "^1.19.0",
     "smooth-scroll": "^16.1.2",
     "v-tooltip": "^2.0.3",
+    "vue-disqus": "^3.0.5",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-infinite-loading": "^2.4.4",
     "vue-runtime-helpers": "^1.1.2"
