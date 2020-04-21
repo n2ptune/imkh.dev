@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <section v-html="contentHTML" data-target-content></section>
-    <Navigation :navi="navi" />
+    <Navigation :content="contentHTML" />
   </div>
 </template>
 
@@ -20,10 +20,6 @@ export default {
   props: {
     contentHTML: {
       type: String,
-      required: true
-    },
-    navi: {
-      type: Array,
       required: true
     }
   },

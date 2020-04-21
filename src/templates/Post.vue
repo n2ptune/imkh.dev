@@ -25,7 +25,6 @@
         </div>
       </div>
       <PostContent
-        :navi="headings"
         :contentHTML="$page.post.content"
         @resolved="generateGallery"
       />
@@ -43,8 +42,7 @@ import GallerySide from 'vue-gallery-slideshow'
 export default {
   data: () => ({
     index: null,
-    images: [],
-    headings: []
+    images: []
   }),
 
   components: {
@@ -94,37 +92,37 @@ export default {
         this.images.push(img.dataset.src)
         img.addEventListener('click', () => (this.index = key))
       })
-    },
-    parseHeading() {
-      const domParser = new DOMParser()
-      const _document = domParser.parseFromString(
-        this.$page.post.content,
-        'text/html'
-      )
-
-      const headings = Array.from(_document.querySelectorAll('h2, h3'))
-      const result = headings.map(heading => {
-        return {
-          path: heading.id,
-          title: heading.innerText,
-          level: heading.tagName.toLowerCase() === 'h2' ? 0 : 1
-        }
-      })
-
-      this.headings = result
     }
+    // parseHeading() {
+    //   const domParser = new DOMParser()
+    //   const _document = domParser.parseFromString(
+    //     this.$page.post.content,
+    //     'text/html'
+    //   )
+
+    //   const headings = Array.from(_document.querySelectorAll('h2, h3'))
+    //   const result = headings.map(heading => {
+    //     return {
+    //       path: heading.id,
+    //       title: heading.innerText,
+    //       level: heading.tagName.toLowerCase() === 'h2' ? 0 : 1
+    //     }
+    //   })
+
+    //   this.headings = result
+    // }
   },
 
   mounted() {
     if (process.isClient) {
-      this.parseHeading()
+      // this.parseHeading()
       require('intersection-observer')
     }
-  },
-
-  beforeUpdate() {
-    this.parseHeading()
   }
+
+  // beforeUpdate() {
+  //   this.parseHeading()
+  // }
 }
 </script>
 
