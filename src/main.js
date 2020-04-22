@@ -1,12 +1,18 @@
 /** global-css-layout */
 import '@/styles/global.css'
-import DefaultLayout from '~/layouts/Default.vue'
+import DefaultLayout from '@/layouts/Default.vue'
+import VLayout from '@/layouts/VLayout.vue'
+import PostLayout from '@/layouts/PostLayout.vue'
 
 /** FontAwesomeIcon */
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faInstagram,
+  faFacebook
+} from '@fortawesome/free-brands-svg-icons'
 import {
   faTimesCircle,
   faAngleDoubleUp,
@@ -14,14 +20,22 @@ import {
   faClipboard,
   faCalendarAlt,
   faChevronLeft,
-  faStream
+  faStream,
+  faEnvelope,
+  faEllipsisH,
+  faTimes,
+  faBars,
+  faExternalLinkAlt,
+  faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
-import 'prismjs/themes/prism-tomorrow.css'
+// import 'prismjs/themes/prism-tomorrow.css'
 import '@/styles/prism-custom.css'
 
 /** plugins */
+import VueDisqus from 'vue-disqus'
+import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import { VTooltip } from 'v-tooltip'
 
@@ -35,7 +49,15 @@ library.add(
   faClipboard,
   faCalendarAlt,
   faChevronLeft,
-  faStream
+  faStream,
+  faEnvelope,
+  faInstagram,
+  faFacebook,
+  faEllipsisH,
+  faTimes,
+  faBars,
+  faExternalLinkAlt,
+  faSearch
 )
 
 export default function(Vue, { router, head, isClient }) {
@@ -45,16 +67,17 @@ export default function(Vue, { router, head, isClient }) {
   head.link.push(
     {
       rel: 'stylesheet',
-      href:
-        'https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Noto+Sans:400,500,600,700&display=swap'
-    },
-    {
-      rel: 'stylesheet',
       href: 'https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'
     },
     {
       rel: 'stylesheet',
       href: 'https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css'
+    },
+    {
+      rel: 'stylesheet',
+      type: 'text/css',
+      href:
+        'https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css'
     }
   )
 
@@ -106,9 +129,13 @@ export default function(Vue, { router, head, isClient }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.component('VLayout', VLayout)
+  Vue.component('PostLayout', PostLayout)
   Vue.component('font-awesome', FontAwesomeIcon)
+  Vue.component('Overlay', Overlay)
 
   // Set plugins
   Vue.use(VueInfiniteLoading)
+  Vue.use(VueDisqus)
   Vue.directive('tooltip', VTooltip)
 }

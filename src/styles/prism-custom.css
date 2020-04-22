@@ -1,19 +1,23 @@
 /* purgecss start ignore */
 
-pre,
-code {
-  font-family: Hack, D2Coding, monospace !important;
+code:not([class*='language-']) {
+  font-family: initial;
+  @apply font-bold text-purple-700;
 }
 
 pre[class*='language-'],
 code[class*='language-'] {
+  background: #2d2d2d;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: Hack, D2Coding, monospace !important;
   font-size: 0.95rem;
 }
 
 pre[class*='language-'] {
   overflow: auto;
   position: relative;
-  padding: 1.25em 3rem;
+  padding: 2rem 1.5rem;
+  @apply rounded-lg;
 }
 
 .token.comment,

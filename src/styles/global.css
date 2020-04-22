@@ -4,7 +4,21 @@
   font-weight: normal;
 }
 
+img.g-image.g-image--lazy {
+  transition: opacity 0.3s linear;
+}
+
+img.g-image.g-image--lazy.g-image--loading {
+  opacity: 0.5;
+}
+
+img.g-image.g-image--lazy.g-image--loaded {
+  opacity: 1;
+}
+
 :root {
   --content-max: 650px;
   --content-post: 950px;
+  --aside-lg-size: 300px;
+  --aside-xl-size: 500px;
 }

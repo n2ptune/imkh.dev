@@ -98,6 +98,7 @@ module.exports = {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      autolinkHeadings: false,
       plugins: [
         ['@gridsome/remark-prismjs'],
         [
@@ -119,12 +120,14 @@ module.exports = {
 
   chainWebpack: config => {
     config.module
-      .rule('css')
+      .rule('postcss')
       .oneOf('normal')
       .use('postcss-loader')
       .tap(options => {
         options.plugins.unshift(
           ...[
+            require('postcss-for'),
+            require('postcss-simple-vars'),
             require('postcss-import'),
             require('postcss-nested'),
             require('tailwindcss')

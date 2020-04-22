@@ -1,84 +1,47 @@
 <template>
-  <Layout>
-    <section
-      class="container flex justify-center mx-auto mb-20 flex-col 2xl:flex-row"
-    >
-      <div class="post-content mx-2 md:mx-auto">
-        <g-image
-          v-if="
-            $page.post.cover_image
-              ? $page.post.cover_image.size.width >= 950
-              : false
-          "
-          :src="$page.post.cover_image"
-          class="rounded-t-lg post-cover-image"
-          blur="4"
-          contain
-        />
-        <post-functions :path="$page.post.path" :date="$page.origin.date" />
-        <post-metadata :post="$page.post" />
-        <post-description :des="$page.post.description" />
-        <article class="md" v-html="$page.post.content"></article>
+  <PostLayout :title="$page.post.title" :postByTag="filterWithoutCurrentPost">
+    <section class="wrapper">
+      <div
+        class="head-wrap border-b-4 border-t-4 border-gray-300 border-dashed py-6 text-center"
+      >
+        <div class="text-2xl font-bold">
+          {{ $page.post.title }}
+        </div>
+        <div class="text-sm text-gray-700 mb-1">
+          {{ $page.post.date }}
+        </div>
+        <div class="text-base text-gray-700">
+          {{ $page.post.description }}
+        </div>
+        <div class="flex mt-3 justify-center">
+          <g-link
+            v-for="tag in $page.post.tags"
+            :to="tag.path"
+            :key="tag.id"
+            class="py-1 px-2 mr-2 bg-purple-200 rounded-lg cursor-pointer transition-colors duration-500 hover:bg-purple-300"
+          >
+            #{{ tag.title }}
+          </g-link>
+        </div>
       </div>
-      <a-side :aside="aside" />
+      <PostContent
+        :contentHTML="$page.post.content"
+        @resolved="generateGallery"
+      />
+      <ClientOnly>
+        <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
+        <GallerySide :images="images" :index="index" @close="index = null" />
+      </ClientOnly>
     </section>
-    <scrolling v-if="scroll" />
-    <ClientOnly>
-      <gallery-slide :images="images" :index="index" @close="index = null" />
-    </ClientOnly>
-  </Layout>
+  </PostLayout>
 </template>
 
-<page-query>
-query Post ($id: ID!) {
-  post: post (id: $id) {
-    title
-    path
-    date (format: "D. MMMM. YYYY")
-    timeToRead
-    tags {
-      id
-      title
-      path
-    }
-    description
-    content
-    cover_image
-  }
-  origin: post (id: $id) {
-    date
-  }
-}
-</page-query>
-
 <script>
-import Layout from '@/layouts/Default.vue'
-import PostLogo from '@/components/post/PostLogo.vue'
-import PostMetadata from '@/components/post/PostMetadata.vue'
-import PostDescription from '@/components/post/PostDescription.vue'
-import PostFunctions from '@/components/post/PostFunctions.vue'
-import Scrolling from '@/components/post/Scrolling.vue'
-import GallerySlide from 'vue-gallery-slideshow'
+import PostContent from '@/components/v2/layouts/PostContent.vue'
+import CommentsPlugin from '@/components/v2/CommentsPlugin.vue'
+import GallerySide from 'vue-gallery-slideshow'
 
 export default {
-  data: () => ({
-    scroll: false,
-    index: null,
-    images: [],
-    aside: []
-  }),
-
-  components: {
-    Layout,
-    PostLogo,
-    PostMetadata,
-    PostDescription,
-    PostFunctions,
-    Scrolling,
-    GallerySlide,
-    ASide: () => import('@/components/post/ASide.vue')
-  },
-
   metaInfo() {
     return {
       title: this.$page.post.title,
@@ -130,133 +93,117 @@ export default {
     }
   },
 
+  data: () => ({
+    index: null,
+    images: []
+  }),
+
+  components: {
+    PostContent,
+    CommentsPlugin,
+    GallerySide
+  },
+
+  computed: {
+    filterWithoutCurrentPost() {
+      const current = this.$page.post.id
+      /** @type {object[]} */
+      const tags = this.$page.post.tags
+      const result = []
+
+      for (let i = 0; i < tags.length; i++) {
+        result.push({
+          id: tags[i].id,
+          title: tags[i].title,
+          path: tags[i].path,
+          node: tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
+        })
+      }
+
+      return result.filter(n => n.node.length)
+    }
+  },
+
+  watch: {
+    $route(c, p) {
+      if (process.isClient) {
+        ;(function(overlay) {
+          if (overlay) overlay.click()
+        })(document.querySelector('.overlay'))
+      }
+
+      this.index = null
+      this.images = []
+    }
+  },
+
+  methods: {
+    /**
+     * @param {HTMLElement[]} data
+     */
+    generateGallery(data) {
+      data.images.map((img, key) => {
+        this.images.push(img.dataset.src)
+        img.addEventListener('click', () => (this.index = key))
+      })
+    }
+  },
+
   mounted() {
-    const postContentTop = document.querySelector('.post-content').offsetTop
-
-    window.addEventListener('scroll', () => {
-      if (postContentTop < window.scrollY) {
-        this.scroll = true
-      } else {
-        this.scroll = false
-      }
-    })
-
-    const allImages = document.querySelectorAll('.post-content img')
-    const contentSize = 950
-
-    allImages.forEach((img, key) => {
-      // 마진 조정
-      if (contentSize > img.width) {
-        img.style.margin = '0 auto'
-      }
-
-      this.images.push(img.dataset.src)
-      img.addEventListener('click', () => {
-        this.index = key
-      })
-    })
-
-    const postContentH2s = document.querySelectorAll('.post-content h2')
-    const collection = []
-
-    postContentH2s.forEach((el, i) => {
-      const top = el.offsetTop
-      const nextTop =
-        postContentH2s.length - 1 === i ? null : postContentH2s[i + 1].offsetTop
-      collection.push({
-        id: el.id,
-        title: el.innerText,
-        top,
-        nextTop
-      })
-    })
-
-    this.aside = collection
-
-    const codepen = document.createElement('script')
-    codepen.src = 'https://static.codepen.io/assets/embed/ei.js'
-
-    this.$el.appendChild(codepen)
+    if (process.isClient) {
+      require('intersection-observer')
+      const codepen = document.createElement('script')
+      codepen.src = 'https://static.codepen.io/assets/embed/ei.js'
+      this.$el.appendChild(codepen)
+    }
   }
 }
 </script>
 
-<style lang="postcss">
-.post-content ul,
-.post-content ol {
-  padding: 0 0 0 20px;
-}
-.post-content ol {
-  list-style-type: decimal;
-}
-.post-content ul {
-  list-style-type: disc;
-}
-pre[class*='language-'] {
-  margin: 0 -1.5rem;
-}
-.post-cover-image {
-  /* max-height: 500px; */
-}
-.post-content {
-  max-width: var(--content-post);
-  @apply px-6 pb-16 bg-white-f shadow-md rounded-lg mt-12;
-}
-.post-content img {
-  cursor: pointer;
-}
-.full-width {
-  max-width: calc(100% + 6rem);
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-}
-.md a {
-  word-break: break-all;
-  @apply text-purple-600;
-}
-.md a:hover {
-  @apply text-purple-700 underline;
-}
-/* purgecss start ignore */
-:not(pre) > code {
-  @apply text-purple-600 font-semibold;
-}
-/* purgecss end ignore */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply my-6 font-bold;
-}
-h1 {
-  @apply text-3xl;
-}
-h2 {
-  @apply text-2xl;
-}
-h3 {
-  @apply text-xl;
-}
-p {
-  @apply my-6;
-}
-@screen sm {
-  .post-content {
-    @apply px-12;
+<page-query>
+query Post ($id: ID!) {
+  post: post (id: $id) {
+    id
+    title
+    path
+    date (format: "YYYY년 MM월 DD일", locale: "ko")
+    timeToRead
+    tags {
+      id
+      title
+      path
+      belongsTo {
+        edges {
+          node {
+            ...on Post {
+              id
+              title
+              path
+              date (format: "YYYY년 MM월 DD일", locale: "ko")
+            }
+          }
+        }
+      }
+    }
+    description
+    content
+    cover_image
   }
-  .post-content img {
-    max-width: calc(100% + 6rem);
-    margin-left: -3rem;
+  origin: post (id: $id) {
+    date
   }
-  .full-width {
-    max-width: calc(100% + 6rem);
-    margin-left: -3rem;
-    margin-right: -3rem;
-  }
-  pre[class*='language-'] {
-    margin: 0 -3rem;
-  }
+}
+</page-query>
+
+<style lang="postcss" scoped>
+.wrapper {
+  --contents-max-width: 800px;
+
+  /* overflow-x: hidden; */
+  overflow-wrap: break-word;
+  max-width: var(--contents-max-width);
+  padding-top: 2rem;
+  top: 3rem;
+  @apply relative mx-auto px-3;
 }
 </style>

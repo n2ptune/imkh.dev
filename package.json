@@ -5,16 +5,20 @@
     "build": "gridsome build",
     "dev": "gridsome develop",
     "explore": "gridsome explore",
-    "makefile": "node helpers/makefile/index.js"
+    "makefile": "node helpers/makefile/index.js",
+    "serve": "serve -n -l 8887",
+    "lint": "prettier --write '**/*.{vue,js}'"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@microflash/gridsome-plugin-feed": "^1.0.4",
     "gridsome": "^0.7.0",
     "gridsome-plugin-rss": "^1.2.0",
+    "intersection-observer": "^0.9.0",
     "prismjs": "^1.19.0",
     "smooth-scroll": "^16.1.2",
     "v-tooltip": "^2.0.3",
+    "vue-disqus": "^3.0.5",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-infinite-loading": "^2.4.4",
     "vue-runtime-helpers": "^1.1.2"
@@ -31,6 +35,8 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "gridsome-plugin-tailwindcss": "^2.2.34",
+    "postcss-for": "^2.1.1",
+    "serve": "^11.3.0",
     "sharp": "^0.25.1"
   }
 }

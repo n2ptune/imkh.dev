@@ -14,10 +14,7 @@
       </div>
       <div class="mt-2 text-center">
         <g-link to="/" class="text-gray-700 hover:text-gray-900">
-          <font-awesome
-            :icon="['fas', 'chevron-left']"
-            :style="{ fontSize: '0.875em' }"
-          />
+          <font-awesome :icon="['fas', 'chevron-left']" size="sm" />
           <span class="ml-2">홈으로 돌아가기</span>
         </g-link>
       </div>
