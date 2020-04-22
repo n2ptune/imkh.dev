@@ -22,7 +22,7 @@
       </div>
     </transition>
     <div>
-      <div class="search-form inline-flex relative">
+      <div class="search-form inline-flex relative hidden lg:inline-flex">
         <input
           type="text"
           class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 px-3 focus:outline-none focus:bg-white-f text-sm"
