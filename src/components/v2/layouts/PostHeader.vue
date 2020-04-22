@@ -2,6 +2,11 @@
   <header>
     <div class="flex items-center">
       <font-awesome
+        :icon="['fas', 'chevron-left']"
+        class="header-icon mr-4"
+        @click="$router.push('/')"
+      />
+      <font-awesome
         :icon="['fas', 'bars']"
         class="header-icon"
         @click="leftHandle"
@@ -17,6 +22,17 @@
       </div>
     </transition>
     <div>
+      <div class="search-form inline-flex relative">
+        <input
+          type="text"
+          class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 px-3 focus:outline-none focus:bg-white-f text-sm"
+          placeholder="준비중..."
+        />
+        <font-awesome
+          :icon="['fas', 'search']"
+          class="search-icon text-gray-800"
+        />
+      </div>
       <font-awesome
         :icon="['fas', 'ellipsis-h']"
         class="header-icon"
@@ -144,5 +160,13 @@ header {
 .h-slide-leave {
   transform: translateY(0%);
   opacity: 1;
+}
+.search-form input::placeholder {
+  @apply text-gray-700;
+}
+.search-icon {
+  left: -43px;
+  align-self: center;
+  @apply relative inline-flex;
 }
 </style>

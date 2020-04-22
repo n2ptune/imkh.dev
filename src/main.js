@@ -25,7 +25,8 @@ import {
   faEllipsisH,
   faTimes,
   faBars,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
 /** prismjs-theme */
@@ -55,7 +56,8 @@ library.add(
   faEllipsisH,
   faTimes,
   faBars,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faSearch
 )
 
 export default function(Vue, { router, head, isClient }) {
