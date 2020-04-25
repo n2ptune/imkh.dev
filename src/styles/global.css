@@ -4,6 +4,8 @@
   font-weight: normal;
 }
 
+/* purgecss start ignore */
+
 img.g-image.g-image--lazy {
   transition: opacity 0.3s linear;
 }
@@ -15,6 +17,8 @@ img.g-image.g-image--lazy.g-image--loading {
 img.g-image.g-image--lazy.g-image--loaded {
   opacity: 1;
 }
+
+/* purgecss end ignore */
 
 :root {
   --content-max: 650px;
