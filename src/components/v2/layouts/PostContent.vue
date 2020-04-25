@@ -129,5 +129,10 @@ section {
     @apply font-bold;
   }
   /* Link End */
+  /* Blockquote Start */
+  & >>> blockquote {
+    @apply text-center py-1 px-4 bg-gray-200 text-gray-700 italic border-l-4 border-gray-500 rounded;
+  }
+  /* Blockquote End */
 }
 </style>
