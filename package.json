@@ -7,7 +7,8 @@
     "explore": "gridsome explore",
     "makefile": "node helpers/makefile/index.js",
     "serve": "serve -n -l 8887",
-    "lint": "prettier --write '**/*.{vue,js}'"
+    "lint": "prettier --write '**/*.{vue,js}'",
+    "tree": "ts-node ./helpers/file-tree/index.ts"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
@@ -37,6 +38,8 @@
     "gridsome-plugin-tailwindcss": "^2.2.34",
     "postcss-for": "^2.1.1",
     "serve": "^11.3.0",
-    "sharp": "^0.25.1"
+    "sharp": "^0.25.1",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
   }
 }

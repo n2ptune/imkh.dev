@@ -1,5 +1,4 @@
-/** @param {string[]} data */
-function decomposition(data) {
+function decomposition(data: string[]) {
   if (!data.length) return
 
   const decomposition = {}
@@ -40,4 +39,4 @@ function extractWithTag(data, toJSON = false) {
   return toJSON ? JSON.stringify(extract, null, 2) : extract
 }
 
-module.exports = { decomposition, extractWithTag }
+export { decomposition, extractWithTag }

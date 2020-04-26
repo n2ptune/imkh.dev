@@ -1,12 +1,12 @@
-const fs = require('fs')
+// const fs = require('fs')
+import { readdirSync, readFileSync } from 'fs'
 
 function readDirFromPath(path, ext) {
-  return fs.readdirSync(path).filter(file => file.endsWith(ext))
+  return readdirSync(path).filter(file => file.endsWith(ext))
 }
 
 function readFileFromPath(path, encoding = 'utf8') {
-  const _data = fs
-    .readFileSync(path, encoding)
+  const _data = readFileSync(path, encoding)
     .split('\n')
     .slice(1, 7)
 
@@ -16,4 +16,4 @@ function readFileFromPath(path, encoding = 'utf8') {
   return _data
 }
 
-module.exports = { readDirFromPath, readFileFromPath }
+export { readDirFromPath, readFileFromPath }
