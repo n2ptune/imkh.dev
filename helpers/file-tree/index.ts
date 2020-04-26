@@ -1,7 +1,7 @@
 import { contentPath, filePath } from './path'
 import { readDirFromPath, readFileFromPath } from './reader'
 import { decomposition, extractWithTag } from './decomposition'
-import { generate } from './generator'
+import { generateMarkdown } from './generator'
 
 // Read all *.md files
 const contents = readDirFromPath(contentPath, '.md')
@@ -15,4 +15,4 @@ for (const content of contents) {
 }
 
 // console.log(extractWithTag(result, false))
-generate(extractWithTag(result, false))
+generateMarkdown(extractWithTag(result, false))

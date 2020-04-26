@@ -2,10 +2,17 @@ import { writeFileSync, readFileSync } from 'fs'
 import { startLine, endLine } from './meta'
 import { rootPath } from './path'
 
-function generate(context: object): void {
+function generateMarkdown(context: object): void | Error {
+  // Read file README.md
   const readme = readFileSync(rootPath + '/README.md', 'utf8')
+  // Search startLine, endLine in README.md
   const [s, e] = [readme.search(startLine), readme.search(endLine)]
-  console.log(readme.substring(s, e))
+
+  // Check startLine and endLine
+  if (!s || !e) return new Error('asdfg')
+
+  const startAndEnd = readme.substring(s, e + endLine.length)
+  const splited = readme.split(startAndEnd)
 
   let result = ''
 
@@ -21,6 +28,8 @@ function generate(context: object): void {
     result += mark.join('\n')
   }
 
+  result = splited[0] + startLine + '\n\n' + result + endLine + splited[1]
+
   console.log(result)
 }
 
@@ -32,4 +41,4 @@ function generateMarkup(title: string, path: string) {
   return `- <a href="${path}">${title}</a>`
 }
 
-export { generate }
+export { generateMarkdown }
