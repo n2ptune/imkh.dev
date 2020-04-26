@@ -20,7 +20,7 @@ function decomposition(data: string[]) {
   return decomposition
 }
 
-function extractWithTag(data, toJSON = false) {
+function extractWithTag(data, toJSON = false): any {
   if (!data.length) return
 
   const extract = {}
