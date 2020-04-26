@@ -8,8 +8,9 @@
 
 <!-- Auto generating by file-tree start -->
 
-### javascript
+아래 내용은 <a href="./helpers/file-tree/index.ts">스크립트</a>에 의해 자동으로 생성되었습니다.
 
+### javascript
 
 - <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
 - <a href="./content/posts/js-array-sort.md">자바스크립트 배열 원소 정렬 (js-array-sort)</a>
@@ -29,17 +30,14 @@
 
 ### css
 
-
 - <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
 - <a href="./content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
 
 ### firebase
 
-
 - <a href="./content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
 
 ### vue
-
 
 - <a href="./content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
 - <a href="./content/posts/gridsome-blog-1.md">Nuxt에서 Gridsome으로 블로그 전환한 이유</a>
@@ -52,23 +50,19 @@
 
 ### git
 
-
 - <a href="./content/posts/git-sync-fork-repository.md">원본 저장소의 내용을 최신화 시키기 (git-sync-original-repository)</a>
 - <a href="./content/posts/github-pages-subtree.md">github pages 특정 폴더만 배포 시키기 (subtree)</a>
 
 ### github
-
 
 - <a href="./content/posts/github-license.md">github repository(원격 저장소)에 license 추가하기</a>
 - <a href="./content/posts/github-pages-subtree.md">github pages 특정 폴더만 배포 시키기 (subtree)</a>
 
 ### graphql
 
-
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 
 ### nodejs
-
 
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 - <a href="./content/posts/js-module.md">자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)</a>
@@ -77,34 +71,28 @@
 
 ### express
 
-
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
 
 ### web
 
-
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 
 ### internet
-
 
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 - <a href="./content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
 ### dns
 
-
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 
 ### html5
 
-
 - <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
 ### es6
-
 
 - <a href="./content/posts/js-object-type-conversion.md">자바스크립트 객체의 타입 형변환 (js-object-type-conversion)</a>
 - <a href="./content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
@@ -112,22 +100,19 @@
 
 ### sequelize
 
-
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 
 ### linux
 
-
 - <a href="./content/posts/linux-tree.md">Linux tree 명령어로 폴더 구조를 텍스트로 변환하기</a>
 
 ### postcss
-
 
 - <a href="./content/posts/vue-postcss-cssnano.md">Vue PostCSS 플러그인으로 CSS 크기를 압축시키기</a>
 - <a href="./content/posts/vue-tailwindcss.md">다 된 Vue에 Tailwindcss 뿌리기</a>
 
 <!-- Auto generating by file-tree end -->
 
-## Test
+## Todo
 
-sdasf
+- 배웠던 내용 복습

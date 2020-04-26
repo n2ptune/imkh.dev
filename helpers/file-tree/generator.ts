@@ -1,5 +1,5 @@
 import { writeFileSync, readFileSync } from 'fs'
-import { startLine, endLine } from './meta'
+import { startLine, endLine, signature } from './meta'
 import { rootPath } from './path'
 
 function generateMarkdown(context: object, callback: Function): void {
@@ -24,12 +24,20 @@ function generateMarkdown(context: object, callback: Function): void {
     )
 
     mark.push('\n')
-    mark.splice(1, 0, '\n')
+    mark.splice(1, 0, '')
 
     result += mark.join('\n')
   }
 
-  result = splited[0] + startLine + '\n\n' + result + endLine + splited[1]
+  result =
+    splited[0] +
+    startLine +
+    '\n\n' +
+    signature +
+    '\n\n' +
+    result +
+    endLine +
+    splited[1]
 
   try {
     writeFileSync(rootPath + '/README.md', result, 'utf8')
