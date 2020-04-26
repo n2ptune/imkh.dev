@@ -14,5 +14,21 @@ for (const content of contents) {
   result.push(des)
 }
 
-// console.log(extractWithTag(result, false))
-generateMarkdown(extractWithTag(result, false))
+generateMarkdown(
+  extractWithTag(result, false),
+  (completed: boolean, error: Error) => {
+    if (!completed || error) {
+      console.error('Something wrong...')
+      throw error
+    } else {
+      console.log(
+        '\x1b[32m%s',
+        'The README.md file has been created successfully.'
+      )
+      console.log(
+        '\x1b[31m%s\x1b[0m',
+        'The file has not apply prettier so must be execute command of lint or modify directly that file.'
+      )
+    }
+  }
+)

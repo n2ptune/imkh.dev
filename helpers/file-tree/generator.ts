@@ -2,14 +2,15 @@ import { writeFileSync, readFileSync } from 'fs'
 import { startLine, endLine } from './meta'
 import { rootPath } from './path'
 
-function generateMarkdown(context: object): void | Error {
+function generateMarkdown(context: object, callback: Function): void {
   // Read file README.md
   const readme = readFileSync(rootPath + '/README.md', 'utf8')
   // Search startLine, endLine in README.md
   const [s, e] = [readme.search(startLine), readme.search(endLine)]
 
   // Check startLine and endLine
-  if (!s || !e) return new Error('asdfg')
+  if (!s || !e)
+    callback(false, new Error("can't find signature line of start, end"))
 
   const startAndEnd = readme.substring(s, e + endLine.length)
   const splited = readme.split(startAndEnd)
@@ -30,7 +31,12 @@ function generateMarkdown(context: object): void | Error {
 
   result = splited[0] + startLine + '\n\n' + result + endLine + splited[1]
 
-  console.log(result)
+  try {
+    writeFileSync(rootPath + '/README.md', result, 'utf8')
+    callback(true, null)
+  } catch (error) {
+    callback(false, new Error(error))
+  }
 }
 
 function generateTitleMarkup(title: string) {
