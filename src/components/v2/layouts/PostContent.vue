@@ -113,10 +113,10 @@ section {
   /* Typography End */
   /* Image Start */
   & >>> img.not-overflow-width {
-    margin: 0 auto;
+    @apply mx-auto;
   }
   & >>> img {
-    @apply cursor-pointer;
+    @apply cursor-pointer my-16;
   }
   /* Image End */
   /* Link Start */

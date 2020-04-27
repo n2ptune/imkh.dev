@@ -5,6 +5,7 @@ module.exports = {
       display: [
         '-apple-system',
         'BlinkMacSystemFont',
+        '"Noto Sans"',
         '"NanumBarunGothic"',
         'sans-serif'
       ],
