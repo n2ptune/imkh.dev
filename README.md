@@ -65,6 +65,7 @@
 ### nodejs
 
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
+- <a href="./content/posts/js-console-colors.md">Nodejs Console Color를 바꿔보자</a>
 - <a href="./content/posts/js-module.md">자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)</a>
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
