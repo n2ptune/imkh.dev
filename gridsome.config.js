@@ -12,27 +12,30 @@ module.exports = {
   port: 4001,
 
   templates: {
-    /**
-     * @templates 정적 페이지 경로를 만들어내기 위한 메타데이터 같은 느낌
-     * src/templates/*.vue 의 이름과 동일해야 할듯
-     */
     Post: '/:title',
     Tag: '/tag/:id'
   },
 
   plugins: [
-    /**
-     * @markdown 로컬 파일을 기준으로 데이터를 읽어들이기 위한 플러그인 설치
-     */
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        collections: [
+          {
+            typeName: 'Post',
+            indexName: 'id',
+            fields: ['title', 'tags', 'description']
+          }
+        ],
+        searchFields: ['title']
+      }
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
         path: 'content/posts/*.md',
         refs: {
-          /**
-           * @GraphQL 태그를 GraphQL Collection으로 만든다고 함
-           */
           tags: {
             typeName: 'Tag',
             create: true
@@ -49,9 +52,6 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        /**
-         * @default
-         */
         cacheTime: 600000
       }
     },
@@ -91,9 +91,6 @@ module.exports = {
     }
   ],
 
-  /**
-   * @markdown 마크다운을 읽어들이기 위한 플러그인
-   */
   transformers: {
     remark: {
       externalLinksTarget: '_blank',

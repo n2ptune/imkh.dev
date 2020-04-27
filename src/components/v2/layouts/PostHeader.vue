@@ -24,10 +24,29 @@
     <div>
       <div class="search-form inline-flex relative hidden lg:inline-flex">
         <input
+          id="search"
+          v-model="searchTerm"
           type="text"
-          class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 px-3 focus:outline-none focus:bg-white-f text-sm"
-          placeholder="준비중..."
+          class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 pl-3 pr-8 focus:outline-none focus:bg-white-f text-sm"
+          placeholder="Search Posts..."
         />
+        <div class="search-results" v-if="searchResults.length">
+          <div class="text-sm text-purple-600 pb-2 border-b-2 border-gray-400">
+            검색 결과({{ searchResults.length }}개)
+          </div>
+          <div class="search-wrap mt-4">
+            <div v-for="post in searchResults" :key="post.id" class="mb-2">
+              <div class="text-base">
+                <g-link :to="post.path">
+                  {{ post.title }}
+                </g-link>
+              </div>
+              <div class="text-sm text-gray-700">
+                {{ substringDescription(post.description) }}
+              </div>
+            </div>
+          </div>
+        </div>
         <font-awesome
           :icon="['fas', 'search']"
           class="search-icon text-gray-800"
@@ -74,6 +93,17 @@ export default {
       return this.title.length > 30
         ? this.title.substring(0, subLength) + (subLength ? '...' : '')
         : this.title
+    },
+    searchResults() {
+      const searchTerm = this.searchTerm
+      if (searchTerm.length < 3) return []
+      return this.$search.search({ query: searchTerm, limit: 5 })
+    },
+    substringDescription() {
+      return desciprtion =>
+        desciprtion.length > 50
+          ? desciprtion.substring(0, 50) + '...'
+          : desciprtion
     }
   },
 
@@ -82,7 +112,8 @@ export default {
     isShowLeft: false,
     isShowRight: false,
     isShowTitle: false,
-    ioRef: null
+    ioRef: null,
+    searchTerm: ''
   }),
 
   methods: {
@@ -126,6 +157,12 @@ export default {
   beforeDestroy() {
     const headWrap = document.querySelector('.head-wrap')
     this.ioRef.unobserve(headWrap)
+  },
+
+  watch: {
+    $route(c, p) {
+      this.searchTerm = ''
+    }
   }
 }
 </script>
@@ -168,5 +205,11 @@ header {
   left: -43px;
   align-self: center;
   @apply relative inline-flex;
+}
+.search-results {
+  width: 300px;
+  right: 30px;
+  top: 2.3rem;
+  @apply absolute bg-white-f border border-gray-300 p-3 rounded-lg shadow-2xl;
 }
 </style>
