@@ -75,7 +75,7 @@ module.exports = {
 ```js
 const axios = require('axios')
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.loadSource(async ({ addCollection }) => {
     // Fetch data from APIs
     const { data } = await axios.get('https://any.api.com')

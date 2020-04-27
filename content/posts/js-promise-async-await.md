@@ -30,13 +30,13 @@ title: 자바스크립트 프로미스 정리 (js-promise)
  */
 
 function doSomething(a, b, callback) {
-  setTimeout(function() {
+  setTimeout(function () {
     let sum = a + b
     callback(sum) // Execute callback
   }, 500)
 }
 
-doSomething(1, 2, function(sum) {
+doSomething(1, 2, function (sum) {
   console.log(sum)
 })
 ```
@@ -78,7 +78,7 @@ console.log('end')
 
 ```js
 for (let i of Array(10).keys()) {
-  setTimeout(function() {
+  setTimeout(function () {
     console.log(i)
   }, 150)
 }
@@ -134,7 +134,7 @@ Promise를 사용하기 위해서는 Promise 인터페이스를 따라 함수를
 ```js
 function doSomething(a, b) {
   return new Promise((resolve, reject) => {
-    setTimeout(function() {
+    setTimeout(function () {
       resolve(a + b)
     }, 500)
   })
@@ -192,7 +192,7 @@ Promise Chain을 이용하지 않고 더 직관적으로 손쉽게 이용할 수
 const axios = require('axios')
 const url = 'https://api.myjson.com/bins/11i1x0'
 
-;(async function() {
+;(async function () {
   const { data } = await axios.get(url)
   console.log(data)
 })()

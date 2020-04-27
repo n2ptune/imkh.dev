@@ -35,7 +35,7 @@ sequelize-cli는 시퀄라이즈의 많은 기능들을 CLI에서 이용할 수 
 ```js
 const app = require('express')()
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.send('Hello Express')
 })
 

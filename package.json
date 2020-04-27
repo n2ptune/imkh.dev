@@ -7,7 +7,8 @@
     "explore": "gridsome explore",
     "makefile": "node helpers/makefile/index.js",
     "serve": "serve -n -l 8887",
-    "lint": "prettier --write '**/*.{vue,js}'",
+    "lint": "prettier --config ./.prettierrc --write '**/*.{vue,js}'",
+    "lint-all": "prettier --config ./.prettierrc --write **/*",
     "tree": "ts-node ./helpers/file-tree/index.ts"
   },
   "dependencies": {

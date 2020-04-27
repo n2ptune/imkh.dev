@@ -16,11 +16,11 @@ function TwoNumber(a, b) {
   this.a = a
   this.b = b
 
-  this.sum = function() {
+  this.sum = function () {
     return this.a + this.b
   }
 
-  this.mul = function() {
+  this.mul = function () {
     return this.a * this.b
   }
 }
@@ -63,14 +63,14 @@ function Animal(name, age) {
 
 function Dog(name, age) {
   Animal.call(this, name, age)
-  this.bark = function() {
+  this.bark = function () {
     console.log(`${this.name}: wal! wal!`)
   }
 }
 
 function Bird(name, age) {
   Animal.call(this, name, age)
-  this.bark = function() {
+  this.bark = function () {
     console.log(`${this.name}: Jak! Jak!`)
   }
 }
@@ -100,7 +100,7 @@ console.log(Object.prototype.toString.call(undefined))
 console.log(Object.prototype.toString.call(null))
 console.log(Object.prototype.toString.call(true))
 console.log(Object.prototype.toString.call([]))
-console.log(Object.prototype.toString.call(function() {}))
+console.log(Object.prototype.toString.call(function () {}))
 console.log(Object.prototype.toString.call(new Date()))
 console.log(Object.prototype.toString.call(/^abc+d/))
 console.log(Object.prototype.toString.call(23455))

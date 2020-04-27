@@ -289,7 +289,7 @@ function somethingWork() {
 
   // 어떤 작업이 실행될 부분이라 가정하고
   // 이 작업은 1500ms 후에 실행됨
-  setTimeout(function() {
+  setTimeout(function () {
     console.timeEnd('somethingWork')
   }, 1500)
 }
@@ -308,10 +308,10 @@ function getSomeData() {
   console.time('timeOfSomeData')
 
   fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(function(res) {
+    .then(function (res) {
       console.timeEnd('timeOfSomeData')
     })
-    .catch(function(err) {
+    .catch(function (err) {
       console.error(err)
     })
 }

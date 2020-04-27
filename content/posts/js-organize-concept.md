@@ -81,7 +81,7 @@ function something() {
   console.log("i'm something function")
 }
 
-var something2 = function() {
+var something2 = function () {
   console.log("i'm something2 function")
 }
 ```
@@ -99,7 +99,7 @@ var something2
 something()
 something2() // TypeError: something2 is not a function
 
-something2 = function() {
+something2 = function () {
   console.log("i'm something2 function")
 }
 ```
@@ -130,7 +130,7 @@ var _ = something() // 'something somethingInner'
 function something() {
   var text = 'something ' + somethingInner() // TypeError: somethingInner is not a function
 
-  var somethingInner = function() {
+  var somethingInner = function () {
     return 'somethingInner'
   }
 
@@ -290,7 +290,7 @@ console.log(scope)
 var f = []
 
 for (var i = 0; i < 5; i++) {
-  f[i] = function() {
+  f[i] = function () {
     return i
   }
 }
@@ -307,7 +307,7 @@ console.log(f[1]()) // 기댓값: 1
 var f = []
 
 for (let i = 0; i < 5; i++) {
-  f[i] = function() {
+  f[i] = function () {
     return i
   }
 }

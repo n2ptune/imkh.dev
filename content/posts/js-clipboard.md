@@ -62,8 +62,8 @@ title: 자바스크립트를 이용해서 텍스트를 클립보드에 복사시
 const clipboard = navigator.clipboard
 const button = document.querySelector('button')
 
-button.addEventListener('click', function() {
-  clipboard.writeText('dummy').then(function() {
+button.addEventListener('click', function () {
+  clipboard.writeText('dummy').then(function () {
     window.alert('복사 완료')
   })
 })
@@ -120,7 +120,7 @@ button.addEventListener('click', function() {
 ```js
 const clipboard = new ClipboardJS('.btn')
 
-clipboard.on('success', function(e) {
+clipboard.on('success', function (e) {
   console.info('Action:', e.action)
   console.info('Text:', e.text)
   console.info('Trigger:', e.trigger)

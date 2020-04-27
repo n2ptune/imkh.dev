@@ -80,10 +80,10 @@ console.log(reds['kkk1'], reds.namedItem('kkk1'))
 객체 내의 모든 원소들을 반복 가능한 `iterator`를 반환한다. 반환되는 값은 키와 값이 쌍을 이루고 있는 배열이며 값은 `Node` 객체이다.
 
 ```js
-const reds = document.querySelectorAll('.red');
+const reds = document.querySelectorAll('.red')
 
 for (const entry of reds.entries()) {
-	console.log(entry)
+  console.log(entry)
 }
 // (2) [0, div.red]
 // (2) [1, div.red]
@@ -97,9 +97,9 @@ for (const entry of reds.entries()) {
 일반 자바스크립트 배열 객체에서 사용했던 메소드, 리스트 내에 모든 원소에 대해 인자로 오는 콜백 함수를 실행시킨다.
 
 ```js
-const reds = document.querySelectorAll('.red');
+const reds = document.querySelectorAll('.red')
 
-reds.forEach((red) => console.log(red.tagName))
+reds.forEach(red => console.log(red.tagName))
 // DIV....
 ```
 
@@ -112,15 +112,15 @@ reds.forEach((red) => console.log(red.tagName))
 각각 원소들의 키와 값을 반복가능한 객체인 `iterator`로 반환한다. `for ... of`문에서 사용할 수 있다.
 
 ```js
-const reds = document.querySelectorAll('.red');
+const reds = document.querySelectorAll('.red')
 
 for (const values of reds.values()) {
-	console.log(values)
+  console.log(values)
 }
 // Node 객체...
 
 for (const keys of reds.keys()) {
-	console.log(keys)
+  console.log(keys)
 }
 // 0..1..2..3
 ```
@@ -145,16 +145,16 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 const reds = document.querySelectorAll('.red')
 const redsArr = Array.from(reds)
 
-redsArr.map((red) => console.log(red))
+redsArr.map(red => console.log(red))
 ```
 
 매우 쉬운 방법이다. 다른 이견이 없다면 이 방법을 사용하는 것이 매우 좋아보인다. 하지만 언제나 문제는 IE에서 생기는 법. `Array.from`은 IE에서 구현되지 않았다. 문제를 해결하려면 `Array.from`의 **폴리필**을 사용해야 되는데 이 **폴리필**의 사이즈가 작은 편이 아니니 다른 방법을 쓰자.
 
 ```js
-const reds = document.querySelectorAll(".red");
+const reds = document.querySelectorAll('.red')
 
-const redsArr = Array.prototype.slice.call(reds);
-redsArr.map((red) => console.log(red));
+const redsArr = Array.prototype.slice.call(reds)
+redsArr.map(red => console.log(red))
 ```
 
 `reds`를 `slice` 메소드에 주고 실행시킨다. 그러면 리스트에 대해 얕은 복사본을 만들어 배열로 반환하기 때문에 배열을 받을 수 있다. 이 방법은 매우 낮은 버전의 IE에서도 동작하기 때문에 `Array.from`의 대체재로 사용할 수 있다.

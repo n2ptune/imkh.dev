@@ -101,12 +101,12 @@ const b = require('./js/b')
 
 ```js
 // a.js
-exports.a = function(num) {
+exports.a = function (num) {
   return num + 2
 }
 
 // b.js
-exports.b = function(num) {
+exports.b = function (num) {
   return num - 2
 }
 ```

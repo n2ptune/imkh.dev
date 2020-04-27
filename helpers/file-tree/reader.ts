@@ -6,9 +6,7 @@ function readDirFromPath(path, ext) {
 }
 
 function readFileFromPath(path, encoding = 'utf8') {
-  const _data = readFileSync(path, encoding)
-    .split('\n')
-    .slice(1, 7)
+  const _data = readFileSync(path, encoding).split('\n').slice(1, 7)
 
   const pathFromRoot = '.' + path.split('dev-blog')[1]
   _data.push(`path: ${pathFromRoot}`)
