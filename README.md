@@ -10,6 +10,11 @@
 
 아래 내용은 <a href="./helpers/file-tree/index.ts">스크립트</a>에 의해 자동으로 생성되었습니다.
 
+### web
+
+- <a href="./content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
+- <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
+
 ### javascript
 
 - <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
@@ -75,10 +80,6 @@
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
-
-### web
-
-- <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 
 ### internet
 
