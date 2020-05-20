@@ -15,6 +15,7 @@
 - <a href="./content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
 - <a href="./content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
+- <a href="./content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
 ### javascript
 
@@ -87,6 +88,7 @@
 ### http
 
 - <a href="./content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
+- <a href="./content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
 ### internet
 

@@ -1,7 +1,7 @@
 ---
 description: HTTP에 대한 이해와 정리
 cover_image:
-tags: ['internet']
+tags: ['internet', 'http', 'web']
 published: true
 date: 2020-03-29
 title: HTTP에 대한 이해와 정리 (what-is-http)
