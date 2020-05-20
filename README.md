@@ -13,6 +13,7 @@
 ### web
 
 - <a href="./content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
+- <a href="./content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 
 ### javascript
@@ -21,6 +22,7 @@
 - <a href="./content/posts/js-array-sort.md">자바스크립트 배열 원소 정렬 (js-array-sort)</a>
 - <a href="./content/posts/js-clipboard.md">자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법 (Copy text to clipboard with javascript)</a>
 - <a href="./content/posts/js-console-many-methods.md">Javascript Console Object(자바스크립트 콘솔 객체)</a>
+- <a href="./content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 - <a href="./content/posts/js-memory-management.md">자바스크립트에서의 메모리 관리 (memory-management-in-javascript)</a>
 - <a href="./content/posts/js-module.md">자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)</a>
@@ -71,6 +73,7 @@
 
 - <a href="./content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 - <a href="./content/posts/js-console-colors.md">Nodejs Console Color를 바꿔보자</a>
+- <a href="./content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="./content/posts/js-module.md">자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)</a>
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
@@ -81,8 +84,13 @@
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
 
+### http
+
+- <a href="./content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
+
 ### internet
 
+- <a href="./content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 - <a href="./content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
@@ -90,15 +98,16 @@
 
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 
-### html5
-
-- <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
-
 ### es6
 
+- <a href="./content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="./content/posts/js-object-type-conversion.md">자바스크립트 객체의 타입 형변환 (js-object-type-conversion)</a>
 - <a href="./content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
 - <a href="./content/posts/js-strict-mode.md">자바스크립트 엄격한 모드 (js strict mode)</a>
+
+### html5
+
+- <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
 ### sequelize
 
