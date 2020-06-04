@@ -17,6 +17,17 @@
 - <a href="./content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
 - <a href="./content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
+### css
+
+- <a href="./content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
+- <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
+- <a href="./content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
+
+### html5
+
+- <a href="./content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
+- <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
+
 ### javascript
 
 - <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
@@ -35,11 +46,6 @@
 - <a href="./content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
 - <a href="./content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="./content/posts/js-strict-mode.md">자바스크립트 엄격한 모드 (js strict mode)</a>
-
-### css
-
-- <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
-- <a href="./content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
 
 ### firebase
 
@@ -106,10 +112,6 @@
 - <a href="./content/posts/js-object-type-conversion.md">자바스크립트 객체의 타입 형변환 (js-object-type-conversion)</a>
 - <a href="./content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
 - <a href="./content/posts/js-strict-mode.md">자바스크립트 엄격한 모드 (js strict mode)</a>
-
-### html5
-
-- <a href="./content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
 ### sequelize
 
