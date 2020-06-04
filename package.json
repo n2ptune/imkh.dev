@@ -16,7 +16,6 @@
     "@microflash/gridsome-plugin-feed": "^1.0.4",
     "gridsome": "^0.7.0",
     "gridsome-plugin-flexsearch": "^0.1.19",
-    "gridsome-plugin-rss": "^1.2.0",
     "intersection-observer": "^0.9.0",
     "prismjs": "^1.19.0",
     "smooth-scroll": "^16.1.2",

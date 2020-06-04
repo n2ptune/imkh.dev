@@ -19,20 +19,30 @@ for (const prop in template) {
   const val = template[prop]
 
   if (!val) {
-    result.unshift(`${prop}: `)
+    result.push(`${prop}: `)
   } else {
     if (prop === 'date') {
       const now = new Date()
+
+      const glueZero = t => (t > 9 ? t : '0' + t)
+
       const date = {
-        year: now.getFullYear(),
+        year: now.getUTCFullYear(),
         month:
-          now.getMonth() + 1 > 9
-            ? now.getMonth() + 1
-            : `0${now.getMonth() + 1}`,
-        day: now.getDate() > 9 ? now.getDate() : `0${now.getDate()}`
+          now.getUTCMonth() + 1 > 9
+            ? now.getUTCMonth() + 1
+            : `0${now.getUTCMonth() + 1}`,
+        day: now.getUTCDate() > 9 ? now.getUTCDate() : `0${now.getUTCDate()}`,
+        hours: glueZero(now.getUTCHours()),
+        minutes: glueZero(now.getUTCMinutes()),
+        seconds: glueZero(now.getUTCSeconds())
       }
 
-      result.unshift(`date: ${date.year}-${date.month}-${date.day}`)
+      result.push(
+        `date: ${date.year}-${date.month}-${date.day} ${date.hours}:${
+          date.minutes
+        }:${date.seconds}`
+      )
     }
   }
 }
