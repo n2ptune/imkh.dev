@@ -32,6 +32,7 @@
 
 - <a href="./content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
 - <a href="./content/posts/js-array-sort.md">자바스크립트 배열 원소 정렬 (js-array-sort)</a>
+- <a href="./content/posts/js-classes.md">자바스크립트 프로토타입, 클래스에 대한 개념 이해 (js-classes)</a>
 - <a href="./content/posts/js-clipboard.md">자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법 (Copy text to clipboard with javascript)</a>
 - <a href="./content/posts/js-console-many-methods.md">Javascript Console Object(자바스크립트 콘솔 객체)</a>
 - <a href="./content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
@@ -109,6 +110,7 @@
 
 ### es6
 
+- <a href="./content/posts/js-classes.md">자바스크립트 프로토타입, 클래스에 대한 개념 이해 (js-classes)</a>
 - <a href="./content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="./content/posts/js-object-type-conversion.md">자바스크립트 객체의 타입 형변환 (js-object-type-conversion)</a>
 - <a href="./content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
