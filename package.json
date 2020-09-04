@@ -17,7 +17,7 @@
     "gridsome": "^0.7.20",
     "gridsome-plugin-flexsearch": "^0.1.19",
     "intersection-observer": "^0.9.0",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "smooth-scroll": "^16.1.2",
     "v-tooltip": "^2.0.3",
     "vue-disqus": "^3.0.5",
