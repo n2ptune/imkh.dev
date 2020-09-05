@@ -172,7 +172,7 @@ header {
   height: 3rem;
   z-index: 10;
   background-color: #242424;
-  @apply flex fixed w-full justify-between items-center px-3;
+  @apply flex fixed w-full justify-between items-center px-3 top-0 left-0;
 }
 .header-icon {
   @apply text-white-600 cursor-pointer transition-colors duration-500;

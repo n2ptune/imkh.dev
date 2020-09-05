@@ -33,6 +33,8 @@ aside {
   position: fixed;
   height: 100vh;
   overflow: auto;
+  left: 0;
+  top: 0;
 }
 .wrapper-before {
   @apply flex items-center justify-center h-full px-2 text-white-f;
