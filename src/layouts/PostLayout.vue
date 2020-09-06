@@ -2,10 +2,11 @@
   <main class="font-display relative">
     <PostHeader :title="title" :postByTag="postByTag" />
     <Adsense
-      ad-layout="in-article"
-      ad-slot="2"
+      ad-slot="5087184924"
       ad-format="fluid"
-      ad-responsive="true"
+      ad-client="ca-pub-3441377677018772"
+      ad-layout-key="-fb+5w+4e-db+86"
+      style="display:block"
     />
 
     <slot />
