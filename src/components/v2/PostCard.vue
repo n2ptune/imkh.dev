@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="post-cover-image">
-      <g-link :to="post.path">
+      <a :href="post.path">
         <g-image
           :src="
             post.cover_image ||
@@ -11,12 +11,12 @@
           blur="4"
           class="rounded-lg mb-3"
         />
-      </g-link>
+      </a>
     </div>
     <div class="post-head font-bold text-lg lg:text-2xl">
-      <g-link :to="post.path">
+      <a :href="post.path">
         {{ post.title }}
-      </g-link>
+      </a>
     </div>
     <div
       class="post-descriptor flex flex-row text-sm text-gray-600 items-center"

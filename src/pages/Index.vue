@@ -2,6 +2,7 @@
   <VLayout>
     <PostSection>
       <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+      <Adsense ad-layout="in-article" ad-slot="1" ad-format="fluid" ad-responsive="false" />
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
         <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
@@ -14,6 +15,7 @@
 import PostCard from '@/components/v2/PostCard.vue'
 import CardsHeader from '@/components/v2/CardsHeader.vue'
 import PostSection from '@/components/v2/PostSection.vue'
+import Adsense from '@/components/v2/utils/Adsense.vue'
 
 export default {
   metaInfo() {
@@ -37,7 +39,8 @@ export default {
   components: {
     PostCard,
     CardsHeader,
-    PostSection
+    PostSection,
+    Adsense
   },
 
   created() {
