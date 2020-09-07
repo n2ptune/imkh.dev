@@ -6,7 +6,7 @@
       ad-format="fluid"
       ad-client="ca-pub-3441377677018772"
       ad-layout-key="-fb+5w+4e-db+86"
-      style="display:block"
+      style="display:block;top:3;rem;position:relative;text-align:center;"
     />
 
     <slot />

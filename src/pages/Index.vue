@@ -2,7 +2,14 @@
   <VLayout>
     <PostSection>
       <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
-      <Adsense ad-slot="5087184924" ad-format="-fb+5w+4e-db+86" ad-client="ca-pub-3441377677018772" style="display:block" />
+      <Adsense
+        class="adsbygoogle"
+        style="display:block"
+        ad-format="fluid"
+        ad-layout-key="-5v+c4-v-3m+q2"
+        ad-client="ca-pub-3441377677018772"
+        ad-slot="1204630294"
+      />
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
         <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
