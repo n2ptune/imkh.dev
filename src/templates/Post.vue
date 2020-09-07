@@ -24,6 +24,15 @@
           </g-link>
         </div>
       </div>
+      <div class="adsense-wrap">
+        <Adsense
+          style="display:block"
+          ad-format="fluid"
+          ad-layout-key="-dg+94+1r-oc+12h"
+          ad-client="ca-pub-3441377677018772"
+          ad-slot="5087184924"
+        />
+      </div>
       <PostContent
         :contentHTML="$page.post.content"
         @resolved="generateGallery"
@@ -40,6 +49,7 @@
 import PostContent from '@/components/v2/layouts/PostContent.vue'
 import CommentsPlugin from '@/components/v2/CommentsPlugin.vue'
 import GallerySide from 'vue-gallery-slideshow'
+import Adsense from '@/components/v2/utils/Adsense.vue'
 
 export default {
   metaInfo() {
@@ -101,7 +111,8 @@ export default {
   components: {
     PostContent,
     CommentsPlugin,
-    GallerySide
+    GallerySide,
+    Adsense
   },
 
   computed: {
@@ -205,5 +216,9 @@ query Post ($id: ID!) {
   padding-top: 2rem;
   top: 3rem;
   @apply relative mx-auto px-3;
+}
+
+.adsense-wrap {
+  @apply my-6;
 }
 </style>
