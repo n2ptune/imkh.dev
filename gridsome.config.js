@@ -147,9 +147,9 @@ module.exports = {
                       content.match(/[A-Za-z0-9-_:\/]+/g) || [],
                     extensions: ['vue', 'js', 'css']
                   }
-                ],
-                whitelist: ['svg-inline--fa'],
-                whitelistPatterns: [/shiki/, /fa-$/]
+                ]
+                // whitelist: ['svg-inline--fa'],
+                // whitelistPatterns: [/shiki/, /fa-$/]
               })
             ]
           )
