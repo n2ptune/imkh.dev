@@ -34,7 +34,6 @@ import {
 import '@/styles/prism-custom.css'
 
 /** plugins */
-import VueDisqus from 'vue-disqus'
 import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import { VTooltip } from 'v-tooltip'
@@ -142,6 +141,5 @@ export default function(Vue, { router, head, isClient }) {
 
   // Set plugins
   Vue.use(VueInfiniteLoading)
-  Vue.use(VueDisqus)
   Vue.directive('tooltip', VTooltip)
 }

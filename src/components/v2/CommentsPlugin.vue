@@ -1,6 +1,6 @@
 <template>
   <div class="comments mt-12 mb-24">
-    <vue-disqus
+    <Disqus
       ref="disqus"
       shortname="imkh-dev"
       :identifier="id"
@@ -10,8 +10,14 @@
 </template>
 
 <script>
+import { Disqus } from 'vue-disqus'
+
 export default {
   props: ['id', 'path'],
+
+  components: {
+    Disqus
+  },
 
   watch: {
     path(v) {

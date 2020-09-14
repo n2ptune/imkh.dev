@@ -50,7 +50,7 @@ export default {
   width: var(--left-side-max-width);
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   scrollbar-width: none;
   @apply bg-white-f shadow-2xl;
 }

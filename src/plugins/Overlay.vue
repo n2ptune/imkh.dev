@@ -1,6 +1,15 @@
 <template>
   <transition name="opacity">
-    <div v-if="handler" class="overlay" @click="clickOverlay"></div>
+    <div
+      v-if="handler"
+      :style="{ zIndex, top: distance }"
+      class="overlay"
+      @click="clickOverlay"
+    >
+      <div class="overlay-inner">
+        <slot />
+      </div>
+    </div>
   </transition>
 </template>
 
@@ -11,6 +20,16 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    zIndex: {
+      type: Number,
+      required: false,
+      default: 20
+    },
+    distance: {
+      type: [Number, String],
+      required: false,
+      default: 0
     }
   },
 
@@ -22,7 +41,7 @@ export default {
       switchOverflow(a)
     },
     clickOverlay() {
-      this.$emit('clickOutside')
+      this.$emit('click-outside')
     }
   },
 
@@ -38,11 +57,14 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .overlay {
-  z-index: 0;
   background-color: rgba(0, 0, 0, 0.6);
-  @apply fixed top-0 left-0 w-full h-full;
+  @apply fixed left-0 w-full h-full;
+
+  &-inner {
+    @apply relative;
+  }
 }
 .opacity-enter-active,
 .opacity-leave-active {

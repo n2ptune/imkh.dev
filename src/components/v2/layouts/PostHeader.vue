@@ -2,14 +2,9 @@
   <header>
     <div class="flex items-center">
       <font-awesome
-        :icon="['fas', 'chevron-left']"
-        class="header-icon mr-4"
-        @click="$router.push('/')"
-      />
-      <font-awesome
         :icon="['fas', 'bars']"
         class="header-icon"
-        @click="leftHandle"
+        @click="leftOverlay"
       />
       <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
     </div>
@@ -21,16 +16,20 @@
         {{ splitedTitle }}
       </div>
     </transition>
-    <div>
-      <div class="search-form inline-flex relative hidden lg:inline-flex">
-        <input
+    <div class="header-right">
+      <!-- <div class="search-form inline-flex relative"> -->
+      <!-- <input
           id="search"
           v-model="searchTerm"
           type="text"
           class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 pl-3 pr-8 focus:outline-none focus:bg-white-f text-sm"
           placeholder="Search Posts..."
-        />
-        <div class="search-results" v-if="searchResults.length">
+        /> -->
+      <!-- <font-awesome
+          :icon="['fas', 'search']"
+          class="text-white-800 mr-2 header-icon"
+        /> -->
+      <!-- <div class="search-results" v-if="searchResults.length">
           <div class="text-sm text-purple-600 pb-2 border-b-2 border-gray-400">
             검색 결과({{ searchResults.length }}개)
           </div>
@@ -46,28 +45,42 @@
               </div>
             </div>
           </div>
-        </div>
-        <font-awesome
+        </div> -->
+      <!-- <font-awesome
           :icon="['fas', 'search']"
           class="search-icon text-gray-800"
-        />
-      </div>
+        /> -->
+      <!-- </div> -->
       <font-awesome
-        :icon="['fas', 'ellipsis-h']"
-        class="header-icon"
-        @click="rightHandle"
-      />
+        :icon="['fas', 'search']"
+        class="header-icon mr-2"
+        @click="searchOverlay"
+      ></font-awesome>
     </div>
-    <Overlay :handler="isOpenMenu" @clickOutside="overlayHandle" />
+    <Overlay
+      :handler="isOpenMenu"
+      key="leftMenu"
+      @click-outside="clickOutsideLeftOverlay"
+    />
+    <Overlay
+      :handler="isSearchOverlay"
+      distance="3rem"
+      key="search"
+      @click-outside="clickOutsideSearchOverlay"
+    >
+      <SearchForm />
+    </Overlay>
   </header>
 </template>
 
 <script>
 import PostLeftSide from '@/components/v2/layouts/PostLeftSide.vue'
+import SearchForm from '@/components/v2/search/Form.vue'
 
 export default {
   components: {
-    PostLeftSide
+    PostLeftSide,
+    SearchForm
   },
 
   props: {
@@ -81,6 +94,15 @@ export default {
       default: () => []
     }
   },
+
+  data: () => ({
+    isOpenMenu: false,
+    isShowLeft: false,
+    isShowTitle: false,
+    isSearchOverlay: false,
+    ioRef: null,
+    searchTerm: ''
+  }),
 
   computed: {
     splitedTitle() {
@@ -107,28 +129,19 @@ export default {
     }
   },
 
-  data: () => ({
-    isOpenMenu: false,
-    isShowLeft: false,
-    isShowRight: false,
-    isShowTitle: false,
-    ioRef: null,
-    searchTerm: ''
-  }),
-
   methods: {
-    leftHandle() {
+    leftOverlay() {
       this.isOpenMenu = !this.isOpenMenu
       this.isShowLeft = !this.isShowLeft
     },
-    rightHandle() {
-      this.isOpenMenu = !this.isOpenMenu
-      this.isShowRight = !this.isShowRight
-    },
-    overlayHandle() {
+    clickOutsideLeftOverlay() {
       this.isOpenMenu = false
       if (this.isShowLeft) this.isShowLeft = false
       else if (this.isShowRight) this.isShowRight = false
+    },
+    clickOutsideSearchOverlay() {},
+    searchOverlay() {
+      this.isSearchOverlay = !this.isSearchOverlay
     }
   },
 
@@ -170,7 +183,7 @@ export default {
 <style lang="postcss" scoped>
 header {
   height: 3rem;
-  z-index: 10;
+  z-index: 80;
   background-color: #242424;
   @apply flex fixed w-full justify-between items-center px-3 top-0 left-0;
 }
@@ -197,19 +210,5 @@ header {
 .h-slide-leave {
   transform: translateY(0%);
   opacity: 1;
-}
-.search-form input::placeholder {
-  @apply text-gray-700;
-}
-.search-icon {
-  left: -43px;
-  align-self: center;
-  @apply relative inline-flex;
-}
-.search-results {
-  width: 300px;
-  right: 30px;
-  top: 2.3rem;
-  @apply absolute bg-white-f border border-gray-300 p-3 rounded-lg shadow-2xl;
 }
 </style>

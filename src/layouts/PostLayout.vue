@@ -1,5 +1,5 @@
 <template>
-  <main class="font-display relative">
+  <main>
     <PostHeader :title="title" :postByTag="postByTag" />
     <slot />
     <PostFooter />
@@ -19,3 +19,9 @@ export default {
   props: ['title', 'postByTag']
 }
 </script>
+
+<style lang="postcss" scoped>
+main {
+  @apply font-display relative overflow-hidden;
+}
+</style>
