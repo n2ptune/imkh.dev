@@ -66,4 +66,8 @@ html,
 body {
   background-color: white;
 }
+
+main {
+  @apply overflow-hidden w-full max-w-full;
+}
 </style>

@@ -12,6 +12,7 @@ section {
 }
 
 .wrapper {
+  width: 100%;
   max-width: 800px;
   @apply flex flex-col;
 }
