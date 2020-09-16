@@ -27,9 +27,7 @@ module.exports = {
             fields: ['title', 'tags', 'description']
           }
         ],
-        searchFields: ['title', 'id', 'path'],
-        chunk: true,
-        compress: true
+        searchFields: ['title', 'id', 'path']
       }
     },
     {

@@ -9,9 +9,9 @@
       <ul :style="{ fontSize: '0.9rem' }">
         <li class="pl-3">목차</li>
         <li
-          v-for="heading in navi"
+          v-for="(heading, index) in navi"
           :id="heading.path"
-          :key="heading.path"
+          :key="heading.path + index"
           :class="[
             heading.level ? 'pl-6' : 'pl-3',
             heading.active ? 'active' : ''

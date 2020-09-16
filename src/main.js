@@ -1,6 +1,7 @@
 /** global-css-layout */
 import '@/styles/global.css'
-import DefaultLayout from '@/layouts/Default.vue'
+// Legacy layout
+// import DefaultLayout from '@/layouts/Default.vue'
 import VLayout from '@/layouts/VLayout.vue'
 import PostLayout from '@/layouts/PostLayout.vue'
 
@@ -133,7 +134,7 @@ export default function(Vue, { router, head, isClient }) {
   )
 
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
+  // Vue.component('Layout', DefaultLayout)
   Vue.component('VLayout', VLayout)
   Vue.component('PostLayout', PostLayout)
   Vue.component('font-awesome', FontAwesomeIcon)

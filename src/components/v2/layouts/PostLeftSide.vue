@@ -47,15 +47,12 @@ export default {
 .left {
   --left-side-max-width: 340px;
   --left-side-outside-width: calc(-1 * var(--left-side-max-width));
+
   width: var(--left-side-max-width);
   left: 0;
   top: 0;
   z-index: 100;
-  scrollbar-width: none;
-  @apply bg-white-f shadow-2xl;
-}
-.left::-webkit-scrollbar {
-  display: none;
+  @apply bg-white-f shadow-2xl h-screen;
 }
 .slide-enter-active,
 .slide-leave-active {

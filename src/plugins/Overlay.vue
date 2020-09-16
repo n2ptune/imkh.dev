@@ -60,7 +60,7 @@ export default {
 <style lang="postcss">
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  @apply fixed left-0 w-full h-full;
+  @apply fixed left-0 w-full h-screen;
 
   &-inner {
     @apply relative;

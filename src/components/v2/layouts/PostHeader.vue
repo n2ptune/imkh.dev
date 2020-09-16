@@ -1,56 +1,14 @@
 <template>
   <header>
-    <div class="flex items-center">
+    <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
+    <div class="area">
       <font-awesome
         :icon="['fas', 'bars']"
         class="header-icon"
         @click="leftOverlay"
       />
-      <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
     </div>
-    <transition name="h-slide">
-      <div
-        v-if="isShowTitle"
-        class="text-sm lg:text-base font-bold text-white-700"
-      >
-        {{ splitedTitle }}
-      </div>
-    </transition>
-    <div class="header-right">
-      <!-- <div class="search-form inline-flex relative"> -->
-      <!-- <input
-          id="search"
-          v-model="searchTerm"
-          type="text"
-          class="mr-5 hidden lg:inline-flex bg-white-600 rounded-lg py-1 pl-3 pr-8 focus:outline-none focus:bg-white-f text-sm"
-          placeholder="Search Posts..."
-        /> -->
-      <!-- <font-awesome
-          :icon="['fas', 'search']"
-          class="text-white-800 mr-2 header-icon"
-        /> -->
-      <!-- <div class="search-results" v-if="searchResults.length">
-          <div class="text-sm text-purple-600 pb-2 border-b-2 border-gray-400">
-            검색 결과({{ searchResults.length }}개)
-          </div>
-          <div class="search-wrap mt-4">
-            <div v-for="post in searchResults" :key="post.id" class="mb-2">
-              <div class="text-base">
-                <g-link :to="post.path">
-                  {{ post.title }}
-                </g-link>
-              </div>
-              <div class="text-sm text-gray-700">
-                {{ substringDescription(post.description) }}
-              </div>
-            </div>
-          </div>
-        </div> -->
-      <!-- <font-awesome
-          :icon="['fas', 'search']"
-          class="search-icon text-gray-800"
-        /> -->
-      <!-- </div> -->
+    <div class="area">
       <font-awesome
         :icon="['fas', 'search']"
         class="header-icon mr-2"
@@ -84,10 +42,6 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
     postByTag: {
       type: Array,
       required: false,
@@ -100,22 +54,11 @@ export default {
     isShowLeft: false,
     isShowTitle: false,
     isSearchOverlay: false,
-    ioRef: null,
+    // ioRef: null,
     searchTerm: ''
   }),
 
   computed: {
-    splitedTitle() {
-      let subLength = 30
-
-      if (window.innerWidth) {
-        subLength = window.innerWidth > 870 ? undefined : subLength
-      }
-
-      return this.title.length > 30
-        ? this.title.substring(0, subLength) + (subLength ? '...' : '')
-        : this.title
-    },
     searchResults() {
       const searchTerm = this.searchTerm
       if (searchTerm.length < 3) return []
@@ -145,32 +88,7 @@ export default {
     }
   },
 
-  mounted() {
-    if (process.isClient) {
-      const headWrap = document.querySelector('.head-wrap')
-
-      const io = new IntersectionObserver(
-        entries => {
-          if (entries.some(entry => entry.isIntersecting)) {
-            this.isShowTitle = false
-          } else {
-            this.isShowTitle = true
-          }
-        },
-        {
-          threshold: 1
-        }
-      )
-
-      io.observe(headWrap)
-      this.ioRef = io
-    }
-  },
-
-  beforeDestroy() {
-    const headWrap = document.querySelector('.head-wrap')
-    this.ioRef.unobserve(headWrap)
-  },
+  mounted() {},
 
   watch: {
     $route(c, p) {
@@ -184,18 +102,20 @@ export default {
 header {
   height: 3rem;
   z-index: 80;
-  background-color: #242424;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background-color: transparent;
   @apply flex fixed w-full justify-between items-center px-3 top-0 left-0;
 }
 .header-icon {
-  @apply text-white-600 cursor-pointer transition-colors duration-500;
+  @apply text-purple-500 cursor-pointer transition-colors duration-500;
 }
 .header-icon:hover {
-  @apply text-white-f;
+  @apply text-purple-600;
 }
 /* side */
 .side {
-  @apply fixed h-full bg-white-f;
+  @apply fixed bg-white-f;
 }
 .h-slide-enter-active,
 .h-slide-leave-active {
