@@ -1,7 +1,8 @@
 <template>
   <header>
     <div class="title">
-      <g-image src="@/assets/profile.jpg" class="avatar" />
+      <!-- <g-image src="@/assets/profile.jpg" class="avatar" /> -->
+      <Avatar class="shadow-md object-cover" />
     </div>
     <div class="icon">
       <button class="focus:outline-none" @click="openSideMenu">
@@ -16,7 +17,13 @@
 </template>
 
 <script>
+import Avatar from '@/components/v2/utils/Avatar.vue'
+
 export default {
+  components: {
+    Avatar
+  },
+
   methods: {
     openSideMenu() {
       this.$emit('openSideMenu')
@@ -30,14 +37,7 @@ header {
   @apply flex items-center justify-between relative top-0 h-12 px-3 py-8
   border-b border-gray-200;
 }
-.title {
-  & .avatar {
-    width: 40px;
-    object-fit: cover;
 
-    @apply rounded-full shadow-md;
-  }
-}
 @screen lg {
   header {
     @apply hidden;
