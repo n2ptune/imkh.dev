@@ -7,9 +7,11 @@
       v-show="isVisibleSideMenu"
       @closeSideMenu="closeSideMenuHandler"
       :tags="tags"
+      :style="{ zIndex: 50 }"
     />
     <Overlay
       :handler="isVisibleSideMenu"
+      :z-index="40"
       @clickOutside="closeSideMenuHandler"
     />
   </main>
