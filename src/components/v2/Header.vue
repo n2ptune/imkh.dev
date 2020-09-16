@@ -1,15 +1,14 @@
 <template>
   <header>
     <div class="title">
-      {{ titleName }}
+      <g-image src="@/assets/profile.jpg" class="avatar" />
     </div>
     <div class="icon">
       <button class="focus:outline-none" @click="openSideMenu">
         <font-awesome
-          :icon="['fas', 'ellipsis-h']"
+          :icon="['fas', 'bars']"
           size="lg"
-          color="gray"
-          class="hover:text-gray-700"
+          class="text-purple-500 hover:text-purple-600"
         />
       </button>
     </div>
@@ -18,12 +17,6 @@
 
 <script>
 export default {
-  computed: {
-    titleName() {
-      return '<imkh-dev :welcome="true" />'
-    }
-  },
-
   methods: {
     openSideMenu() {
       this.$emit('openSideMenu')
@@ -34,12 +27,16 @@ export default {
 
 <style lang="postcss" scoped>
 header {
-  @apply flex items-center justify-between relative top-0 h-12 p-3 border-b border-gray-300;
+  @apply flex items-center justify-between relative top-0 h-12 px-3 py-8
+  border-b border-gray-200;
 }
 .title {
-  font-family: 'Hack', monospace;
-  letter-spacing: -1px;
-  @apply font-bold text-base text-red-700;
+  & .avatar {
+    width: 40px;
+    object-fit: cover;
+
+    @apply rounded-full shadow-md;
+  }
 }
 @screen lg {
   header {

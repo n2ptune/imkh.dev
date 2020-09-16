@@ -1,7 +1,6 @@
 <template>
   <VLayout>
     <PostSection>
-      <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
       <Adsense
         class="adsbygoogle"
         style="display:block"
@@ -10,6 +9,7 @@
         ad-client="ca-pub-3441377677018772"
         ad-slot="1204630294"
       />
+      <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
         <infinite-loading @infinite="loadingHandler" spinner="bubbles" />

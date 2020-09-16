@@ -58,16 +58,6 @@
         class="flex flex-wrap justify-center px-6 xl:px-12 tag-wrapper"
         :class="classBindingMobile"
       >
-        <!-- <div
-          v-for="tag in tags"
-          :key="tag.node.id"
-          class="tag"
-          :class="classBindingMobile"
-        >
-          <g-link :to="tag.node.path">
-            {{ tag.node.title }}
-          </g-link>
-        </div> -->
         <g-link
           v-for="tag in tags"
           :key="tag.node.id"
@@ -98,11 +88,11 @@ export default {
 
   computed: {
     classBindingDescriptor() {
-      return this.isSide ? 'text-gray-700' : 'text-white-700'
+      return this.isSide ? 'text-gray-800' : 'text-white-700'
     },
     classBindingIcon() {
       return this.isSide
-        ? 'text-gray-600 focus:text-black'
+        ? 'text-purple-500 focus:text-purple-600'
         : 'text-white-600 hover:text-white-f'
     },
     classBindingMobile() {
@@ -131,7 +121,7 @@ export default {
   mr-1 mb-1;
 }
 .tag.mobile {
-  @apply bg-gray-600 text-white-800;
+  @apply bg-purple-500 text-white-f;
 }
 .tag:not(.mobile):hover {
   @apply bg-white-f text-black;

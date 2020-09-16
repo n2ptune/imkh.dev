@@ -5,14 +5,14 @@
     <slot />
     <MobileSideMenu
       v-show="isVisibleSideMenu"
-      @closeSideMenu="closeSideMenuHandler"
+      @close-side-menu="closeSideMenuHandler"
       :tags="tags"
       :style="{ zIndex: 50 }"
     />
     <Overlay
       :handler="isVisibleSideMenu"
       :z-index="40"
-      @clickOutside="closeSideMenuHandler"
+      @click-outside="closeSideMenuHandler"
     />
   </main>
 </template>
@@ -70,6 +70,12 @@ body {
 }
 
 main {
-  @apply overflow-hidden w-full max-w-full;
+  overflow-x: hidden;
+}
+
+@screen lg {
+  main {
+    overflow-x: visible;
+  }
 }
 </style>

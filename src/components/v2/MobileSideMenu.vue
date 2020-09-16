@@ -28,7 +28,13 @@ export default {
 
   methods: {
     closeSideMenu() {
-      this.$emit('closeSideMenu')
+      this.$emit('close-side-menu')
+    }
+  },
+
+  watch: {
+    '$route.path'() {
+      this.$emit('close-side-menu')
     }
   }
 }
