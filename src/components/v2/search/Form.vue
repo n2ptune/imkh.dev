@@ -1,6 +1,6 @@
 <template>
   <div class="search-form">
-    <div class="text-5xl text-gray-400">
+    <div class="text-5xl text-gray-800 text-center p-2">
       It's not supported now.
     </div>
     <!-- <input
@@ -17,8 +17,8 @@ export default {}
 
 <style lang="postcss" scoped>
 .search-form {
-  @apply flex justify-center items-center
-         w-full h-64 bg-white-f shadow-lg;
+  @apply flex justify-center
+    items-center w-full bg-white-f h-64 shadow-lg;
 
   &__input {
   }

@@ -1,14 +1,17 @@
 <template>
   <header>
     <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
-    <div class="area">
+    <div>
       <font-awesome
         :icon="['fas', 'bars']"
         class="header-icon"
         @click="leftOverlay"
       />
     </div>
-    <div class="area">
+    <div class="flex">
+      <Avatar width="35px" class="shadow-md" />
+    </div>
+    <div>
       <font-awesome
         :icon="['fas', 'search']"
         class="header-icon mr-2"
@@ -34,11 +37,13 @@
 <script>
 import PostLeftSide from '@/components/v2/layouts/PostLeftSide.vue'
 import SearchForm from '@/components/v2/search/Form.vue'
+import Avatar from '@/components/v2/utils/Avatar.vue'
 
 export default {
   components: {
     PostLeftSide,
-    SearchForm
+    SearchForm,
+    Avatar
   },
 
   props: {
@@ -104,7 +109,7 @@ header {
   z-index: 80;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.65);
   @apply flex fixed w-full justify-between items-center px-3 top-0 left-0;
 }
 .header-icon {
