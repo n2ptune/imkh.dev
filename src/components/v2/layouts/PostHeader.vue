@@ -59,7 +59,6 @@ export default {
     isShowLeft: false,
     isShowTitle: false,
     isSearchOverlay: false,
-    // ioRef: null,
     searchTerm: ''
   }),
 

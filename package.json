@@ -17,6 +17,7 @@
     "gridsome": "^0.7.20",
     "gridsome-plugin-flexsearch": "^1.0.4",
     "intersection-observer": "^0.11.0",
+    "lodash.debounce": "^4.0.8",
     "prismjs": "^1.21.0",
     "smooth-scroll": "^16.1.2",
     "v-tooltip": "^2.0.3",

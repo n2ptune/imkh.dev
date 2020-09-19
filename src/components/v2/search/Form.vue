@@ -1,26 +1,94 @@
 <template>
   <div class="search-form">
-    <div class="text-5xl text-gray-800 text-center p-2">
-      It's not supported now.
-    </div>
-    <!-- <input
+    <input
+      v-model="searchText"
       class="search-form__input"
       type="text"
-      placeholder="검색 키워드 ex) javascript, vue..."
-    /> -->
+      placeholder="Javascript, Vue..."
+      @input="waitSearch"
+    />
+    <font-awesome
+      :icon="['fas', 'times']"
+      class="search-form__icon"
+      @click="resetSearchText"
+    />
+    <div class="search-form__result">
+      <ul class="list-wrapper">
+        <!-- <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li> -->
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import debounce from 'lodash.debounce'
+
+export default {
+  data: () => ({
+    searchText: ''
+  }),
+
+  methods: {
+    resetSearchText() {
+      this.searchText = ''
+    },
+    waitSearch: debounce(function() {
+      console.log(this.searchText)
+    }, 500)
+  }
+}
 </script>
 
 <style lang="postcss" scoped>
 .search-form {
-  @apply flex justify-center
-    items-center w-full bg-white-f h-64 shadow-lg;
+  @apply flex justify-center relative flex-wrap
+    items-center w-full bg-white-f shadow-lg overflow-hidden;
 
   &__input {
+    @apply text-3xl mx-2 text-purple-400 my-8;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      @apply text-purple-200;
+    }
+  }
+
+  &__icon {
+    @apply text-purple-200 cursor-pointer text-3xl mx-4;
+
+    &:hover {
+      @apply text-purple-300;
+    }
+  }
+
+  &__result {
+    @apply w-full text-center py-6;
+  }
+}
+
+@screen lg {
+  .search-form {
+    &__input {
+      @apply text-5xl;
+    }
+
+    &__icon {
+      @apply text-5xl;
+    }
   }
 }
 </style>
