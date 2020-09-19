@@ -14,18 +14,9 @@
     />
     <div class="search-form__result">
       <ul class="list-wrapper">
-        <!-- <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li> -->
+        <li v-for="item in searchResults" :key="item.id">
+          {{ item.node.title }}
+        </li>
       </ul>
     </div>
   </div>
@@ -36,7 +27,8 @@ import debounce from 'lodash.debounce'
 
 export default {
   data: () => ({
-    searchText: ''
+    searchText: '',
+    searchResults: []
   }),
 
   methods: {
@@ -44,7 +36,10 @@ export default {
       this.searchText = ''
     },
     waitSearch: debounce(function() {
-      console.log(this.searchText)
+      this.searchResults = this.$search.search({
+        query: this.searchText,
+        limit: 10
+      })
     }, 500)
   }
 }
