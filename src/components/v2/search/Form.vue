@@ -13,9 +13,14 @@
       @click="resetSearchText"
     />
     <div class="search-form__result">
-      <ul class="list-wrapper">
-        <li v-for="item in searchResults" :key="item.id">
-          {{ item.node.title }}
+      <ul v-if="searchResults.length" class="list-wrapper">
+        <li v-for="item in searchResults" :key="item.id" class="list-item">
+          <div class="list-item__title">
+            {{ item.node.title }}
+          </div>
+          <div class="list-item__description">
+            {{ item.node.description }}
+          </div>
         </li>
       </ul>
     </div>
@@ -71,7 +76,17 @@ export default {
   }
 
   &__result {
-    @apply w-full text-center py-6;
+    @apply w-full text-center py-6 mb-4;
+
+    & .list-wrapper {
+      @apply px-4 break-all max-w-xl mx-auto;
+
+      & .list-item {
+        &:not(:last-child) {
+          @apply mb-4;
+        }
+      }
+    }
   }
 }
 
