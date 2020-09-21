@@ -1,4 +1,5 @@
 module.exports = {
+  purge: false,
   theme: {
     fontFamily: {
       mono: ['Hack', 'D2Coding', 'monospace'],

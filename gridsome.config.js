@@ -27,7 +27,12 @@ module.exports = {
             fields: ['title', 'tags', 'description']
           }
         ],
-        searchFields: ['title', 'id', 'path']
+        searchFields: ['title', 'id', 'path', 'tags'],
+        flexsearch: {
+          encode: false,
+          split: /[\x00-\x7F]/,
+          tokenize: 'forward'
+        }
       }
     },
     {
