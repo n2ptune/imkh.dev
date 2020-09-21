@@ -15,36 +15,48 @@
     <div class="search-form__result">
       <ul v-if="searchResults.length" class="list-wrapper">
         <li v-for="item in searchResults" :key="item.id" class="list-item">
-          <div class="list-item__title">
-            {{ item.node.title }}
-          </div>
-          <div class="list-item__description">
-            {{ item.node.description }}
-          </div>
+          <ListItem :item="item.node" />
         </li>
       </ul>
+      <div v-else-if="isSearched" class="no-data">
+        검색 결과가 없습니다. 다른 검색어로 검색해주세요. 🤞🤞
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ListItem from './ListItem.vue'
 import debounce from 'lodash.debounce'
 
 export default {
+  components: {
+    ListItem
+  },
+
   data: () => ({
     searchText: '',
-    searchResults: []
+    searchResults: [],
+    isSearched: false
   }),
 
   methods: {
     resetSearchText() {
       this.searchText = ''
+      this.isSearched = false
     },
     waitSearch: debounce(function() {
+      if (!this.searchText) {
+        this.isSearched = false
+        return
+      }
+
       this.searchResults = this.$search.search({
         query: this.searchText,
         limit: 10
       })
+
+      this.isSearched = true
     }, 500)
   }
 }
@@ -79,13 +91,17 @@ export default {
     @apply w-full text-center py-6 mb-4;
 
     & .list-wrapper {
-      @apply px-4 break-all max-w-xl mx-auto;
+      @apply px-4 break-all max-w-xl mx-auto pb-12;
 
       & .list-item {
         &:not(:last-child) {
           @apply mb-4;
         }
       }
+    }
+
+    & .no-data {
+      @apply text-xl max-w-2xl mx-auto break-all px-6;
     }
   }
 }
@@ -98,6 +114,12 @@ export default {
 
     &__icon {
       @apply text-5xl;
+    }
+
+    &__result {
+      & .no-data {
+        @apply text-2xl;
+      }
     }
   }
 }

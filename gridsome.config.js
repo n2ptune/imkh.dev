@@ -24,14 +24,14 @@ module.exports = {
           {
             typeName: 'Post',
             indexName: 'id',
-            fields: ['title', 'tags', 'description']
+            fields: ['title', 'tags', 'description', 'path', 'id']
           }
         ],
-        searchFields: ['title', 'id', 'path', 'tags'],
+        searchFields: ['title', 'description'],
         flexsearch: {
           encode: false,
           split: /[\x00-\x7F]/,
-          tokenize: 'forward'
+          tokenize: 'full'
         }
       }
     },

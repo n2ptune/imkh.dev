@@ -25,6 +25,7 @@
     />
     <Overlay
       :handler="isSearchOverlay"
+      :style="{ overflow: 'auto' }"
       distance="3rem"
       key="search"
       @click-outside="clickOutsideSearchOverlay"
