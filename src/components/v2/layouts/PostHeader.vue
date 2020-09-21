@@ -30,7 +30,7 @@
       key="search"
       @click-outside="clickOutsideSearchOverlay"
     >
-      <SearchForm />
+      <SearchForm @close-form="closeForm" />
     </Overlay>
   </header>
 </template>
@@ -59,23 +59,8 @@ export default {
     isOpenMenu: false,
     isShowLeft: false,
     isShowTitle: false,
-    isSearchOverlay: false,
-    searchTerm: ''
+    isSearchOverlay: false
   }),
-
-  computed: {
-    searchResults() {
-      const searchTerm = this.searchTerm
-      if (searchTerm.length < 3) return []
-      return this.$search.search({ query: searchTerm, limit: 5 })
-    },
-    substringDescription() {
-      return desciprtion =>
-        desciprtion.length > 50
-          ? desciprtion.substring(0, 50) + '...'
-          : desciprtion
-    }
-  },
 
   methods: {
     leftOverlay() {
@@ -87,17 +72,14 @@ export default {
       if (this.isShowLeft) this.isShowLeft = false
       else if (this.isShowRight) this.isShowRight = false
     },
-    clickOutsideSearchOverlay() {},
+    clickOutsideSearchOverlay() {
+      return
+    },
     searchOverlay() {
       this.isSearchOverlay = !this.isSearchOverlay
-    }
-  },
-
-  mounted() {},
-
-  watch: {
-    $route(c, p) {
-      this.searchTerm = ''
+    },
+    closeForm() {
+      this.isSearchOverlay = false
     }
   }
 }

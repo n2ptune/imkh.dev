@@ -58,6 +58,12 @@ export default {
 
       this.isSearched = true
     }, 500)
+  },
+
+  watch: {
+    $route() {
+      this.$emit('close-form')
+    }
   }
 }
 </script>
