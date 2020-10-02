@@ -3,20 +3,29 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
-  purge: false,
+  purge: true,
   theme: {
-    fontFamily: {
-      mono: ['Hack', 'D2Coding', 'monospace'],
-      display: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Noto Sans"',
-        '"NanumBarunGothic"',
-        'sans-serif'
-      ],
-      head: ['Herbarium']
-    },
+    // fontFamily: {
+    //   mono: ['Hack', 'D2Coding', 'monospace'],
+    //   display: [
+    //     '-apple-system',
+    //     'BlinkMacSystemFont',
+    //     '"Noto Sans"',
+    //     '"NanumBarunGothic"',
+    //     'sans-serif'
+    //   ]
+    // },
     extend: {
+      fontFamily: {
+        mono: ['Hack', 'D2Coding', 'monospace'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Noto Sans"',
+          '"NanumBarunGothic"',
+          'sans-serif'
+        ]
+      },
       fontSize: {
         xl: '1.3rem'
       },
@@ -27,22 +36,6 @@ module.exports = {
         /**
          * @colors https://flatuicolors.com/palette/nl
          */
-        sunflower: '#FFC312',
-        energos: '#C4E538',
-        'blue-martina': '#12CBC4',
-        rose: '#FDA7DF',
-        'bara-red': '#ED4C67',
-        'radiant-yellow': '#F79F1F',
-        'android-green': '#A3CB38',
-        'm-sea': '#1289A7',
-        'lavender-tea': '#D980FA',
-        'very-berry': '#B53471',
-        'puffins-bill': '#EE5A24',
-        'forgotten-purple': '#9980FA',
-        hollyhock: '#833471',
-        'red-pigment': '#EA2027',
-        sea: '#161518',
-        'sea-low': '#27252A',
         white: {
           '100': 'rgba(255, 255, 255, 0.1)',
           '200': 'rgba(255, 255, 255, 0.2)',

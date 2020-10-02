@@ -22,6 +22,6 @@ export default {
 
 <style lang="postcss" scoped>
 main {
-  @apply font-display relative overflow-hidden;
+  @apply relative overflow-hidden;
 }
 </style>

@@ -1,10 +1,11 @@
-@font-face {
-  font-family: Herbarium;
-  src: url(../assets/font/Herbarium.otf);
-  font-weight: normal;
-}
-
 /* purgecss start ignore */
+
+html,
+body {
+  font-size: 19px;
+  font-display: block;
+  font-weight: 500;
+}
 
 img.g-image.g-image--lazy {
   transition: opacity 0.3s linear;
