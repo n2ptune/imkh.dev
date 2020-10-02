@@ -76,12 +76,6 @@ export default function(Vue, { router, head, isClient }) {
       type: 'text/css',
       href:
         'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet'
-    },
-    {
-      rel: 'stylesheet',
-      type: 'text/css',
-      href:
-        'https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css'
     }
   )
 

@@ -3,18 +3,16 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
-  purge: true,
+  purge: {
+    enabled: true,
+    content: [
+      './src/assets/**/*.css',
+      './src/styles/**/*.css',
+      './src/**/*.vue',
+      './src/**/*.js'
+    ]
+  },
   theme: {
-    // fontFamily: {
-    //   mono: ['Hack', 'D2Coding', 'monospace'],
-    //   display: [
-    //     '-apple-system',
-    //     'BlinkMacSystemFont',
-    //     '"Noto Sans"',
-    //     '"NanumBarunGothic"',
-    //     'sans-serif'
-    //   ]
-    // },
     extend: {
       fontFamily: {
         mono: ['Hack', 'D2Coding', 'monospace'],
@@ -22,8 +20,9 @@ module.exports = {
           '-apple-system',
           'BlinkMacSystemFont',
           '"Noto Sans"',
-          '"NanumBarunGothic"',
-          'sans-serif'
+          'NanumSquareRound',
+          'sans-serif',
+          'emoji'
         ]
       },
       fontSize: {

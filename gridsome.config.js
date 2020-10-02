@@ -132,33 +132,10 @@ module.exports = {
             require('postcss-simple-vars'),
             require('postcss-import'),
             require('postcss-nested'),
+            require('cssnano'),
             require('tailwindcss')
           ]
         )
-
-        if (process.env.NODE_ENV === 'production') {
-          options.plugins.push(
-            ...[
-              require('@fullhuman/postcss-purgecss')({
-                content: [
-                  'src/assets/**/*.css',
-                  'src/styles/**/*.css',
-                  'src/**/*.vue',
-                  'src/**/*.js'
-                ],
-                extractors: [
-                  {
-                    extractor: content =>
-                      content.match(/[A-Za-z0-9-_:\/]+/g) || [],
-                    extensions: ['vue', 'js', 'css']
-                  }
-                ]
-                // whitelist: ['svg-inline--fa'],
-                // whitelistPatterns: [/shiki/, /fa-$/]
-              })
-            ]
-          )
-        }
 
         return options
       })

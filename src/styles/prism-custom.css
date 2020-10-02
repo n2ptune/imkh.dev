@@ -1,16 +1,16 @@
 /* purgecss start ignore */
 
 code:not([class*='language-']) {
-  font-family: initial;
-  @apply font-bold text-purple-700;
+  @apply font-bold font-mono text-purple-700;
 }
 
 pre[class*='language-'],
 code[class*='language-'] {
   background: #2d2d2d;
   color: rgba(255, 255, 255, 0.85);
-  font-family: Hack, D2Coding, monospace !important;
   font-size: 0.95rem;
+
+  @apply font-mono !important;
 }
 
 pre[class*='language-'] {

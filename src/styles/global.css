@@ -1,10 +1,16 @@
 /* purgecss start ignore */
 
+@font-face {
+  font-family: 'emoji';
+  src: local('Apple Color Emoji'), local('Segoe UI Emoji'),
+    local('Segoe UI Symbol'), local('Noto Color Emoji');
+}
+
 html,
 body {
-  font-size: 19px;
+  font-size: 18px;
   font-display: block;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 img.g-image.g-image--lazy {
