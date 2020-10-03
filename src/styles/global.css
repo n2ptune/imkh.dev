@@ -8,9 +8,16 @@
 
 html,
 body {
-  font-size: 18px;
-  font-display: block;
+  font-size: 16px;
+  font-display: swap;
   font-weight: 400;
+}
+
+@screen lg {
+  html,
+  body {
+    font-size: 18px;
+  }
 }
 
 img.g-image.g-image--lazy {

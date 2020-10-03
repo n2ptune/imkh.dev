@@ -139,5 +139,7 @@ module.exports = {
 
         return options
       })
+
+    config.plugins.delete('prefetch')
   }
 }

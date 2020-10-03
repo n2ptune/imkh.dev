@@ -7,7 +7,7 @@
         <div class="text-2xl font-bold">
           {{ $page.post.title }}
         </div>
-        <div class="text-sm text-gray-700 mb-1">
+        <div class="text-base text-gray-700 mb-1">
           {{ $page.post.date }}
         </div>
         <div class="text-base text-gray-700">

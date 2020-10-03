@@ -19,7 +19,7 @@
       </a>
     </div>
     <div
-      class="post-descriptor flex flex-row text-sm text-gray-600 items-center"
+      class="post-descriptor flex flex-row text-base text-gray-600 items-center"
     >
       <div>
         {{ post.date }}
