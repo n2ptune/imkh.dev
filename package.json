@@ -42,5 +42,8 @@
     "serve": "^11.3.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
+  },
+  "peerDependencies": {
+    "vue": "2.6.12"
   }
 }
