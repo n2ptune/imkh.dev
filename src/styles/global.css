@@ -13,13 +13,6 @@ body {
   font-weight: 400;
 }
 
-@screen lg {
-  html,
-  body {
-    font-size: 18px;
-  }
-}
-
 img.g-image.g-image--lazy {
   transition: opacity 0.3s linear;
 }
