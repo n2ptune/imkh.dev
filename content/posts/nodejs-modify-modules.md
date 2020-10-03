@@ -39,7 +39,7 @@ npx patch-package [package_name]
 // package.json
 
 "scripts": {
-	"postinstall": "npx patch-package"
+  "postinstall": "npx patch-package"
 }
 ```
 

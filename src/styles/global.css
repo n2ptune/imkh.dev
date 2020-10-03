@@ -1,7 +1,8 @@
 /* purgecss start ignore */
 
 @font-face {
-  font-family: 'emoji';
+  font-family: emoji;
+  font-display: swap;
   src: local('Apple Color Emoji'), local('Segoe UI Emoji'),
     local('Segoe UI Symbol'), local('Noto Color Emoji');
 }

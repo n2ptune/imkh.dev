@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SidebarProfile from '@/components/v2/SidebarProfile'
+import SidebarProfile from '@/components/layouts/main/SidebarProfile.vue'
 
 export default {
   props: {

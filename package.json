@@ -21,7 +21,6 @@
     "postcss-for": "^2.1.1",
     "prismjs": "^1.21.0",
     "smooth-scroll": "^16.1.2",
-    "v-tooltip": "^2.0.3",
     "vue-disqus": "^4.0.1",
     "vue-gallery-slideshow": "^1.5.0",
     "vue-infinite-loading": "^2.4.4",

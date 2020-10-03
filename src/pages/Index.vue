@@ -1,6 +1,6 @@
 <template>
-  <VLayout>
-    <PostSection>
+  <DefaultLayout>
+    <Section>
       <Adsense
         class="adsbygoogle"
         style="display:block"
@@ -14,15 +14,16 @@
       <ClientOnly>
         <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
       </ClientOnly>
-    </PostSection>
-  </VLayout>
+    </Section>
+  </DefaultLayout>
 </template>
 
 <script>
-import PostCard from '@/components/v2/PostCard.vue'
-import CardsHeader from '@/components/v2/CardsHeader.vue'
-import PostSection from '@/components/v2/PostSection.vue'
-import Adsense from '@/components/v2/utils/Adsense.vue'
+import DefaultLayout from '@/layouts/Default.vue'
+import PostCard from '@/components/layouts/main/PostCard.vue'
+import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
+import Section from '@/components/layouts/main/Section.vue'
+import Adsense from '@/components/utils/Adsense.vue'
 
 export default {
   metaInfo() {
@@ -33,6 +34,21 @@ export default {
           key: 'og:title',
           property: 'og:title',
           content: 'Home'
+        },
+        {
+          key: 'og:description',
+          property: 'og:description',
+          content: '웹 기술/개발 개인 블로그'
+        },
+        {
+          key: 'description',
+          name: 'description',
+          content: '웹 기술/개발 개인 블로그'
+        },
+        {
+          key: 'og:url',
+          property: 'og:url',
+          content: 'https://imkh.dev/'
         }
       ]
     }
@@ -44,9 +60,10 @@ export default {
   }),
 
   components: {
+    DefaultLayout,
     PostCard,
     CardsHeader,
-    PostSection,
+    Section,
     Adsense
   },
 

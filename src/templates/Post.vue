@@ -33,10 +33,7 @@
           ad-slot="5087184924"
         />
       </div>
-      <PostContent
-        :contentHTML="$page.post.content"
-        @resolved="generateGallery"
-      />
+      <Content :contentHTML="$page.post.content" @resolved="generateGallery" />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />
@@ -46,10 +43,11 @@
 </template>
 
 <script>
-import PostContent from '@/components/v2/layouts/PostContent.vue'
-import CommentsPlugin from '@/components/v2/CommentsPlugin.vue'
+import PostLayout from '@/layouts/PostLayout.vue'
+import Content from '@/components/layouts/post/Content.vue'
+import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import GallerySide from 'vue-gallery-slideshow'
-import Adsense from '@/components/v2/utils/Adsense.vue'
+import Adsense from '@/components/utils/Adsense.vue'
 
 export default {
   metaInfo() {
@@ -109,7 +107,8 @@ export default {
   }),
 
   components: {
-    PostContent,
+    PostLayout,
+    Content,
     CommentsPlugin,
     GallerySide,
     Adsense

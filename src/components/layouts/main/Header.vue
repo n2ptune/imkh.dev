@@ -1,7 +1,6 @@
 <template>
   <header>
     <div class="title">
-      <!-- <g-image src="@/assets/profile.jpg" class="avatar" /> -->
       <Avatar class="shadow-md object-cover" />
     </div>
     <div class="icon">
@@ -17,7 +16,7 @@
 </template>
 
 <script>
-import Avatar from '@/components/v2/utils/Avatar.vue'
+import Avatar from '@/components/utils/Avatar.vue'
 
 export default {
   components: {

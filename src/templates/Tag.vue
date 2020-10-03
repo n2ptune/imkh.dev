@@ -1,6 +1,6 @@
 <template>
-  <VLayout class="font-display">
-    <PostSection>
+  <DefaultLayout class="font-display">
+    <Section>
       <CardsHeader
         title="tag"
         :tagName="$page.tag.title"
@@ -12,14 +12,15 @@
         :post="post.node"
         class="my-6"
       />
-    </PostSection>
-  </VLayout>
+    </Section>
+  </DefaultLayout>
 </template>
 
 <script>
-import PostCard from '@/components/v2/PostCard.vue'
-import PostSection from '@/components/v2/PostSection.vue'
-import CardsHeader from '@/components/v2/CardsHeader.vue'
+import DefaultLayout from '@/layouts/Default.vue'
+import PostCard from '@/components/layouts/main/PostCard.vue'
+import Section from '@/components/layouts/main/Section.vue'
+import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 
 export default {
   metaInfo() {
@@ -51,8 +52,9 @@ export default {
   },
 
   components: {
+    DefaultLayout,
     PostCard,
-    PostSection,
+    Section,
     CardsHeader
   }
 }

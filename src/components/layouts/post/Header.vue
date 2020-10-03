@@ -1,6 +1,6 @@
 <template>
   <header>
-    <PostLeftSide v-if="isShowLeft" :postByTag="postByTag" />
+    <LeftSide v-if="isShowLeft" :postByTag="postByTag" />
     <div>
       <font-awesome
         :icon="['fas', 'bars']"
@@ -9,7 +9,9 @@
       />
     </div>
     <div class="flex">
-      <Avatar width="35px" class="shadow-md" />
+      <g-link to="/">
+        <Avatar width="35px" class="shadow-md" />
+      </g-link>
     </div>
     <div>
       <font-awesome
@@ -36,13 +38,13 @@
 </template>
 
 <script>
-import PostLeftSide from '@/components/v2/layouts/PostLeftSide.vue'
-import SearchForm from '@/components/v2/search/Form.vue'
-import Avatar from '@/components/v2/utils/Avatar.vue'
+import LeftSide from '@/components/layouts/post/LeftSide.vue'
+import SearchForm from '@/components/search/Form.vue'
+import Avatar from '@/components/utils/Avatar.vue'
 
 export default {
   components: {
-    PostLeftSide,
+    LeftSide,
     SearchForm,
     Avatar
   },

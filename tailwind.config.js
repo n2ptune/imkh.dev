@@ -19,8 +19,9 @@ module.exports = {
         sans: [
           '-apple-system',
           'BlinkMacSystemFont',
-          '"Noto Sans"',
-          'NanumSquareRound',
+          '"Segoe UI"',
+          'Helvetica',
+          'Arial',
           'sans-serif',
           'emoji'
         ]

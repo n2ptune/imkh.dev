@@ -1,19 +1,19 @@
 <template>
   <main>
-    <PostHeader :title="title" :postByTag="postByTag" />
+    <Header :title="title" :postByTag="postByTag" />
     <slot />
-    <PostFooter />
+    <Footer />
   </main>
 </template>
 
 <script>
-import PostHeader from '@/components/v2/layouts/PostHeader.vue'
-import PostFooter from '@/components/v2/layouts/PostFooter.vue'
+import Header from '@/components/layouts/post/Header.vue'
+import Footer from '@/components/layouts/post/Footer.vue'
 
 export default {
   components: {
-    PostHeader,
-    PostFooter
+    Header,
+    Footer
   },
 
   props: ['title', 'postByTag']

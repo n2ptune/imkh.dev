@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Navigation from '@/components/v2/layouts/Navigation.vue'
+import Navigation from '@/components/layouts/post/Navigation.vue'
 
 export default {
   components: {
