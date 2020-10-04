@@ -58,5 +58,10 @@ const header = result.join('\n')
 fs.writeFile(`${postPath}/${fileName}.md`, header, function(err) {
   if (err) {
     throw err
+  } else {
+    if (fileName === 'default') {
+      console.log('No offered name option so fileName has setting default name')
+      console.log("It can offer '--name' option to set fileName")
+    }
   }
 })
