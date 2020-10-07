@@ -1,5 +1,5 @@
 <template>
-  <PostLayout :title="$page.post.title" :postByTag="filterWithoutCurrentPost">
+  <DefaultLayout>
     <section class="wrapper">
       <div
         class="head-wrap border-b-4 border-t-4 border-gray-300 border-dashed py-6 text-center"
@@ -39,11 +39,12 @@
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
-  </PostLayout>
+  </DefaultLayout>
 </template>
 
 <script>
-import PostLayout from '@/layouts/PostLayout.vue'
+// import PostLayout from '@/layouts/PostLayout.vue'
+import DefaultLayout from '@/layouts/Default.vue'
 import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import GallerySide from 'vue-gallery-slideshow'
@@ -107,7 +108,7 @@ export default {
   }),
 
   components: {
-    PostLayout,
+    DefaultLayout,
     Content,
     CommentsPlugin,
     GallerySide,

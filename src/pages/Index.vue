@@ -1,14 +1,6 @@
 <template>
   <DefaultLayout>
     <Section>
-      <Adsense
-        class="adsbygoogle"
-        style="display:block"
-        ad-format="fluid"
-        ad-layout-key="-5v+c4-v-3m+q2"
-        ad-client="ca-pub-3441377677018772"
-        ad-slot="1204630294"
-      />
       <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
@@ -23,7 +15,6 @@ import DefaultLayout from '@/layouts/Default.vue'
 import PostCard from '@/components/layouts/main/PostCard.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 import Section from '@/components/layouts/main/Section.vue'
-import Adsense from '@/components/utils/Adsense.vue'
 
 export default {
   metaInfo() {
@@ -63,8 +54,7 @@ export default {
     DefaultLayout,
     PostCard,
     CardsHeader,
-    Section,
-    Adsense
+    Section
   },
 
   created() {

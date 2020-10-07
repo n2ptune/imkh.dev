@@ -1,19 +1,13 @@
 <template>
-  <main class="font-display">
+  <main>
     <Header @openSideMenu="openSideMenuHandler" />
-    <Sidebar :tags="tags" />
     <slot />
-    <MobileSideMenu
+    <!-- <MobileSideMenu
       v-show="isVisibleSideMenu"
       @close-side-menu="closeSideMenuHandler"
       :tags="tags"
       :style="{ zIndex: 50 }"
-    />
-    <Overlay
-      :handler="isVisibleSideMenu"
-      :z-index="40"
-      @click-outside="closeSideMenuHandler"
-    />
+    /> -->
   </main>
 </template>
 
@@ -71,10 +65,8 @@ body {
 
 main {
   overflow-x: hidden;
-}
 
-@screen lg {
-  main {
+  @screen lg {
     overflow-x: visible;
   }
 }

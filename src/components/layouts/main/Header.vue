@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="title">
+    <!-- <div class="title">
       <Avatar class="shadow-md object-cover" />
     </div>
     <div class="icon">
@@ -11,6 +11,21 @@
           class="text-purple-500 hover:text-purple-600"
         />
       </button>
+    </div> -->
+    <div class="flex items-center">
+      <Avatar class="shadow-2xl object-cover mr-2" width="40px" />
+      <ul class="text-base">
+        <li class="menu-link">
+          <g-link to="/">
+            Home
+          </g-link>
+        </li>
+        <li class="menu-link">
+          <a href="#">
+            Portfolio
+          </a>
+        </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -33,13 +48,19 @@ export default {
 
 <style lang="postcss" scoped>
 header {
-  @apply flex items-center justify-between relative top-0 h-12 px-3 py-8
-  border-b border-gray-200;
-}
+  @apply flex justify-between items-center px-2 py-4 bg-dark-lighten
+  fixed w-full z-50;
 
-@screen lg {
-  header {
-    @apply hidden;
+  @screen md {
+    @apply px-4;
+  }
+
+  & .menu-link {
+    @apply inline-block ml-4 text-white-300;
+
+    & .active--exact {
+      @apply text-white-900 font-bold;
+    }
   }
 }
 </style>

@@ -3,15 +3,18 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true
   },
-  purge: {
-    enabled: true,
-    content: [
-      './src/assets/**/*.css',
-      './src/styles/**/*.css',
-      './src/**/*.vue',
-      './src/**/*.js'
-    ]
-  },
+  purge:
+    process.env.NODE_ENV === 'production'
+      ? {
+          enabled: true,
+          content: [
+            './src/assets/**/*.css',
+            './src/styles/**/*.css',
+            './src/**/*.vue',
+            './src/**/*.js'
+          ]
+        }
+      : false,
   theme: {
     extend: {
       fontFamily: {
@@ -19,6 +22,7 @@ module.exports = {
         sans: [
           '-apple-system',
           'BlinkMacSystemFont',
+          '"Noto Sans"',
           '"Segoe UI"',
           'Helvetica',
           'Arial',
@@ -33,9 +37,21 @@ module.exports = {
         '2xl': '1480px'
       },
       colors: {
-        /**
-         * @colors https://flatuicolors.com/palette/nl
-         */
+        elevation: {
+          '100': 'rgba(255, 255, 255, 0.05)',
+          '200': 'rgba(255, 255, 255, 0.07)',
+          '300': 'rgba(255, 255, 255, 0.08)',
+          '400': 'rgba(255, 255, 255, 0.09)',
+          '500': 'rgba(255, 255, 255, 0.11)',
+          '600': 'rgba(255, 255, 255, 0.12)',
+          '700': 'rgba(255, 255, 255, 0.14)',
+          '800': 'rgba(255, 255, 255, 0.15)',
+          '900': 'rgba(255, 255, 255, 0.16)'
+        },
+        dark: {
+          surface: '#121212',
+          lighten: '#272727'
+        },
         white: {
           '100': 'rgba(255, 255, 255, 0.1)',
           '200': 'rgba(255, 255, 255, 0.2)',
