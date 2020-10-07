@@ -1,6 +1,7 @@
 import { writeFileSync, readFileSync } from 'fs'
-import { startLine, endLine, signature } from './meta'
+import { startLine, endLine } from './meta'
 import { rootPath } from './path'
+import { format } from 'prettier'
 
 function generateMarkdown(context: object, callback: Function): void {
   // Read file README.md
@@ -29,15 +30,8 @@ function generateMarkdown(context: object, callback: Function): void {
     result += mark.join('\n')
   }
 
-  result =
-    splited[0] +
-    startLine +
-    '\n\n' +
-    signature +
-    '\n\n' +
-    result +
-    endLine +
-    splited[1]
+  result = splited[0] + startLine + '\n\n' + result + endLine + splited[1]
+  result = format(result, { parser: 'markdown' })
 
   try {
     writeFileSync(rootPath + '/README.md', result, 'utf8')

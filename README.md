@@ -8,8 +8,6 @@
 
 <!-- Auto generating by file-tree start -->
 
-아래 내용은 <a href="./helpers/file-tree/index.ts">스크립트</a>에 의해 자동으로 생성되었습니다.
-
 ### web
 
 - <a href="/content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
@@ -35,6 +33,7 @@
 - <a href="/content/posts/js-classes.md">자바스크립트 프로토타입, 클래스에 대한 개념 이해 (js-classes)</a>
 - <a href="/content/posts/js-clipboard.md">자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법 (Copy text to clipboard with javascript)</a>
 - <a href="/content/posts/js-console-many-methods.md">Javascript Console Object(자바스크립트 콘솔 객체)</a>
+- <a href="/content/posts/js-design-patterns.md">자바스크립트 디자인 패턴, 모듈 패턴과 옵저버 패턴 (js design patterns)</a>
 - <a href="/content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 - <a href="/content/posts/js-memory-management.md">자바스크립트에서의 메모리 관리 (memory-management-in-javascript)</a>

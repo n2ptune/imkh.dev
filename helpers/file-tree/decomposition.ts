@@ -1,3 +1,5 @@
+import { Content } from './types'
+
 function decomposition(data: string[]) {
   if (!data.length) return
 
@@ -24,9 +26,18 @@ function extractWithTag(data, toJSON = false): any {
   if (!data.length) return
 
   const extract = {}
+  const notArray: Array<Content> = data.filter(
+    (content: Content) => typeof content.tags === 'string'
+  )
 
-  data.forEach(content => {
-    content.tags.forEach(tag => {
+  notArray.forEach(
+    (content: Content): void => {
+      content.tags = [content.tags] as string[]
+    }
+  )
+
+  data.forEach((content: Content) => {
+    ;(content.tags as string[]).forEach(tag => {
       if (!extract.hasOwnProperty(tag)) {
         extract[tag] = { name: tag, data: [] }
         extract[tag].data = [{ title: content.title, path: content.path }]
