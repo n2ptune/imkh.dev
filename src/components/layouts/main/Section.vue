@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container mx-auto relative">
     <div class="wrapper">
       <slot />
     </div>
@@ -8,19 +8,16 @@
 
 <style lang="postcss" scoped>
 section {
-  @apply flex justify-center p-6 relative;
+  top: 6rem;
 }
 
 .wrapper {
-  width: 100%;
-  max-width: 800px;
   @apply flex flex-col;
 }
 
-@screen lg {
+/* @screen lg {
   section {
     width: calc(100% - var(--aside-lg-size));
-    @apply float-right;
   }
 }
 
@@ -28,5 +25,5 @@ section {
   section {
     width: calc(100% - var(--aside-xl-size));
   }
-}
+} */
 </style>

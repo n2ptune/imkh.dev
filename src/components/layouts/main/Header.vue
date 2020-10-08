@@ -1,17 +1,5 @@
 <template>
   <header>
-    <!-- <div class="title">
-      <Avatar class="shadow-md object-cover" />
-    </div>
-    <div class="icon">
-      <button class="focus:outline-none" @click="openSideMenu">
-        <font-awesome
-          :icon="['fas', 'bars']"
-          size="lg"
-          class="text-purple-500 hover:text-purple-600"
-        />
-      </button>
-    </div> -->
     <div class="flex items-center">
       <Avatar class="shadow-2xl object-cover mr-2" width="40px" />
       <ul class="text-base">
