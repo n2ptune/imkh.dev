@@ -2,7 +2,7 @@
 title: 자바스크립트 디자인 패턴, 모듈 패턴과 옵저버 패턴 (js design patterns)
 date: 2020-10-04 02:41:58
 published: true
-tags: 'javascript'
+tags: ['javascript']
 cover_image: ./images/js-design-pattern.jpg
 description: 디자인 패턴 중 2가지, 모듈 패턴과 옵저버 패턴에 대해서 정리하고 자바스크립트로 구현해서 각각의 특징을 알아본다.
 ---
