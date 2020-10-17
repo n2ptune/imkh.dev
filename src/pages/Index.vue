@@ -1,5 +1,7 @@
 <template>
   <DefaultLayout>
+    <!-- <div class="relative">Full Width</div> -->
+    <FullWidthImage />
     <Section>
       <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
@@ -15,6 +17,7 @@ import DefaultLayout from '@/layouts/Default.vue'
 import PostCard from '@/components/layouts/main/PostCard.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 import Section from '@/components/layouts/main/Section.vue'
+import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
 
 export default {
   metaInfo() {
@@ -54,7 +57,8 @@ export default {
     DefaultLayout,
     PostCard,
     CardsHeader,
-    Section
+    Section,
+    FullWidthImage
   },
 
   created() {

@@ -43,7 +43,6 @@
 </template>
 
 <script>
-// import PostLayout from '@/layouts/PostLayout.vue'
 import DefaultLayout from '@/layouts/Default.vue'
 import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'

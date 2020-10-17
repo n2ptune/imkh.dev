@@ -2,24 +2,16 @@
   <main>
     <Header @openSideMenu="openSideMenuHandler" />
     <slot />
-    <!-- <MobileSideMenu
-      v-show="isVisibleSideMenu"
-      @close-side-menu="closeSideMenuHandler"
-      :tags="tags"
-      :style="{ zIndex: 50 }"
-    /> -->
   </main>
 </template>
 
 <script>
 import Header from '@/components/layouts/main/Header.vue'
-import Sidebar from '@/components/layouts/main/Sidebar.vue'
 import MobileSideMenu from '@/components/layouts/main/MobileSideMenu.vue'
 
 export default {
   components: {
     Header,
-    Sidebar,
     MobileSideMenu
   },
 
@@ -58,16 +50,7 @@ query {
 </static-query>
 
 <style lang="postcss" scoped>
-html,
-body {
-  background-color: white;
-}
-
 main {
-  overflow-x: hidden;
-
-  @screen lg {
-    overflow-x: visible;
-  }
+  overflow-y: hidden;
 }
 </style>

@@ -11,19 +11,7 @@ section {
   top: 6rem;
 }
 
-.wrapper {
+/* .wrapper {
   @apply flex flex-col;
-}
-
-/* @screen lg {
-  section {
-    width: calc(100% - var(--aside-lg-size));
-  }
-}
-
-@screen xl {
-  section {
-    width: calc(100% - var(--aside-xl-size));
-  }
 } */
 </style>

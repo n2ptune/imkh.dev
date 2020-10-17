@@ -29,10 +29,3 @@ img.g-image.g-image--lazy.g-image--loaded {
 }
 
 /* purgecss end ignore */
-
-:root {
-  --content-max: 650px;
-  --content-post: 950px;
-  --aside-lg-size: 300px;
-  --aside-xl-size: 500px;
-}
