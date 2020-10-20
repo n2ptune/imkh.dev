@@ -1,12 +1,16 @@
 <template>
   <DefaultLayout>
-    <!-- <div class="relative">Full Width</div> -->
     <FullWidthImage />
     <Section>
-      <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+      <template #header>
+        <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+      </template>
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
-        <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
+        <infinite-loading @infinite="loadingHandler" spinner="bubbles">
+          <div slot="no-more"></div>
+          <div slot="no-results"></div>
+        </infinite-loading>
       </ClientOnly>
     </Section>
   </DefaultLayout>

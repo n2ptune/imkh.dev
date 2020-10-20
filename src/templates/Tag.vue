@@ -1,11 +1,13 @@
 <template>
   <DefaultLayout class="font-display">
     <Section>
-      <CardsHeader
-        title="tag"
-        :tagName="$page.tag.title"
-        :count="$page.tag.belongsTo.totalCount"
-      />
+      <template #header>
+        <CardsHeader
+          title="tag"
+          :tagName="$page.tag.title"
+          :count="$page.tag.belongsTo.totalCount"
+        />
+      </template>
       <PostCard
         v-for="post in $page.tag.belongsTo.edges"
         :key="post.node.id"

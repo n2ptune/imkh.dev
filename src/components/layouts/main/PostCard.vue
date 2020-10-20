@@ -1,7 +1,7 @@
 <template>
   <div class="post">
-    <div class="post-cover-image">
-      <a :href="post.path">
+    <g-link :to="post.path">
+      <div>
         <g-image
           :src="
             post.cover_image ||
@@ -9,32 +9,45 @@
           "
           cover
           blur="4"
-          class="rounded-lg mb-3"
+          class="rounded-none md:rounded-t-lg mb-1"
         />
-      </a>
-    </div>
-    <div class="post-head font-bold text-lg lg:text-2xl">
-      <a :href="post.path">
-        {{ post.title }}
-      </a>
-    </div>
-    <div
-      class="post-descriptor flex flex-row text-base text-gray-600 items-center"
-    >
-      <div>
-        {{ post.date }}
       </div>
-      <div>{{ post.timeToRead }} Min Read</div>
-    </div>
-    <div class="tags">
-      <div v-for="tag in post.tags" :key="tag.id">
-        <g-link :to="tag.path"> #{{ tag.id }} </g-link>
+      <div class="pb-16">
+        <div class="p-4">
+          <div class="text-2xl font-bold title">
+            {{ post.title }}
+          </div>
+          <div class="text-base text-white-400 mt-5">
+            {{ post.description }}
+          </div>
+          <div class="mt-3">
+            <ul class="space-x-2 space-y-1">
+              <li
+                v-for="tag in post.tags"
+                :key="tag.id"
+                class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
+              >
+                <g-link :to="tag.path">
+                  {{ tag.id }}
+                </g-link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="post-body mt-2">
-      {{ post.description }}
-    </div>
-    <div class="outline"></div>
+      <div
+        class="absolute bottom-0 left-0 h-12 w-full border-t border-elevation-300"
+      >
+        <div class="bottom-left space-x-3">
+          <font-awesome :icon="['fas', 'bookmark']" class="inline-block" />
+          <p class="inline-block">{{ post.date }}</p>
+        </div>
+        <div class="bottom-right">
+          읽는 데 {{ post.timeToRead }}분 걸림
+          <span class="text-white-f">{{ toReadLevel }} </span>
+        </div>
+      </div>
+    </g-link>
   </div>
 </template>
 
@@ -45,37 +58,74 @@ export default {
       type: Object,
       required: true
     }
+  },
+
+  computed: {
+    toReadLevel() {
+      const num = this.post.timeToRead
+
+      if (this.between(num, 0, 5)) {
+        return '☕'
+      } else if (this.between(num, 6, 11)) {
+        return '📰'
+      } else if (this.between(num, 12, 20)) {
+        return '🔥'
+      } else {
+        return '😴'
+      }
+    }
+  },
+
+  methods: {
+    /**
+     * @param {number} num
+     * @param {number} min
+     * @param {number} max
+     * @returns {boolean}
+     */
+    between(num, min, max) {
+      return min <= num && num <= max
+    }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
 .post {
-  @apply flex flex-col mb-24;
-}
-.outline {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  @apply bg-gray-300 mt-6;
-}
-.post-descriptor > *:not(:last-child)::after {
-  content: '·';
-  display: inline-block;
-  margin: 0 0.4rem 0 0.2rem;
-  @apply text-lg;
-}
-.tags {
-  @apply text-base text-purple-700 flex flex-wrap;
-}
-.tags > * {
-  @apply m-1 underline;
-}
-.tags > *:first-child {
-  @apply ml-0;
-}
-.tags > *:hover {
-  @apply font-bold;
+  @apply my-3 bg-elevation-200 transition-all duration-300
+  relative;
+
+  flex: 0 1 450px;
+
+  @screen md {
+    @apply m-4 rounded-lg;
+  }
+
+  &:hover {
+    @apply transform -translate-y-1;
+
+    & .title {
+      @apply text-white-f;
+    }
+  }
+
+  & .bottom-right {
+    right: 15px;
+  }
+
+  & .bottom-left {
+    left: 15px;
+  }
+
+  & .bottom-left,
+  & .bottom-right {
+    @apply absolute text-sm text-white-500;
+
+    top: 25%;
+  }
+
+  & .title {
+    @apply text-white-700 transition-colors duration-300;
+  }
 }
 </style>

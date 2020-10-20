@@ -18,6 +18,20 @@ module.exports = {
 
   plugins: [
     {
+      use: 'gridsome-plugin-tailwindcss'
+      /**
+      * These are the default options. You don't need to set any options to get
+      * going. Seriously, you don't need to declare tailwind.config.js.
+
+      options: {
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: true,
+        shouldTimeTravel: true
+      }
+      */
+    },
+    {
       use: 'gridsome-plugin-flexsearch',
       options: {
         collections: [
@@ -46,12 +60,6 @@ module.exports = {
             create: true
           }
         }
-      }
-    },
-    {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-        tailwindConfig: './tailwind.config.js'
       }
     },
     {

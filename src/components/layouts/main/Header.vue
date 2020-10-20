@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="flex items-center">
-      <Avatar class="shadow-2xl object-cover mr-2" width="40px" />
+    <div class="flex items-center w-full">
+      <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" />
       <ul class="text-base">
         <li class="menu-link">
           <g-link to="/">
@@ -14,6 +14,13 @@
           </a>
         </li>
       </ul>
+      <div class="ml-auto">
+        <font-awesome
+          :icon="['fas', 'search']"
+          class="font-normal cursor-pointer transition-colors duration-300 text-white-500 hover:text-white-f"
+          size="lg"
+        />
+      </div>
     </div>
   </header>
 </template>

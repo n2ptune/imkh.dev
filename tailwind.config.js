@@ -23,9 +23,7 @@ module.exports = {
           '-apple-system',
           'BlinkMacSystemFont',
           '"Noto Sans"',
-          '"Segoe UI"',
-          'Helvetica',
-          'Arial',
+          '"Noto Sans KR"',
           'sans-serif',
           'emoji'
         ]
@@ -49,7 +47,7 @@ module.exports = {
           '900': 'rgba(255, 255, 255, 0.16)'
         },
         dark: {
-          surface: '#121212',
+          surface: '#101010',
           lighten: '#272727'
         },
         white: {
