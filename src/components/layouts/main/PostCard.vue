@@ -1,15 +1,13 @@
 <template>
   <div class="post">
     <g-link :to="post.path">
-      <div>
+      <div class="mb-1">
         <g-image
-          :src="
-            post.cover_image ||
-              require('!!assets-loader?!@/assets/default-thumbnail.jpg')
-          "
+          v-if="post.cover_image"
+          :src="post.cover_image"
           cover
           blur="4"
-          class="rounded-none md:rounded-t-lg mb-1"
+          class="rounded-none md:rounded-t-lg"
         />
       </div>
       <div class="pb-16">
@@ -17,7 +15,7 @@
           <div class="text-2xl font-bold title">
             {{ post.title }}
           </div>
-          <div class="text-base text-white-400 mt-5">
+          <div class="text-base text-white-400 mt-5 desc">
             {{ post.description }}
           </div>
           <div class="mt-3">
@@ -107,6 +105,10 @@ export default {
     & .title {
       @apply text-white-f;
     }
+
+    & .desc {
+      @apply text-white-600;
+    }
   }
 
   & .bottom-right {
@@ -124,8 +126,13 @@ export default {
     top: 25%;
   }
 
+  & .title,
+  & .desc {
+    @apply transition-colors duration-300;
+  }
+
   & .title {
-    @apply text-white-700 transition-colors duration-300;
+    @apply text-white-700;
   }
 }
 </style>

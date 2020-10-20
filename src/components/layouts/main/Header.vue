@@ -9,8 +9,13 @@
           </g-link>
         </li>
         <li class="menu-link">
-          <a href="#">
+          <a href="#" target="_blank">
             Portfolio
+          </a>
+        </li>
+        <li class="menu-link">
+          <a href="http://github.com/n2ptune" target="_blank">
+            Github
           </a>
         </li>
       </ul>
@@ -51,10 +56,11 @@ header {
   }
 
   & .menu-link {
-    @apply inline-block ml-4 text-white-300;
+    @apply inline-block ml-4 text-white-300 transition-colors duration-300;
 
-    & .active--exact {
-      @apply text-white-900 font-bold;
+    & .active--exact,
+    &:hover {
+      @apply text-white-700;
     }
   }
 }
