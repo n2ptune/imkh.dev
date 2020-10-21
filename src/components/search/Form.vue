@@ -1,17 +1,20 @@
 <template>
   <div class="search-form">
-    <input
-      v-model="searchText"
-      class="search-form__input"
-      type="text"
-      placeholder="Javascript, Vue..."
-      @input="waitSearch"
-    />
-    <font-awesome
-      :icon="['fas', 'times']"
-      class="search-form__icon"
-      @click="resetSearchText"
-    />
+    <div class="search-form__wrapper">
+      <input
+        v-model="searchText"
+        class="search-form__input"
+        type="text"
+        placeholder="Javascript, Vue..."
+        @input="waitSearch"
+      />
+      <font-awesome
+        v-show="searchText"
+        :icon="['fas', 'times']"
+        class="search-form__icon"
+        @click="resetSearchText"
+      />
+    </div>
     <div class="search-form__result">
       <ul v-if="searchResults.length" class="list-wrapper">
         <li v-for="item in searchResults" :key="item.id" class="list-item">
@@ -19,7 +22,8 @@
         </li>
       </ul>
       <div v-else-if="isSearched" class="no-data">
-        검색 결과가 없습니다. 다른 검색어로 검색해주세요. 🤞🤞
+        검색 결과가 없습니다. 다른 검색어로 검색해주세요.
+        <span class="text-white-f">🤞🤞</span>
       </div>
     </div>
   </div>
@@ -98,25 +102,37 @@ export default {
 <style lang="postcss" scoped>
 .search-form {
   @apply flex justify-center relative flex-wrap
-    items-center w-full bg-white-f shadow-lg overflow-hidden;
+    items-center w-full bg-dark-lighten shadow-lg overflow-hidden
+    text-white-500 px-4;
+
+  &__wrapper {
+    @apply relative;
+  }
 
   &__input {
-    @apply text-3xl mx-2 text-purple-400 my-8;
+    @apply text-3xl text-purple-400 my-8 bg-transparent
+    border-b border-elevation-300 pb-4 w-full;
+
+    @screen md {
+      @apply pr-16 pl-4;
+    }
 
     &:focus {
       outline: none;
     }
 
     &::placeholder {
-      @apply text-purple-200;
+      @apply text-white-200;
     }
   }
 
   &__icon {
-    @apply text-purple-200 cursor-pointer text-3xl mx-4;
+    @apply text-white-200 cursor-pointer text-3xl mx-4 absolute right-0;
+
+    top: 30%;
 
     &:hover {
-      @apply text-purple-300;
+      @apply text-white-500;
     }
   }
 

@@ -10,7 +10,9 @@
       <div class="item-tags">
         <ul class="item-tags-container">
           <li class="tag-item" v-for="(tag, index) in item.tags" :key="index">
-            {{ tag.title }}
+            <g-link :to="tag.path">
+              {{ tag.title }}
+            </g-link>
           </li>
         </ul>
       </div>
@@ -30,21 +32,40 @@ export default {
 
 <style lang="postcss" scoped>
 .item {
-  @apply text-left bg-purple-200 rounded-lg p-4;
+  @apply text-left bg-elevation-300 rounded-lg p-4
+  transition-transform duration-300;
+
+  &:hover {
+    @apply transform -translate-y-2;
+
+    & .item-title {
+      @apply text-white-900;
+    }
+
+    & .item-desc {
+      @apply text-white-700;
+    }
+  }
 
   &-title {
-    @apply text-lg font-bold text-purple-800 mb-2;
+    @apply text-lg font-bold text-white-700 mb-2
+    transition-colors duration-300;
   }
 
   &-desc {
-    @apply text-purple-900 mb-5;
+    @apply text-white-500 mb-5 transition-colors duration-300;
   }
 
   &-tags {
     &-container {
       & .tag-item {
         @apply inline-block mr-2 mb-2 px-4 py-1 rounded-lg
-        bg-purple-800 text-white-f text-sm;
+        bg-elevation-500 text-white-500 text-sm
+        transition-colors duration-300;
+
+        &:hover {
+          @apply text-white-800;
+        }
       }
     }
   }

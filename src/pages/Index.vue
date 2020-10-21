@@ -3,7 +3,7 @@
     <FullWidthImage />
     <Section>
       <template #header>
-        <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+        <CardsHeader :all="allTags" :tops="topTags" />
       </template>
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
@@ -22,6 +22,7 @@ import PostCard from '@/components/layouts/main/PostCard.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 import Section from '@/components/layouts/main/Section.vue'
 import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
+import TagMixins from '@/components/utils/TagMixins'
 
 export default {
   metaInfo() {
@@ -65,6 +66,8 @@ export default {
     FullWidthImage
   },
 
+  mixins: [TagMixins],
+
   created() {
     this.posts.push(...this.$page.posts.edges)
   },
@@ -100,7 +103,7 @@ query ($page: Int) {
       node {
         id
         title
-        date (format: "YYYY년 MMMM DD일", locale: "ko")
+        date (format: "D. MMMM YYYY")
         timeToRead
         description
         path
@@ -108,6 +111,16 @@ query ($page: Int) {
         tags {
           id
           title
+          path
+        }
+      }
+    }
+  }
+  tags: allPost {
+    edges {
+      node {
+        tags {
+          title,
           path
         }
       }

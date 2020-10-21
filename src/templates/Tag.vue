@@ -1,12 +1,9 @@
 <template>
   <DefaultLayout class="font-display">
+    <FullWidthImage />
     <Section>
       <template #header>
-        <CardsHeader
-          title="tag"
-          :tagName="$page.tag.title"
-          :count="$page.tag.belongsTo.totalCount"
-        />
+        <CardsHeader :tops="topTags" :all="allTags" />
       </template>
       <PostCard
         v-for="post in $page.tag.belongsTo.edges"
@@ -23,6 +20,8 @@ import DefaultLayout from '@/layouts/Default.vue'
 import PostCard from '@/components/layouts/main/PostCard.vue'
 import Section from '@/components/layouts/main/Section.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
+import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
+import TagMixins from '@/components/utils/TagMixins'
 
 export default {
   metaInfo() {
@@ -57,8 +56,11 @@ export default {
     DefaultLayout,
     PostCard,
     Section,
-    CardsHeader
-  }
+    CardsHeader,
+    FullWidthImage
+  },
+
+  mixins: [TagMixins]
 }
 </script>
 
@@ -85,6 +87,16 @@ query Tag ($id: ID!) {
               path
             }
           }
+        }
+      }
+    }
+  }
+  tags: allPost {
+    edges {
+      node {
+        tags {
+          title,
+          path
         }
       }
     }
