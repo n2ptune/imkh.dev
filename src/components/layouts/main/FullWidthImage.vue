@@ -44,7 +44,7 @@
 
   & .inner {
     @apply flex flex-col justify-center items-center relative z-20
-    h-full;
+    h-full px-6;
 
     & p {
       @apply text-4xl font-bold text-white-f text-center leading-tight;

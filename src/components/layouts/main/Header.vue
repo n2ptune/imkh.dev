@@ -24,23 +24,46 @@
           :icon="['fas', 'search']"
           class="font-normal cursor-pointer transition-colors duration-300 text-white-500 hover:text-white-f"
           size="lg"
+          @click="handleSearchForm"
         />
       </div>
+      <Overlay
+        :handler="isSearchOverlay"
+        :style="{ overflow: 'auto' }"
+        :z-index="1"
+        distance="72px"
+        key="search"
+        @click-outside="clickOutsideSearchOverlay"
+      >
+        <SearchForm @close-form="closeForm" />
+      </Overlay>
     </div>
   </header>
 </template>
 
 <script>
 import Avatar from '@/components/utils/Avatar.vue'
+import SearchForm from '@/components/search/Form.vue'
 
 export default {
   components: {
-    Avatar
+    Avatar,
+    SearchForm
   },
 
+  data: () => ({
+    isSearchOverlay: false
+  }),
+
   methods: {
-    openSideMenu() {
-      this.$emit('openSideMenu')
+    clickOutsideSearchOverlay() {
+      this.isSearchOverlay = !this.isSearchOverlay
+    },
+    closeForm() {
+      this.isSearchOverlay = false
+    },
+    handleSearchForm() {
+      this.isSearchOverlay = !this.isSearchOverlay
     }
   }
 }

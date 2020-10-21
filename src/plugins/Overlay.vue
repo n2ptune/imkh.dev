@@ -6,7 +6,7 @@
       class="overlay"
       @click="clickOverlay"
     >
-      <div class="overlay-inner">
+      <div ref="inner" class="overlay-inner">
         <slot />
       </div>
     </div>
@@ -40,10 +40,14 @@ export default {
 
       switchOverflow(a)
     },
-    clickOverlay() {
-      this.$emit('click-outside')
+    clickOverlay(e) {
+      if (e.target === this.$el) {
+        this.$emit('click-outside')
+      }
     }
   },
+
+  mounted() {},
 
   beforeDestroy() {
     this.handleOverlay(false, true)

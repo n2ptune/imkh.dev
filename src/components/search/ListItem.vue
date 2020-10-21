@@ -5,12 +5,12 @@
         {{ item.title }}
       </div>
       <div class="item-desc">
-        {{ item.description }}
+        {{ item.excerpt + '...' }}
       </div>
       <div class="item-tags">
         <ul class="item-tags-container">
           <li class="tag-item" v-for="(tag, index) in item.tags" :key="index">
-            {{ tag }}
+            {{ tag.title }}
           </li>
         </ul>
       </div>

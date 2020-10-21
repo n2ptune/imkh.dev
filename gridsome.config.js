@@ -32,24 +32,6 @@ module.exports = {
       */
     },
     {
-      use: 'gridsome-plugin-flexsearch',
-      options: {
-        collections: [
-          {
-            typeName: 'Post',
-            indexName: 'id',
-            fields: ['title', 'tags', 'description', 'path', 'id']
-          }
-        ],
-        searchFields: ['title', 'description'],
-        flexsearch: {
-          encode: false,
-          split: /[\x00-\x7F]/,
-          tokenize: 'full'
-        }
-      }
-    },
-    {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',

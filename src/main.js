@@ -14,6 +14,7 @@ import {
 import '@/styles/prism-custom.css'
 import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
+import VueFuse from 'vue-fuse'
 
 library.add(faGithub, faTimes, faBars, faSearch, faArrowRight, faBookmark)
 
@@ -23,4 +24,5 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('font-awesome', FontAwesomeIcon)
   Vue.component('Overlay', Overlay)
   Vue.use(VueInfiniteLoading)
+  Vue.use(VueFuse)
 }

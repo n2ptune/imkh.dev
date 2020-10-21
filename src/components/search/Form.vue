@@ -25,6 +25,26 @@
   </div>
 </template>
 
+<static-query>
+query {
+  allPost {
+    edges {
+      node {
+        title
+        excerpt
+        date
+        path
+        tags {
+          id
+          title
+          path
+        }
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import ListItem from './ListItem.vue'
 import debounce from 'lodash.debounce'
@@ -37,8 +57,13 @@ export default {
   data: () => ({
     searchText: '',
     searchResults: [],
-    isSearched: false
+    isSearched: false,
+    posts: []
   }),
+
+  created() {
+    this.posts = this.$static.allPost.edges
+  },
 
   methods: {
     resetSearchText() {
@@ -47,13 +72,15 @@ export default {
     },
     waitSearch: debounce(function() {
       if (!this.searchText) {
+        this.searchResults = []
         this.isSearched = false
         return
       }
 
-      this.searchResults = this.$search.search({
-        query: this.searchText,
-        limit: 10
+      this.$search(this.searchText, this.posts, {
+        keys: ['node.title', 'node.excerpt', 'node.tags.title']
+      }).then(result => {
+        this.searchResults = result
       })
 
       this.isSearched = true
