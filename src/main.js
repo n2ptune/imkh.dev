@@ -9,14 +9,23 @@ import {
   faBars,
   faSearch,
   faArrowRight,
-  faBookmark
+  faBookmark,
+  faChevronDown
 } from '@fortawesome/free-solid-svg-icons'
 import '@/styles/prism-custom.css'
 import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import VueFuse from 'vue-fuse'
 
-library.add(faGithub, faTimes, faBars, faSearch, faArrowRight, faBookmark)
+library.add(
+  faGithub,
+  faTimes,
+  faBars,
+  faSearch,
+  faArrowRight,
+  faBookmark,
+  faChevronDown
+)
 
 export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }

@@ -11,7 +11,7 @@
 section {
   @apply mb-64;
 
-  top: 6rem;
+  top: 5rem;
 
   & .wrapper {
     @apply flex flex-row flex-wrap justify-center;
