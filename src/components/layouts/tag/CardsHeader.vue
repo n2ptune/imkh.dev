@@ -11,22 +11,7 @@
           />
         </span>
       </div>
-      <transition name="top-appear" appear>
-        <div v-if="visibleDropdown" class="dropdown">
-          <ul class="break-words">
-            <li
-              v-for="tag in all"
-              :key="tag.title"
-              class="inline-block mx-1 my-1"
-            >
-              <g-link :to="tag.path" class="space-x-2">
-                <span class="hover:underline">{{ tag.title }}</span>
-                <span class="text-base text-white-300">({{ tag.count }})</span>
-              </g-link>
-            </li>
-          </ul>
-        </div>
-      </transition>
+      <Dropdown v-if="visibleDropdown" :tags="all" @close="handleDropdown" />
     </div>
     <div class="hidden md:block">
       <ul class="text-lg space-x-5">
@@ -43,7 +28,13 @@
 </template>
 
 <script>
+import Dropdown from './Dropdown.vue'
+
 export default {
+  components: {
+    Dropdown
+  },
+
   props: {
     tops: {
       type: Array
@@ -65,6 +56,7 @@ export default {
 
   watch: {
     $route() {
+      // 페이지 경로가 바뀌면 드롭다운 닫음
       if (this.visibleDropdown) {
         this.visibleDropdown = false
       }
@@ -72,30 +64,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.top-appear {
-  &-enter-active,
-  &-leave-active {
-    @apply transition duration-500;
-  }
-
-  &-enter,
-  &-leave-to {
-    @apply transform -translate-y-4 opacity-0;
-  }
-
-  &-enter-to,
-  &-leave {
-    @apply transform translate-y-0 opacity-100;
-  }
-}
-
-.dropdown {
-  @apply absolute z-20 bg-dark-lighten shadow-xl text-white-700
-  px-2 py-4 rounded-lg left-0 text-xl;
-
-  top: 3rem;
-  min-width: 450px;
-}
-</style>
