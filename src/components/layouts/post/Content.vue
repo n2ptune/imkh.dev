@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
-    <section v-html="contentHTML" data-target-content></section>
-    <Navigation :content="contentHTML" />
+    <section v-html="md" data-target-content></section>
+    <Navigation :content="md" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   }),
 
   props: {
-    contentHTML: {
+    md: {
       type: String,
       required: true
     }
@@ -38,6 +38,7 @@ export default {
         )
         const images = [...this.$el.getElementsByTagName('img')]
         this.galleryImages.push(...images)
+
         // emit event to parent component after loaded all images
         this.$emit('resolved', {
           images: this.galleryImages
@@ -75,25 +76,6 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  /* Heading Start */
-  @for $i from 1 to 6 {
-    & >>> h$(i) {
-      @apply my-6 font-bold;
-    }
-  }
-  & >>> h1 {
-    @apply text-3xl;
-  }
-  & >>> h2 {
-    @apply text-2xl;
-  }
-  & >>> h3 {
-    @apply text-xl;
-  }
-  & >>> h4 {
-    @apply text-lg;
-  }
-  /* Heading End */
   /* List Start */
   & >>> ul,
   & >>> ol {
@@ -119,20 +101,5 @@ section {
     @apply cursor-pointer my-16;
   }
   /* Image End */
-  /* Link Start */
-  & >>> a:before {
-  }
-  & >>> a {
-    @apply text-blue-600 underline;
-  }
-  & >>> a:hover {
-    @apply font-bold;
-  }
-  /* Link End */
-  /* Blockquote Start */
-  & >>> blockquote {
-    @apply text-center py-1 px-4 bg-gray-200 text-gray-700 italic border-l-4 border-gray-500 rounded;
-  }
-  /* Blockquote End */
 }
 </style>

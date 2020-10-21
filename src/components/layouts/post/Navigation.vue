@@ -37,7 +37,7 @@ export default {
   data: () => ({
     contentOffset: 0,
     offsetAside: 0,
-    leftMargin: 15,
+    leftMargin: 40,
     target: null,
     isFixed: null,
     navi: null
@@ -156,7 +156,7 @@ aside {
 
 @screen 2xl {
   aside {
-    top: 5rem;
+    top: 10rem;
     @apply flex fixed;
   }
   aside ul li {

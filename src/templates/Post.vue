@@ -1,30 +1,7 @@
 <template>
   <DefaultLayout>
     <section class="wrapper">
-      <div
-        class="head-wrap border-b-4 border-t-4 border-gray-300 border-dashed py-6 text-center"
-      >
-        <div class="text-2xl font-bold">
-          {{ $page.post.title }}
-        </div>
-        <div class="text-base text-gray-700 mb-1">
-          {{ $page.post.date }}
-        </div>
-        <div class="text-base text-gray-700">
-          {{ $page.post.description }}
-        </div>
-        <div class="flex mt-3 justify-center">
-          <g-link
-            v-for="tag in $page.post.tags"
-            :to="tag.path"
-            :key="tag.id"
-            class="py-1 px-2 mr-2 bg-purple-200 rounded-lg cursor-pointer transition-colors duration-500 hover:bg-purple-300"
-          >
-            #{{ tag.title }}
-          </g-link>
-        </div>
-      </div>
-      <div class="adsense-wrap">
+      <!-- <div class="adsense-wrap">
         <Adsense
           style="display:block"
           ad-format="fluid"
@@ -32,8 +9,8 @@
           ad-client="ca-pub-3441377677018772"
           ad-slot="5087184924"
         />
-      </div>
-      <Content :contentHTML="$page.post.content" @resolved="generateGallery" />
+      </div> -->
+      <Content :md="$page.post.content" @resolved="generateGallery" />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />
@@ -115,33 +92,25 @@ export default {
   },
 
   computed: {
-    filterWithoutCurrentPost() {
-      const current = this.$page.post.id
-      /** @type {object[]} */
-      const tags = this.$page.post.tags
-      const result = []
-
-      for (let i = 0; i < tags.length; i++) {
-        result.push({
-          id: tags[i].id,
-          title: tags[i].title,
-          path: tags[i].path,
-          node: tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
-        })
-      }
-
-      return result.filter(n => n.node.length)
-    }
+    // filterWithoutCurrentPost() {
+    //   const current = this.$page.post.id
+    //   /** @type {object[]} */
+    //   const tags = this.$page.post.tags
+    //   const result = []
+    //   for (let i = 0; i < tags.length; i++) {
+    //     result.push({
+    //       id: tags[i].id,
+    //       title: tags[i].title,
+    //       path: tags[i].path,
+    //       node: tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
+    //     })
+    //   }
+    //   return result.filter(n => n.node.length)
+    // }
   },
 
   watch: {
     $route(c, p) {
-      if (process.isClient) {
-        ;(function(overlay) {
-          if (overlay) overlay.click()
-        })(document.querySelector('.overlay'))
-      }
-
       this.index = null
       this.images = []
     }
@@ -161,7 +130,11 @@ export default {
 
   mounted() {
     if (process.isClient) {
-      require('intersection-observer')
+      if (!IntersectionObserver in window) {
+        console.warn('import intersection observer polyfill')
+        require('intersection-observer')
+      }
+      // 임베디드 삽입 head에 집어 넣든가 바꿔야 함
       const codepen = document.createElement('script')
       codepen.src = 'https://static.codepen.io/assets/embed/ei.js'
       this.$el.appendChild(codepen)
@@ -206,18 +179,23 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="postcss" scoped>
-.wrapper {
-  --contents-max-width: 800px;
-
-  /* overflow-x: hidden; */
-  overflow-wrap: break-word;
-  max-width: var(--contents-max-width);
-  padding-top: 2rem;
-  top: 3rem;
-  @apply relative mx-auto px-3;
-}
-
 .adsense-wrap {
   @apply my-6;
+}
+
+.wrapper {
+  @apply relative mx-auto mb-64 py-10 px-4 rounded-xl shadow-xl
+  bg-elevation-200 text-white-800;
+
+  max-width: 750px;
+  top: 10rem;
+
+  @screen md {
+    @apply px-6;
+  }
+
+  @screen lg {
+    @apply px-10;
+  }
 }
 </style>
