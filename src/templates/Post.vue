@@ -1,7 +1,7 @@
 <template>
   <DefaultLayout>
     <section class="wrapper">
-      <header class="mb-12 break-words">
+      <!-- <header class="mb-12 break-words">
         <div class="text-white-300 mb-4 text-sm space-x-2">
           <span class="text-white-700">
             읽는 데 {{ $page.post.timeToRead }}분
@@ -27,7 +27,8 @@
             </g-link>
           </li>
         </ul>
-      </header>
+      </header> -->
+      <Header :post="$page.post" />
       <div class="break"></div>
       <!-- <div class="adsense-wrap">
         <Adsense
@@ -52,12 +53,12 @@
 
 <script>
 import DefaultLayout from '@/layouts/Default.vue'
+import Header from '@/components/layouts/post/Header.vue'
 import GallerySide from 'vue-gallery-slideshow'
 import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import Adsense from '@/components/utils/Adsense.vue'
 import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
-import TimeReadMixins from '@/components/mixins/TimeReadMixins'
 
 export default {
   metaInfo() {
@@ -118,14 +119,13 @@ export default {
 
   components: {
     DefaultLayout,
+    Header,
     Content,
     CommentsPlugin,
     GallerySide,
     Adsense,
     RelatedPosts
   },
-
-  mixins: [TimeReadMixins],
 
   computed: {
     filterWithoutCurrentPost() {

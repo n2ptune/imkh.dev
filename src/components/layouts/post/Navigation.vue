@@ -92,9 +92,8 @@ export default {
       this.navi.map(n => n.isActive(y))
 
       const heightScope = this.$parent.$el.clientHeight
-      const margin = 500
 
-      if (y >= margin + heightScope) {
+      if (y >= heightScope) {
         this.isFixed = false
       } else {
         this.isFixed = true
@@ -147,16 +146,15 @@ export default {
 <style lang="postcss" scoped>
 .slide-navigation-enter-active,
 .slide-navigation-leave-active {
-  transition: opacity 0.45s ease;
+  @apply transition-opacity duration-300;
 }
 .slide-navigation-enter,
 .slide-navigation-leave-to {
-  opacity: 0;
+  @apply opacity-0;
 }
 .slide-navigation-enter-to,
 .slide-navigation-leave {
-  transform: translateY(0);
-  opacity: 1;
+  @apply opacity-100;
 }
 
 aside {

@@ -1,13 +1,15 @@
 <template>
   <div class="post">
     <div class="mb-1">
-      <g-image
-        v-if="post.cover_image"
-        :src="post.cover_image"
-        cover
-        blur="4"
-        class="rounded-none md:rounded-t-lg"
-      />
+      <g-link :to="post.path">
+        <g-image
+          v-if="post.cover_image"
+          :src="post.cover_image"
+          cover
+          blur="4"
+          class="rounded-none md:rounded-t-lg"
+        />
+      </g-link>
     </div>
     <g-link :to="post.path">
       <div class="pb-16">
