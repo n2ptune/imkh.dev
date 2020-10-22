@@ -129,3 +129,9 @@ query ($page: Int) {
   }
 }
 </page-query>
+
+<style lang="postcss">
+.infinite-loading-container {
+  @apply w-full;
+}
+</style>

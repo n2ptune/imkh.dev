@@ -1,6 +1,6 @@
 .cache
 content/posts/images
-dist
 static
+dist
 
 src/.temp

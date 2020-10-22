@@ -1,15 +1,15 @@
 <template>
   <div class="post">
+    <div class="mb-1">
+      <g-image
+        v-if="post.cover_image"
+        :src="post.cover_image"
+        cover
+        blur="4"
+        class="rounded-none md:rounded-t-lg"
+      />
+    </div>
     <g-link :to="post.path">
-      <div class="mb-1">
-        <g-image
-          v-if="post.cover_image"
-          :src="post.cover_image"
-          cover
-          blur="4"
-          class="rounded-none md:rounded-t-lg"
-        />
-      </div>
       <div class="pb-16">
         <div class="p-4">
           <div class="text-2xl font-bold title">
@@ -33,19 +33,19 @@
           </div>
         </div>
       </div>
-      <div
-        class="absolute bottom-0 left-0 h-12 w-full border-t border-elevation-300"
-      >
-        <div class="bottom-left space-x-3">
-          <font-awesome :icon="['fas', 'bookmark']" class="inline-block" />
-          <p class="inline-block">{{ post.date }}</p>
-        </div>
-        <div class="bottom-right">
-          읽는 데 {{ post.timeToRead }}분 걸림
-          <span class="text-white-f">{{ toReadLevel(post.timeToRead) }} </span>
-        </div>
-      </div>
     </g-link>
+    <div
+      class="absolute bottom-0 left-0 h-12 w-full border-t border-elevation-300"
+    >
+      <div class="bottom-left space-x-3">
+        <font-awesome :icon="['fas', 'bookmark']" class="inline-block" />
+        <p class="inline-block">{{ post.date }}</p>
+      </div>
+      <div class="bottom-right">
+        읽는 데 {{ post.timeToRead }}분 걸림
+        <span class="text-white-f">{{ toReadLevel(post.timeToRead) }} </span>
+      </div>
+    </div>
   </div>
 </template>
 
