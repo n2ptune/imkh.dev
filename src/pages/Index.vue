@@ -93,7 +93,7 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  posts: allPost(filter: { published: { eq: true }}, perPage: 5, page: $page) @paginate {
+  posts: allPost(filter: { published: { eq: true }}, perPage: 6, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage

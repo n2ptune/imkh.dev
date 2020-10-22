@@ -1,27 +1,29 @@
 <template>
-  <aside
-    v-if="isFixed"
-    :style="{
-      left: isFixed ? offsetAside + leftMargin + 'px' : 0
-    }"
-  >
-    <ul :style="{ fontSize: '0.9rem' }">
-      <li class="pl-3 active">목차</li>
-      <li
-        v-for="(heading, index) in navi"
-        :id="heading.path"
-        :key="heading.path + index"
-        :class="[
-          heading.level ? 'pl-6' : 'pl-3',
-          heading.active ? 'active' : ''
-        ]"
-      >
-        <a :href="'#' + heading.path" @click="anchor">
-          {{ heading.title }}
-        </a>
-      </li>
-    </ul>
-  </aside>
+  <transition name="slide-navigation" appear>
+    <aside
+      v-if="isFixed"
+      :style="{
+        left: isFixed ? offsetAside + leftMargin + 'px' : 0
+      }"
+    >
+      <ul :style="{ fontSize: '0.9rem' }">
+        <li class="pl-3 active">목차</li>
+        <li
+          v-for="(heading, index) in navi"
+          :id="heading.path"
+          :key="heading.path + index"
+          :class="[
+            heading.level ? 'pl-6' : 'pl-3',
+            heading.active ? 'active' : ''
+          ]"
+        >
+          <a :href="'#' + heading.path" @click="anchor">
+            {{ heading.title }}
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </transition>
 </template>
 
 <script>
@@ -88,6 +90,15 @@ export default {
       const y = window.pageYOffset
 
       this.navi.map(n => n.isActive(y))
+
+      const heightScope = this.$parent.$el.clientHeight
+      const margin = 500
+
+      if (y >= margin + heightScope) {
+        this.isFixed = false
+      } else {
+        this.isFixed = true
+      }
     },
     anchor(event) {
       event.preventDefault()
@@ -134,6 +145,20 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.slide-navigation-enter-active,
+.slide-navigation-leave-active {
+  transition: opacity 0.45s ease;
+}
+.slide-navigation-enter,
+.slide-navigation-leave-to {
+  opacity: 0;
+}
+.slide-navigation-enter-to,
+.slide-navigation-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 aside {
   @apply hidden;
 }
