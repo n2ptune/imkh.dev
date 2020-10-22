@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative mt-24">
     <section v-html="md" data-target-content></section>
     <Navigation :content="md" />
   </div>
@@ -76,6 +76,8 @@ export default {
 
 <style lang="postcss" scoped>
 section {
+  @apply break-words;
+
   /* List Start */
   & >>> ul,
   & >>> ol {
@@ -94,11 +96,8 @@ section {
   }
   /* Typography End */
   /* Image Start */
-  & >>> img.not-overflow-width {
-    @apply mx-auto;
-  }
   & >>> img {
-    @apply cursor-pointer my-16;
+    @apply cursor-pointer my-16 mx-auto;
   }
   /* Image End */
 }

@@ -1,6 +1,34 @@
 <template>
   <DefaultLayout>
     <section class="wrapper">
+      <header class="mb-12 break-words">
+        <div class="text-white-300 mb-4 text-sm space-x-2">
+          <span class="text-white-700">
+            읽는 데 {{ $page.post.timeToRead }}분
+            <span class="text-white-f">
+              {{ toReadLevel($page.post.timeToRead) }}
+            </span>
+          </span>
+          <span class="italic float-right">
+            {{ $page.post.date }}
+          </span>
+        </div>
+        <div class="text-white-f text-4xl font-bold leading-tight mb-4">
+          {{ $page.post.title }}
+        </div>
+        <ul class="space-x-2 space-y-1">
+          <li
+            v-for="tag in $page.post.tags"
+            :key="tag.id"
+            class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
+          >
+            <g-link :to="tag.path">
+              {{ tag.title }}
+            </g-link>
+          </li>
+        </ul>
+      </header>
+      <div class="break"></div>
       <!-- <div class="adsense-wrap">
         <Adsense
           style="display:block"
@@ -16,15 +44,20 @@
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
+    <ClientOnly>
+      <RelatedPosts v-if="filterWithoutCurrentPost.length" :posts="related" />
+    </ClientOnly>
   </DefaultLayout>
 </template>
 
 <script>
 import DefaultLayout from '@/layouts/Default.vue'
+import GallerySide from 'vue-gallery-slideshow'
 import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
-import GallerySide from 'vue-gallery-slideshow'
 import Adsense from '@/components/utils/Adsense.vue'
+import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
+import TimeReadMixins from '@/components/mixins/TimeReadMixins'
 
 export default {
   metaInfo() {
@@ -88,25 +121,76 @@ export default {
     Content,
     CommentsPlugin,
     GallerySide,
-    Adsense
+    Adsense,
+    RelatedPosts
   },
 
+  mixins: [TimeReadMixins],
+
   computed: {
-    // filterWithoutCurrentPost() {
-    //   const current = this.$page.post.id
-    //   /** @type {object[]} */
-    //   const tags = this.$page.post.tags
-    //   const result = []
-    //   for (let i = 0; i < tags.length; i++) {
-    //     result.push({
-    //       id: tags[i].id,
-    //       title: tags[i].title,
-    //       path: tags[i].path,
-    //       node: tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
-    //     })
-    //   }
-    //   return result.filter(n => n.node.length)
-    // }
+    filterWithoutCurrentPost() {
+      const current = this.$page.post.id
+      const tags = this.$page.post.tags
+      const result = []
+
+      for (let i = 0; i < tags.length; i++) {
+        result.push(
+          tags[i].belongsTo.edges.filter(edge => edge.node.id !== current)
+        )
+      }
+
+      // 합치기
+      if (result.length > 1) {
+        for (let i = 1; i < result.length; i++) {
+          result[0].push(...result[i])
+        }
+      }
+
+      // 중복 제거
+      const filter = result[0].filter(
+        (edge, index) =>
+          result[0].findIndex(
+            innerEdge => innerEdge.node.id === edge.node.id
+          ) === index
+      )
+
+      return result.length ? filter : []
+    },
+    related() {
+      /** @type {Array<any>} */
+      const list = this.filterWithoutCurrentPost
+
+      // 최대 배열 길이, 관련 포스트 최대 갯수
+      const MAX_INDEX = list.length
+      const MAX_LENGTH = 6
+
+      // 배열 길이가 갯수 이하일 경우 내보냄
+      if (MAX_INDEX <= MAX_LENGTH) {
+        return list.slice(0, MAX_LENGTH)
+      }
+
+      const randPool = []
+      const rand = max => Math.floor(Math.random() * max)
+
+      let flag = 0
+
+      while (flag < MAX_LENGTH) {
+        const _temp = rand(MAX_INDEX)
+
+        if (randPool.indexOf(_temp) === -1) {
+          flag++
+          randPool.push(_temp)
+        } else {
+          continue
+        }
+      }
+
+      const result = []
+
+      randPool.forEach(i => result.push(list[i]))
+
+      return result
+    }
   },
 
   watch: {
@@ -149,7 +233,7 @@ query Post ($id: ID!) {
     id
     title
     path
-    date (format: "YYYY년 MM월 DD일", locale: "ko")
+    date (format: "D. MMMM YYYY")
     timeToRead
     tags {
       id
@@ -159,10 +243,19 @@ query Post ($id: ID!) {
         edges {
           node {
             ...on Post {
+              cover_image (width: 800, height: 300, blur: 4)
+              date (format: "D. MMMM YYYY")
+              description
               id
-              title
               path
-              date (format: "YYYY년 MM월 DD일", locale: "ko")
+              title
+              timeToRead
+              excerpt
+              tags {
+                id
+                title
+                path
+              }
             }
           }
         }
@@ -184,18 +277,24 @@ query Post ($id: ID!) {
 }
 
 .wrapper {
-  @apply relative mx-auto mb-64 py-10 px-4 rounded-xl shadow-xl
-  bg-elevation-200 text-white-800;
+  @apply relative mx-auto mb-32 py-10 px-4 rounded-none text-white-800
+  bg-elevation-200;
 
   max-width: 750px;
-  top: 10rem;
+  top: 7rem;
 
   @screen md {
-    @apply px-6;
+    @apply px-6 rounded-xl;
   }
 
   @screen lg {
     @apply px-10;
+  }
+
+  & .break {
+    @apply absolute left-0 w-full;
+
+    border-bottom: 1px solid theme('colors.elevation.500');
   }
 }
 </style>

@@ -47,8 +47,8 @@ module.exports = {
           '900': 'rgba(255, 255, 255, 0.16)'
         },
         dark: {
-          surface: '#101010',
-          lighten: '#272727'
+          surface: '#161616',
+          lighten: '#212121'
         },
         white: {
           '100': 'rgba(255, 255, 255, 0.1)',

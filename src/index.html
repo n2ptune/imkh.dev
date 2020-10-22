@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html ${htmlAttrs} lang="ko">
   <head>
-    ${head}
+    ${head} <%= process.env.NODE_ENV === 'production' ? `
     <script
       data-ad-client="ca-pub-3441377677018772"
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
     ></script>
+    ` : '' %>
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/svg-with-js.css"

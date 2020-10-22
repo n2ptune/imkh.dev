@@ -16,7 +16,7 @@
             {{ post.title }}
           </div>
           <div class="text-base text-white-400 mt-5 desc">
-            {{ post.description }}
+            {{ post.cover_image ? post.description : post.excerpt + '...' }}
           </div>
           <div class="mt-3">
             <ul class="space-x-2 space-y-1">
@@ -42,7 +42,7 @@
         </div>
         <div class="bottom-right">
           읽는 데 {{ post.timeToRead }}분 걸림
-          <span class="text-white-f">{{ toReadLevel }} </span>
+          <span class="text-white-f">{{ toReadLevel(post.timeToRead) }} </span>
         </div>
       </div>
     </g-link>
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import TimeReadMixins from '@/components/mixins/TimeReadMixins'
+
 export default {
   props: {
     post: {
@@ -58,33 +60,7 @@ export default {
     }
   },
 
-  computed: {
-    toReadLevel() {
-      const num = this.post.timeToRead
-
-      if (this.between(num, 0, 5)) {
-        return '☕'
-      } else if (this.between(num, 6, 11)) {
-        return '📰'
-      } else if (this.between(num, 12, 20)) {
-        return '🔥'
-      } else {
-        return '😴'
-      }
-    }
-  },
-
-  methods: {
-    /**
-     * @param {number} num
-     * @param {number} min
-     * @param {number} max
-     * @returns {boolean}
-     */
-    between(num, min, max) {
-      return min <= num && num <= max
-    }
-  }
+  mixins: [TimeReadMixins]
 }
 </script>
 

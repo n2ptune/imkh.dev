@@ -21,7 +21,7 @@ import PostCard from '@/components/layouts/main/PostCard.vue'
 import Section from '@/components/layouts/main/Section.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
-import TagMixins from '@/components/utils/TagMixins'
+import TagMixins from '@/components/mixins/TagMixins'
 
 export default {
   metaInfo() {

@@ -1,29 +1,27 @@
 <template>
-  <transition name="slide-navigation">
-    <aside
-      v-if="isFixed"
-      :style="{
-        left: isFixed ? offsetAside + leftMargin + 'px' : 0
-      }"
-    >
-      <ul :style="{ fontSize: '0.9rem' }">
-        <li class="pl-3">목차</li>
-        <li
-          v-for="(heading, index) in navi"
-          :id="heading.path"
-          :key="heading.path + index"
-          :class="[
-            heading.level ? 'pl-6' : 'pl-3',
-            heading.active ? 'active' : ''
-          ]"
-        >
-          <a :href="'#' + heading.path" @click="anchor">
-            {{ heading.title }}
-          </a>
-        </li>
-      </ul>
-    </aside>
-  </transition>
+  <aside
+    v-if="isFixed"
+    :style="{
+      left: isFixed ? offsetAside + leftMargin + 'px' : 0
+    }"
+  >
+    <ul :style="{ fontSize: '0.9rem' }">
+      <li class="pl-3 active">목차</li>
+      <li
+        v-for="(heading, index) in navi"
+        :id="heading.path"
+        :key="heading.path + index"
+        :class="[
+          heading.level ? 'pl-6' : 'pl-3',
+          heading.active ? 'active' : ''
+        ]"
+      >
+        <a :href="'#' + heading.path" @click="anchor">
+          {{ heading.title }}
+        </a>
+      </li>
+    </ul>
+  </aside>
 </template>
 
 <script>
@@ -37,9 +35,9 @@ export default {
   data: () => ({
     contentOffset: 0,
     offsetAside: 0,
-    leftMargin: 40,
+    leftMargin: 65,
     target: null,
-    isFixed: null,
+    isFixed: true,
     navi: null
   }),
 
@@ -80,17 +78,6 @@ export default {
 
       this.navi = result
     },
-    fixedAside() {
-      const y = window.scrollY
-      this.contentOffset = this.target.getBoundingClientRect().top
-
-      if (y >= this.contentOffset) {
-        this.resizingAside()
-        this.isFixed = true
-      } else {
-        this.isFixed = false
-      }
-    },
     resizingAside() {
       if (!this.isFixed) return
 
@@ -120,7 +107,6 @@ export default {
 
   mounted() {
     this.parseHeading()
-
     this.target = document.querySelector('section[data-target-content]')
 
     let { top, right } = this.target.getBoundingClientRect()
@@ -129,13 +115,11 @@ export default {
     this.offsetAside = right
 
     window.addEventListener('resize', this.resizingAside, { passive: true })
-    window.addEventListener('scroll', this.fixedAside, { passive: true })
     window.addEventListener('scroll', this.naviActive, { passive: true })
   },
 
   beforeDestroy() {
     window.removeEventListener('resize', this.resizingAside)
-    window.removeEventListener('scroll', this.fixedAside)
     window.removeEventListener('scroll', this.naviActive)
   },
 
@@ -156,32 +140,19 @@ aside {
 
 @screen 2xl {
   aside {
-    top: 10rem;
+    top: 12rem;
     @apply flex fixed;
   }
   aside ul li {
-    @apply text-gray-700 border-l-4 border-gray-300 transition-colors duration-700;
+    @apply text-white-500 border-l-4 border-elevation-300
+    transition-colors duration-700;
   }
   aside ul li:hover {
-    @apply text-black font-semibold;
+    @apply text-white-f font-semibold;
   }
   aside ul li.active,
   aside ul li.sub-active {
-    @apply border-purple-300 text-purple-600;
+    @apply border-white-f text-white-f;
   }
-}
-
-.slide-navigation-enter-active,
-.slide-navigation-leave-active {
-  transition: opacity 0.45s ease;
-}
-.slide-navigation-enter,
-.slide-navigation-leave-to {
-  opacity: 0;
-}
-.slide-navigation-enter-to,
-.slide-navigation-leave {
-  transform: translateY(0);
-  opacity: 1;
 }
 </style>
