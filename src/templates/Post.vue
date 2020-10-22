@@ -1,50 +1,23 @@
 <template>
   <DefaultLayout>
     <section class="wrapper">
-      <!-- <header class="mb-12 break-words">
-        <div class="text-white-300 mb-4 text-sm space-x-2">
-          <span class="text-white-700">
-            읽는 데 {{ $page.post.timeToRead }}분
-            <span class="text-white-f">
-              {{ toReadLevel($page.post.timeToRead) }}
-            </span>
-          </span>
-          <span class="italic float-right">
-            {{ $page.post.date }}
-          </span>
-        </div>
-        <div class="text-white-f text-4xl font-bold leading-tight mb-4">
-          {{ $page.post.title }}
-        </div>
-        <ul class="space-x-2 space-y-1">
-          <li
-            v-for="tag in $page.post.tags"
-            :key="tag.id"
-            class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
-          >
-            <g-link :to="tag.path">
-              {{ tag.title }}
-            </g-link>
-          </li>
-        </ul>
-      </header> -->
       <Header :post="$page.post" />
       <div class="break"></div>
-      <!-- <div class="adsense-wrap">
-        <Adsense
-          style="display:block"
-          ad-format="fluid"
-          ad-layout-key="-dg+94+1r-oc+12h"
-          ad-client="ca-pub-3441377677018772"
-          ad-slot="5087184924"
-        />
-      </div> -->
       <Content :md="$page.post.content" @resolved="generateGallery" />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
+    <div class="wrapper">
+      <Adsense
+        style="display:block"
+        ad-format="fluid"
+        ad-layout-key="-dg+94+1r-oc+12h"
+        ad-client="ca-pub-3441377677018772"
+        ad-slot="5087184924"
+      />
+    </div>
     <ClientOnly>
       <RelatedPosts v-if="filterWithoutCurrentPost.length" :posts="related" />
     </ClientOnly>
@@ -107,6 +80,12 @@ export default {
           key: 'og:url',
           property: 'og:url',
           content: `https://imkh.dev${this.$page.post.path}`
+        }
+      ],
+      script: [
+        {
+          src: 'https://static.codepen.io/assets/embed/ei.js',
+          defer: true
         }
       ]
     }
@@ -218,10 +197,22 @@ export default {
         console.warn('import intersection observer polyfill')
         require('intersection-observer')
       }
-      // 임베디드 삽입 head에 집어 넣든가 바꿔야 함
-      const codepen = document.createElement('script')
-      codepen.src = 'https://static.codepen.io/assets/embed/ei.js'
-      this.$el.appendChild(codepen)
+
+      // adsense
+      const adsense = document.querySelector(
+        'script[data-ad-client=ca-pub-3441377677018772]'
+      )
+
+      if (adsense === null) {
+        const script = document.createElement('script')
+
+        script.src =
+          'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+        script.async = true
+        script.dataset.adClient = 'ca-pub-3441377677018772'
+
+        document.head.appendChild(script)
+      }
     }
   }
 }
