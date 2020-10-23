@@ -3,7 +3,7 @@
     <aside
       v-if="isFixed"
       :style="{
-        left: isFixed ? offsetAside + leftMargin + 'px' : 0
+        left: offsetWithMargin
       }"
     >
       <ul :style="{ fontSize: '0.9rem' }">
@@ -42,6 +42,12 @@ export default {
     isFixed: true,
     navi: null
   }),
+
+  computed: {
+    offsetWithMargin() {
+      return this.isFixed ? this.leftMargin + this.offsetAside + 'px' : 0
+    }
+  },
 
   methods: {
     parseHeading() {
