@@ -1,7 +1,7 @@
 <template>
-  <div class="relative">
-    <section v-html="contentHTML" data-target-content></section>
-    <Navigation :content="contentHTML" />
+  <div class="relative mt-24">
+    <section v-html="md" data-target-content></section>
+    <Navigation :content="md" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   }),
 
   props: {
-    contentHTML: {
+    md: {
       type: String,
       required: true
     }
@@ -38,6 +38,7 @@ export default {
         )
         const images = [...this.$el.getElementsByTagName('img')]
         this.galleryImages.push(...images)
+
         // emit event to parent component after loaded all images
         this.$emit('resolved', {
           images: this.galleryImages
@@ -75,64 +76,135 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  /* Heading Start */
-  @for $i from 1 to 6 {
-    & >>> h$(i) {
-      @apply my-6 font-bold;
+  @apply break-words text-white-800;
+
+  font-size: 1rem;
+
+  @screen lg {
+    font-size: 1.1rem;
+  }
+
+  @screen xl {
+    font-size: 1.15rem;
+  }
+
+  /* Blockquote */
+
+  & >>> blockquote {
+    @apply px-4 py-2 my-12 border-l-4 border-elevation-300 text-white-600
+    italic;
+
+    & p {
+      @apply m-0;
+
+      &::before {
+        @apply mr-1;
+
+        content: open-quote;
+      }
+
+      &::after {
+        @apply ml-1;
+
+        content: close-quote;
+      }
     }
   }
-  & >>> h1 {
-    @apply text-3xl;
+
+  /* Link */
+
+  & >>> a {
+    @apply text-purple-300 underline;
+
+    &:hover {
+      @apply text-purple-400;
+    }
   }
-  & >>> h2 {
-    @apply text-2xl;
+
+  /* Code */
+
+  & >>> code:not([class*='language-']) {
+    @apply text-sm p-1 bg-elevation-200 font-mono !important;
   }
-  & >>> h3 {
-    @apply text-xl;
+
+  & >>> pre[class*='language-'],
+  & >>> code[class*='language-'] {
+    font-size: 0.95rem;
+
+    @apply font-mono !important;
+    @apply text-white-f;
   }
-  & >>> h4 {
-    @apply text-lg;
+
+  & >>> pre[class*='language-'] {
+    overflow: auto;
+    position: relative;
+    padding: 2rem 1.5rem;
+
+    @apply bg-elevation-400 rounded-lg;
   }
-  /* Heading End */
-  /* List Start */
+
+  /* List */
+
   & >>> ul,
   & >>> ol {
     padding: 0 0 0 20px;
+    list-style-position: inside;
+
+    & a {
+      @apply no-underline;
+    }
   }
+
   & >>> ol {
     list-style-type: decimal;
   }
+
   & >>> ul {
     list-style-type: disc;
   }
-  /* List End */
-  /* Typography Start */
+
+  /* Typography */
+
+  & >>> h1,
+  & >>> h2 {
+    &:not(:first-child)::before {
+      content: '· · ·';
+
+      @apply block my-16 text-xl font-black text-center text-white-400;
+    }
+  }
+
+  & >>> h1,
+  & >>> h2,
+  & >>> h3,
+  & >>> h4 {
+    @apply font-bold text-white-900 my-6;
+  }
+
+  & >>> h1 {
+    @apply text-3xl;
+  }
+
+  & >>> h2 {
+    @apply text-2xl;
+  }
+
+  & >>> h3 {
+    @apply text-xl;
+  }
+
+  & >>> h4 {
+    @apply text-lg;
+  }
+
   & >>> p {
     @apply my-6;
   }
-  /* Typography End */
-  /* Image Start */
-  & >>> img.not-overflow-width {
-    @apply mx-auto;
-  }
+
+  /* Image */
+
   & >>> img {
-    @apply cursor-pointer my-16;
+    @apply cursor-pointer my-16 mx-auto;
   }
-  /* Image End */
-  /* Link Start */
-  & >>> a:before {
-  }
-  & >>> a {
-    @apply text-blue-600 underline;
-  }
-  & >>> a:hover {
-    @apply font-bold;
-  }
-  /* Link End */
-  /* Blockquote Start */
-  & >>> blockquote {
-    @apply text-center py-1 px-4 bg-gray-200 text-gray-700 italic border-l-4 border-gray-500 rounded;
-  }
-  /* Blockquote End */
 }
 </style>

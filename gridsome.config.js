@@ -18,22 +18,18 @@ module.exports = {
 
   plugins: [
     {
-      use: 'gridsome-plugin-flexsearch',
+      use: 'gridsome-plugin-tailwindcss'
+      /**
+      * These are the default options. You don't need to set any options to get
+      * going. Seriously, you don't need to declare tailwind.config.js.
+
       options: {
-        collections: [
-          {
-            typeName: 'Post',
-            indexName: 'id',
-            fields: ['title', 'tags', 'description', 'path', 'id']
-          }
-        ],
-        searchFields: ['title', 'description'],
-        flexsearch: {
-          encode: false,
-          split: /[\x00-\x7F]/,
-          tokenize: 'full'
-        }
+        tailwindConfig: './tailwind.config.js',
+        presetEnvConfig: {},
+        shouldImport: true,
+        shouldTimeTravel: true
       }
+      */
     },
     {
       use: '@gridsome/source-filesystem',
@@ -46,12 +42,6 @@ module.exports = {
             create: true
           }
         }
-      }
-    },
-    {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-        tailwindConfig: './tailwind.config.js'
       }
     },
     {

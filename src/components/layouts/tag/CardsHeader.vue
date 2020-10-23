@@ -1,48 +1,65 @@
 <template>
-  <div class="mb-4 text-lg">
-    <div v-if="tagName" class="inline-block mr-5">
-      <g-link to="/">
-        <font-awesome
-          :icon="['fas', 'chevron-left']"
-          class="cursor-pointer transition-colors duration-500 text-gray-700 hover:text-black"
-        />
-      </g-link>
+  <div class="flex flex-row m-0 md:m-4 px-3 py-4 md:space-x-6 items-center">
+    <div class="font-black relative">
+      <div class="text-2xl space-x-3 cursor-pointer" @click="handleDropdown">
+        <span>All Tags</span>
+        <span>
+          <font-awesome
+            :icon="['fas', 'chevron-down']"
+            :class="visibleDropdown ? 'fa-rotate-180' : ''"
+            class="transition-transform duration-300"
+          />
+        </span>
+      </div>
+      <Dropdown v-if="visibleDropdown" :tags="all" @close="handleDropdown" />
     </div>
-    <div class="inline-block">
-      {{ computedTitle }}
+    <div class="hidden md:block">
+      <ul class="text-lg space-x-5">
+        <li
+          v-for="top in tops"
+          :key="top.title"
+          class="inline-block text-white-400 transition-colors duration-300 hover:text-white-700 pb-1 border-b-2 border-elevation-300 hover:border-elevation-700"
+        >
+          <g-link :to="top.path"> #{{ top.title }} </g-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import Dropdown from './Dropdown.vue'
+
 export default {
+  components: {
+    Dropdown
+  },
+
   props: {
-    title: {
-      type: String,
-      required: true
+    tops: {
+      type: Array
     },
-    tagName: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    count: {
-      type: Number,
-      required: true
+    all: {
+      type: Array
     }
   },
+
+  data: () => ({
+    visibleDropdown: false
+  }),
 
   methods: {
-    setTitle() {
-      if (this.title === 'all') return '모든 포스트'
-      else if (this.title === 'tag')
-        return `${this.tagName.toUpperCase()}와 관련된 포스트`
+    handleDropdown() {
+      this.visibleDropdown = !this.visibleDropdown
     }
   },
 
-  computed: {
-    computedTitle() {
-      return `${this.setTitle()} ${this.count}개`
+  watch: {
+    $route() {
+      // 페이지 경로가 바뀌면 드롭다운 닫음
+      if (this.visibleDropdown) {
+        this.visibleDropdown = false
+      }
     }
   }
 }

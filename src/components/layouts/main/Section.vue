@@ -1,5 +1,6 @@
 <template>
-  <section>
+  <section class="container mx-auto relative">
+    <slot name="header" />
     <div class="wrapper">
       <slot />
     </div>
@@ -8,25 +9,16 @@
 
 <style lang="postcss" scoped>
 section {
-  @apply flex justify-center p-6 relative;
-}
+  @apply mb-64;
 
-.wrapper {
-  width: 100%;
-  max-width: 800px;
-  @apply flex flex-col;
-}
+  top: 5rem;
 
-@screen lg {
-  section {
-    width: calc(100% - var(--aside-lg-size));
-    @apply float-right;
+  & .wrapper {
+    @apply flex flex-row flex-wrap justify-center;
   }
 }
 
-@screen xl {
-  section {
-    width: calc(100% - var(--aside-xl-size));
-  }
+&::v-deep .infinite-loading-container {
+  flex: 1 1 100%;
 }
 </style>

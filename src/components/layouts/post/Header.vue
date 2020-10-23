@@ -1,123 +1,43 @@
 <template>
-  <header>
-    <LeftSide v-if="isShowLeft" :postByTag="postByTag" />
-    <div>
-      <font-awesome
-        :icon="['fas', 'bars']"
-        class="header-icon"
-        @click="leftOverlay"
-      />
+  <header class="mb-12 break-words">
+    <div class="text-white-300 mb-4 text-sm space-x-2">
+      <span class="text-white-700">
+        읽는 데 {{ post.timeToRead }}분
+        <span class="text-white-f">
+          {{ toReadLevel(post.timeToRead) }}
+        </span>
+      </span>
+      <span class="italic float-right">
+        {{ post.date }}
+      </span>
     </div>
-    <div class="flex">
-      <g-link to="/">
-        <Avatar width="35px" class="shadow-md" />
-      </g-link>
+    <div class="text-white-f text-4xl font-bold leading-tight mb-4">
+      {{ post.title }}
     </div>
-    <div>
-      <font-awesome
-        :icon="['fas', 'search']"
-        class="header-icon mr-2"
-        @click="searchOverlay"
-      ></font-awesome>
-    </div>
-    <Overlay
-      :handler="isOpenMenu"
-      key="leftMenu"
-      @click-outside="clickOutsideLeftOverlay"
-    />
-    <Overlay
-      :handler="isSearchOverlay"
-      :style="{ overflow: 'auto' }"
-      distance="3rem"
-      key="search"
-      @click-outside="clickOutsideSearchOverlay"
-    >
-      <SearchForm @close-form="closeForm" />
-    </Overlay>
+    <ul class="space-x-2 space-y-1">
+      <li
+        v-for="tag in post.tags"
+        :key="tag.id"
+        class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
+      >
+        <g-link :to="tag.path">
+          {{ tag.title }}
+        </g-link>
+      </li>
+    </ul>
   </header>
 </template>
 
 <script>
-import LeftSide from '@/components/layouts/post/LeftSide.vue'
-import SearchForm from '@/components/search/Form.vue'
-import Avatar from '@/components/utils/Avatar.vue'
+import TimeRead from '@/components/mixins/TimeReadMixins'
 
 export default {
-  components: {
-    LeftSide,
-    SearchForm,
-    Avatar
-  },
-
   props: {
-    postByTag: {
-      type: Array,
-      required: false,
-      default: () => []
+    post: {
+      type: Object
     }
   },
 
-  data: () => ({
-    isOpenMenu: false,
-    isShowLeft: false,
-    isShowTitle: false,
-    isSearchOverlay: false
-  }),
-
-  methods: {
-    leftOverlay() {
-      this.isOpenMenu = !this.isOpenMenu
-      this.isShowLeft = !this.isShowLeft
-    },
-    clickOutsideLeftOverlay() {
-      this.isOpenMenu = false
-      if (this.isShowLeft) this.isShowLeft = false
-      else if (this.isShowRight) this.isShowRight = false
-    },
-    clickOutsideSearchOverlay() {
-      return
-    },
-    searchOverlay() {
-      this.isSearchOverlay = !this.isSearchOverlay
-    },
-    closeForm() {
-      this.isSearchOverlay = false
-    }
-  }
+  mixins: [TimeRead]
 }
 </script>
-
-<style lang="postcss" scoped>
-header {
-  height: 3rem;
-  z-index: 80;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.65);
-  @apply flex fixed w-full justify-between items-center px-3 top-0 left-0;
-}
-.header-icon {
-  @apply text-purple-500 cursor-pointer transition-colors duration-500;
-}
-.header-icon:hover {
-  @apply text-purple-600;
-}
-/* side */
-.side {
-  @apply fixed bg-white-f;
-}
-.h-slide-enter-active,
-.h-slide-leave-active {
-  transition: transform 0.45s ease, opacity 0.45s ease;
-}
-.h-slide-enter,
-.h-slide-leave-to {
-  transform: translateY(50%);
-  opacity: 0;
-}
-.h-slide-enter-to,
-.h-slide-leave {
-  transform: translateY(0%);
-  opacity: 1;
-}
-</style>

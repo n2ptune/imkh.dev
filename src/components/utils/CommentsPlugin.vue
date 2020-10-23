@@ -1,5 +1,5 @@
 <template>
-  <div class="comments mt-12 mb-24">
+  <div class="mb-0 mt-12">
     <Disqus
       ref="disqus"
       shortname="imkh-dev"

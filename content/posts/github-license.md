@@ -15,7 +15,7 @@ description: github repository(원격 저장소)에 license 추가하는 방법 
 
 ## 원격 저장소에 추가하기
 
-### 1. 저장소를 만들 때 추가하기
+### 저장소를 만들 때 추가하기
 
 [https://github.com/new](https://github.com/new)에 접속하면 새로운 저장소를 만들 수 있는 폼이 뜬다. 이 곳에서 저장소의 이름, 설명, 공개 여부, .gitignore 생성 여부, README.md 생성 여부, 라이선스 생성 여부 등을 결정할 수 있다.
 
@@ -23,7 +23,7 @@ description: github repository(원격 저장소)에 license 추가하는 방법 
 
 **Add a license** 부분을 클릭 후 라이선스를 선택한 뒤에 저장소를 만들면 자동으로 라이선스가 저장소에 추가된다.
 
-### 2. 만들어진 저장소에 추가하기
+### 만들어진 저장소에 추가하기
 
 이미 만들어진 저장소에 라이선스를 추가할 때에는 저장소 루트 디렉터리에 `LICENSE` 파일을 추가하기만 하면 github에서 자동으로 라이선스를 확인해준다.
 

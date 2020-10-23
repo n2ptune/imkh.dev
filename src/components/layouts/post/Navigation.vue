@@ -1,13 +1,13 @@
 <template>
-  <transition name="slide-navigation">
+  <transition name="slide-navigation" appear>
     <aside
       v-if="isFixed"
       :style="{
-        left: isFixed ? offsetAside + leftMargin + 'px' : 0
+        left: offsetWithMargin
       }"
     >
       <ul :style="{ fontSize: '0.9rem' }">
-        <li class="pl-3">목차</li>
+        <li class="pl-3 active">목차</li>
         <li
           v-for="(heading, index) in navi"
           :id="heading.path"
@@ -37,11 +37,17 @@ export default {
   data: () => ({
     contentOffset: 0,
     offsetAside: 0,
-    leftMargin: 15,
+    leftMargin: 65,
     target: null,
-    isFixed: null,
+    isFixed: true,
     navi: null
   }),
+
+  computed: {
+    offsetWithMargin() {
+      return this.isFixed ? this.leftMargin + this.offsetAside + 'px' : 0
+    }
+  },
 
   methods: {
     parseHeading() {
@@ -80,17 +86,6 @@ export default {
 
       this.navi = result
     },
-    fixedAside() {
-      const y = window.scrollY
-      this.contentOffset = this.target.getBoundingClientRect().top
-
-      if (y >= this.contentOffset) {
-        this.resizingAside()
-        this.isFixed = true
-      } else {
-        this.isFixed = false
-      }
-    },
     resizingAside() {
       if (!this.isFixed) return
 
@@ -101,6 +96,14 @@ export default {
       const y = window.pageYOffset
 
       this.navi.map(n => n.isActive(y))
+
+      const heightScope = this.$parent.$el.clientHeight
+
+      if (y >= heightScope) {
+        this.isFixed = false
+      } else {
+        this.isFixed = true
+      }
     },
     anchor(event) {
       event.preventDefault()
@@ -111,16 +114,15 @@ export default {
       const targetElemTop =
         targetElem.getBoundingClientRect().top +
         window.pageYOffset -
-        (targetElem.clientHeight + 16 * 3)
+        (targetElem.clientHeight + 20 * 3)
 
       window.scrollTo(0, targetElemTop)
-      window.history.pushState({}, '', '#' + targetID)
+      // window.history.pushState({}, '', '#' + targetID)
     }
   },
 
   mounted() {
     this.parseHeading()
-
     this.target = document.querySelector('section[data-target-content]')
 
     let { top, right } = this.target.getBoundingClientRect()
@@ -129,13 +131,11 @@ export default {
     this.offsetAside = right
 
     window.addEventListener('resize', this.resizingAside, { passive: true })
-    window.addEventListener('scroll', this.fixedAside, { passive: true })
     window.addEventListener('scroll', this.naviActive, { passive: true })
   },
 
   beforeDestroy() {
     window.removeEventListener('resize', this.resizingAside)
-    window.removeEventListener('scroll', this.fixedAside)
     window.removeEventListener('scroll', this.naviActive)
   },
 
@@ -150,38 +150,38 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.slide-navigation-enter-active,
+.slide-navigation-leave-active {
+  @apply transition-opacity duration-300;
+}
+.slide-navigation-enter,
+.slide-navigation-leave-to {
+  @apply opacity-0;
+}
+.slide-navigation-enter-to,
+.slide-navigation-leave {
+  @apply opacity-100;
+}
+
 aside {
   @apply hidden;
 }
 
 @screen 2xl {
   aside {
-    top: 5rem;
+    top: 12rem;
     @apply flex fixed;
   }
   aside ul li {
-    @apply text-gray-700 border-l-4 border-gray-300 transition-colors duration-700;
+    @apply text-white-500 border-l-4 border-elevation-300
+    transition-colors duration-700;
   }
   aside ul li:hover {
-    @apply text-black font-semibold;
+    @apply text-white-f font-semibold;
   }
   aside ul li.active,
   aside ul li.sub-active {
-    @apply border-purple-300 text-purple-600;
+    @apply border-white-f text-white-f;
   }
-}
-
-.slide-navigation-enter-active,
-.slide-navigation-leave-active {
-  transition: opacity 0.45s ease;
-}
-.slide-navigation-enter,
-.slide-navigation-leave-to {
-  opacity: 0;
-}
-.slide-navigation-enter-to,
-.slide-navigation-leave {
-  transform: translateY(0);
-  opacity: 1;
 }
 </style>

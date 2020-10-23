@@ -1,18 +1,16 @@
 <template>
   <DefaultLayout>
+    <FullWidthImage />
     <Section>
-      <Adsense
-        class="adsbygoogle"
-        style="display:block"
-        ad-format="fluid"
-        ad-layout-key="-5v+c4-v-3m+q2"
-        ad-client="ca-pub-3441377677018772"
-        ad-slot="1204630294"
-      />
-      <CardsHeader :count="$page.posts.pageInfo.totalItems" title="all" />
+      <template #header>
+        <CardsHeader :all="allTags" :tops="topTags" />
+      </template>
       <PostCard v-for="post in posts" :key="post.node.id" :post="post.node" />
       <ClientOnly>
-        <infinite-loading @infinite="loadingHandler" spinner="bubbles" />
+        <infinite-loading @infinite="loadingHandler" spinner="bubbles">
+          <div slot="no-more"></div>
+          <div slot="no-results"></div>
+        </infinite-loading>
       </ClientOnly>
     </Section>
   </DefaultLayout>
@@ -23,7 +21,8 @@ import DefaultLayout from '@/layouts/Default.vue'
 import PostCard from '@/components/layouts/main/PostCard.vue'
 import CardsHeader from '@/components/layouts/tag/CardsHeader.vue'
 import Section from '@/components/layouts/main/Section.vue'
-import Adsense from '@/components/utils/Adsense.vue'
+import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
+import TagMixins from '@/components/mixins/TagMixins'
 
 export default {
   metaInfo() {
@@ -64,8 +63,10 @@ export default {
     PostCard,
     CardsHeader,
     Section,
-    Adsense
+    FullWidthImage
   },
+
+  mixins: [TagMixins],
 
   created() {
     this.posts.push(...this.$page.posts.edges)
@@ -92,7 +93,7 @@ export default {
 
 <page-query>
 query ($page: Int) {
-  posts: allPost(filter: { published: { eq: true }}, perPage: 5, page: $page) @paginate {
+  posts: allPost(filter: { published: { eq: true }}, perPage: 6, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -102,10 +103,11 @@ query ($page: Int) {
       node {
         id
         title
-        date (format: "YYYY년 MMMM DD일", locale: "ko")
+        date (format: "D. MMMM YYYY")
         timeToRead
         description
         path
+        excerpt
         cover_image (width: 800, height: 300, blur: 4)
         tags {
           id
@@ -115,5 +117,21 @@ query ($page: Int) {
       }
     }
   }
+  tags: allPost {
+    edges {
+      node {
+        tags {
+          title,
+          path
+        }
+      }
+    }
+  }
 }
 </page-query>
+
+<style lang="postcss">
+.infinite-loading-container {
+  @apply w-full;
+}
+</style>

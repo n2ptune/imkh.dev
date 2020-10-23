@@ -12,6 +12,8 @@ body {
   font-size: 16px;
   font-display: swap;
   font-weight: 400;
+
+  @apply bg-dark-surface text-white-800;
 }
 
 img.g-image.g-image--lazy {
@@ -27,10 +29,3 @@ img.g-image.g-image--lazy.g-image--loaded {
 }
 
 /* purgecss end ignore */
-
-:root {
-  --content-max: 650px;
-  --content-post: 950px;
-  --aside-lg-size: 300px;
-  --aside-xl-size: 500px;
-}
