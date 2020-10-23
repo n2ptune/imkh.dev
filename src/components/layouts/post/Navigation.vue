@@ -114,10 +114,10 @@ export default {
       const targetElemTop =
         targetElem.getBoundingClientRect().top +
         window.pageYOffset -
-        (targetElem.clientHeight + 16 * 3)
+        (targetElem.clientHeight + 20 * 3)
 
       window.scrollTo(0, targetElemTop)
-      window.history.pushState({}, '', '#' + targetID)
+      // window.history.pushState({}, '', '#' + targetID)
     }
   },
 

@@ -76,29 +76,135 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  @apply break-words;
+  @apply break-words text-white-800;
 
-  /* List Start */
+  font-size: 1rem;
+
+  @screen lg {
+    font-size: 1.1rem;
+  }
+
+  @screen xl {
+    font-size: 1.15rem;
+  }
+
+  /* Blockquote */
+
+  & >>> blockquote {
+    @apply px-4 py-2 my-12 border-l-4 border-elevation-300 text-white-600
+    italic;
+
+    & p {
+      @apply m-0;
+
+      &::before {
+        @apply mr-1;
+
+        content: open-quote;
+      }
+
+      &::after {
+        @apply ml-1;
+
+        content: close-quote;
+      }
+    }
+  }
+
+  /* Link */
+
+  & >>> a {
+    @apply text-purple-300 underline;
+
+    &:hover {
+      @apply text-purple-400;
+    }
+  }
+
+  /* Code */
+
+  & >>> code:not([class*='language-']) {
+    @apply text-sm p-1 bg-elevation-200 font-mono !important;
+  }
+
+  & >>> pre[class*='language-'],
+  & >>> code[class*='language-'] {
+    font-size: 0.95rem;
+
+    @apply font-mono !important;
+    @apply text-white-f;
+  }
+
+  & >>> pre[class*='language-'] {
+    overflow: auto;
+    position: relative;
+    padding: 2rem 1.5rem;
+
+    @apply bg-elevation-400 rounded-lg;
+  }
+
+  /* List */
+
   & >>> ul,
   & >>> ol {
     padding: 0 0 0 20px;
+    list-style-position: inside;
+
+    & a {
+      @apply no-underline;
+    }
   }
+
   & >>> ol {
     list-style-type: decimal;
   }
+
   & >>> ul {
     list-style-type: disc;
   }
-  /* List End */
-  /* Typography Start */
+
+  /* Typography */
+
+  & >>> h1,
+  & >>> h2 {
+    &:not(:first-child)::before {
+      content: '· · ·';
+
+      @apply block my-16 text-xl font-black text-center text-white-400;
+    }
+  }
+
+  & >>> h1,
+  & >>> h2,
+  & >>> h3,
+  & >>> h4 {
+    @apply font-bold text-white-900 my-6;
+  }
+
+  & >>> h1 {
+    @apply text-3xl;
+  }
+
+  & >>> h2 {
+    @apply text-2xl;
+  }
+
+  & >>> h3 {
+    @apply text-xl;
+  }
+
+  & >>> h4 {
+    @apply text-lg;
+  }
+
   & >>> p {
     @apply my-6;
   }
-  /* Typography End */
-  /* Image Start */
+
+  /* Image */
+
   & >>> img {
     @apply cursor-pointer my-16 mx-auto;
   }
-  /* Image End */
 }
 </style>
