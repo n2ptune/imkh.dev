@@ -87,8 +87,6 @@ export default {
       this.navi = result
     },
     resizingAside() {
-      if (!this.isFixed) return
-
       const { right } = this.target.getBoundingClientRect()
       this.offsetAside = right
     },

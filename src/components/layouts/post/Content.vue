@@ -30,12 +30,6 @@ export default {
         // initialize galleryImages
         this.galleryImages = []
 
-        // get max width variable of content wrapper
-        const MAX_WIDTH = parseInt(
-          getComputedStyle(document.querySelector('.wrapper'))
-            .getPropertyValue('--contents-max-width')
-            .replace('px', '')
-        )
         const images = [...this.$el.getElementsByTagName('img')]
         this.galleryImages.push(...images)
 
@@ -55,6 +49,31 @@ export default {
           )
         }
       })
+    },
+    embed() {
+      const dom = new DOMParser()
+      const html = dom.parseFromString(this.md, 'text/html')
+      const isCodepen = html.querySelector('.codepen-embed')
+
+      if (isCodepen !== null) {
+        const codepen = document.head.querySelector(
+          'script[data-codepen-embed]'
+        )
+
+        if (codepen !== null) {
+          window.__CpEmbed()
+        } else {
+          const script = document.createElement('script')
+
+          script.async = true
+          script.setAttribute(
+            'src',
+            'https://static.codepen.io/assets/embed/ei.js'
+          )
+
+          document.head.appendChild(script)
+        }
+      }
     }
   },
 
@@ -62,11 +81,14 @@ export default {
     $route(c, p) {
       if (process.isClient) {
         this.resizingImages()
+        this.embed()
       }
     }
   },
 
   mounted() {
+    this.embed()
+
     if (process.isClient) {
       this.resizingImages()
     }

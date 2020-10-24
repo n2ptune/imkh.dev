@@ -81,12 +81,6 @@ export default {
           property: 'og:url',
           content: `https://imkh.dev${this.$page.post.path}`
         }
-      ],
-      script: [
-        {
-          src: 'https://static.codepen.io/assets/embed/ei.js',
-          defer: true
-        }
       ]
     }
   },
