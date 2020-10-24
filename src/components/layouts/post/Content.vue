@@ -26,29 +26,27 @@ export default {
 
   methods: {
     resizingImages() {
-      this.$nextTick(() => {
-        // initialize galleryImages
-        this.galleryImages = []
+      const dom = new DOMParser()
+      const html = dom.parseFromString(this.md, 'text/html')
+      const images = html.getElementsByTagName('img')
 
-        const images = [...this.$el.getElementsByTagName('img')]
-        this.galleryImages.push(...images)
+      this.galleryImages.push(...images)
 
-        // emit event to parent component after loaded all images
-        this.$emit('resolved', {
-          images: this.galleryImages
-        })
-
-        // add class 'not-overflow-width' if image's width
-        // less than max width(content wrapper)
-        if (images.length) {
-          const lessThanWidthImages = images.filter(
-            img => img.width < MAX_WIDTH
-          )
-          lessThanWidthImages.map(img =>
-            img.classList.add('not-overflow-width')
-          )
-        }
+      this.$emit('resolved', {
+        images: this.galleryImages
       })
+      // this.$nextTick(() => {
+      //   // initialize galleryImages
+      //   this.galleryImages = []
+
+      //   const images = [...this.$el.getElementsByTagName('img')]
+      //   this.galleryImages.push(...images)
+
+      //   // emit event to parent component after loaded all images
+      //   this.$emit('resolved', {
+      //     images: this.galleryImages
+      //   })
+      // })
     },
     embed() {
       const dom = new DOMParser()

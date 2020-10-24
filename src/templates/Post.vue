@@ -9,15 +9,6 @@
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
-    <div class="wrapper">
-      <Adsense
-        style="display:block"
-        ad-format="fluid"
-        ad-layout-key="-dg+94+1r-oc+12h"
-        ad-client="ca-pub-3441377677018772"
-        ad-slot="5087184924"
-      />
-    </div>
     <ClientOnly>
       <RelatedPosts v-if="filterWithoutCurrentPost.length" :posts="related" />
     </ClientOnly>
@@ -30,7 +21,6 @@ import Header from '@/components/layouts/post/Header.vue'
 import GallerySide from 'vue-gallery-slideshow'
 import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
-import Adsense from '@/components/utils/Adsense.vue'
 import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
 
 export default {
@@ -96,7 +86,6 @@ export default {
     Content,
     CommentsPlugin,
     GallerySide,
-    Adsense,
     RelatedPosts
   },
 

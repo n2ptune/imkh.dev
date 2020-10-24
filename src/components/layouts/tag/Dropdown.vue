@@ -64,6 +64,14 @@ export default {
   px-2 py-4 rounded-lg left-0 text-xl;
 
   top: 3rem;
-  min-width: 450px;
+  width: 320px;
+
+  @screen md {
+    width: 350px;
+  }
+
+  @screen lg {
+    width: 450px;
+  }
 }
 </style>
