@@ -12,7 +12,11 @@ module.exports = {
   port: 4001,
 
   templates: {
-    Post: '/:title',
+    Post: [
+      {
+        path: node => `/${node.fileInfo.name}`
+      }
+    ],
     Tag: '/tag/:id'
   },
 
