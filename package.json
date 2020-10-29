@@ -12,18 +12,17 @@
     "tree": "ts-node ./helpers/file-tree/index.ts"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@microflash/gridsome-plugin-feed": "^1.0.4",
-    "gridsome": "^0.7.20",
+    "@gridsome/plugin-google-analytics": "0.1.0",
+    "@microflash/gridsome-plugin-feed": "1.0.4",
+    "gridsome": "0.7.21",
     "intersection-observer": "^0.11.0",
     "lodash.debounce": "^4.0.8",
     "postcss-for": "^2.1.1",
     "prismjs": "^1.21.0",
-    "smooth-scroll": "^16.1.2",
     "vue-disqus": "^4.0.1",
     "vue-fuse": "^2.2.1",
-    "vue-gallery-slideshow": "^1.5.0",
-    "vue-infinite-loading": "^2.4.4",
+    "vue-gallery-slideshow": "1.5.0",
+    "vue-infinite-loading": "2.4.4",
     "vue-runtime-helpers": "^1.1.2"
   },
   "devDependencies": {
@@ -39,11 +38,7 @@
     "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
     "cssnano": "^4.1.10",
     "gridsome-plugin-tailwindcss": "^3.0.1",
-    "serve": "^11.3.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
-  },
-  "peerDependencies": {
-    "vue": "2.6.12"
   }
 }
