@@ -8,26 +8,9 @@
 
 <!-- Auto generating by file-tree start -->
 
-### web
-
-- <a href="/content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
-- <a href="/content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
-- <a href="/content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
-- <a href="/content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
-
-### css
-
-- <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
-- <a href="/content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
-- <a href="/content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
-
-### html5
-
-- <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
-- <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
-
 ### javascript
 
+- <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
 - <a href="/content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
 - <a href="/content/posts/js-array-sort.md">자바스크립트 배열 원소 정렬 (js-array-sort)</a>
 - <a href="/content/posts/js-classes.md">자바스크립트 프로토타입, 클래스에 대한 개념 이해 (js-classes)</a>
@@ -47,6 +30,28 @@
 - <a href="/content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
 - <a href="/content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="/content/posts/js-strict-mode.md">자바스크립트 엄격한 모드 (js strict mode)</a>
+
+### algorithm
+
+- <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
+
+### web
+
+- <a href="/content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
+- <a href="/content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
+- <a href="/content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
+- <a href="/content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
+
+### css
+
+- <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
+- <a href="/content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
+- <a href="/content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
+
+### html5
+
+- <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
+- <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
 ### firebase
 
