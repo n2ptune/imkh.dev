@@ -18,6 +18,7 @@
 - <a href="/content/posts/js-console-many-methods.md">Javascript Console Object(자바스크립트 콘솔 객체)</a>
 - <a href="/content/posts/js-design-patterns-mediator.md">자바스크립트 디자인 패턴 (중재자 패턴, js-mediator-pattern)</a>
 - <a href="/content/posts/js-design-patterns.md">자바스크립트 디자인 패턴, 모듈 패턴과 옵저버 패턴 (js design patterns)</a>
+- <a href="/content/posts/js-detect-mobile-device.md">자바스크립트로 모바일 기기 감지하는 여러 방법</a>
 - <a href="/content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
 - <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 - <a href="/content/posts/js-memory-management.md">자바스크립트에서의 메모리 관리 (memory-management-in-javascript)</a>
@@ -40,6 +41,7 @@
 - <a href="/content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
 - <a href="/content/posts/http-header.md">HTTP HEADER에 대한 정리</a>
 - <a href="/content/posts/internet-domain-name-system.md">DNS와 작동 원리 (Domain Name System)</a>
+- <a href="/content/posts/js-detect-mobile-device.md">자바스크립트로 모바일 기기 감지하는 여러 방법</a>
 - <a href="/content/posts/what-is-http.md">HTTP에 대한 이해와 정리 (what-is-http)</a>
 
 ### css
