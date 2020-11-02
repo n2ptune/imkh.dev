@@ -9,6 +9,16 @@
         <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
+    <div class="mt-12 mb-6">
+      <ins
+        class="adsbygoogle"
+        style="display: block; text-align: center"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-3441377677018772"
+        data-ad-slot="6314058533"
+      />
+    </div>
     <ClientOnly>
       <RelatedPosts v-if="filterWithoutCurrentPost.length" :posts="related" />
     </ClientOnly>

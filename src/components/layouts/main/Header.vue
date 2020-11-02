@@ -72,7 +72,7 @@ export default {
 <style lang="postcss" scoped>
 header {
   @apply flex justify-between items-center px-2 py-4 bg-dark-lighten
-  fixed w-full z-50;
+  fixed w-full z-50 top-0;
 
   @screen md {
     @apply px-4;
