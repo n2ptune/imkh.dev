@@ -10,6 +10,7 @@
 
 ### javascript
 
+- <a href="/content/posts/algorithm-boj-10820.md">(Node.js) 백준 10820번 문자열 분석 문제</a>
 - <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
 - <a href="/content/posts/css-use-variables.md">CSS에서 변수 사용하기 (use-variables-in-css)</a>
 - <a href="/content/posts/js-array-sort.md">자바스크립트 배열 원소 정렬 (js-array-sort)</a>
@@ -34,7 +35,13 @@
 
 ### algorithm
 
+- <a href="/content/posts/algorithm-boj-10820.md">(Node.js) 백준 10820번 문자열 분석 문제</a>
+- <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
 - <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
+
+### python
+
+- <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
 
 ### web
 
