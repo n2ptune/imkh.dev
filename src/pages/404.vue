@@ -1,21 +1,23 @@
 <template>
   <section class="flex items-center justify-center h-screen font-display">
-    <article class="">
+    <article>
       <div class="image mx-auto">
         <g-image src="@/assets/pikachu_404.png" blur="4" width="200" />
       </div>
-      <div class="number text-center text-5xl font-bold mt-1 tracking-widest">
+      <div
+        class="number text-center text-4xl md:text-6xl font-bold mt-1 tracking-widest text-purple-400"
+      >
         404
       </div>
-      <div class="description text-center text-gray-700">
+      <div class="description text-center text-white-f">
         Page Not Found :(
         <br />
         페이지를 찾을 수 없습니다.
       </div>
       <div class="mt-2 text-center">
-        <g-link to="/" class="text-gray-700 hover:text-gray-900">
+        <g-link to="/" class="text-white-f hover:text-purple-400 underline">
           <font-awesome :icon="['fas', 'chevron-left']" size="sm" />
-          <span class="ml-2">홈으로 돌아가기</span>
+          <span class="ml-2">메인으로 돌아가기</span>
         </g-link>
       </div>
     </article>
@@ -48,25 +50,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.top-deco {
-  display: block;
-  position: relative;
-  top: 2.7rem;
-}
-.top-deco span {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin: 0 2.2rem;
-  @apply rounded-full bg-red-500;
-}
-.bottom-number {
-  font-size: 2rem;
-  letter-spacing: 1.6rem;
-}
-.highlight-number {
-  @apply text-orange-500;
-}
-</style>
