@@ -74,13 +74,14 @@ query Tag ($id: ID!) {
       edges {
         node {
           ...on Post {
+            id
             title
-            path
             date (format: "D. MMMM YYYY")
             timeToRead
             description
-            content
-            cover_image (width: 770, height: 380, blur: 10)
+            path
+            excerpt
+            cover_image (width: 800, height: 300, blur: 4)
             tags {
               id
               title
