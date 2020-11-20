@@ -9,7 +9,7 @@
           </g-link>
         </li>
         <li class="menu-link">
-          <a href="#" target="_blank">
+          <a href="https://portfolio.imkh.dev/" target="_blank">
             Portfolio
           </a>
         </li>

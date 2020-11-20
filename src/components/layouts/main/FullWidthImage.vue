@@ -7,7 +7,7 @@
       </p>
       <p>같이 성장하는 학습 <span class="text-purple-300">블로그</span></p>
       <div class="mt-10 text-base">
-        <a href="/not-yet-portfolio" target="_blank">
+        <a href="https://portfolio.imkh.dev/" target="_blank">
           <button
             class="bg-purple-700 py-4 px-8 rounded-full text-xl font-bold transition-button"
           >
