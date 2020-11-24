@@ -39,11 +39,13 @@
 - <a href="/content/posts/algorithm-boj-1978.md">(Python) 백준 1978, 2581, 1929번 소수 구하기, 소수 찾기</a>
 - <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
 - <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
+- <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
 
 ### python
 
 - <a href="/content/posts/algorithm-boj-1978.md">(Python) 백준 1978, 2581, 1929번 소수 구하기, 소수 찾기</a>
 - <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
+- <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
 
 ### web
 
