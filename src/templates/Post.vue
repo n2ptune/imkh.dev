@@ -4,6 +4,7 @@
       <Header :post="$page.post" />
       <div class="break"></div>
       <Content :md="$page.post.content" @resolved="generateGallery" />
+      <navigation />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />
@@ -16,11 +17,12 @@
 </template>
 
 <script>
-import DefaultLayout from '@/layouts/Default.vue'
-import Header from '@/components/layouts/post/Header.vue'
-import GallerySide from 'vue-gallery-slideshow'
-import Content from '@/components/layouts/post/Content.vue'
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
+import Content from '@/components/layouts/post/Content.vue'
+import DefaultLayout from '@/layouts/Default.vue'
+import GallerySide from 'vue-gallery-slideshow'
+import Header from '@/components/layouts/post/Header.vue'
+import Navigation from '@/components/layouts/post/Navigation.vue'
 import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
 
 export default {
@@ -81,11 +83,12 @@ export default {
   }),
 
   components: {
-    DefaultLayout,
-    Header,
-    Content,
     CommentsPlugin,
+    Content,
+    DefaultLayout,
     GallerySide,
+    Header,
+    Navigation,
     RelatedPosts
   },
 
@@ -204,11 +207,19 @@ export default {
 <page-query>
 query Post ($id: ID!) {
   post: post (id: $id) {
-    id
-    title
-    path
+    content
+    cover_image
     date (format: "D. MMMM YYYY")
+    description
+    id
+    path
     timeToRead
+    title
+    headings {
+      anchor
+      depth
+      value
+    }
     tags {
       id
       title
@@ -235,9 +246,6 @@ query Post ($id: ID!) {
         }
       }
     }
-    description
-    content
-    cover_image
   }
   origin: post (id: $id) {
     date
