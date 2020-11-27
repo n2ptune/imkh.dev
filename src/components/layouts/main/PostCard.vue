@@ -20,19 +20,7 @@
           <div class="text-base text-white-400 mt-5 desc">
             {{ post.cover_image ? post.description : post.excerpt + '...' }}
           </div>
-          <div class="mt-3">
-            <ul class="space-x-2 space-y-1">
-              <li
-                v-for="tag in sortedTags"
-                :key="tag.id"
-                class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
-              >
-                <g-link :to="tag.path">
-                  {{ tag.id }}
-                </g-link>
-              </li>
-            </ul>
-          </div>
+          <tag-list :tag="post.tags" />
         </div>
       </div>
     </g-link>
@@ -53,21 +41,17 @@
 
 <script>
 import TimeReadMixins from '@/components/mixins/TimeReadMixins'
+import TagList from '@/components/tag/List.vue'
 
 export default {
+  components: {
+    TagList
+  },
+
   props: {
     post: {
       type: Object,
       required: true
-    }
-  },
-
-  computed: {
-    sortedTags() {
-      const tags = this.post.tags.slice()
-      tags.sort((a, b) => (a.id > b.id ? 1 : -1))
-
-      return tags
     }
   },
 
