@@ -10,14 +10,17 @@
         <li class="pl-3 active">목차</li>
         <li
           v-for="(heading, index) in navi"
-          :id="heading.path"
-          :key="heading.path + index"
-          :class="[
-            heading.level ? 'pl-6' : 'pl-3',
-            heading.active ? 'active' : ''
-          ]"
+          :key="heading.title + index"
+          :style="{
+            paddingLeft: `calc(0.75rem + ${(heading.depth - 2) * 12}px`
+          }"
+          :class="heading.active ? 'active' : ''"
         >
-          <a :href="'#' + heading.path" @click="anchor">
+          <a
+            class="cursor-pointer"
+            :data-anchor="heading.anchor"
+            @click="anchor"
+          >
             {{ heading.title }}
           </a>
         </li>
@@ -28,19 +31,13 @@
 
 <script>
 export default {
-  props: {
-    content: {
-      type: undefined
-    }
-  },
-
   data: () => ({
     contentOffset: 0,
-    offsetAside: 0,
-    leftMargin: 65,
-    target: null,
     isFixed: true,
-    navi: null
+    leftMargin: 65,
+    navi: null,
+    offsetAside: 0,
+    target: null
   }),
 
   computed: {
@@ -51,31 +48,29 @@ export default {
 
   methods: {
     parseHeading() {
-      const domParser = new DOMParser()
-      const _document = domParser.parseFromString(
-        this.$page.post.content,
-        'text/html'
-      )
-
-      const headings = Array.from(_document.querySelectorAll('h2, h3'))
+      const headings = this.$page.post.headings
       const result = headings.map((heading, index) => {
+        // Viewport 떨어진 거리
         let top =
           window.pageYOffset +
-          document.querySelector('#' + heading.id).getBoundingClientRect().top
+          document.querySelector(heading.anchor).getBoundingClientRect().top
         let nextTop = null
         if (headings.length - 1 > index) {
-          const nextDOM = document.querySelector('#' + headings[index + 1].id)
+          // 다음 목차
+          const nextDOM = document.querySelector(headings[index + 1].anchor)
           const { top } = nextDOM.getBoundingClientRect()
-
           nextTop = window.pageYOffset + top
         }
 
+        // 취합
         return {
-          path: heading.id,
-          title: heading.innerText,
-          level: heading.tagName.toLowerCase() === 'h2' ? 0 : 1,
-          ref: document.querySelector('#' + heading.id),
+          path: heading.anchor,
+          title: heading.value,
+          ref: document.querySelector(heading.anchor),
           active: false,
+          depth: heading.depth,
+          anchor: heading.anchor,
+          // 현재 Y가 거리 이상인 상태
           isActive(y) {
             this.active = this.top <= y && y >= this.nextTop
           },
@@ -95,7 +90,7 @@ export default {
 
       this.navi.map(n => n.isActive(y))
 
-      const heightScope = this.$parent.$el.clientHeight
+      const heightScope = this.target.clientHeight
 
       if (y >= heightScope) {
         this.isFixed = false
@@ -105,17 +100,13 @@ export default {
     },
     anchor(event) {
       event.preventDefault()
-
-      const targetID = event.target.attributes.href.value.slice(1)
-      const targetElem = document.getElementById(targetID)
-      // const targetElemTop = targetElem.offsetTop
-      const targetElemTop =
-        targetElem.getBoundingClientRect().top +
-        window.pageYOffset -
-        (targetElem.clientHeight + 20 * 3)
-
-      window.scrollTo(0, targetElemTop)
-      // window.history.pushState({}, '', '#' + targetID)
+      // 앵커 값으로 엘리먼트 가져오기
+      const target = document.querySelector(event.target.dataset.anchor)
+      // Viewport로부터 떨어진 거리 스크롤 이동
+      window.scrollTo(
+        0,
+        target.getBoundingClientRect().top + window.pageYOffset - 100
+      )
     }
   },
 
@@ -174,12 +165,9 @@ aside {
     @apply text-white-500 border-l-4 border-elevation-300
     transition-colors duration-700;
   }
-  aside ul li:hover {
-    @apply text-white-f font-semibold;
-  }
-  aside ul li.active,
-  aside ul li.sub-active {
-    @apply border-white-f text-white-f;
+  aside ul li:hover,
+  aside ul li.active {
+    @apply text-white-f border-white-f;
   }
 }
 </style>

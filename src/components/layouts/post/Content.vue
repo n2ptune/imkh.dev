@@ -1,18 +1,11 @@
 <template>
   <div class="relative mt-24">
     <section v-html="md" data-target-content></section>
-    <Navigation :content="md" />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/layouts/post/Navigation.vue'
-
 export default {
-  components: {
-    Navigation
-  },
-
   data: () => ({
     galleryImages: []
   }),
