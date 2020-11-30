@@ -146,6 +146,10 @@
 
 - <a href="/content/posts/linux-tree.md">Linux tree 명령어로 폴더 구조를 텍스트로 변환하기</a>
 
+### react
+
+- <a href="/content/posts/react-absolute-path.md">리액트 절대 경로 사용하기</a>
+
 ### postcss
 
 - <a href="/content/posts/vue-postcss-cssnano.md">Vue PostCSS 플러그인으로 CSS 크기를 압축시키기</a>
