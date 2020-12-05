@@ -77,6 +77,7 @@
 ### firebase
 
 - <a href="/content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
+- <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
 ### vue
 
@@ -156,6 +157,7 @@
 
 - <a href="/content/posts/react-absolute-path.md">리액트 절대 경로 사용하기</a>
 - <a href="/content/posts/react-context-api.md">리액트 Context API와 useContext()</a>
+- <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
 ### postcss
 
