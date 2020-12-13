@@ -161,6 +161,10 @@
 - <a href="/content/posts/react-context-api.md">리액트 Context API와 useContext()</a>
 - <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
+### typescript
+
+- <a href="/content/posts/ts-generic.md">타입스크립트 제네릭 사용하기</a>
+
 ### postcss
 
 - <a href="/content/posts/vue-postcss-cssnano.md">Vue PostCSS 플러그인으로 CSS 크기를 압축시키기</a>
