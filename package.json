@@ -14,7 +14,7 @@
   "dependencies": {
     "@gridsome/plugin-google-analytics": "0.1.0",
     "@microflash/gridsome-plugin-feed": "1.0.4",
-    "gridsome": "0.7.21",
+    "gridsome": "0.7.23",
     "intersection-observer": "^0.11.0",
     "lodash.debounce": "^4.0.8",
     "postcss-for": "^2.1.1",
