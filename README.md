@@ -30,6 +30,7 @@
 - <a href="/content/posts/js-organize-concept.md">자바스크립트 기본 개념(호이스팅, 이벤트 버블링 기타 등) 이해하고 정리하기 (js-organize-concept)</a>
 - <a href="/content/posts/js-organize-concept2.md">자바스크립트 기본 개념(프로토타입, Shadow DOM) 이해하고 정리하기 (js-organize-concept)</a>
 - <a href="/content/posts/js-promise-async-await.md">자바스크립트 프로미스 정리 (js-promise)</a>
+- <a href="/content/posts/js-scope.md">자바스크립트 유효 범위와 var</a>
 - <a href="/content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="/content/posts/js-strict-mode.md">자바스크립트 엄격한 모드 (js strict mode)</a>
 
