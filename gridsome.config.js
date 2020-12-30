@@ -22,18 +22,10 @@ module.exports = {
 
   plugins: [
     {
-      use: 'gridsome-plugin-tailwindcss'
-      /**
-      * These are the default options. You don't need to set any options to get
-      * going. Seriously, you don't need to declare tailwind.config.js.
-
+      use: 'gridsome-plugin-tailwindcss',
       options: {
-        tailwindConfig: './tailwind.config.js',
-        presetEnvConfig: {},
-        shouldImport: true,
-        shouldTimeTravel: true
+        tailwindConfig: './tailwind.config.js'
       }
-      */
     },
     {
       use: '@gridsome/source-filesystem',

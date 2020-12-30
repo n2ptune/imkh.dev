@@ -4,7 +4,7 @@ date: 2020-12-30 13:18:26
 published: true
 tags: ['vue']
 cover_image: ./images/vscode-custom-data-thumbnail.png
-description: @tailwindcss 구문을 CSS 파일에서 사용했을 때 나타나는 경고 문구 회피하기
+description: tailwind 구문을 CSS 파일에서 사용했을 때 나타나는 경고 문구 회피하기
 ---
 
 ## Unknown at rule ...
