@@ -42,6 +42,7 @@
 - <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
 - <a href="/content/posts/algorithm-boj-7568.md">(Python) 백준 7568번 덩치 문제</a>
 - <a href="/content/posts/algorithm-boj-7785.md">(Python) 백준 7785번 회사에 있는 사람 문제</a>
+- <a href="/content/posts/algorithm-dfs.md">(Python) 그래프 깊이 우선 탐색 DFS, 백준 2606번 바이러스 문제</a>
 - <a href="/content/posts/algorithm-gcd-lcm.md">최소공배수와 최대공약수 알고리즘 (유클리드 호제법)</a>
 - <a href="/content/posts/algorithm-pro-42576.md">(Python) 프로그래머스 완주하지 못한 선수</a>
 - <a href="/content/posts/algorithm-pro-42586.md">(Python) 프로그래머스 스택/큐 기능 개발</a>
@@ -54,6 +55,7 @@
 - <a href="/content/posts/algorithm-boj-2947.md">(Python) 백준 2947번 나무 조각 문제</a>
 - <a href="/content/posts/algorithm-boj-7568.md">(Python) 백준 7568번 덩치 문제</a>
 - <a href="/content/posts/algorithm-boj-7785.md">(Python) 백준 7785번 회사에 있는 사람 문제</a>
+- <a href="/content/posts/algorithm-dfs.md">(Python) 그래프 깊이 우선 탐색 DFS, 백준 2606번 바이러스 문제</a>
 - <a href="/content/posts/algorithm-pro-42576.md">(Python) 프로그래머스 완주하지 못한 선수</a>
 - <a href="/content/posts/algorithm-pro-42586.md">(Python) 프로그래머스 스택/큐 기능 개발</a>
 - <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
