@@ -47,6 +47,7 @@
 - <a href="/content/posts/algorithm-pro-42576.md">(Python) 프로그래머스 완주하지 못한 선수</a>
 - <a href="/content/posts/algorithm-pro-42586.md">(Python) 프로그래머스 스택/큐 기능 개발</a>
 - <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
+- <a href="/content/posts/algorithm-pro-crain-game.md">프로그래머스 크레인 인형뽑기 게임 파이썬 풀이</a>
 
 ### python
 
@@ -59,6 +60,7 @@
 - <a href="/content/posts/algorithm-pro-42576.md">(Python) 프로그래머스 완주하지 못한 선수</a>
 - <a href="/content/posts/algorithm-pro-42586.md">(Python) 프로그래머스 스택/큐 기능 개발</a>
 - <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
+- <a href="/content/posts/algorithm-pro-crain-game.md">프로그래머스 크레인 인형뽑기 게임 파이썬 풀이</a>
 
 ### web
 
