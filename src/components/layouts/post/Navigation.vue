@@ -1,9 +1,9 @@
 <template>
   <transition name="slide-navigation" appear>
     <aside
-      v-show="offsetAside && isFixed"
+      v-show="offsetLeft && isFixed"
       :style="{
-        left: offsetWithMargin
+        left: offsetLeft
       }"
     >
       <ul :style="{ fontSize: '0.9rem' }">
@@ -37,14 +37,9 @@ export default {
     leftMargin: 65,
     navi: null,
     offsetAside: 0,
+    offsetLeft: 0,
     target: null
   }),
-
-  computed: {
-    offsetWithMargin() {
-      return this.isFixed ? this.leftMargin + this.offsetAside + 'px' : 0
-    }
-  },
 
   methods: {
     parseHeading() {
@@ -118,6 +113,7 @@ export default {
 
     this.contentOffset = top
     this.offsetAside = right
+    this.offsetLeft = this.leftMargin + this.offsetAside + 'px'
 
     window.addEventListener('resize', this.resizingAside, { passive: true })
     window.addEventListener('scroll', this.naviActive, { passive: true })
