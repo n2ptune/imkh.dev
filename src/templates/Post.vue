@@ -4,7 +4,7 @@
       <Header :post="$page.post" />
       <div class="break"></div>
       <Content :md="$page.post.content" @resolved="generateGallery" />
-      <navigation />
+      <Navigation />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
         <GallerySide :images="images" :index="index" @close="index = null" />

@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-navigation" appear>
     <aside
-      v-if="isFixed"
+      v-show="offsetAside && isFixed"
       :style="{
         left: offsetWithMargin
       }"
