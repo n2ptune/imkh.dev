@@ -21,6 +21,7 @@
 - <a href="/content/posts/js-design-patterns.md">자바스크립트 디자인 패턴, 모듈 패턴과 옵저버 패턴 (js design patterns)</a>
 - <a href="/content/posts/js-detect-mobile-device.md">자바스크립트로 모바일 기기 감지하는 여러 방법</a>
 - <a href="/content/posts/js-error.md">자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)</a>
+- <a href="/content/posts/js-falsy-truthy.md">자바스크립트 논리 연산자와 참, 거짓으로 평가되는 값들</a>
 - <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 - <a href="/content/posts/js-memory-management.md">자바스크립트에서의 메모리 관리 (memory-management-in-javascript)</a>
 - <a href="/content/posts/js-module.md">자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)</a>
