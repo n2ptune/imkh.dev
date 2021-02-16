@@ -20,7 +20,7 @@
     "postcss-for": "^2.1.1",
     "prismjs": "^1.21.0",
     "vue-disqus": "^4.0.1",
-    "vue-fuse": "^2.2.1",
+    "vue-fuse": "^3.0.0",
     "vue-gallery-slideshow": "1.5.2",
     "vue-infinite-loading": "2.4.5",
     "vue-runtime-helpers": "^1.1.2"
