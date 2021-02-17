@@ -914,10 +914,10 @@
     sort-package-json "^1.15.0"
     update-notifier "^4.1.0"
 
-"@gridsome/plugin-google-analytics@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@gridsome/plugin-google-analytics/-/plugin-google-analytics-0.1.0.tgz#f2fdffdb05dd2928ca85c4a0d64c7e497a36ee49"
-  integrity sha512-IUuIj1z0BMtNa4NPRyBP3rYGyww+RWypsHTJ7WDdIj/BuH1x7BR9cDn7kskfG5azUi1LV0lJX329Te077oG07A==
+"@gridsome/plugin-google-analytics@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@gridsome/plugin-google-analytics/-/plugin-google-analytics-0.1.2.tgz#5ffe9c80a0c9c3418a51c21fcbdc5fae7dd4ff1f"
+  integrity sha512-41rWKTXQLnZphP8Fozzjh240lg/v5/JEDacB6ZJEr3RzXz3oYvoEQMOxQaUEgZkS8oOSG9TYDoBWVegzwMOuaw==
   dependencies:
     vue-analytics "^5.16.1"
 
@@ -1102,6 +1102,7 @@
     defer-to-connect "^1.0.1"
 
 "@tailwindcss/postcss7-compat@^2.0.2", tailwindcss@>=1.4, "tailwindcss@npm:@tailwindcss/postcss7-compat":
+  name "@tailwindcss/postcss7-compat"
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@tailwindcss/postcss7-compat/-/postcss7-compat-2.0.2.tgz#49cb21703dfb4447620fceab5cef3285cff8c69d"
   integrity sha512-KM8kjG5dd8qoXBX2a6r3r1TOqhFh8NtFBheG9qpVPwSjrD8wRdoM7s+Xz56HEA1XmeN64gEKqjmY6vm55DiS3Q==
