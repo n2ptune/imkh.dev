@@ -18,7 +18,7 @@
     "intersection-observer": "^0.11.0",
     "lodash.debounce": "^4.0.8",
     "postcss-for": "^2.1.1",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "vue-disqus": "^4.0.1",
     "vue-fuse": "^2.2.1",
     "vue-gallery-slideshow": "1.5.2",
