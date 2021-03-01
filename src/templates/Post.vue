@@ -50,7 +50,7 @@ export default {
           property: 'og:image',
           content: this.$page.post.cover_image
             ? `https://imkh.dev${this.$page.post.cover_image.src}`
-            : `https://imkh.dev${require('@/assets/default-thumbnail.jpg')}`
+            : ''
         },
         {
           key: 'og:image:width',

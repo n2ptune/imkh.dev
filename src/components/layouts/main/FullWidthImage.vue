@@ -25,7 +25,7 @@
     @apply absolute z-10 top-0 left-0 w-full h-full block;
 
     content: '';
-    background-color: rgba(0, 0, 0, 0.74);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   & .inner {
