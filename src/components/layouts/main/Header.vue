@@ -9,11 +9,6 @@
           </g-link>
         </li>
         <li class="menu-link">
-          <a href="https://portfolio.imkh.dev/" target="_blank">
-            Portfolio
-          </a>
-        </li>
-        <li class="menu-link">
           <a href="http://github.com/n2ptune" target="_blank">
             Github
           </a>
