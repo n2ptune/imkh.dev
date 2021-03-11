@@ -92,10 +92,10 @@
 
 - <a href="/content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
 - <a href="/content/posts/gridsome-blog-1.md">Nuxt에서 Gridsome으로 블로그 전환한 이유</a>
-- <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
 - <a href="/content/posts/vue-alias-path.md">Vue에서 경로 별칭(@, ~ 등) 사용하기</a>
 - <a href="/content/posts/vue-directive.md">Vue Directive 알아보고 만들어보기</a>
 - <a href="/content/posts/vue-fontawesome.md">Vue 프로젝트에서 Font Awesome Icon 사용하기</a>
+- <a href="/content/posts/vue-i18n.md">Vue i18n 간단하게 사용하기</a>
 - <a href="/content/posts/vue-lifecycle.md">Vue Instance Lifecycle 8단계</a>
 - <a href="/content/posts/vue-masonry-layout.md">Vue Masonry Layout 구현하기 (feat. css grid)</a>
 - <a href="/content/posts/vue-postcss-cssnano.md">Vue PostCSS 플러그인으로 CSS 크기를 압축시키기</a>
@@ -164,15 +164,16 @@
 
 - <a href="/content/posts/linux-tree.md">Linux tree 명령어로 폴더 구조를 텍스트로 변환하기</a>
 
-### etc
-
-- <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
-
 ### react
 
+- <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
 - <a href="/content/posts/react-absolute-path.md">리액트 절대 경로 사용하기</a>
 - <a href="/content/posts/react-context-api.md">리액트 Context API와 useContext()</a>
 - <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
+
+###
+
+- <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
 
 ### typescript
 
