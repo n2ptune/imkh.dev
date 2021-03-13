@@ -92,6 +92,7 @@
 
 - <a href="/content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
 - <a href="/content/posts/gridsome-blog-1.md">Nuxt에서 Gridsome으로 블로그 전환한 이유</a>
+- <a href="/content/posts/socket-io-vue-nodejs.md">Socket.io 5분만에 배우기</a>
 - <a href="/content/posts/vue-alias-path.md">Vue에서 경로 별칭(@, ~ 등) 사용하기</a>
 - <a href="/content/posts/vue-directive.md">Vue Directive 알아보고 만들어보기</a>
 - <a href="/content/posts/vue-fontawesome.md">Vue 프로젝트에서 Font Awesome Icon 사용하기</a>
@@ -126,6 +127,7 @@
 - <a href="/content/posts/js-sequelize-mysql.md">Nodejs(Express)와 Sequelize를 같이 사용하기</a>
 - <a href="/content/posts/nodejs-modify-modules.md">node_modules modify dependency 의존성 패키지 수정하기</a>
 - <a href="/content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
+- <a href="/content/posts/socket-io-vue-nodejs.md">Socket.io 5분만에 배우기</a>
 
 ### express
 

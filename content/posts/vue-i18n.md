@@ -86,7 +86,7 @@ i18n은 공식적으로 지원하는 라이브러리이기 때문에 Vue 생성�
 
 템플릿에서 아래와 같이 사용하면 된다.
 
-```vue
+```html
 <template>
   <div>
     <button>
@@ -98,7 +98,7 @@ i18n은 공식적으로 지원하는 라이브러리이기 때문에 Vue 생성�
 
 위 부분은 `locale` 값에 따라 텍스트로 '추가'가 표시되거나 'add'가 표시된다. `locale` 값을 변경하려면 i18n에서 제공하는 API를 사용하여 변경할 수 있다.
 
-```vue
+```html
 <template>
   <button @click="changeLocale">
     {{ $t('button.change') }}
