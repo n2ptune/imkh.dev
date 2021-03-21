@@ -178,6 +178,10 @@
 
 - <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
 
+### rust
+
+- <a href="/content/posts/rust-hello-world.md">러스트(Rust) 프로그래밍 언어를 설치해보고 Hello World 출력하기</a>
+
 ### typescript
 
 - <a href="/content/posts/ts-generic.md">타입스크립트 제네릭 사용하기</a>
