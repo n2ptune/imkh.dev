@@ -184,6 +184,7 @@
 
 ### typescript
 
+- <a href="/content/posts/ts-challenges.md">타입스크립트 유틸리티 타입과 타입 챌린지로 실력 올리기</a>
 - <a href="/content/posts/ts-generic.md">타입스크립트 제네릭 사용하기</a>
 
 ### postcss
