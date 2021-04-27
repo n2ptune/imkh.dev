@@ -2,7 +2,7 @@
 title: 신입 개발자 포트폴리오용 협업 프로젝트 회고록
 date: 2021-03-07 09:55:53
 published: true
-tags: ['react', '']
+tags: ['react']
 cover_image: ./images/tripbnb-thumbnail.jpg
 description: 신입 개발자가 포트폴리오에 넣을 프로젝트를 개발하고 팀원들과 협업하면서 있었던 일들과 어떻게 진행했는지, 아쉬웠던 점을 기록
 ---
