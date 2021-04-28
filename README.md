@@ -187,10 +187,6 @@
 - <a href="/content/posts/react-context-api.md">리액트 Context API와 useContext()</a>
 - <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
-###
-
-- <a href="/content/posts/portfolio-project.md">신입 개발자 포트폴리오용 협업 프로젝트 회고록</a>
-
 ### rust
 
 - <a href="/content/posts/rust-hello-world.md">러스트(Rust) 프로그래밍 언어를 설치해보고 Hello World 출력하기</a>
