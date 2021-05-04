@@ -108,7 +108,7 @@ export const userModule: Module<UserModuleState, RootState> = {
 
 Vue 2에서는 인스턴스에 `$store`가 바인딩되어 `this.$store`로 스토어에 접근할 수 있지만 Composition API에서 `this`에 접근할 수 없으니 다른 방법을 제공한다. `useStore` 라는 메서드를 사용하면 된다.
 
-```vue
+```ts
 <template>
   <div>{name}</div>
   <div>{email}</div>
@@ -172,7 +172,7 @@ export default createStore({
 
 `key`를 하나 만들고 동기화 시킨다. 그리고 Vuex에서 제공하는 `useStore` 메서드를 확장하는 메서드를 하나 만든다. 매번 키를 임포트해서 사용하기 불편하기 때문에 키를 인자로 받고 스토어를 반환하는 헬퍼 메서드를 하나 작성한다.
 
-```vue
+```ts
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useStore } from '@/store'
