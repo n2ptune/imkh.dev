@@ -5,11 +5,9 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    galleryImages: []
-  }),
+import MediumZoom from 'medium-zoom'
 
+export default {
   props: {
     md: {
       type: String,
@@ -19,27 +17,19 @@ export default {
 
   methods: {
     resizingImages() {
-      const dom = new DOMParser()
-      const html = dom.parseFromString(this.md, 'text/html')
-      const images = html.getElementsByTagName('img')
+      this.$nextTick(() => {
+        const zoom = MediumZoom([...this.$el.querySelectorAll('img')], {
+          background: '#161616'
+        })
 
-      this.galleryImages.push(...images)
+        const headerZIndex = zoomVisible => {
+          const header = document.querySelector('header')
+          header.style.zIndex = zoomVisible ? '-20' : '50'
+        }
 
-      this.$emit('resolved', {
-        images: this.galleryImages
+        zoom.on('open', _event => headerZIndex(true))
+        zoom.on('close', _event => headerZIndex(false))
       })
-      // this.$nextTick(() => {
-      //   // initialize galleryImages
-      //   this.galleryImages = []
-
-      //   const images = [...this.$el.getElementsByTagName('img')]
-      //   this.galleryImages.push(...images)
-
-      //   // emit event to parent component after loaded all images
-      //   this.$emit('resolved', {
-      //     images: this.galleryImages
-      //   })
-      // })
     },
     embed() {
       const dom = new DOMParser()

@@ -12,16 +12,16 @@
     "tree": "ts-node ./helpers/file-tree/index.ts"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "0.1.0",
-    "@microflash/gridsome-plugin-feed": "1.0.4",
+    "@gridsome/plugin-google-analytics": "0.1.2",
+    "@microflash/gridsome-plugin-feed": "1.2.1",
     "gridsome": "0.7.23",
-    "intersection-observer": "^0.11.0",
+    "intersection-observer": "^0.12.0",
     "lodash.debounce": "^4.0.8",
+    "medium-zoom": "^1.0.6",
     "postcss-for": "^2.1.1",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "vue-disqus": "^4.0.1",
-    "vue-fuse": "^2.2.1",
-    "vue-gallery-slideshow": "1.5.2",
+    "vue-fuse": "^3.0.0",
     "vue-infinite-loading": "2.4.5",
     "vue-runtime-helpers": "^1.1.2"
   },

@@ -3,11 +3,10 @@
     <section class="wrapper">
       <Header :post="$page.post" />
       <div class="break"></div>
-      <Content :md="$page.post.content" @resolved="generateGallery" />
+      <Content :md="$page.post.content" />
       <Navigation />
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
-        <GallerySide :images="images" :index="index" @close="index = null" />
       </ClientOnly>
     </section>
     <ClientOnly>
@@ -20,7 +19,6 @@
 import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import Content from '@/components/layouts/post/Content.vue'
 import DefaultLayout from '@/layouts/Default.vue'
-import GallerySide from 'vue-gallery-slideshow'
 import Header from '@/components/layouts/post/Header.vue'
 import Navigation from '@/components/layouts/post/Navigation.vue'
 import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
@@ -86,7 +84,6 @@ export default {
     CommentsPlugin,
     Content,
     DefaultLayout,
-    GallerySide,
     Header,
     Navigation,
     RelatedPosts
@@ -160,20 +157,7 @@ export default {
 
   watch: {
     $route(c, p) {
-      this.index = null
       this.images = []
-    }
-  },
-
-  methods: {
-    /**
-     * @param {HTMLElement[]} data
-     */
-    generateGallery(data) {
-      data.images.map((img, key) => {
-        this.images.push(img.dataset.src)
-        img.addEventListener('click', () => (this.index = key))
-      })
     }
   },
 
