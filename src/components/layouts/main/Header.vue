@@ -1,23 +1,20 @@
 <template>
   <header>
     <div class="flex items-center w-full">
-      <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" />
-      <ul class="text-base">
-        <li class="menu-link">
-          <g-link to="/">
-            Home
-          </g-link>
-        </li>
-        <li class="menu-link">
-          <a href="http://github.com/n2ptune" target="_blank">
-            Github
-          </a>
-        </li>
-      </ul>
-      <div class="ml-auto">
+      <g-link to="/">
+        <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" />
+      </g-link>
+      <div class="ml-auto space-x-4">
+        <a href="https://github.com/n2ptune" target="_blank">
+          <font-awesome
+            :icon="['fab', 'github']"
+            class="header-icon"
+            size="lg"
+          />
+        </a>
         <font-awesome
-          :icon="['fas', 'search']"
-          class="font-normal cursor-pointer transition-colors duration-300 text-white-500 hover:text-white-f"
+          :icon="['fas', 'code-branch']"
+          class="header-icon"
           size="lg"
           @click="handleSearchForm"
         />
@@ -80,6 +77,11 @@ header {
     &:hover {
       @apply text-white-700;
     }
+  }
+
+  & .header-icon {
+    @apply font-thin cursor-pointer transition-colors duration-300
+    text-white-500 hover:text-white-f;
   }
 }
 </style>
