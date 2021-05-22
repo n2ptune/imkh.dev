@@ -82,8 +82,13 @@
 - <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
 - <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
+### devops
+
+- <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
+
 ### nodejs
 
+- <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
 - <a href="/content/posts/docker-nodejs.md">내 Node.js 애플리케이션을 Docker에 올리기</a>
 - <a href="/content/posts/graphql-server-setting.md">GraphQL 서버 환경설정 With GraphQL-Yoga</a>
 - <a href="/content/posts/js-console-colors.md">Nodejs Console Color를 바꿔보자</a>
@@ -96,6 +101,7 @@
 
 ### docker
 
+- <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
 - <a href="/content/posts/docker-nodejs.md">내 Node.js 애플리케이션을 Docker에 올리기</a>
 
 ### typescript
