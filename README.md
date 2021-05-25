@@ -82,6 +82,12 @@
 - <a href="/content/posts/css-table-margin.md">테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)</a>
 - <a href="/content/posts/js-intersection-observer.md">자바스크립트로 IntersectionObserver API 다루기</a>
 
+### docker
+
+- <a href="/content/posts/docker-expose-ports.md">docker run -p 옵션과 Dockerfile의 EXPOSE와의 차이</a>
+- <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
+- <a href="/content/posts/docker-nodejs.md">내 Node.js 애플리케이션을 Docker에 올리기</a>
+
 ### devops
 
 - <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
@@ -98,11 +104,6 @@
 - <a href="/content/posts/nodejs-modify-modules.md">node_modules modify dependency 의존성 패키지 수정하기</a>
 - <a href="/content/posts/nodejs-video-streaming-server.md">5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)</a>
 - <a href="/content/posts/socket-io-vue-nodejs.md">Socket.io 5분만에 배우기</a>
-
-### docker
-
-- <a href="/content/posts/docker-node-jenkins.md">Node.js와 Docker 그리고 Jenkins.</a>
-- <a href="/content/posts/docker-nodejs.md">내 Node.js 애플리케이션을 Docker에 올리기</a>
 
 ### typescript
 
