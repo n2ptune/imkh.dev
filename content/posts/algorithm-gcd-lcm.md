@@ -70,8 +70,7 @@ function gcd(a, b) {
     a = b
     b = r
   }
-  ret
-urn a
+  return a
 }
 ```
 
