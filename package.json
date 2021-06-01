@@ -8,16 +8,28 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint:source": "prettier --write src/**/*.{js,jsx,ts,tsx,md,html,css} --config ./.prettierrc",
+    "lint:content": "prettier --write content/**/*.md --config ./.prettierrc",
+    "lint": "npm run lint:source & npm run lint:content"
   },
   "dependencies": {
+    "gatsby": "^3.4.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.13.13",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby": "^3.4.1",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.5",
+    "autoprefixer": "^10.2.6",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",
@@ -28,9 +40,8 @@
     "gatsby-plugin-sitemap": "^4.2.0",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-sharp": "^3.6.0",
-    "postcss": "^8.2.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "postcss": "^8.3.0",
+    "react-helmet": "^6.1.0",
+    "tailwindcss": "^2.1.2"
   }
 }

@@ -150,9 +150,7 @@ var _ = something() // 'something somethingInner'
 <div class="container">
   <div class="depth-1">
     <div class="depth-2">
-      <div class="depth-3">
-        Last Depth
-      </div>
+      <div class="depth-3">Last Depth</div>
     </div>
   </div>
 </div>

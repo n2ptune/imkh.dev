@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "moduleResolution": "node",
+    "declarationMap": true,
+    "declaration": true,
+    "target": "ESNext",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": ["node_modules", "content/**/*"],
+  "include": ["src/**/*"]
+}
