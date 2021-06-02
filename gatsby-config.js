@@ -21,7 +21,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/'
+        path: './content/posts/images'
       },
       __key: 'images'
     },
@@ -29,10 +29,11 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/'
+        path: './content/posts'
       },
       __key: 'pages'
     },
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
