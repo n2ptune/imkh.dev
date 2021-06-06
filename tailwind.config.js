@@ -17,6 +17,7 @@ const config = {
       colors: {
         black: {
           primary: {
+            50: '#404040',
             100: '#2A2A2A',
             200: '#1C1C1C',
             300: '#121212',

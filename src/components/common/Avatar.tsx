@@ -6,7 +6,7 @@ const Avatar: React.FC = () => {
     <StaticImage
       src="../../images/profile.png"
       alt="profile"
-      className="rounded-full w-8 h-8 bg-gray-200 dark:bg-black-primary-400"
+      className="rounded-full w-8 h-8 bg-gray-200 dark:bg-black-primary-300 mr-2"
       placeholder="dominantColor"
     />
   )
