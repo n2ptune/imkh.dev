@@ -1,3 +1,13 @@
+const plugin = require('tailwindcss/plugin')
+
+const childrenPlugin = plugin(({ addVariant, e }) => {
+  addVariant('children', ({ modifySelectors, separator }) => {
+    modifySelectors(({ className }) => {
+      return `.${e(`children${separator}${className}`)} > *`
+    })
+  })
+})
+
 /** @type {import('tailwindcss/tailwind-config').TailwindConfig} */
 const config = {
   purge: ['src/**/*.{js,jsx,ts,tsx,html,css}'],
@@ -18,9 +28,18 @@ const config = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      display: ['children'],
+      textColor: ['children', 'hover'],
+      textOpacity: ['children'],
+      opacity: ['children'],
+      backgroundColor: ['children'],
+      transform: ['children'],
+      transitionDuration: ['children'],
+      transitionProperty: ['children']
+    }
   },
-  plugins: []
+  plugins: [childrenPlugin]
 }
 
 module.exports = config
