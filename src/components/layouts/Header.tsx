@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import Avatar from '../common/Avatar'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
+import { HEADER_HEIGHT } from '@/const'
 
 const HeaderNavi: React.FC = () => {
   const classes = useMemo(() => {
@@ -33,7 +34,9 @@ const HeaderNavi: React.FC = () => {
 
 export default function Header({ children }: React.PropsWithChildren<unknown>) {
   return (
-    <header className="h-16 flex flex-row fixed top-0 left-0 w-full items-center flex-nowrap px-2 lg:px-6 bg-black-primary-400 text-white">
+    <header
+      className={`flex flex-row fixed top-0 left-0 w-full items-center flex-nowrap px-2 lg:px-6 bg-black-primary-300 z-50 text-white ${HEADER_HEIGHT.class} border-b border-black-primary-100`}
+    >
       <div className="flex items-center flex-nowrap space-x-2">
         <Avatar />
         <h1 className="text-xl font-semibold">imkh.dev</h1>

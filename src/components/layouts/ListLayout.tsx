@@ -1,4 +1,5 @@
 import React from 'react'
+import Navigation from '../main/Navigation'
 import Header from './Header'
 import WrapLayout from './Wrap'
 
@@ -7,12 +8,14 @@ export default function ListLayout({
 }: React.PropsWithChildren<unknown>) {
   return (
     <WrapLayout>
-      <main>
+      <main className="py-8">
         <Header />
-        <section className="flex container mx-auto">
-          <aside>1</aside>
-          <section>{children}</section>
-          <aside>3</aside>
+        <section className="grid grid-cols-12 gap-10 container mx-auto">
+          <aside className="hidden lg:block lg:col-span-2">
+            <Navigation />
+          </aside>
+          <section className="col-span-12 lg:col-span-8">{children}</section>
+          <aside className="hidden lg:block lg:col-span-2">3</aside>
         </section>
       </main>
     </WrapLayout>

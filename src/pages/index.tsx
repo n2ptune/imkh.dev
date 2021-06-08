@@ -8,7 +8,7 @@ export default function Main(props: PageProps) {
     <>
       <Hero />
       <ListLayout>
-        <article>Hello</article>
+        <article className="break-words">{'Hello'.repeat(2000)}</article>
       </ListLayout>
     </>
   )
