@@ -28,6 +28,9 @@ const HeaderNavi: React.FC = () => {
       >
         Github
       </a>
+      <a href="" className={classes.item}>
+        Search
+      </a>
     </nav>
   )
 }

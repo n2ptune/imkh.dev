@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
       style={{ top: `calc(${HEADER_HEIGHT.size} + 20px)` }}
     >
       🐋 모든 태그
-      <div className="overflow-y-scroll max-h-96 text-base font-normal pl-6 my-4 space-y-1">
+      <div className="overflow-y-scroll text-base font-normal pl-6 my-4 space-y-1">
         {removedDuplicatedTag.map(tag => (
           <div key={tag}>
             <span className="text-gray-400 hover:text-white cursor-pointer">
