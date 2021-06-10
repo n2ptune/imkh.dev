@@ -10,7 +10,7 @@ export default function ListLayout({
     <WrapLayout>
       <main className="py-8">
         <Header />
-        <section className="grid grid-cols-12 gap-10 container mx-auto">
+        <section className="grid grid-cols-12 lg:gap-10 container mx-auto">
           <aside className="hidden lg:block lg:col-span-2">
             <Navigation />
           </aside>
