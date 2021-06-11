@@ -40,7 +40,7 @@
     "autoprefixer": "^9",
     "cssnano": "^4.1.10",
     "gridsome-plugin-tailwindcss": "3.0.1",
-    "postcss": "^7",
+    "postcss": "^8",
     "postcss-import": "^12",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "ts-node": "^9.1.1",
