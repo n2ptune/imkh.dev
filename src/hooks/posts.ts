@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useAllPosts = () => {
   const query = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             id
@@ -21,7 +21,7 @@ export const useAllPosts = () => {
               date
             }
             timeToRead
-            excerpt
+            excerpt(pruneLength: 70, truncate: true)
             fields {
               slug
             }

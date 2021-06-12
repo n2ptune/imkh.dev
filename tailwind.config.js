@@ -14,6 +14,19 @@ const config = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          '-system-ui',
+          '-apple-system',
+          'Ubuntu',
+          'Roboto',
+          '"Noto Sans"',
+          '"Noto Sans KR"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          'Segoe UI Emoji"'
+        ]
+      },
       colors: {
         black: {
           primary: {

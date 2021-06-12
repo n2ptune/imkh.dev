@@ -7,7 +7,7 @@ const PostWrap: React.FC = () => {
 
   return (
     <>
-      <div className="mb-6 text-xl font-extrabold">✏ 모든 포스트</div>
+      <div className="mb-6 text-xl font-black">✏ 모든 포스트</div>
       <div className="grid grid-cols-12 gap-6">
         {posts.map(post => (
           <PostCard post={post} key={post.id} />

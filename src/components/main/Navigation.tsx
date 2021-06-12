@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
 
   return (
     <div
-      className="sticky text-xl font-extrabold"
+      className="sticky text-xl font-black"
       style={{ top: `calc(${HEADER_HEIGHT.size} + 20px)` }}
     >
       🐋 모든 태그
