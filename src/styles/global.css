@@ -5,5 +5,19 @@
 html,
 body {
   @apply bg-white dark:bg-black-primary-300 transition-colors duration-200
-  h-full overflow-x-hidden text-black-primary-500 dark:text-white;
+ text-black-primary-500 dark:text-white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  z-index: 2001;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white dark:bg-black-primary-300;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-black-primary-300 dark:bg-black-primary-50 rounded-3xl h-40;
 }

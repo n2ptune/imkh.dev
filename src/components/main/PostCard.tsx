@@ -14,7 +14,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
   const classes = {
     wrapper: classNames('col-span-12 md:col-span-6 lg:col-span-4'),
-    image: classNames('rounded'),
+    image: classNames('rounded bg-gray-200 dark:bg-black-primary-300 w-full'),
     body: classNames(
       'bg-white dark:bg-black-primary-100 shadow-lg rounded',
       'h-full'
@@ -33,7 +33,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             style={{ height: CARD_IMAGE_HEIGHT }}
           />
         ) : null}
-        <div className={classes.content}>{post.id}</div>
+        <div className={classes.content}>{post.frontmatter.title}</div>
       </div>
     </div>
   )
