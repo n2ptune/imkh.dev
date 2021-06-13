@@ -33,3 +33,19 @@ export const useAllPosts = () => {
 
   return { posts: query.allMarkdownRemark.edges.map(edge => edge.node) }
 }
+
+export const useTimeToReadToText = (timeToRead: string | number) => {
+  if (typeof timeToRead === 'string') {
+    timeToRead = parseInt(timeToRead)
+  }
+
+  const template = (n: number, emoji: string) => `읽는 데 ${n}분 걸림 ${emoji}`
+
+  if (1 <= timeToRead && timeToRead <= 3) {
+    return template(timeToRead, '☕')
+  } else if (3 < timeToRead && timeToRead <= 5) {
+    return template(timeToRead, '🔥')
+  } else {
+    return template(timeToRead, '📰')
+  }
+}

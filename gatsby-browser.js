@@ -1,22 +1,15 @@
+import React from 'react'
 import './src/styles/global.css'
+import { ThemeProvider, useDefaultTheme } from './src/context/theme'
 
 export function onClientEntry() {
-  const setTheme = theme => {
-    document.documentElement.classList.add(theme)
-    window.localStorage.removeItem('theme')
-    window.localStorage.setItem('theme', theme)
-  }
-  const storageTheme = window.localStorage.getItem('theme')
+  /* eslint-disable-next-line */
+  useDefaultTheme()
+}
 
-  if (storageTheme) {
-    setTheme(storageTheme)
-  } else {
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+export function wrapRootElement({ element }) {
+  /* eslint-disable-next-line */
+  const theme = useDefaultTheme()
 
-    if (darkScheme.matches) {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
-  }
+  return <ThemeProvider color={theme}>{element}</ThemeProvider>
 }

@@ -1,20 +1,31 @@
-import React, { useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import Avatar from '../common/Avatar'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { HEADER_HEIGHT } from '@/const'
+import ThemeContext from '@/context/theme'
 
 const HeaderNavi: React.FC = () => {
+  const { color, toggleTheme } = useContext(ThemeContext)
   const classes = useMemo(() => {
     return {
       wrapper: classNames(
         'hidden lg:block children:inline-block text-gray-500 space-x-5 ml-10'
       ),
       item: classNames(
-        'transition-colors duration-300 hover:text-white text-sm'
+        'transition-colors duration-300 hover:text-white',
+        'cursor-pointer'
       )
     }
   }, [])
+
+  const handleToggleTheme = () => {
+    if (color === 'dark') {
+      toggleTheme('light')
+    } else {
+      toggleTheme('dark')
+    }
+  }
 
   return (
     <nav className={classes.wrapper}>
@@ -28,9 +39,10 @@ const HeaderNavi: React.FC = () => {
       >
         Github
       </a>
-      <a href="" className={classes.item}>
-        Search
-      </a>
+      <span className={classes.item}>Search</span>
+      <span onClick={handleToggleTheme} className={classes.item}>
+        {color === 'dark' ? 'Light Mode' : 'Dark Mode'}
+      </span>
     </nav>
   )
 }

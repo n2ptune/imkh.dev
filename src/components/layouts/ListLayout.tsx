@@ -8,7 +8,7 @@ export default function ListLayout({
 }: React.PropsWithChildren<unknown>) {
   return (
     <WrapLayout>
-      <main className="pt-8 pb-72 bg-gray-100 dark:bg-black-primary-300">
+      <main className="pt-8 pb-72 bg-black-primary-10 dark:bg-black-primary-300 transition-colors duration-300">
         <Header />
         <section className="grid grid-cols-12 lg:gap-10 container mx-auto">
           <aside className="hidden lg:block lg:col-span-2">

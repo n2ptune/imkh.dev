@@ -21,6 +21,7 @@ const config = {
           'Ubuntu',
           'Roboto',
           '"Noto Sans"',
+          '"Apple SD Gothic Neo"',
           '"Noto Sans KR"',
           'sans-serif',
           '"Apple Color Emoji"',
@@ -30,6 +31,7 @@ const config = {
       colors: {
         black: {
           primary: {
+            10: '#f2f3f9',
             50: '#404040',
             100: '#2A2A2A',
             200: '#1C1C1C',
