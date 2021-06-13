@@ -11,6 +11,7 @@
     "dev": "GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR=false gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "postbuild": "mv public dist",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint:source": "prettier --write src/**/*.{js,jsx,ts,tsx,md,html,css} --config ./.prettierrc",

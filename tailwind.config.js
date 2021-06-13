@@ -25,7 +25,7 @@ const config = {
           '"Noto Sans KR"',
           'sans-serif',
           '"Apple Color Emoji"',
-          'Segoe UI Emoji"'
+          '"Segoe UI Emoji"'
         ]
       },
       colors: {
