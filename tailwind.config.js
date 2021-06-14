@@ -18,10 +18,8 @@ const config = {
         sans: [
           '-system-ui',
           '-apple-system',
-          'Ubuntu',
-          'Roboto',
           '"Noto Sans"',
-          '"Apple SD Gothic Neo"',
+          // '"Apple SD Gothic Neo"',
           '"Noto Sans KR"',
           'sans-serif',
           '"Apple Color Emoji"',

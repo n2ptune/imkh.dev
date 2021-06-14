@@ -29,9 +29,9 @@ const Navigation: React.FC = () => {
       style={{ top: `calc(${HEADER_HEIGHT.size} + 20px)` }}
     >
       🐋 모든 태그
-      <div className="text-base font-normal pl-6 my-4 space-y-1">
+      <div className="font-normal pl-6 my-4 space-y-1">
         {removedDuplicatedTag.map(tag => (
-          <div key={tag}>
+          <div className="text-sm" key={tag}>
             <span className="text-gray-600 dark:text-gray-400 hover:text-black-primary-500 dark:hover:text-white cursor-pointer">
               {tag}
             </span>

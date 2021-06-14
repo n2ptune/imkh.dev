@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
         <CSSTransition in={imageLoaded} timeout={100} mountOnEnter>
           {state => (
             <div className={classes.text} style={{ ...transitionClass(state) }}>
-              <div className="text-white text-center text-3xl lg:text-5xl font-black">
+              <div className="text-white text-center text-3xl lg:text-5xl font-bold">
                 <div>
                   <span className={classes.highlight}>개발자</span>의 개발로그
                 </div>

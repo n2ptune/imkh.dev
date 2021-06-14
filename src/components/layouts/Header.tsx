@@ -10,7 +10,7 @@ const HeaderNavi: React.FC = () => {
   const classes = useMemo(() => {
     return {
       wrapper: classNames(
-        'hidden lg:block children:inline-block text-gray-500 space-x-5 ml-10'
+        'hidden lg:block children:inline-block text-gray-500 space-x-5 ml-10 text-sm'
       ),
       item: classNames(
         'transition-colors duration-300 hover:text-white',

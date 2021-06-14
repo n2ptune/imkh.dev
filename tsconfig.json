@@ -9,8 +9,10 @@
     "declaration": true,
     "target": "ESNext",
     "jsx": "react",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "content/**/*"],
-  "include": ["src/**/*", "./global.d.ts"]
+  "include": ["src/**/*", "./global.d.ts"],
+  "files": ["./global.d.ts"]
 }

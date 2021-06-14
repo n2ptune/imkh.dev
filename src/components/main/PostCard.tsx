@@ -5,6 +5,7 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { BsBookmarkFill } from 'react-icons/bs'
 import TagList from './TagList'
+import { Link } from 'gatsby'
 
 type PostCardProps = {
   post: any
@@ -33,32 +34,34 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   }
 
   return (
-    <div className={classes.wrapper} style={{ height: CARD_HEIGHT }}>
-      <div className={classes.body}>
-        {coverImage ? (
-          <GatsbyImage
-            className={classes.image}
-            image={coverImage}
-            alt="image"
-            style={{ height: CARD_IMAGE_HEIGHT }}
-          />
-        ) : null}
-        <div className={classes.content}>
-          <div className="text-lg font-bold">{post.frontmatter.title}</div>
-          <div className="text-gray-400 dark:text-white dark:text-opacity-40 group-hover:text-black-primary-500 dark:group-hover:text-white dark:group-hover:text-opacity-100 transition-colors duration-300">
-            {post.excerpt}
+    <Link className={classes.wrapper} to={post.fields.slug}>
+      <div style={{ height: CARD_HEIGHT }}>
+        <div className={classes.body}>
+          {coverImage ? (
+            <GatsbyImage
+              className={classes.image}
+              image={coverImage}
+              alt="image"
+              style={{ height: CARD_IMAGE_HEIGHT }}
+            />
+          ) : null}
+          <div className={classes.content}>
+            <div className="text-lg font-bold">{post.frontmatter.title}</div>
+            <div className="text-gray-400 dark:text-white dark:text-opacity-40 group-hover:text-black-primary-500 dark:group-hover:text-white dark:group-hover:text-opacity-100 transition-colors duration-300">
+              {post.excerpt}
+            </div>
+          </div>
+          <TagList tags={post.frontmatter.tags} />
+          <div className="flex items-center justify-between w-full absolute bottom-0 p-4 border-t border-gray-200 dark:border-black-primary-50">
+            <span className="text-sm">
+              <BsBookmarkFill className="inline-block mr-2" />
+              <span>{date}</span>
+            </span>
+            <span className="text-sm">{ttr}</span>
           </div>
         </div>
-        <TagList tags={post.frontmatter.tags} />
-        <div className="flex items-center justify-between w-full absolute bottom-0 p-4 border-t border-gray-200 dark:border-black-primary-50">
-          <span className="text-sm">
-            <BsBookmarkFill className="inline-block mr-2" />
-            <span>{date}</span>
-          </span>
-          <span className="text-sm">{ttr}</span>
-        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
