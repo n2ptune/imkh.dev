@@ -49,3 +49,30 @@ export const useTimeToReadToText = (timeToRead: string | number) => {
     return template(timeToRead, '📰')
   }
 }
+
+export const usePostWithSlug: (s: string) => object = slug => {
+  // const query = useStaticQuery(
+  //   graphql`
+  //     query getPost {
+  //       markdownRemark(fields: { slug: { eq: $slug } }) {
+  //         id
+  //         tableOfContents(absolute: false, heading: "", maxDepth: 10)
+  //         timeToRead
+  //         html
+  //         frontmatter {
+  //           date
+  //           description
+  //           published
+  //           tags
+  //           title
+  //         }
+  //         fields {
+  //           slug
+  //         }
+  //       }
+  //     }
+  //   `
+  // )
+
+  return {}
+}
