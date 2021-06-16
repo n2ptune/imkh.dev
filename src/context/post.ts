@@ -1,5 +1,12 @@
 import { createContext } from 'react'
 
+// Multiple
 const PostContext = createContext({ posts: [] })
 
-export default PostContext
+// Single
+const SinglePostContext = createContext({
+  post: null,
+  setPost: (s: unknown) => {}
+})
+
+export { PostContext, SinglePostContext }

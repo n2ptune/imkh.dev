@@ -4,7 +4,7 @@ import ListLayout from '@/components/layouts/ListLayout'
 import Hero from '@/components/Hero'
 import PostWrap from '@/components/main/PostWrap'
 import { useAllPosts } from '@/hooks/posts'
-import PostContext from '@/context/post'
+import { PostContext } from '@/context/post'
 
 export default function Main(props: PageProps) {
   const { posts } = useAllPosts()

@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PostLayout from '@/components/layouts/PostLayout'
 import { graphql, PageProps } from 'gatsby'
+import { SinglePostContext } from '@/context/post'
 
 export default function Post(props: PageProps) {
   const { markdownRemark: md } = props.data as any
+  const [post, setPost] = useState(null)
+
+  useEffect(() => {
+    setPost(md)
+  }, [])
+
   return (
-    <PostLayout>
-      <div className="text-3xl font-bold">{md.frontmatter.title}</div>
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: md.html }}
-      ></div>
-    </PostLayout>
+    <SinglePostContext.Provider value={{ post, setPost }}>
+      <PostLayout>
+        <div className="text-3xl font-bold">{md.frontmatter.title}</div>
+        <div
+          className="prose dark:prose-dark"
+          dangerouslySetInnerHTML={{ __html: md.html }}
+        ></div>
+      </PostLayout>
+    </SinglePostContext.Provider>
   )
 }
 

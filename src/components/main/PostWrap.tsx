@@ -1,4 +1,4 @@
-import PostContext from '@/context/post'
+import { PostContext } from '@/context/post'
 import React, { useContext } from 'react'
 import PostCard from './PostCard'
 

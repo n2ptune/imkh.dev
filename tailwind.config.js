@@ -15,6 +15,18 @@ const config = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      typography: theme => ({
+        default: {
+          css: {
+            color: theme('colors.black.primary-400')
+          }
+        },
+        dark: {
+          css: {
+            color: theme('colors.white')
+          }
+        }
+      }),
       fontFamily: {
         sans: [
           '-system-ui',
@@ -51,7 +63,8 @@ const config = {
       backgroundColor: ['children'],
       transform: ['children'],
       transitionDuration: ['children'],
-      transitionProperty: ['children']
+      transitionProperty: ['children'],
+      typography: ['dark']
     }
   },
   plugins: [childrenPlugin, typography]
