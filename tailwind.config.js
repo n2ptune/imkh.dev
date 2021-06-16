@@ -1,4 +1,5 @@
 const plugin = require('tailwindcss/plugin')
+const typography = require('@tailwindcss/typography')
 
 const childrenPlugin = plugin(({ addVariant, e }) => {
   addVariant('children', ({ modifySelectors, separator }) => {
@@ -53,7 +54,7 @@ const config = {
       transitionProperty: ['children']
     }
   },
-  plugins: [childrenPlugin]
+  plugins: [childrenPlugin, typography]
 }
 
 module.exports = config

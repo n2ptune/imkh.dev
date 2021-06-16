@@ -3,12 +3,14 @@ import PostLayout from '@/components/layouts/PostLayout'
 import { graphql, PageProps } from 'gatsby'
 
 export default function Post(props: PageProps) {
-  console.log(props)
   const { markdownRemark: md } = props.data as any
   return (
     <PostLayout>
       <div className="text-3xl font-bold">{md.frontmatter.title}</div>
-      <div dangerouslySetInnerHTML={{ __html: md.html }}></div>
+      <div
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: md.html }}
+      ></div>
     </PostLayout>
   )
 }
