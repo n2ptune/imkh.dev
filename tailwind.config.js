@@ -1,70 +1,73 @@
-module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
-  },
-  purge:
-    process.env.NODE_ENV === 'production'
-      ? {
-          enabled: true,
-          content: [
-            './src/assets/**/*.css',
-            './src/styles/**/*.css',
-            './src/**/*.vue',
-            './src/**/*.js'
-          ]
-        }
-      : false,
+const plugin = require('tailwindcss/plugin')
+const typography = require('@tailwindcss/typography')
+
+const childrenPlugin = plugin(({ addVariant, e }) => {
+  addVariant('children', ({ modifySelectors, separator }) => {
+    modifySelectors(({ className }) => {
+      return `.${e(`children${separator}${className}`)} > *`
+    })
+  })
+})
+
+/** @type {import('tailwindcss/tailwind-config').TailwindConfig} */
+const config = {
+  purge: ['src/**/*.{js,jsx,ts,tsx,html,css}'],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      fontFamily: {
-        mono: ['Hack', 'D2Coding', 'monospace'],
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Noto Sans"',
-          '"Noto Sans KR"',
-          'sans-serif',
-          'emoji'
-        ]
-      },
-      fontSize: {
-        xl: '1.3rem'
-      },
-      screens: {
-        '2xl': '1480px'
-      },
-      colors: {
-        elevation: {
-          '100': 'rgba(255, 255, 255, 0.05)',
-          '200': 'rgba(255, 255, 255, 0.07)',
-          '300': 'rgba(255, 255, 255, 0.08)',
-          '400': 'rgba(255, 255, 255, 0.09)',
-          '500': 'rgba(255, 255, 255, 0.11)',
-          '600': 'rgba(255, 255, 255, 0.12)',
-          '700': 'rgba(255, 255, 255, 0.14)',
-          '800': 'rgba(255, 255, 255, 0.15)',
-          '900': 'rgba(255, 255, 255, 0.16)'
+      typography: theme => ({
+        default: {
+          css: {
+            color: theme('colors.black.primary-400')
+          }
         },
         dark: {
-          surface: '#161616',
-          lighten: '#212121'
-        },
-        white: {
-          '100': 'rgba(255, 255, 255, 0.1)',
-          '200': 'rgba(255, 255, 255, 0.2)',
-          '300': 'rgba(255, 255, 255, 0.3)',
-          '400': 'rgba(255, 255, 255, 0.4)',
-          '500': 'rgba(255, 255, 255, 0.5)',
-          '600': 'rgba(255, 255, 255, 0.6)',
-          '700': 'rgba(255, 255, 255, 0.7)',
-          '800': 'rgba(255, 255, 255, 0.8)',
-          '900': 'rgba(255, 255, 255, 0.9)',
-          f: 'rgb(255, 255, 255)'
+          css: {
+            color: theme('colors.white')
+          }
+        }
+      }),
+      fontFamily: {
+        sans: [
+          '-system-ui',
+          '-apple-system',
+          '"Noto Sans"',
+          // '"Apple SD Gothic Neo"',
+          '"Noto Sans KR"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"'
+        ]
+      },
+      colors: {
+        black: {
+          primary: {
+            10: '#f2f3f9',
+            50: '#404040',
+            100: '#2A2A2A',
+            200: '#1C1C1C',
+            300: '#121212',
+            400: '#080808',
+            500: '#040404'
+          }
         }
       }
     }
   },
-  variants: {},
-  plugins: []
+  variants: {
+    extend: {
+      display: ['children'],
+      textColor: ['children', 'hover'],
+      textOpacity: ['children'],
+      opacity: ['children'],
+      backgroundColor: ['children'],
+      transform: ['children'],
+      transitionDuration: ['children'],
+      transitionProperty: ['children'],
+      typography: ['dark']
+    }
+  },
+  plugins: [childrenPlugin, typography]
 }
+
+module.exports = config

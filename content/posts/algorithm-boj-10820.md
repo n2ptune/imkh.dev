@@ -23,10 +23,7 @@ description: 백준 10820번 문자열 분석 문제 솔루션
 ### 풀이
 
 ```js
-const input = require('fs')
-  .readFileSync('/dev/stdin')
-  .toString()
-  .split('\n')
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n')
 
 const t = input.filter(str => str.length < 1)
 

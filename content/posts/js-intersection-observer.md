@@ -84,18 +84,10 @@ IntersectionObserver API(줄여서 IO API)를 만들기 위해서는 `new` 연�
   <div class="status-field">
     <div class="status-item">Loaded Item : 4</div>
   </div>
-  <div class="item">
-    Item 1
-  </div>
-  <div class="item">
-    Item 2
-  </div>
-  <div class="item">
-    Item 3
-  </div>
-  <div class="item">
-    Item 4
-  </div>
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
   <div class="scroll-detecting"></div>
 </div>
 ```

@@ -89,9 +89,7 @@ i18n은 공식적으로 지원하는 라이브러리이기 때문에 Vue 생성�
 ```html
 <template>
   <div>
-    <button>
-      {{ $t('button.add') }}
-    </button>
+    <button>{{ $t('button.add') }}</button>
   </div>
 </template>
 ```
@@ -100,20 +98,18 @@ i18n은 공식적으로 지원하는 라이브러리이기 때문에 Vue 생성�
 
 ```html
 <template>
-  <button @click="changeLocale">
-    {{ $t('button.change') }}
-  </button>
+  <button @click="changeLocale">{{ $t('button.change') }}</button>
 </template>
 
 <script>
-export default {
-  methods: {
-    changeLocale() {
-      if (this.$i18n.locale === 'en') return (this.$i18n.locale = 'ko')
-      this.$i18n.locale = 'en'
+  export default {
+    methods: {
+      changeLocale() {
+        if (this.$i18n.locale === 'en') return (this.$i18n.locale = 'ko')
+        this.$i18n.locale = 'en'
+      }
     }
   }
-}
 </script>
 ```
 

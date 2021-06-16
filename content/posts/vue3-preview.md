@@ -167,10 +167,7 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const reversedMessage = computed(() =>
-      props.msg
-        .split('')
-        .reverse()
-        .join('')
+      props.msg.split('').reverse().join('')
     )
 
     onMounted(() => {
