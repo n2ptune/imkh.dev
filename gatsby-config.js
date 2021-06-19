@@ -23,7 +23,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './content/posts/images'
+        path: path.join(__dirname, 'content', 'posts', 'images/')
       },
       __key: 'images'
     },
@@ -35,7 +35,19 @@ module.exports = {
       },
       __key: 'pages'
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: 'gatsby-plugin-typescript',
       options: {
