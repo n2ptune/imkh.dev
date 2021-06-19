@@ -30,7 +30,10 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       'bg-white dark:bg-black-primary-100 shadow-lg rounded',
       'h-full relative'
     ),
-    content: classNames('p-6 lg:p-4 space-y-2')
+    content: classNames('p-6 lg:p-4 space-y-2'),
+    groupText: classNames(
+      'text-gray-400 dark:text-white dark:text-opacity-40 group-hover:text-black-primary-500 dark:group-hover:text-white dark:group-hover:text-opacity-100 transition-colors duration-300'
+    )
   }
 
   return (
@@ -47,13 +50,11 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
           ) : null}
           <div className={classes.content}>
             <div className="text-lg font-bold">{post.frontmatter.title}</div>
-            <div className="text-gray-400 dark:text-white dark:text-opacity-40 group-hover:text-black-primary-500 dark:group-hover:text-white dark:group-hover:text-opacity-100 transition-colors duration-300">
-              {post.excerpt}
-            </div>
+            <div className={classes.groupText}>{post.excerpt}</div>
           </div>
           <TagList tags={post.frontmatter.tags} />
           <div className="flex items-center justify-between w-full absolute bottom-0 p-4 border-t border-gray-200 dark:border-black-primary-50">
-            <span className="text-sm">
+            <span className={classes.groupText + ' text-sm'}>
               <BsBookmarkFill className="inline-block mr-2" />
               <span>{date}</span>
             </span>
