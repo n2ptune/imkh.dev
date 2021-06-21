@@ -58,7 +58,9 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               <BsBookmarkFill className="inline-block mr-2" />
               <span>{date}</span>
             </span>
-            <span className="text-sm">{ttr}</span>
+            <span className={classNames(classes.groupText, 'text-sm')}>
+              {ttr}
+            </span>
           </div>
         </div>
       </div>

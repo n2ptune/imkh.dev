@@ -14,7 +14,10 @@ export default function Post(props: PageProps) {
   return (
     <SinglePostContext.Provider value={{ post, setPost }}>
       <PostLayout>
-        <div className="text-3xl font-bold">{md.frontmatter.title}</div>
+        <div className="pl-4 pr-24 mb-24">
+          <div className="text-3xl font-bold mb-2">{md.frontmatter.title}</div>
+          <div className="text-xl">{md.frontmatter.description}</div>
+        </div>
         <div
           className="prose dark:prose-dark"
           dangerouslySetInnerHTML={{ __html: md.html }}
