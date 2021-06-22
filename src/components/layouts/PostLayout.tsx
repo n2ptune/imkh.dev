@@ -11,7 +11,7 @@ export default function PostLayout({
 
   return (
     <WrapLayout>
-      <main className="pt-24 pb-72 bg-black-primary-10 dark:bg-black-primary-300 transition-colors duration-300">
+      <main className="pt-24 pb-72 bg-white dark:bg-black-primary-300 transition-colors duration-300">
         <Header />
         <section className={style.layoutSection}>
           <section className="grid grid-cols-12 lg:gap-6">

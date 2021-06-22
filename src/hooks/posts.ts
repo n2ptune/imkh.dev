@@ -34,12 +34,16 @@ export const useAllPosts = () => {
   return { posts: query.allMarkdownRemark.edges.map(edge => edge.node) }
 }
 
-export const useTimeToReadToText = (timeToRead: string | number) => {
+export const useTimeToReadToText = (
+  timeToRead: string | number,
+  noText: boolean = false
+) => {
   if (typeof timeToRead === 'string') {
     timeToRead = parseInt(timeToRead)
   }
 
-  const template = (n: number, emoji: string) => `읽는 데 ${n}분 걸림 ${emoji}`
+  const template = (n: number, emoji: string) =>
+    !noText ? `읽는 데 ${n}분 걸림 ${emoji}` : emoji
 
   if (1 <= timeToRead && timeToRead <= 3) {
     return template(timeToRead, '☕')
