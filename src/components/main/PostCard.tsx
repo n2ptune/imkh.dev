@@ -50,7 +50,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             />
           ) : null}
           <div className={classes.content}>
-            <div className="text-lg font-bold text-black-primary-300">
+            <div className="text-lg font-bold text-black-primary-300 dark:text-white">
               {post.frontmatter.title}
             </div>
             {!isCutDescription && (

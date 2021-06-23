@@ -12,10 +12,11 @@ type TagItemProps = {
 const TagItem: React.FC<TagItemProps> = ({ tag }) => {
   const style = classNames(
     'text-gray-400',
-    'bg-white',
+    'bg-transparent',
     'rounded-full',
     'border',
-    'border-gray-300',
+    'dark:border-black-primary-50',
+    'dark:text-black-primary-10',
     'px-3 py-1',
     'mr-2 mb-2'
     // 'group group-hover:text-black-primary-50 group-hover:border-black-primary-50'
