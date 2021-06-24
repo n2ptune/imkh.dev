@@ -6,6 +6,7 @@ import Avatar from '@/components/common/Avatar'
 import { useRelativeDate } from '@/hooks/date'
 import * as layoutModule from '@/styles/post-layout.module.css'
 import { useTimeToReadToText } from '@/hooks/posts'
+import TagList from '@/components/main/TagList'
 
 export default function Post(props: PageProps) {
   const { markdownRemark: md } = props.data as any
@@ -30,6 +31,9 @@ export default function Post(props: PageProps) {
             <span className="text-sm">ㅡ</span>
             <span className="text-sm">{formatDate}</span>
             <span>{ttr}</span>
+          </div>
+          <div className="py-6">
+            <TagList tags={md.frontmatter.tags} />
           </div>
         </div>
         <span className="absolute left-0 h-px w-full bg-gray-200 dark:bg-black-primary-200"></span>

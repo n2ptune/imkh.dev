@@ -18,7 +18,12 @@ const config = {
       typography: theme => ({
         default: {
           css: {
-            color: theme('colors.black.primary-400')
+            color: theme('colors.black.primary-400'),
+            code: {
+              '&::before': {
+                content: '@'
+              }
+            }
           }
         },
         dark: {

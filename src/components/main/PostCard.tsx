@@ -57,7 +57,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
               <div className={classes.groupText}>{post.excerpt}</div>
             )}
           </div>
-          <TagList tags={post.frontmatter.tags} />
+          <TagList isPadding tags={post.frontmatter.tags} />
           <div className="text-xs flex items-center justify-between w-full absolute bottom-0 p-4 border-t border-gray-200 dark:border-black-primary-50">
             <span className={classes.groupText}>
               <BsBookmarkFill className="inline-block mr-2" />

@@ -3,6 +3,7 @@ import React from 'react'
 
 type TagListProps = {
   tags: string[]
+  isPadding?: boolean
 }
 
 type TagItemProps = {
@@ -25,9 +26,13 @@ const TagItem: React.FC<TagItemProps> = ({ tag }) => {
   return <div className={style}>{tag}</div>
 }
 
-const TagList: React.FC<TagListProps> = ({ tags }) => {
+const TagList: React.FC<TagListProps> = ({ tags, isPadding }) => {
+  const mergeClass = classNames('flex flex-wrap flex-row text-xs', {
+    'px-4': isPadding
+  })
+
   return (
-    <div className="flex flex-wrap flex-row px-4 text-xs">
+    <div className={mergeClass}>
       {tags.map(tag => (
         <TagItem tag={tag} key={tag} />
       ))}
