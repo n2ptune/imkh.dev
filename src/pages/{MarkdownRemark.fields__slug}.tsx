@@ -5,8 +5,10 @@ import { SinglePostContext } from '@/context/post'
 import Avatar from '@/components/common/Avatar'
 import { useRelativeDate } from '@/hooks/date'
 import * as layoutModule from '@/styles/post-layout.module.css'
+import '@/styles/post.css'
 import { useTimeToReadToText } from '@/hooks/posts'
 import TagList from '@/components/main/TagList'
+import classNames from 'classnames'
 
 export default function Post(props: PageProps) {
   const { markdownRemark: md } = props.data as any
@@ -38,7 +40,9 @@ export default function Post(props: PageProps) {
         </div>
         <span className="absolute left-0 h-px w-full bg-gray-200 dark:bg-black-primary-200"></span>
         <div
-          className="mt-48 prose dark:prose-dark lg:prose-lg"
+          className={classNames(
+            'dark:prose-dark lg:prose-lg prose mt-48 post-main'
+          )}
           dangerouslySetInnerHTML={{ __html: md.html }}
         ></div>
       </PostLayout>
@@ -50,7 +54,6 @@ export const query = graphql`
   query ($fields__slug: String) {
     markdownRemark(fields: { slug: { eq: $fields__slug } }) {
       id
-      tableOfContents(absolute: false, heading: "", maxDepth: 10)
       timeToRead
       html
       frontmatter {
@@ -62,6 +65,11 @@ export const query = graphql`
       }
       fields {
         slug
+      }
+      headings {
+        depth
+        id
+        value
       }
     }
   }

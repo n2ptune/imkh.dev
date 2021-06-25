@@ -8,7 +8,14 @@ module.exports = {
     title: 'imkh.dev'
   },
   plugins: [
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require('postcss-preset-env')({ autoprefixer: true, stage: 0 })
+        ]
+      }
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     // 'gatsby-plugin-sitemap',
@@ -44,6 +51,13 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 800
+            }
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+              className: 'anchor'
             }
           }
         ]

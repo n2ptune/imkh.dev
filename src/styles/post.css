@@ -1,0 +1,15 @@
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+.post-main {
+  & > :--heading {
+    &::before {
+      /* a 태그로 페이지 내에서 이동할 때, 고정된 헤더에 의해
+      해당 제목이 가려지는 걸 방지하기 위함 */
+      content: '';
+      display: block;
+      height: 5rem;
+      margin-top: -5rem;
+      visibility: hidden;
+    }
+  }
+}
