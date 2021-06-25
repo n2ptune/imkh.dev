@@ -9,6 +9,9 @@ const childrenPlugin = plugin(({ addVariant, e }) => {
   })
 })
 
+const colorFromTheme = (mode, theme) =>
+  mode === 'dark' ? theme('colors.white') : theme('colors.black.primary.400')
+
 /** @type {import('tailwindcss/tailwind-config').TailwindConfig} */
 const config = {
   purge: ['src/**/*.{js,jsx,ts,tsx,html,css}'],
@@ -16,19 +19,34 @@ const config = {
   theme: {
     extend: {
       typography: theme => ({
-        default: {
+        DEFAULT: {
           css: {
-            color: theme('colors.black.primary-400'),
-            code: {
-              '&::before': {
-                content: '@'
-              }
-            }
+            color: colorFromTheme('light', theme),
+            h1: { color: colorFromTheme('light', theme) },
+            h2: { color: colorFromTheme('light', theme) },
+            h3: { color: colorFromTheme('light', theme) },
+            h4: { color: colorFromTheme('light', theme) },
+            h5: { color: colorFromTheme('light', theme) },
+            h6: { color: colorFromTheme('light', theme) },
+            blockquote: { color: colorFromTheme('light', theme) },
+            a: { color: colorFromTheme('light', theme) }, // @TODO custom
+            code: { color: colorFromTheme('light', theme) },
+            strong: { color: colorFromTheme('light', theme) }
           }
         },
         dark: {
           css: {
-            color: theme('colors.white')
+            color: colorFromTheme('dark', theme),
+            h1: { color: colorFromTheme('dark', theme) },
+            h2: { color: colorFromTheme('dark', theme) },
+            h3: { color: colorFromTheme('dark', theme) },
+            h4: { color: colorFromTheme('dark', theme) },
+            h5: { color: colorFromTheme('dark', theme) },
+            h6: { color: colorFromTheme('dark', theme) },
+            blockquote: { color: colorFromTheme('dark', theme) },
+            a: { color: colorFromTheme('dark', theme) }, // @TODO custom
+            code: { color: colorFromTheme('dark', theme) },
+            strong: { color: colorFromTheme('dark', theme) }
           }
         }
       }),

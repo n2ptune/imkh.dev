@@ -3,6 +3,7 @@ import Header from './Header'
 import WrapLayout from './Wrap'
 import * as style from '@/styles/post-layout.module.css'
 import { SinglePostContext } from '@/context/post'
+import Navigation from '@/components/post/Navigation'
 
 export default function PostLayout({
   children
@@ -16,7 +17,7 @@ export default function PostLayout({
         <section className={style.layoutSection}>
           <section className="grid grid-cols-12 lg:gap-6">
             <article className="col-span-12 lg:col-span-9">{children}</article>
-            <aside className="hidden lg:block lg:col-span-3">SIdebar</aside>
+            <Navigation />
           </section>
         </section>
       </main>

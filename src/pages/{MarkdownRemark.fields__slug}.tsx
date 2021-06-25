@@ -38,7 +38,7 @@ export default function Post(props: PageProps) {
         </div>
         <span className="absolute left-0 h-px w-full bg-gray-200 dark:bg-black-primary-200"></span>
         <div
-          className="mt-48 prose dark:prose-dark"
+          className="mt-48 prose dark:prose-dark lg:prose-lg"
           dangerouslySetInnerHTML={{ __html: md.html }}
         ></div>
       </PostLayout>
