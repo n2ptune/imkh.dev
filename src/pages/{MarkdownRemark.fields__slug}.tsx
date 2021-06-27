@@ -25,7 +25,7 @@ export default function Post(props: PageProps) {
       <PostLayout>
         <div className={layoutModule.layoutHeader}>
           <div className="text-3xl font-bold mb-1">{md.frontmatter.title}</div>
-          <div className="font-light text-lg mb-8 text-gray-500">
+          <div className="font-light text-lg mb-8 text-gray-500 dark:text-white dark:text-opacity-50">
             {md.frontmatter.description}
           </div>
           <div className="space-x-2">

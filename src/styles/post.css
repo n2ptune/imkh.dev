@@ -12,4 +12,14 @@
       visibility: hidden;
     }
   }
+  /* & code {
+    &::before,
+    &::after {
+      content: '';
+    }
+  }
+
+  & pre {
+    @apply bg-gray-200 dark:bg-black-primary-100;
+  } */
 }

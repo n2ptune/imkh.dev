@@ -1,0 +1,11 @@
+.navi {
+  @apply py-1;
+}
+
+.item {
+  @apply text-red-500;
+}
+
+.item.depth-3 {
+  @apply pl-3;
+}

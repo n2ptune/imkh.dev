@@ -40,9 +40,13 @@ const HeaderNavi: React.FC = () => {
         Github
       </a>
       <span className={classes.item}>Search</span>
-      <span onClick={handleToggleTheme} className={classes.item}>
-        {color === 'dark' ? 'Light Mode' : 'Dark Mode'}
-      </span>
+      {typeof window !== 'undefined' && (
+        <React.Suspense fallback={<span />}>
+          <span onClick={handleToggleTheme} className={classes.item}>
+            {color === 'dark' ? 'Light Mode' : 'Dark Mode'}
+          </span>
+        </React.Suspense>
+      )}
     </nav>
   )
 }

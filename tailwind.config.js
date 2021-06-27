@@ -28,10 +28,25 @@ const config = {
             h4: { color: colorFromTheme('light', theme) },
             h5: { color: colorFromTheme('light', theme) },
             h6: { color: colorFromTheme('light', theme) },
-            blockquote: { color: colorFromTheme('light', theme) },
+            blockquote: {
+              color: 'gray',
+              '& p:first-of-type::before': {
+                content: '"" !important'
+              },
+              '& p:first-of-type::after': {
+                content: '"" !important'
+              }
+            },
             a: { color: colorFromTheme('light', theme) }, // @TODO custom
-            code: { color: colorFromTheme('light', theme) },
-            strong: { color: colorFromTheme('light', theme) }
+            code: {
+              color: colorFromTheme('light', theme),
+              '&::before': { content: '"" !important' },
+              '&::after': { content: '"" !important' }
+            },
+            strong: { color: colorFromTheme('light', theme) },
+            pre: {
+              backgroundColor: theme('colors.black.primary.200')
+            }
           }
         },
         dark: {
@@ -45,7 +60,9 @@ const config = {
             h6: { color: colorFromTheme('dark', theme) },
             blockquote: { color: colorFromTheme('dark', theme) },
             a: { color: colorFromTheme('dark', theme) }, // @TODO custom
-            code: { color: colorFromTheme('dark', theme) },
+            code: {
+              color: colorFromTheme('dark', theme)
+            },
             strong: { color: colorFromTheme('dark', theme) }
           }
         }
