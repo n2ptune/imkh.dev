@@ -63,6 +63,10 @@
 - <a href="/content/posts/algorithm-pro-68644.md">(Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제</a>
 - <a href="/content/posts/algorithm-pro-crain-game.md">프로그래머스 크레인 인형뽑기 게임 파이썬 풀이</a>
 
+### angular
+
+- <a href="/content/posts/angular-getting-started.md">Angular 프로젝트 설치하고 컴포넌트 만들기</a>
+
 ### web
 
 - <a href="/content/posts/csr-ssr.md">CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)</a>
