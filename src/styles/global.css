@@ -1,28 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap');
+/* purgecss start ignore */
+@font-face {
+  font-family: emoji;
+  font-display: swap;
+  src: local('Apple Color Emoji'), local('Segoe UI Emoji'),
+    local('Segoe UI Symbol'), local('Noto Color Emoji');
+}
 
 html,
 body {
-  @apply bg-white dark:bg-black-primary-300 transition-colors duration-200
- text-black-primary-500 dark:text-white;
+  font-size: 16px;
+  font-display: swap;
+  font-weight: 400;
 
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  @apply bg-dark-surface text-white-800;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  z-index: 2001;
-  position: absolute;
+img.g-image.g-image--lazy {
+  transition: opacity 0.3s linear;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-white dark:bg-black-primary-300;
+img.g-image.g-image--lazy.g-image--loading {
+  opacity: 0.5;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-black-primary-300 dark:bg-black-primary-50 rounded-3xl h-40;
+img.g-image.g-image--lazy.g-image--loaded {
+  opacity: 1;
 }
+/* purgecss end ignore */

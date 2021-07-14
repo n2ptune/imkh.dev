@@ -41,7 +41,7 @@ Vue에서 사용자 지정 디렉티브를 만들기 위해서 2가지 방법 �
 import Vue from 'vue'
 
 Vue.directive('tooltip', {
-  inserted: function (el, binding, n, o) {
+  inserted: function(el, binding, n, o) {
     console.log(el, binding, n, o)
   }
 })

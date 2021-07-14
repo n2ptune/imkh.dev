@@ -39,7 +39,7 @@ function Dog(age, name) {
   this.name = name
 }
 
-Dog.prototype.cry = function () {
+Dog.prototype.cry = function() {
   console.log(this.name + ' : wal! wal!')
 }
 
@@ -72,7 +72,7 @@ function Dog(age, name) {
   this.name = name
 }
 
-Dog.prototype.cry = function () {
+Dog.prototype.cry = function() {
   console.log(this.name + ' : wal! wal!')
 }
 
@@ -84,7 +84,7 @@ function Doberman(age, name, weight) {
 }
 
 Doberman.prototype = new Dog()
-Doberman.prototype.cry = function () {
+Doberman.prototype.cry = function() {
   console.log(`${this.name}(${this.weight}) : wal~!!!!!! wal~!@!!!!`)
 }
 
@@ -105,7 +105,7 @@ muse.cry()
 function Dog(age, name) {
   this.age = age
   this.name = name
-  this.cry = function () {
+  this.cry = function() {
     console.log(this.name + ' : wal~!')
   }
 }
@@ -119,7 +119,7 @@ function Dog(age, name) {
   this.name = name
 }
 
-Dog.prototype.cry = function () {
+Dog.prototype.cry = function() {
   console.log(this.name + ' : wal~!')
 }
 ```
@@ -169,7 +169,7 @@ var Dog = class {
 }
 
 // 위와 같은 함수 표현식
-var Dog = function (age, name) {
+var Dog = function(age, name) {
   this.age = age
   this.name = name
 }

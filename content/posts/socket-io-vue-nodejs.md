@@ -58,8 +58,8 @@ const messsags = []
 // 두번째 인자인 콜백함수에 생성된 소켓이 담겨져온다.
 // 소켓에는 해당 소켓에 연결된 모든 클라이언트들에게 broadcast를 하거나,
 // 이벤트를 발생 혹은 수신할 수 있는 메서드가 있다.
-io.on('connection', socket => {
-  socket.on('send', message => {
+io.on('connection', (socket) => {
+  socket.on('send', (message) => {
     messages.push(message)
     io.emit('messages', messages)
   })
@@ -160,8 +160,8 @@ function chats() {
 
 const chatState = chats()
 
-io.on('connection', socket => {
-  socket.on('send', message => {
+io.on('connection', (socket) => {
+  socket.on('send', (message) => {
     chatState.add(socket.id, message)
     io.emit('messages', chatState.getAllChat())
   })
@@ -173,14 +173,14 @@ io.on('connection', socket => {
 ```html
 // Socket.vue
 <script>
-  export default {
-    created() {
-      // 일부만 작성
-      this.socket.on('messages', messages => {
-        this.receivedMessage = messages
-      })
-    }
+export default {
+  created() {
+    // 일부만 작성
+    this.socket.on('messages', (messages) => {
+      this.receivedMessage = messages
+    })
   }
+}
 </script>
 ```
 

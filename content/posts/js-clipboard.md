@@ -90,7 +90,9 @@ button.addEventListener('click', function () {
 
 ```html
 <div id="app">
-  <button class="btn" data-clipboard-text="dummy">dummy 텍스트 복사하기</button>
+  <button class="btn" data-clipboard-text="dummy">
+    dummy 텍스트 복사하기
+  </button>
 </div>
 
 <script>

@@ -84,7 +84,9 @@ methods: {
     <div class="cards" v-if="images.length">
       <image-card v-for="image in images" :key="image.id" :image="image" />
     </div>
-    <div class="cards-loading" v-else>Loading image....</div>
+    <div class="cards-loading" v-else>
+      Loading image....
+    </div>
   </div>
 </template>
 ```

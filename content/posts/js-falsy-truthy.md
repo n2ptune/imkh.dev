@@ -52,7 +52,7 @@ if ({}) {
 마찬가지로 빈 객체도 참으로 평가된다.
 
 ```js
-if (function () {}) {
+if (function() {}) {
   alert('함수')
 }
 ```

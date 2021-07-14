@@ -81,7 +81,7 @@ helloWorld()
 function WrapClosure() {
   let counter = 0
 
-  return function () {
+  return function() {
     counter++
     console.log(counter)
   }

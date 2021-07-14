@@ -71,7 +71,7 @@ use strict 구문은 스크립트 최상단에 위치하거나 함수 본문 최
 
 ```js
 // prettier-ignore
-(function() {
+;(function() {
   'use strict'
 
   let a = 'Hello Strict'
@@ -100,7 +100,7 @@ function print(a) {
 ```js
 if (true) {
   // prettier-ignore
-  'use strict'
+  ;'use strict'
 
   console.log('Something wrong')
 }

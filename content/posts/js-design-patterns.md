@@ -22,14 +22,14 @@ description: 디자인 패턴 중 2가지, 모듈 패턴과 옵저버 패턴에 
 대개 모듈 디자인 패턴을 사용하려고 하면 클로져를 사용하여 외부에서 모듈의 멤버 변수, 함수 등에 접근할 수 없게 한다. 아래는 즉시 실행 함수 IIFE (Immediately-Invoked-Function-Expressions)를 사용해서 모듈 디자인 패턴로 구현하는 간단한 예제다.
 
 ```js
-let ModuleDesign = (function () {
+let ModuleDesign = (function() {
   let grade = 'A'
   let score = 96
 
-  const getGrade = function () {
+  const getGrade = function() {
     return grade
   }
-  const getScore = function () {
+  const getScore = function() {
     return score
   }
 
@@ -109,17 +109,17 @@ function Observer() {
   this.list = []
 }
 
-Observer.prototype.registerObserver = function (target) {
+Observer.prototype.registerObserver = function(target) {
   this.list.push(target)
 }
 
-Observer.prototype.unregisterObserver = function (targetObserver) {
+Observer.prototype.unregisterObserver = function(targetObserver) {
   this.list = this.list.filter(
     existObserver => existObserver !== targetObserver
   )
 }
 
-Observer.prototype.notifyObservers = function (content) {
+Observer.prototype.notifyObservers = function(content) {
   this.list.forEach(observer => observer.notify(content))
 }
 
