@@ -1,15 +1,10 @@
 module.exports = {
-  mode: 'jit',
+  dark: 'class',
   purge:
     process.env.NODE_ENV === 'production'
       ? {
           enabled: true,
-          content: [
-            './src/assets/**/*.css',
-            './src/styles/**/*.css',
-            './src/**/*.vue',
-            './src/**/*.js'
-          ]
+          content: ['./src/**/*.vue', './src/**/*.js']
         }
       : false,
   theme: {

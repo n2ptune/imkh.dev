@@ -114,8 +114,8 @@ module.exports = {
       .tap(options => {
         options.plugins.unshift(
           ...[
-            require('postcss-for'),
-            require('postcss-simple-vars'),
+            // require('postcss-for'),
+            // require('postcss-simple-vars'),
             require('postcss-import'),
             require('postcss-nested'),
             require('cssnano'),
