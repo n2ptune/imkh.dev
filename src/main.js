@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faTimes,
   faBars,
-  faCodeBranch,
+  faSearch,
   faArrowRight,
   faBookmark,
   faChevronDown
@@ -20,7 +20,7 @@ library.add(
   faGithub,
   faTimes,
   faBars,
-  faCodeBranch,
+  faSearch,
   faArrowRight,
   faBookmark,
   faChevronDown

@@ -1,9 +1,29 @@
 <template>
-  <header>
-    <div class="flex items-center w-full">
+  <header :class="isTransparentHeader && 'is-transparent'">
+    <div class="container mx-auto flex items-center w-full">
       <g-link to="/">
-        <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" />
+        <!-- <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" /> -->
+        <span
+          class="font-bold text-2xl transition-colors duration-200 text-white-700 hover:text-white-f"
+        >
+          IMKH.DEV
+        </span>
       </g-link>
+      <ul class="header-list">
+        <li>
+          <g-link to="/">Blog</g-link>
+        </li>
+        <li>
+          <g-link to="/memo">
+            Memo
+          </g-link>
+        </li>
+        <li>
+          <a href="https://github.com/n2ptune" target="_blank">
+            Github
+          </a>
+        </li>
+      </ul>
       <div class="ml-auto space-x-4">
         <a href="https://github.com/n2ptune" target="_blank">
           <font-awesome
@@ -13,7 +33,7 @@
           />
         </a>
         <font-awesome
-          :icon="['fas', 'code-branch']"
+          :icon="['fas', 'search']"
           class="header-icon"
           size="lg"
           @click="handleSearchForm"
@@ -44,8 +64,23 @@ export default {
   },
 
   data: () => ({
-    isSearchOverlay: false
+    isSearchOverlay: false,
+    isTransparentHeader: true
   }),
+
+  created() {
+    if (this.$route.path !== '/') {
+      this.isTransparentHeader = false
+    }
+  },
+
+  mounted() {
+    window.addEventListener('scroll', this.setTransparentHeader)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.setTransparentHeader)
+  },
 
   methods: {
     clickOutsideSearchOverlay() {
@@ -56,6 +91,14 @@ export default {
     },
     handleSearchForm() {
       this.isSearchOverlay = !this.isSearchOverlay
+    },
+    setTransparentHeader() {
+      if (this.$route.path !== '/') return
+      if (window.scrollY >= 300) {
+        this.isTransparentHeader = false
+      } else {
+        this.isTransparentHeader = true
+      }
     }
   }
 }
@@ -63,8 +106,12 @@ export default {
 
 <style lang="postcss" scoped>
 header {
-  @apply flex justify-between items-center px-2 py-4 bg-dark-lighten
-  fixed w-full z-50 top-0;
+  @apply px-2 py-4
+  fixed w-full z-50 top-0 bg-dark-surface transition-colors duration-500;
+
+  &.is-transparent {
+    @apply bg-transparent;
+  }
 
   & .menu-link {
     @apply inline-block ml-4 text-white-300 transition-colors duration-300;
@@ -78,6 +125,18 @@ header {
   & .header-icon {
     @apply font-thin cursor-pointer transition-colors duration-300
     text-white-500 hover:text-white-f;
+  }
+
+  ul.header-list {
+    @apply ml-8 text-sm;
+
+    & > li {
+      @apply inline-block;
+    }
+
+    & > * + * {
+      @apply ml-4;
+    }
   }
 }
 
