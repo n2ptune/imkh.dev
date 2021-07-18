@@ -12,7 +12,6 @@ import {
   faChevronDown
 } from '@fortawesome/free-solid-svg-icons'
 import '@/styles/prism-custom.css'
-import Overlay from '@/plugins/Overlay.vue'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import VueFuse from 'vue-fuse'
 
@@ -30,7 +29,6 @@ export default function(Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
 
   Vue.component('font-awesome', FontAwesomeIcon)
-  Vue.component('Overlay', Overlay)
   Vue.use(VueInfiniteLoading)
   Vue.use(VueFuse)
 }

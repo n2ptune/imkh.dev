@@ -39,32 +39,20 @@
           @click="handleSearchForm"
         />
       </div>
-      <Overlay
-        :handler="isSearchOverlay"
-        :style="{ overflow: 'auto' }"
-        :z-index="1"
-        distance="72px"
-        key="search"
-        @click-outside="clickOutsideSearchOverlay"
-      >
-        <SearchForm @close-form="closeForm" />
-      </Overlay>
     </div>
   </header>
 </template>
 
 <script>
 import Avatar from '@/components/utils/Avatar.vue'
-import SearchForm from '@/components/search/Form.vue'
+import { EventBus } from '@/components/utils/EventBus'
 
 export default {
   components: {
-    Avatar,
-    SearchForm
+    Avatar
   },
 
   data: () => ({
-    isSearchOverlay: false,
     isTransparentHeader: true
   }),
 
@@ -90,7 +78,7 @@ export default {
       this.isSearchOverlay = false
     },
     handleSearchForm() {
-      this.isSearchOverlay = !this.isSearchOverlay
+      EventBus.$emit('search', true)
     },
     setTransparentHeader() {
       if (this.$route.path !== '/') return
@@ -128,7 +116,7 @@ header {
   }
 
   ul.header-list {
-    @apply ml-8 text-sm;
+    @apply hidden md:block ml-8 text-sm;
 
     & > li {
       @apply inline-block;
