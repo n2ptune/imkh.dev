@@ -17,7 +17,12 @@ module.exports = {
         path: node => `/${node.fileInfo.name}`
       }
     ],
-    Tag: '/tag/:id'
+    Tag: '/tag/:id',
+    Memo: [
+      {
+        path: node => `/memo/${node.fileInfo.name}`
+      }
+    ]
   },
 
   plugins: [
@@ -32,6 +37,19 @@ module.exports = {
       options: {
         typeName: 'Post',
         path: 'content/posts/*.md',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Memo',
+        path: 'content/memo/*.md',
         refs: {
           tags: {
             typeName: 'Tag',

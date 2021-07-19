@@ -2,9 +2,16 @@
   <header :class="isTransparentHeader && 'is-transparent'">
     <div class="container mx-auto flex items-center w-full">
       <g-link to="/">
-        <!-- <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2" width="40px" /> -->
+        <!-- <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2 inline-block" width="40px" /> -->
         <span
-          class="font-bold text-2xl transition-colors duration-200 text-white-700 hover:text-white-f"
+          class="
+            font-bold
+            text-2xl
+            transition-colors
+            duration-200
+            text-white-700
+            hover:text-white-f
+          "
         >
           IMKH.DEV
         </span>
@@ -14,14 +21,10 @@
           <g-link to="/">Blog</g-link>
         </li>
         <li>
-          <g-link to="/memo">
-            Memo
-          </g-link>
+          <g-link to="/memo"> Memo </g-link>
         </li>
         <li>
-          <a href="https://github.com/n2ptune" target="_blank">
-            Github
-          </a>
+          <a href="https://github.com/n2ptune" target="_blank"> Github </a>
         </li>
       </ul>
       <div class="ml-auto space-x-4">
@@ -82,7 +85,7 @@ export default {
     },
     setTransparentHeader() {
       if (this.$route.path !== '/') return
-      if (window.scrollY >= 300) {
+      if (window.scrollY >= 200) {
         this.isTransparentHeader = false
       } else {
         this.isTransparentHeader = true
@@ -120,6 +123,15 @@ header {
 
     & > li {
       @apply inline-block;
+
+      & > a {
+        @apply text-white-500 transition-colors duration-300;
+
+        &.active,
+        &:hover {
+          @apply text-white-f;
+        }
+      }
     }
 
     & > * + * {
