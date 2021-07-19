@@ -5,7 +5,10 @@
       <transition name="dialog-transition" appear>
         <div class="search-dialog">
           <div class="search-dialog-wrapper">
-            hello world
+            <div class="search-dialog-wrapper__icon-close" @click="close">
+              <font-awesome :icon="['fas', 'times']" size="lg" />
+            </div>
+            <SearchForm />
           </div>
         </div>
       </transition>
@@ -14,10 +17,23 @@
 </template>
 
 <script>
+import { EventBus } from '@/components/utils/EventBus'
+import SearchForm from '@/components/search/Form.vue'
+
 export default {
+  components: {
+    SearchForm
+  },
+
   data: () => ({
     tempOverflowY: null
   }),
+
+  watch: {
+    '$route.path'(_) {
+      this.close()
+    }
+  },
 
   created() {
     this.hiddenScroll()
@@ -34,6 +50,9 @@ export default {
     },
     unHiddenScroll() {
       document.body.style.overflowY = this.tempOverflowY
+    },
+    close() {
+      EventBus.$emit('search', false)
     }
   }
 }
@@ -43,19 +62,19 @@ export default {
 .dialog-transition {
   &-enter-active,
   &-leave-active {
-    transition: transform 250ms ease-in-out, opacity 500ms ease;
+    transition: transform 350ms ease-out, opacity 350ms ease;
   }
 
   &-enter,
   &-leave-to {
-    transform: scale(0.5);
+    transform: scale(0.9);
     @apply opacity-50;
   }
 
   &-enter-to,
   &-leave {
     transform: scale(1);
-    @apply scale-100 opacity-100;
+    @apply opacity-100;
   }
 }
 
@@ -88,10 +107,21 @@ export default {
   }
 
   &-dialog {
-    @apply flex justify-center items-center absolute top-0 left-0;
+    @apply flex justify-center absolute top-0 left-0 h-auto;
 
     &-wrapper {
-      @apply text-white-f;
+      background-color: #3c3c3c;
+
+      @apply w-full text-white-f max-w-xs md:max-w-md lg:max-w-2xl rounded p-4 md:p-8
+      mt-36 bg-opacity-100 shadow relative;
+
+      &__icon-close {
+        @apply absolute top-0 right-0 p-4 text-white-400 transition-colors duration-200;
+
+        &:hover {
+          @apply cursor-pointer text-white-f;
+        }
+      }
     }
   }
 }

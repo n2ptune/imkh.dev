@@ -18,10 +18,10 @@
       </g-link>
       <ul class="header-list">
         <li>
-          <g-link to="/">Blog</g-link>
+          <g-link to="/" exact-active-class="exact-active">Blog</g-link>
         </li>
         <li>
-          <g-link to="/memo"> Memo </g-link>
+          <g-link to="/memo" exact-active-class="exact-active"> Memo </g-link>
         </li>
         <li>
           <a href="https://github.com/n2ptune" target="_blank"> Github </a>
@@ -127,7 +127,7 @@ header {
       & > a {
         @apply text-white-500 transition-colors duration-300;
 
-        &.active,
+        &.exact-active,
         &:hover {
           @apply text-white-f;
         }

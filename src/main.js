@@ -9,7 +9,8 @@ import {
   faSearch,
   faArrowRight,
   faBookmark,
-  faChevronDown
+  faChevronDown,
+  faRedo
 } from '@fortawesome/free-solid-svg-icons'
 import '@/styles/prism-custom.css'
 import VueInfiniteLoading from 'vue-infinite-loading'
@@ -22,7 +23,8 @@ library.add(
   faSearch,
   faArrowRight,
   faBookmark,
-  faChevronDown
+  faChevronDown,
+  faRedo
 )
 
 export default function(Vue, { router, head, isClient }) {

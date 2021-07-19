@@ -1,4 +1,3 @@
-/* purgecss start ignore */
 @font-face {
   font-family: emoji;
   font-display: swap;
@@ -26,4 +25,16 @@ img.g-image.g-image--lazy.g-image--loading {
 img.g-image.g-image--lazy.g-image--loaded {
   opacity: 1;
 }
-/* purgecss end ignore */
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-elevation-500 rounded-xl;
+}
+
+*::-webkit-scrollbar-track {
+  @apply rounded bg-transparent;
+}
+
+*::-webkit-scrollbar {
+  @apply bg-transparent rounded;
+  width: 5px;
+}
