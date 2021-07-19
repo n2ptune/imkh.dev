@@ -10,12 +10,23 @@
       />
       <font-awesome
         v-show="searchText"
-        :icon="['fas', 'times']"
+        :icon="['fas', 'redo']"
         class="search-form__icon"
         @click="resetSearchText"
       />
     </div>
     <div class="search-form__result">
+      <transition name="spinner-fade" appear mode="in-out">
+        <div
+          v-show="!isSearched && searchText.length"
+          class="search-form__result-spinner"
+        />
+      </transition>
+      <div v-if="searchResults.length" class="text-left my-2 md:px-4">
+        총
+        <span class="text-green-500 font-bold">{{ searchResults.length }}</span
+        >개의 포스트
+      </div>
       <ul v-if="searchResults.length" class="list-wrapper">
         <li v-for="item in searchResults" :key="item.id" class="list-item">
           <ListItem :item="item.node" />
@@ -92,30 +103,43 @@ export default {
   },
 
   watch: {
-    $route() {
-      this.$emit('close-form')
+    searchText(text) {
+      this.isSearched = false
     }
   }
 }
 </script>
 
 <style lang="postcss" scoped>
+.spinner-fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 350ms ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+  }
+}
+
 .search-form {
   @apply flex justify-center relative flex-wrap
-    items-center w-full bg-dark-lighten shadow-lg overflow-hidden
-    text-white-500 px-4;
+    items-center w-full overflow-x-hidden
+    text-white-500 px-1 md:px-4;
 
   &__wrapper {
-    @apply relative;
+    @apply relative w-full;
   }
 
   &__input {
-    @apply text-3xl text-purple-400 my-8 bg-transparent
+    @apply text-xl text-green-500 my-8 bg-transparent
     border-b border-elevation-300 pb-4 w-full;
-
-    @screen md {
-      @apply pr-16 pl-4;
-    }
 
     &:focus {
       outline: none;
@@ -139,8 +163,28 @@ export default {
   &__result {
     @apply w-full text-center py-6 mb-4;
 
+    &-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid theme('colors.white.300');
+      border-top: 4px solid theme('colors.white.f');
+      animation: rotate infinite linear 950ms;
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @apply bg-transparent block rounded-full mx-auto mb-6;
+    }
+
     & .list-wrapper {
-      @apply px-4 break-all max-w-xl mx-auto pb-12;
+      max-height: calc(100vh - 500px);
+      @apply px-1 md:px-4 break-all max-w-xl mx-auto pt-6 pb-12 overflow-y-auto;
 
       & .list-item {
         &:not(:last-child) {
@@ -155,20 +199,10 @@ export default {
   }
 }
 
-@screen lg {
+@screen md {
   .search-form {
     &__input {
-      @apply text-5xl;
-    }
-
-    &__icon {
-      @apply text-5xl;
-    }
-
-    &__result {
-      & .no-data {
-        @apply text-2xl;
-      }
+      @apply pr-16 pl-4;
     }
   }
 }

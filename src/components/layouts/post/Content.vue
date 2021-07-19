@@ -83,14 +83,6 @@ section {
 
   font-size: 1rem;
 
-  @screen lg {
-    font-size: 1.1rem;
-  }
-
-  @screen xl {
-    font-size: 1.15rem;
-  }
-
   /* Blockquote */
 
   & >>> blockquote {
@@ -208,6 +200,18 @@ section {
 
   & >>> img {
     @apply cursor-pointer my-16 mx-auto;
+  }
+}
+
+@screen lg {
+  section {
+    font-size: 1.1rem;
+  }
+}
+
+@screen xl {
+  section {
+    font-size: 1.15rem;
   }
 }
 </style>

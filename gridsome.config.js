@@ -9,7 +9,7 @@ module.exports = {
   siteName: `imkh.dev`,
   siteDescription: 'Personal blog for Web Dev/Tech',
   siteUrl,
-  port: 4001,
+  port: 8000,
 
   templates: {
     Post: [
@@ -17,7 +17,12 @@ module.exports = {
         path: node => `/${node.fileInfo.name}`
       }
     ],
-    Tag: '/tag/:id'
+    Tag: '/tag/:id',
+    Memo: [
+      {
+        path: node => `/memo/${node.fileInfo.name}`
+      }
+    ]
   },
 
   plugins: [
@@ -32,6 +37,19 @@ module.exports = {
       options: {
         typeName: 'Post',
         path: 'content/posts/*.md',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Memo',
+        path: 'content/memo/*.md',
         refs: {
           tags: {
             typeName: 'Tag',
@@ -114,8 +132,8 @@ module.exports = {
       .tap(options => {
         options.plugins.unshift(
           ...[
-            require('postcss-for'),
-            require('postcss-simple-vars'),
+            // require('postcss-for'),
+            // require('postcss-simple-vars'),
             require('postcss-import'),
             require('postcss-nested'),
             require('cssnano'),

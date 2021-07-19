@@ -16,20 +16,31 @@
 
   height: 30rem;
   background-size: cover;
-  background-position: center center;
+  background-position: center 70%;
   background-repeat: no-repeat;
   background-image: url(~@/assets/header-cover.jpg);
-  top: 72px;
+  /* top: 72px; */
+
+  &::after {
+    @apply absolute block w-full h-full top-0 left-0 z-20 opacity-20;
+
+    background-color: theme('colors.dark.surface');
+    content: '';
+  }
 
   &::before {
     @apply absolute z-10 top-0 left-0 w-full h-full block;
 
     content: '';
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom,
+      transparent 20%,
+      theme('colors.dark.surface')
+    );
   }
 
   & .inner {
-    @apply flex flex-col justify-center items-center relative z-20
+    @apply flex flex-col justify-center items-center relative z-30
     h-full px-6;
 
     & p {

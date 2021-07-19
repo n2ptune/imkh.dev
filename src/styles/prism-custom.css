@@ -1,5 +1,3 @@
-/* purgecss start ignore */
-
 .token.comment,
 .token.block-comment,
 .token.prolog,
@@ -73,5 +71,3 @@
 .token.inserted {
   color: green;
 }
-
-/* purgecss end ignore */

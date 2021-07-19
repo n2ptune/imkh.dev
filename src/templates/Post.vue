@@ -249,18 +249,22 @@ query Post ($id: ID!) {
   max-width: 750px;
   top: 7rem;
 
-  @screen md {
-    @apply px-6 rounded-xl;
-  }
-
-  @screen lg {
-    @apply px-10;
-  }
-
   & .break {
     @apply absolute left-0 w-full;
 
     border-bottom: 1px solid theme('colors.elevation.500');
+  }
+}
+
+@screen md {
+  .wrapper {
+    @apply px-6 rounded-xl;
+  }
+}
+
+@screen lg {
+  .wrapper {
+    @apply px-10;
   }
 }
 </style>

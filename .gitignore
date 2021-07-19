@@ -7,3 +7,6 @@ dist
 .env
 .env.*
 .vscode
+
+.yarn/*
+.pnp.*

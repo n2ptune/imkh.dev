@@ -66,10 +66,6 @@ export default {
 
   flex: 0 1 450px;
 
-  @screen md {
-    @apply m-4 rounded-lg;
-  }
-
   &:hover {
     @apply transform -translate-y-1;
 
@@ -104,6 +100,12 @@ export default {
 
   & .title {
     @apply text-white-700;
+  }
+}
+
+@screen md {
+  .post {
+    @apply m-4 rounded-lg;
   }
 }
 </style>

@@ -65,12 +65,16 @@ export default {
 
   top: 3rem;
   width: 320px;
+}
 
-  @screen md {
+@screen md {
+  .dropdown {
     width: 350px;
   }
+}
 
-  @screen lg {
+@screen lg {
+  .dropdown {
     width: 450px;
   }
 }
