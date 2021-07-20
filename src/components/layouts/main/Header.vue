@@ -9,8 +9,8 @@
             text-2xl
             transition-colors
             duration-200
-            text-white-700
-            hover:text-white-f
+            text-green-500
+            hover:text-green-600
           "
         >
           IMKH.DEV
@@ -60,7 +60,7 @@ export default {
   }),
 
   created() {
-    if (this.$route.path !== '/') {
+    if (this.$route.path !== '/' && !this.$route.path.startsWith('/tag/')) {
       this.isTransparentHeader = false
     }
   },
@@ -84,7 +84,8 @@ export default {
       EventBus.$emit('search', true)
     },
     setTransparentHeader() {
-      if (this.$route.path !== '/') return
+      if (this.$route.path !== '/' && !this.$route.path.startsWith('/tag/'))
+        return
       if (window.scrollY >= 200) {
         this.isTransparentHeader = false
       } else {
@@ -98,7 +99,7 @@ export default {
 <style lang="postcss" scoped>
 header {
   @apply px-2 py-4
-  fixed w-full z-50 top-0 bg-dark-surface transition-colors duration-500;
+  fixed w-full z-50 top-0 bg-dark-surface bg-opacity-80 transition-colors duration-500;
 
   &.is-transparent {
     @apply bg-transparent;

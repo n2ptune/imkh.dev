@@ -12,9 +12,9 @@
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
       </ClientOnly>
     </section>
-    <ClientOnly>
-      <RelatedPosts v-if="filterWithoutCurrentPost.length" :posts="related" />
-    </ClientOnly>
+    <template #footer>
+      <Footer :relatedPost="filterWithoutCurrentPost" />
+    </template>
   </DefaultLayout>
 </template>
 
@@ -23,8 +23,7 @@ import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import Content from '@/components/layouts/post/Content.vue'
 import DefaultLayout from '@/layouts/Default.vue'
 import Header from '@/components/layouts/post/Header.vue'
-// import Navigation from '@/components/layouts/post/Navigation.vue'
-import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
+import Footer from '@/components/layouts/post/Footer.vue'
 
 export default {
   metaInfo() {
@@ -88,8 +87,7 @@ export default {
     Content,
     DefaultLayout,
     Header,
-    // Navigation,
-    RelatedPosts
+    Footer
   },
 
   computed: {
@@ -127,7 +125,7 @@ export default {
 
       // 최대 배열 길이, 관련 포스트 최대 갯수
       const MAX_INDEX = list.length
-      const MAX_LENGTH = 6
+      const MAX_LENGTH = 3
 
       // 배열 길이가 갯수 이하일 경우 내보냄
       if (MAX_INDEX <= MAX_LENGTH) {

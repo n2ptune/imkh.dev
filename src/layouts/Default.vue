@@ -2,6 +2,9 @@
   <main>
     <Header />
     <slot />
+    <footer>
+      <slot name="footer" />
+    </footer>
   </main>
 </template>
 
