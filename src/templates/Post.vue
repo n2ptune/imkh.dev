@@ -246,20 +246,16 @@ query Post ($id: ID!) {
 }
 
 .wrapper {
-  @apply relative mx-auto mb-32 py-10 px-4 rounded-none text-white-800;
+  @apply relative mx-auto mb-32 py-10 rounded-none text-white-800 px-4
+  overflow-x-hidden;
 
-  max-width: 1100px;
+  max-width: 100%;
   top: 7rem;
-
-  /* & .break {
-    @apply absolute left-0 w-full;
-
-    border-bottom: 1px solid theme('colors.elevation.500');
-  } */
 
   & .cover-image {
     > img {
       max-width: 1100px;
+      /* margin-left: -2.5rem; */
       @apply mx-auto;
     }
   }
@@ -267,13 +263,15 @@ query Post ($id: ID!) {
 
 @screen md {
   .wrapper {
-    @apply px-6 rounded-xl;
+    /* @apply px-6 rounded-xl; */
+    @apply px-0;
   }
 }
 
 @screen lg {
   .wrapper {
-    @apply px-10;
+    /* @apply px-10; */
+    max-width: 1100px;
   }
 }
 </style>
