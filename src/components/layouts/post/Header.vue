@@ -36,3 +36,10 @@ export default {
   mixins: [TimeRead]
 }
 </script>
+
+<style lang="postcss" scoped>
+header {
+  width: 750px;
+  @apply mx-auto pb-12 border-b border-elevation-500;
+}
+</style>
