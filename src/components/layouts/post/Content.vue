@@ -79,9 +79,10 @@ export default {
 
 <style lang="postcss" scoped>
 section {
-  @apply break-words text-white-800;
+  @apply break-words text-white-800 mx-auto;
 
   font-size: 1rem;
+  width: 100%;
 
   /* Blockquote */
 
@@ -205,6 +206,7 @@ section {
 
 @screen lg {
   section {
+    width: 750px;
     font-size: 1.1rem;
   }
 }

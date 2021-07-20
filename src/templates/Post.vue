@@ -3,8 +3,11 @@
     <section class="wrapper">
       <Header :post="$page.post" />
       <div class="break"></div>
+      <div v-if="$page.post.cover_image" class="cover-image">
+        <g-image :src="$page.post.cover_image" />
+      </div>
       <Content :md="$page.post.content" />
-      <Navigation />
+      <!-- <Navigation /> -->
       <ClientOnly>
         <CommentsPlugin :id="$page.post.id" :path="$page.post.path" />
       </ClientOnly>
@@ -20,7 +23,7 @@ import CommentsPlugin from '@/components/utils/CommentsPlugin.vue'
 import Content from '@/components/layouts/post/Content.vue'
 import DefaultLayout from '@/layouts/Default.vue'
 import Header from '@/components/layouts/post/Header.vue'
-import Navigation from '@/components/layouts/post/Navigation.vue'
+// import Navigation from '@/components/layouts/post/Navigation.vue'
 import RelatedPosts from '@/components/layouts/post/RelatedPosts.vue'
 
 export default {
@@ -85,7 +88,7 @@ export default {
     Content,
     DefaultLayout,
     Header,
-    Navigation,
+    // Navigation,
     RelatedPosts
   },
 
@@ -192,7 +195,7 @@ export default {
 query Post ($id: ID!) {
   post: post (id: $id) {
     content
-    cover_image
+    cover_image (width: 1100, blur: 4)
     date (format: "D. MMMM YYYY")
     description
     id
@@ -243,28 +246,32 @@ query Post ($id: ID!) {
 }
 
 .wrapper {
-  @apply relative mx-auto mb-32 py-10 px-4 rounded-none text-white-800
-  bg-elevation-200;
+  @apply relative mx-auto mb-32 py-10 rounded-none text-white-800 px-4
+  overflow-x-hidden;
 
-  max-width: 750px;
+  max-width: 100%;
   top: 7rem;
 
-  & .break {
-    @apply absolute left-0 w-full;
-
-    border-bottom: 1px solid theme('colors.elevation.500');
+  & .cover-image {
+    > img {
+      max-width: 1100px;
+      /* margin-left: -2.5rem; */
+      @apply mx-auto;
+    }
   }
 }
 
 @screen md {
   .wrapper {
-    @apply px-6 rounded-xl;
+    /* @apply px-6 rounded-xl; */
+    @apply px-0;
   }
 }
 
 @screen lg {
   .wrapper {
-    @apply px-10;
+    /* @apply px-10; */
+    max-width: 1100px;
   }
 }
 </style>
