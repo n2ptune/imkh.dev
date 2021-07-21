@@ -2,7 +2,11 @@ import '@/styles/global.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram
+} from '@fortawesome/free-brands-svg-icons'
 import {
   faTimes,
   faBars,
@@ -24,7 +28,9 @@ library.add(
   faArrowRight,
   faBookmark,
   faChevronDown,
-  faRedo
+  faRedo,
+  faLinkedin,
+  faInstagram
 )
 
 export default function(Vue, { router, head, isClient }) {

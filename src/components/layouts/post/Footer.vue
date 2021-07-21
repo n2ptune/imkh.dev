@@ -15,8 +15,42 @@
             IMKH.DEV
           </div>
         </div>
-        <div>B</div>
-        <div>C</div>
+        <div class="item">
+          <div class="title">
+            Links
+          </div>
+          <div class="links">
+            <div class="link">
+              <font-awesome :icon="['fab', 'github']" class="icon" />
+              <a href="https://github.com/n2ptune" target="_blank">Github</a>
+            </div>
+            <div class="link">
+              <font-awesome :icon="['fab', 'linkedin']" class="icon" />
+              <a href="https://kr.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+            <div class="link">
+              <font-awesome :icon="['fab', 'instagram']" class="icon" />
+              <a
+                href="https://www.instagram.com/ililiilililililiii"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">
+            Contact
+          </div>
+          <div class="links">
+            <div class="link">
+              <a href="">Portfolio</a>
+            </div>
+            <div class="link">
+              <a href="">Mail</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -64,10 +98,10 @@ export default {
       }
 
       &-cards {
-        @apply grid grid-cols-12 gap-4;
+        @apply grid grid-cols-12 gap-4 grid-rows-1;
 
         & > * {
-          @apply col-span-12 lg:col-span-4;
+          @apply col-span-12 lg:col-span-4 mx-auto;
         }
       }
     }
@@ -77,6 +111,26 @@ export default {
 
       & > * {
         @apply col-span-12 lg:col-span-4;
+      }
+
+      & .title {
+        @apply text-white-300 uppercase text-sm tracking-wider mb-6;
+      }
+
+      & .links {
+        @apply space-y-3 inline-block;
+
+        & .link {
+          @apply text-white-700 transition-colors duration-300;
+
+          &:hover {
+            @apply text-white-f;
+          }
+
+          & > .icon {
+            @apply mr-2;
+          }
+        }
       }
     }
   }
