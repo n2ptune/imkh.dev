@@ -119,6 +119,10 @@
 - <a href="/content/posts/ts-interface.md">타입스크립트 인터페이스 아주 간단하게 살펴보기</a>
 - <a href="/content/posts/vue3-vuex-typescript.md">Vue 3에서 Vuex와 타입스크립트 같이 사용하기</a>
 
+### electron
+
+- <a href="/content/posts/electron-getting-started.md">일렉트론 톺아보기</a>
+
 ### firebase
 
 - <a href="/content/posts/firebase-vue-functions.md">Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions</a>
