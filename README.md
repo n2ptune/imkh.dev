@@ -122,6 +122,7 @@
 ### electron
 
 - <a href="/content/posts/electron-getting-started.md">일렉트론 톺아보기</a>
+- <a href="/content/posts/react-electron-integration.md">리액트와 일렉트론으로 데스크탑 애플리케이션 만들기 (포르젝트 초기 구성)</a>
 
 ### firebase
 
@@ -204,6 +205,7 @@
 - <a href="/content/posts/react-absolute-path.md">리액트 절대 경로 사용하기</a>
 - <a href="/content/posts/react-and-rn.md">리액트와 리액트 네이티브</a>
 - <a href="/content/posts/react-context-api.md">리액트 Context API와 useContext()</a>
+- <a href="/content/posts/react-electron-integration.md">리액트와 일렉트론으로 데스크탑 애플리케이션 만들기 (포르젝트 초기 구성)</a>
 - <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
 ### react-native
