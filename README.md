@@ -67,6 +67,7 @@
 
 - <a href="/content/posts/angular-getting-started.md">Angular 프로젝트 설치하고 컴포넌트 만들기</a>
 - <a href="/content/posts/angular-routing.md">Angular Routing 이해하기</a>
+- <a href="/content/posts/angular-transition.md">Angular에서 Transition 사용법과 이해</a>
 
 ### web
 
