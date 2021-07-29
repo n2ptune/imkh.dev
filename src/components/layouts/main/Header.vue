@@ -60,7 +60,11 @@ export default {
   }),
 
   created() {
-    if (this.$route.path !== '/' && !this.$route.path.startsWith('/tag/')) {
+    if (
+      this.$route.path !== '/' &&
+      this.$route.path !== '/memo' &&
+      !this.$route.path.startsWith('/tag/')
+    ) {
       this.isTransparentHeader = false
     }
   },
@@ -84,7 +88,11 @@ export default {
       EventBus.$emit('search', true)
     },
     setTransparentHeader() {
-      if (this.$route.path !== '/' && !this.$route.path.startsWith('/tag/'))
+      if (
+        this.$route.path !== '/' &&
+        this.$route.path !== '/memo' &&
+        !this.$route.path.startsWith('/tag/')
+      )
         return
       if (window.scrollY >= 200) {
         this.isTransparentHeader = false
