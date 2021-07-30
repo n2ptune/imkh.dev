@@ -252,23 +252,19 @@ query Post ($id: ID!) {
 
   & .cover-image {
     > img {
-      max-width: 1100px;
-      /* margin-left: -2.5rem; */
-      @apply mx-auto;
+      @apply mx-auto max-w-full overflow-hidden;
     }
   }
 }
 
 @screen md {
   .wrapper {
-    /* @apply px-6 rounded-xl; */
     @apply px-0;
   }
 }
 
 @screen lg {
   .wrapper {
-    /* @apply px-10; */
     max-width: 1100px;
   }
 }

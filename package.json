@@ -5,12 +5,12 @@
     "build": "gridsome build",
     "dev": "gridsome develop",
     "explore": "gridsome explore",
-    "makefile": "node helpers/makefile/index.js",
-    "post": "babel-node helpers/makefile/v2/index.js",
+    "post": "babel-node helpers/makefile/index.js",
     "serve": "serve -n -l 8887",
     "lint": "prettier --config ./.prettierrc --write '**/*.{vue,js}'",
     "lint-all": "prettier --config ./.prettierrc --write **/*",
-    "tree": "ts-node ./helpers/file-tree/index.ts"
+    "tree": "ts-node ./helpers/file-tree/index.ts",
+    "tree:v2": "babel-node ./helpers/tree/index.js"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "0.1.2",
@@ -30,6 +30,7 @@
     "@babel/core": "^7.14.8",
     "@babel/node": "^7.14.7",
     "@babel/preset-env": "^7.14.8",
+    "@babel/preset-flow": "^7.14.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.3",
     "@fortawesome/free-regular-svg-icons": "^5.12.3",
@@ -43,6 +44,7 @@
     "autoprefixer": "^9",
     "commander": "^8.1.0",
     "cssnano": "^4.1.10",
+    "flow-bin": "^0.156.0",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "postcss": "7.0.35",
     "postcss-import": "^12",

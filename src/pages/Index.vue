@@ -37,12 +37,12 @@ export default {
         {
           key: 'og:description',
           property: 'og:description',
-          content: '웹 기술/개발 개인 블로그'
+          content: '웹 기술/개발 블로그'
         },
         {
           key: 'description',
           name: 'description',
-          content: '웹 기술/개발 개인 블로그'
+          content: '웹 기술/개발 블로그'
         },
         {
           key: 'og:url',

@@ -20,6 +20,6 @@ export default {
 
 <style lang="postcss" scoped>
 main {
-  overflow-y: hidden;
+  @apply overflow-hidden;
 }
 </style>

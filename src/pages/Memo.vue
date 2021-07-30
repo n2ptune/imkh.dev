@@ -2,7 +2,7 @@
   <DefaultLayout>
     <FullWidthImage />
     <Section>
-      TODO Memo list page
+      <List :memos="memos" />
     </Section>
   </DefaultLayout>
 </template>
@@ -11,11 +11,39 @@
 import DefaultLayout from '@/layouts/Default.vue'
 import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
 import Section from '@/components/layouts/main/Section.vue'
+import List from '@/components/memo/List.vue'
 
 export default {
-  components: { DefaultLayout, Section, FullWidthImage },
-  created() {
-    console.log(this.$page.memos)
+  metaInfo: () => ({
+    title: 'Memo',
+    meta: [
+      {
+        key: 'og:title',
+        property: 'og:title',
+        content: 'Memo'
+      },
+      {
+        key: 'og:description',
+        property: 'og:description',
+        content: '웹 기술/개발 블로그'
+      },
+      {
+        key: 'description',
+        name: 'description',
+        content: '웹 기술/개발 블로그'
+      },
+      {
+        key: 'og:url',
+        property: 'og:url',
+        content: 'https://imkh.dev/memo'
+      }
+    ]
+  }),
+  components: { DefaultLayout, Section, FullWidthImage, List },
+  computed: {
+    memos() {
+      return this.$page.memos.edges.map(edge => edge.node)
+    }
   }
 }
 </script>
@@ -37,6 +65,11 @@ query ($page: Int) {
         timeToRead
         date (format: "D. MMMM YYYY")
         excerpt
+        tags {
+          id
+          title
+          path
+        }
       }
     }
   }

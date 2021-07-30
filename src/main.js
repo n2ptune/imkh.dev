@@ -16,6 +16,7 @@ import {
   faChevronDown,
   faRedo
 } from '@fortawesome/free-solid-svg-icons'
+import { faStickyNote } from '@fortawesome/free-regular-svg-icons'
 import '@/styles/prism-custom.css'
 import VueInfiniteLoading from 'vue-infinite-loading'
 import VueFuse from 'vue-fuse'
@@ -30,7 +31,8 @@ library.add(
   faChevronDown,
   faRedo,
   faLinkedin,
-  faInstagram
+  faInstagram,
+  faStickyNote
 )
 
 export default function(Vue, { router, head, isClient }) {
