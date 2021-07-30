@@ -4,9 +4,11 @@
       <div class="flex justify-between">
         <div>
           <span class="mr-2">
-            <font-awesome :icon="['far', 'sticky-note']" />
+            <font-awesome
+              class="text-white-500 group-hover:text-white-800 transition-colors duration-300"
+              :icon="['far', 'sticky-note']"
+            />
           </span>
-          <span class="underline">{{ memoItem.tags.title }}</span>
         </div>
         <div
           class="text-sm text-white-500 group-hover:text-white-800 transition-colors duration-300"

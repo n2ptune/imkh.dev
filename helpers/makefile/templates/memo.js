@@ -8,8 +8,7 @@ export type Template = {
 const memoTemplate: Template[] = [
   { key: 'title' },
   { key: 'date', value: (): string => new Date().toISOString() },
-  { key: 'description' },
-  { key: 'tag' }
+  { key: 'description' }
 ]
 
 export default memoTemplate

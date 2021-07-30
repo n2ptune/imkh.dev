@@ -49,13 +49,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Memo',
-        path: 'content/memo/*.md',
-        refs: {
-          tags: {
-            typeName: 'Tag',
-            create: true
-          }
-        }
+        path: 'content/memo/*.md'
       }
     },
     {

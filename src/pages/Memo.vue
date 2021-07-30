@@ -65,11 +65,6 @@ query ($page: Int) {
         timeToRead
         date (format: "D. MMMM YYYY")
         excerpt
-        tags {
-          id
-          title
-          path
-        }
       }
     }
   }
