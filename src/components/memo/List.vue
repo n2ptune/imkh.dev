@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper space-y-6">
     <ListItem v-for="memo in memos" :key="memo.id" :memoItem="memo" />
-    <div v-if="!memos.length">
-      No Data
+    <div v-if="!memos.length" class="text-white-500">
+      No Memos yet
     </div>
   </div>
 </template>
