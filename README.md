@@ -152,6 +152,7 @@
 
 - <a href="/content/posts/git-sync-fork-repository.md">원본 저장소의 내용을 최신화 시키기 (git-sync-original-repository)</a>
 - <a href="/content/posts/github-pages-subtree.md">github pages 특정 폴더만 배포 시키기 (subtree)</a>
+- <a href="/content/posts/what-is-husky.md">Git Hooks를 내 프로젝트에 통합해주는 Husky</a>
 
 ### github
 
