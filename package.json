@@ -32,7 +32,7 @@
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-flow": "^7.14.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.3",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.12.3",
     "@fortawesome/free-solid-svg-icons": "^5.12.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
