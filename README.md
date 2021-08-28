@@ -210,6 +210,10 @@
 - <a href="/content/posts/react-electron-integration.md">리액트와 일렉트론으로 데스크탑 애플리케이션 만들기 (포르젝트 초기 구성)</a>
 - <a href="/content/posts/react-firebase-init.md">React와 Firebase 프로젝트 초기 환경설정</a>
 
+### raspberrypi
+
+- <a href="/content/posts/raspberry-getting-started.md">라즈베리 파이 4 Model B 환경 구성하기(시작하기)</a>
+
 ### react-native
 
 - <a href="/content/posts/react-and-rn.md">리액트와 리액트 네이티브</a>
