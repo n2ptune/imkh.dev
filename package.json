@@ -20,7 +20,7 @@
     "lodash.debounce": "^4.0.8",
     "medium-zoom": "^1.0.6",
     "postcss-for": "^2.1.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.25.0",
     "vue-disqus": "^4.0.1",
     "vue-fuse": "^2",
     "vue-infinite-loading": "2.4.5",
