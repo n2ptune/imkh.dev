@@ -1,3 +1,4 @@
+/* @deprecated */
 import { contentPath, filePath } from './path'
 import { readDirFromPath, readFileFromPath } from './reader'
 import { decomposition, extractWithTag } from './decomposition'
