@@ -1,16 +1,29 @@
 <template>
   <DefaultLayout>
     <section class="wrapper">
-      asdasf
+      <header class="text-center leading-snug whitespace-normal break-all">
+        <div class="text-xl lg:text-2xl font-bold mb-3">
+          {{ $page.memo.title }}
+        </div>
+        <div class="text-white-500">
+          {{ $page.memo.description }}
+        </div>
+        <div class="text-white-500">
+          {{ $page.memo.date }}
+        </div>
+      </header>
+      <article v-html="$page.memo.content" class="py-16" />
     </section>
+    <Footer />
   </DefaultLayout>
 </template>
 
 <script>
 import DefaultLayout from '@/layouts/Default.vue'
+import Footer from '@/components/layouts/post/Footer.vue'
 
 export default {
-  components: { DefaultLayout }
+  components: { DefaultLayout, Footer }
 }
 </script>
 
@@ -18,6 +31,12 @@ export default {
 query Memo ($id: ID!) {
   memo: memo (id: $id) {
     content
+    date (format: "D. MMMM YYYY")
+    description
+    id
+    path
+    timeToRead
+    title
   }
 }
 </page-query>

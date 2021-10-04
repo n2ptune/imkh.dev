@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="footer-inner">
-      <div class="footer-inner__related">
+      <div v-if="!ignoreMemoPage" class="footer-inner__related">
         <div class="footer-inner__related-title">
           관심있으실 만한 포스트
         </div>
@@ -71,10 +71,10 @@ export default {
   computed: {
     related() {
       return this.relatedPost.map(data => data.node).slice(0, 3)
+    },
+    ignoreMemoPage() {
+      return this.$route.path.startsWith('/memo/')
     }
-  },
-  created() {
-    console.log(this.relatedPost)
   }
 }
 </script>
