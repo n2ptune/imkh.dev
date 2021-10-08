@@ -23,6 +23,9 @@ import DefaultLayout from '@/layouts/Default.vue'
 import Footer from '@/components/layouts/post/Footer.vue'
 
 export default {
+  metaInfo() {
+    return {}
+  },
   components: { DefaultLayout, Footer }
 }
 </script>
@@ -42,6 +45,10 @@ query Memo ($id: ID!) {
 </page-query>
 
 <style lang="postcss" scoped>
+article {
+  @apply py-32;
+}
+
 .wrapper {
   @apply relative mx-auto mb-32 py-10 rounded-none text-white-800 px-4
   overflow-x-hidden;
