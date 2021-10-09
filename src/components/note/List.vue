@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper space-y-6">
-    <ListItem v-for="memo in memos" :key="memo.id" :memoItem="memo" />
-    <div v-if="!memos.length" class="text-white-500">
-      No Memos yet
+    <ListItem v-for="note in notes" :key="note.id" :noteItem="note" />
+    <div v-if="!notes.length" class="text-white-500">
+      No Notes yet
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
     ListItem
   },
   props: {
-    memos: {
+    notes: {
       type: [Object, Array],
       required: true
     }

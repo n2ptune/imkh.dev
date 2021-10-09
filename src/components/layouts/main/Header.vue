@@ -13,7 +13,7 @@
             hover:text-green-600
           "
         >
-          IMKH.DEV
+          Devlog
         </span>
       </g-link>
       <ul class="header-list">
@@ -21,7 +21,7 @@
           <g-link to="/" exact-active-class="exact-active">Blog</g-link>
         </li>
         <li>
-          <g-link to="/memo" exact-active-class="exact-active"> Memo </g-link>
+          <g-link to="/note" exact-active-class="exact-active"> Note </g-link>
         </li>
         <li>
           <a href="https://github.com/n2ptune" target="_blank"> Github </a>
@@ -62,7 +62,7 @@ export default {
   created() {
     if (
       this.$route.path !== '/' &&
-      this.$route.path !== '/memo' &&
+      this.$route.path !== '/note' &&
       !this.$route.path.startsWith('/tag/')
     ) {
       this.isTransparentHeader = false
@@ -90,7 +90,7 @@ export default {
     setTransparentHeader() {
       if (
         this.$route.path !== '/' &&
-        this.$route.path !== '/memo' &&
+        this.$route.path !== '/note' &&
         !this.$route.path.startsWith('/tag/')
       )
         return

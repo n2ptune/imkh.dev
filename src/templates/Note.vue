@@ -3,16 +3,16 @@
     <section class="wrapper">
       <header class="leading-snug whitespace-normal break-all">
         <div class="text-xl lg:text-2xl font-bold mb-3">
-          {{ $page.memo.title }}
+          {{ $page.note.title }}
         </div>
         <div class="text-white-500">
-          {{ $page.memo.description }}
+          {{ $page.note.description }}
         </div>
         <div class="text-white-500">
-          {{ $page.memo.date }}
+          {{ $page.note.date }}
         </div>
       </header>
-      <article v-html="$page.memo.content" class="py-16" />
+      <article v-html="$page.note.content" class="py-16" />
     </section>
     <Footer />
   </DefaultLayout>
@@ -31,8 +31,8 @@ export default {
 </script>
 
 <page-query>
-query Memo ($id: ID!) {
-  memo: memo (id: $id) {
+query Note ($id: ID!) {
+  note: note (id: $id) {
     content
     date (format: "D. MMMM YYYY")
     description
@@ -46,10 +46,9 @@ query Memo ($id: ID!) {
 
 <style lang="postcss" scoped>
 article {
-  @apply break-words text-white-800 mx-auto py-32;
+  @apply break-words text-white-800 mx-auto py-32 w-full;
 
   font-size: 1rem;
-  width: 100%;
 
   /* Blockquote */
 
@@ -196,6 +195,10 @@ article {
       @apply mx-auto max-w-full overflow-hidden;
     }
   }
+
+  header {
+    @apply w-full;
+  }
 }
 
 @screen md {
@@ -207,6 +210,19 @@ article {
 @screen lg {
   .wrapper {
     max-width: 1100px;
+  }
+
+  .wrapper header {
+    @apply mx-auto;
+
+    max-width: 750px;
+    font-size: 1.1rem;
+  }
+}
+
+@screen xl {
+  .wrapper header {
+    font-size: 1.15rem;
   }
 }
 </style>

@@ -2,7 +2,7 @@
   <DefaultLayout>
     <FullWidthImage />
     <Section>
-      <List :memos="memos" />
+      <List :notes="notes" />
       <ClientOnly>
         <infinite-loading
           @infinite="loadingHandler"
@@ -21,16 +21,16 @@
 import DefaultLayout from '@/layouts/Default.vue'
 import FullWidthImage from '@/components/layouts/main/FullWidthImage.vue'
 import Section from '@/components/layouts/main/Section.vue'
-import List from '@/components/memo/List.vue'
+import List from '@/components/note/List.vue'
 
 export default {
   metaInfo: () => ({
-    title: 'Memo',
+    title: 'Note',
     meta: [
       {
         key: 'og:title',
         property: 'og:title',
-        content: 'Memo'
+        content: 'Note'
       },
       {
         key: 'og:description',
@@ -45,24 +45,24 @@ export default {
       {
         key: 'og:url',
         property: 'og:url',
-        content: 'https://imkh.dev/memo'
+        content: 'https://imkh.dev/note'
       }
     ]
   }),
   components: { DefaultLayout, Section, FullWidthImage, List },
   created() {
-    this.memos = this.$page.memos.edges.map(edge => edge.node)
+    this.notes = this.$page.notes.edges.map(edge => edge.node)
   },
   methods: {
     async loadingHandler($state) {
-      if (this.currentPage + 1 > this.$page.memos.pageInfo.totalPages) {
+      if (this.currentPage + 1 > this.$page.notes.pageInfo.totalPages) {
         $state.complete()
       } else {
-        const { data } = await this.$fetch(`/memo/${this.currentPage + 1}`)
-        if (data.memos.edges.length) {
-          const collections = data.memos.edges.map(edge => edge.node)
-          this.currentPage = data.memos.pageInfo.currentPage
-          this.memos = this.memos.concat(collections)
+        const { data } = await this.$fetch(`/note/${this.currentPage + 1}`)
+        if (data.notes.edges.length) {
+          const collections = data.notes.edges.map(edge => edge.node)
+          this.currentPage = data.notes.pageInfo.currentPage
+          this.notes = this.notes.concat(collections)
           $state.loaded()
         } else {
           $state.complete()
@@ -72,14 +72,14 @@ export default {
   },
   data: () => ({
     currentPage: 1,
-    memos: []
+    notes: []
   })
 }
 </script>
 
 <page-query>
 query ($page: Int) {
-  memos: allMemo(perPage: 6, page: $page) @paginate {
+  notes: allNote(perPage: 6, page: $page) @paginate {
     pageInfo {
       totalPages
       currentPage

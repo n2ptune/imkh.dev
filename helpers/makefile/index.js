@@ -2,18 +2,18 @@
 import fs from 'fs'
 import path from 'path'
 import post from './templates/post'
-import memo from './templates/memo'
+import note from './templates/note'
 import { Command } from 'commander'
 
 type MakeOption = {
-  type: 'post' | 'memo',
+  type: 'post' | 'note',
   name: string
 }
 
 const program = new Command()
 
 program
-  .option('-t, --type <type>', 'file type post | memo')
+  .option('-t, --type <type>', 'file type post | note')
   .option('-n, --name <name>', 'file name')
 
 program.parse(process.argv)
@@ -28,10 +28,10 @@ if (!name || !type) {
 const contentPath = path.resolve(
   process.cwd(),
   'content',
-  type === 'post' ? 'posts' : 'memo'
+  type === 'post' ? 'posts' : 'note'
 )
 
-const template = type === 'post' ? post : memo
+const template = type === 'post' ? post : note
 const fileString = ['---']
 
 const properties = template.map(property => {

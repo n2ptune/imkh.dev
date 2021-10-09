@@ -18,9 +18,9 @@ module.exports = {
       }
     ],
     Tag: '/tag/:id',
-    Memo: [
+    Note: [
       {
-        path: node => `/memo/${node.fileInfo.name}`
+        path: node => `/note/${node.fileInfo.name}`
       }
     ]
   },
@@ -48,8 +48,8 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Memo',
-        path: 'content/memo/*.md'
+        typeName: 'Note',
+        path: 'content/note/*.md'
       }
     },
     {

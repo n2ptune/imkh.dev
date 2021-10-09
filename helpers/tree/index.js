@@ -26,18 +26,16 @@ const filterMd = (file: string, _index: number, _array: string[]): boolean =>
   file.endsWith('.md')
 
 const postPath = path.resolve(process.cwd(), 'content', 'posts')
-const memoPath = path.resolve(process.cwd(), 'content', 'memo')
+const notePath = path.resolve(process.cwd(), 'content', 'note')
 
 const obj: ContentMap = {}
 
 const posts = fs.readdirSync(postPath).filter(filterMd)
-const memos = fs.readdirSync(memoPath).filter(filterMd)
+const notes = fs.readdirSync(notePath).filter(filterMd)
 
 posts.forEach(post => {
   const file = fs.readFileSync(path.resolve(postPath, post), 'utf-8')
   const headers = parseMDHeader(file, post)
-  console.log(headers)
-  // obj[post] = headers
 })
 
 const tags: Tag = {}

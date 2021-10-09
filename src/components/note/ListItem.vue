@@ -1,5 +1,5 @@
 <template>
-  <g-link :to="memoItem.path" class="w-full group">
+  <g-link :to="noteItem.path" class="w-full group">
     <div class="space-y-1">
       <div class="flex justify-between">
         <div>
@@ -13,14 +13,14 @@
         <div
           class="text-sm text-white-500 group-hover:text-white-800 transition-colors duration-300"
         >
-          {{ memoItem.date }}
+          {{ noteItem.date }}
         </div>
       </div>
-      <div class="text-xl font-bold">{{ memoItem.title }}</div>
+      <div class="text-xl font-bold">{{ noteItem.title }}</div>
       <div
         class="text-white-500 group-hover:text-white-800 transition-colors duration-300"
       >
-        {{ memoItem.excerpt }}
+        {{ noteItem.excerpt }}
       </div>
     </div>
   </g-link>
@@ -29,7 +29,7 @@
 <script>
 export default {
   props: {
-    memoItem: {
+    noteItem: {
       type: Object,
       required: true
     }
