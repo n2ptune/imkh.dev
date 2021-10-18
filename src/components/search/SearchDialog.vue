@@ -4,7 +4,7 @@
       <div class="search-overlay"></div>
       <transition name="dialog-transition" appear>
         <div class="search-dialog">
-          <div class="search-dialog-wrapper">
+          <div class="search-dialog-wrapper" ref="wrapper">
             <div class="search-dialog-wrapper__icon-close" @click="close">
               <font-awesome :icon="['fas', 'times']" size="lg" />
             </div>
@@ -39,8 +39,15 @@ export default {
     this.hiddenScroll()
   },
 
+  mounted() {
+    setTimeout(() => {
+      document.addEventListener('click', this.clickOutside)
+    }, 0) // delay
+  },
+
   beforeDestroy() {
     this.unHiddenScroll()
+    document.removeEventListener('click', this.clickOutside)
   },
 
   methods: {
@@ -53,6 +60,11 @@ export default {
     },
     close() {
       EventBus.$emit('search', false)
+    },
+    clickOutside(event) {
+      if (this.$refs.wrapper && !this.$refs.wrapper.contains(event.target)) {
+        this.close()
+      }
     }
   }
 }

@@ -18,7 +18,7 @@
         <li
           v-for="top in tops"
           :key="top.title"
-          class="inline-block text-white-400 transition-colors duration-300 hover:text-white-700 pb-1 border-b-2 border-elevation-300 hover:border-elevation-700"
+          class="inline-block text-white-400 transition-colors duration-300 hover:text-white-700 hover:border-elevation-700"
         >
           <g-link :to="top.path"> #{{ top.title }} </g-link>
         </li>

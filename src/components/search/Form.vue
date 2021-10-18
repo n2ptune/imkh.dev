@@ -161,7 +161,7 @@ export default {
   }
 
   &__result {
-    @apply w-full text-center py-6 mb-4;
+    @apply w-full text-center py-6 mb-4 relative;
 
     &-spinner {
       width: 40px;
@@ -169,6 +169,9 @@ export default {
       border: 4px solid theme('colors.white.300');
       border-top: 4px solid theme('colors.white.f');
       animation: rotate infinite linear 950ms;
+      position: absolute;
+      left: calc(50% - 20px);
+      top: 0;
 
       @keyframes rotate {
         from {

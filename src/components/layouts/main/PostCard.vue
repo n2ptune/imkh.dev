@@ -14,10 +14,10 @@
     <g-link :to="post.path">
       <div class="pb-16">
         <div class="p-4">
-          <div class="text-2xl font-bold title">
+          <div class="text-lg font-bold title">
             {{ post.title }}
           </div>
-          <div class="text-base text-white-400 mt-5 desc">
+          <div class="text-sm font-thin text-white-400 mt-5 desc">
             {{ post.cover_image ? post.description : post.excerpt + '...' }}
           </div>
           <tag-list :tag="post.tags" />
@@ -64,7 +64,7 @@ export default {
   @apply my-3 bg-elevation-200 transition-all duration-300
   relative;
 
-  flex: 0 1 450px;
+  flex: 0 1 400px;
 
   &:hover {
     @apply transform -translate-y-1;

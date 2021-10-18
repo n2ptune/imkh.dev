@@ -61,7 +61,7 @@ export default {
 
 .dropdown {
   @apply absolute z-20 bg-dark-lighten shadow-xl text-white-700
-  px-2 py-4 rounded-lg left-0 text-xl;
+  px-2 py-4 rounded-lg left-0 text-base;
 
   top: 3rem;
   width: 320px;
