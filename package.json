@@ -46,7 +46,7 @@
     "cssnano": "^4.1.10",
     "flow-bin": "^0.156.0",
     "gridsome-plugin-tailwindcss": "^4.1.1",
-    "postcss": "7.0.35",
+    "postcss": "8.3.10",
     "postcss-import": "^12",
     "postcss-nested": "4.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
