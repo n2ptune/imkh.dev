@@ -7,6 +7,10 @@ dist
 .env
 .env.*
 .vscode
-
 .yarn/*
-.pnp.*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
