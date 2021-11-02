@@ -10,15 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['Hack', 'D2Coding', 'monospace'],
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Noto Sans"',
-          '"Noto Sans KR"',
-          'sans-serif',
-          'emoji'
-        ]
+        mono: ['Hack', 'D2Coding', 'monospace']
       },
       fontSize: {
         xl: '1.3rem'

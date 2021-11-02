@@ -10,7 +10,8 @@ body {
   font-size: 16px;
   font-display: swap;
   font-weight: 400;
-
+  font-family: Pretendard, '-apple-system', 'BlinkMacSystemFont', '"Noto Sans"',
+    '"Noto Sans KR"', 'sans-serif', 'emoji';
   @apply bg-dark-surface text-white-800;
 }
 
