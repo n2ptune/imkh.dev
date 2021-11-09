@@ -1,11 +1,7 @@
 <template>
   <div class="mt-3">
     <ul class="space-x-2 space-y-1">
-      <li
-        v-for="tag in sortedTags"
-        :key="tag.id"
-        class="inline-block rounded py-1 px-3 text-sm transition-colors duration-300 text-white-500 bg-elevation-500 hover:bg-elevation-800 hover:text-white-800"
-      >
+      <li v-for="tag in sortedTags" :key="tag.id" class="tag">
         <g-link :to="tag.path">
           {{ tag.id }}
         </g-link>
@@ -33,3 +29,14 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.tag {
+  @apply inline-block rounded py-1 px-3 text-sm transition-colors duration-300
+  text-accent-main bg-accent-bg;
+
+  &:hover {
+    @apply text-accent-light bg-accent-bgl;
+  }
+}
+</style>

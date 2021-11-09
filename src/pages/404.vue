@@ -5,7 +5,7 @@
         <g-image src="@/assets/pikachu_404.png" blur="4" width="200" />
       </div>
       <div
-        class="number text-center text-4xl md:text-6xl font-bold mt-1 tracking-widest text-purple-400"
+        class="number text-center text-4xl md:text-6xl font-bold mt-1 tracking-widest text-accent-main"
       >
         404
       </div>
@@ -15,7 +15,7 @@
         페이지를 찾을 수 없습니다.
       </div>
       <div class="mt-2 text-center">
-        <g-link to="/" class="text-white-f hover:text-purple-400 underline">
+        <g-link to="/" class="text-white-f hover:text-accent-main underline">
           <font-awesome :icon="['fas', 'chevron-left']" size="sm" />
           <span class="ml-2">메인으로 돌아가기</span>
         </g-link>

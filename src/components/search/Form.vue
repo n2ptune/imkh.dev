@@ -24,7 +24,9 @@
       </transition>
       <div v-if="searchResults.length" class="text-left my-2 md:px-4">
         총
-        <span class="text-green-500 font-bold">{{ searchResults.length }}</span
+        <span class="text-accent-main font-bold">{{
+          searchResults.length
+        }}</span
         >개의 포스트
       </div>
       <ul v-if="searchResults.length" class="list-wrapper">
@@ -138,7 +140,7 @@ export default {
   }
 
   &__input {
-    @apply text-xl text-green-500 my-8 bg-transparent
+    @apply text-xl text-accent-main my-8 bg-transparent
     border-b border-elevation-300 pb-4 w-full;
 
     &:focus {

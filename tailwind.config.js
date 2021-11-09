@@ -30,6 +30,16 @@ module.exports = {
           '800': 'rgba(255, 255, 255, 0.15)',
           '900': 'rgba(255, 255, 255, 0.16)'
         },
+        accent: {
+          main: '#00C896',
+          darker: '#00AF9C',
+          darken: '#009498',
+          darkest: '#007A8B',
+          bg: '#2B382B',
+          bgh: '#00794E',
+          light: '#00FFD2',
+          bgl: '#3a503a'
+        },
         dark: {
           surface: '#161616',
           lighten: '#212121'

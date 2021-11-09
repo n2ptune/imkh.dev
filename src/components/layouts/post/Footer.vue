@@ -11,7 +11,7 @@
       </div>
       <div class="footer-inner__list">
         <div class="footer-inner__list-blog">
-          <div class="text-green-500 text-2xl font-bold">
+          <div class="text-accent-main text-2xl font-bold">
             IMKH.DEV
           </div>
         </div>

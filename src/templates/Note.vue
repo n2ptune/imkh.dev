@@ -76,10 +76,10 @@ article {
   /* Link */
 
   & >>> a {
-    @apply text-purple-300 underline;
+    @apply text-accent-main underline;
 
     &:hover {
-      @apply text-purple-400;
+      @apply text-accent-darker;
     }
   }
 

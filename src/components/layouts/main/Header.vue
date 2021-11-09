@@ -9,8 +9,8 @@
             text-2xl
             transition-colors
             duration-200
-            text-green-500
-            hover:text-green-600
+            text-accent-main
+            hover:text-accent-darker
           "
         >
           Devlog
