@@ -44,7 +44,7 @@
     "autoprefixer": "^9",
     "commander": "^8.3.0",
     "cssnano": "^4.1.10",
-    "flow-bin": "^0.162.1",
+    "flow-bin": "^0.165.1",
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "postcss": "7.0.35",
     "postcss-import": "^12",
