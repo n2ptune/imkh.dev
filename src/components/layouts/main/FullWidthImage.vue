@@ -14,12 +14,11 @@
 .full-width-image {
   @apply relative w-full;
 
-  height: 30rem;
+  height: 45rem;
   background-size: cover;
-  background-position: center 70%;
+  background-position: center 68%;
   background-repeat: no-repeat;
   background-image: url(~@/assets/header-cover.jpg);
-  /* top: 72px; */
 
   &::after {
     @apply absolute block w-full h-full top-0 left-0 z-20 opacity-20;
@@ -34,7 +33,7 @@
     content: '';
     background: linear-gradient(
       to bottom,
-      transparent 20%,
+      transparent 10%,
       theme('colors.dark.surface')
     );
   }

@@ -39,3 +39,8 @@ img.g-image.g-image--lazy.g-image--loaded {
   @apply bg-transparent rounded;
   width: 5px;
 }
+
+:root {
+  --card-min-height: 400px;
+  --card-max-height: 500px;
+}

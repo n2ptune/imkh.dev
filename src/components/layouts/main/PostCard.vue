@@ -18,7 +18,7 @@
             {{ post.title }}
           </div>
           <div class="text-base font-normal text-white-400 mt-2 desc">
-            {{ post.cover_image ? post.description : post.excerpt + '...' }}
+            {{ (post.cover_image ? post.description : post.excerpt) | limitMaxLen }}
           </div>
           <tag-list :tag="post.tags" />
         </div>
@@ -48,6 +48,13 @@ export default {
     TagList
   },
 
+  filters: {
+    limitMaxLen(value) {
+      if (value && value.length > 30) return value.slice(0, 70) + '...'
+      return value
+    }
+  },
+
   props: {
     post: {
       type: Object,
@@ -62,9 +69,10 @@ export default {
 <style lang="postcss" scoped>
 .post {
   @apply my-3 bg-elevation-200 transition-all duration-300
-  relative;
+  relative max-w-full;
 
-  flex: 0 1 400px;
+  min-height: var(--card-min-height);
+  max-height: var(--card-max-height);
 
   &:hover {
     @apply transform -translate-y-1;
@@ -105,7 +113,19 @@ export default {
 
 @screen md {
   .post {
-    @apply m-4 rounded-lg;
+    @apply m-2 rounded-lg;
+  }
+}
+
+@screen lg {
+  .post {
+    flex: 0 1 31%;
+  }
+}
+
+@screen xl {
+  .post {
+    flex: 0 1 23%;
   }
 }
 </style>

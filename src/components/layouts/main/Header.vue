@@ -109,8 +109,10 @@ header {
   @apply px-2 py-4
   fixed w-full z-50 top-0 bg-dark-surface bg-opacity-80 transition-colors duration-500;
 
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  &:not(.is-transparent) {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
 
   &.is-transparent {
     @apply bg-transparent;
