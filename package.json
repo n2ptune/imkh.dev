@@ -1,6 +1,18 @@
 {
   "name": "dev-blog",
   "private": true,
+  "author": {
+    "email": "vue2598@gmail.com",
+    "name": "n2ptune"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n2ptune/imkh.dev.git"
+  },
+  "main": "src/main.js",
+  "description": "Personal blog",
+  "license": "MIT",
+  "version": "0.0.1",
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
