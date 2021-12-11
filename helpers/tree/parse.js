@@ -1,7 +1,13 @@
-// @flow
-import type { ContentMap } from './index.js'
+/** @flow */
+import type { Content } from './index.js'
+import yaml from 'js-yaml'
 
-export const parseMDHeader = (file: string, fileName: string): any => {
+export const AUTO_GENERATED_START_TEXT =
+  '<!-- Auto generating by file-tree start -->'
+export const AUTO_GENERATED_END_TEXT =
+  '<!-- Auto generating by file-tree end -->'
+
+export const parseMDHeader = (file: string, fileName: string): Content => {
   const arr = file.split('\n')
   let flag = false
   let startIndex = 0
@@ -21,5 +27,23 @@ export const parseMDHeader = (file: string, fileName: string): any => {
     i++
   }
 
-  const parse = arr.slice(startIndex + 1, endIndex).join(',')
+  const arrData = arr.slice(startIndex + 1, endIndex)
+  // Top yaml front-matter format headers -> js object
+  const parsed: Content = yaml.load(arrData.join('\n'))
+
+  return parsed
+}
+
+export const parseAllTags = (contents: Content[]): string[] => {
+  const tags = [...new Set(contents.map(content => content.tags).flat())]
+  tags.sort()
+  return tags
+}
+
+// Return "start", "end" by tuple
+export const parseReadMe = (content: string): [number, number, string[]] => {
+  const separated = content.split('\n')
+  const start = separated.findIndex(t => t.trim() === AUTO_GENERATED_START_TEXT)
+  const end = separated.findIndex(t => t.trim() === AUTO_GENERATED_END_TEXT)
+  return [start, end, separated]
 }
