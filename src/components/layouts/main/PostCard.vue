@@ -18,7 +18,9 @@
             {{ post.title }}
           </div>
           <div class="text-base font-normal text-white-400 mt-2 desc">
-            {{ (post.cover_image ? post.description : post.excerpt) | limitMaxLen }}
+            {{
+              (post.cover_image ? post.description : post.excerpt) | limitMaxLen
+            }}
           </div>
           <tag-list :tag="post.tags" />
         </div>

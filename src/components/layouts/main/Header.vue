@@ -4,14 +4,7 @@
       <g-link to="/">
         <!-- <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2 inline-block" width="40px" /> -->
         <span
-          class="
-            font-bold
-            text-2xl
-            transition-colors
-            duration-200
-            text-accent-main
-            hover:text-accent-darker
-          "
+          class="font-bold text-2xl transition-colors duration-200 text-accent-main hover:text-accent-darker"
         >
           Devlog
         </span>

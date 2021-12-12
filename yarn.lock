@@ -4986,6 +4986,7 @@ __metadata:
     postcss-for: ^2.1.1
     postcss-import: ^12
     postcss-nested: 4.2.1
+    prettier: ^2.5.1
     prismjs: ^1.23.0
     tailwindcss: "npm:@tailwindcss/postcss7-compat@^2.0.2"
     ts-node: ^9.1.1
@@ -11029,6 +11030,15 @@ __metadata:
   bin:
     prettier: ./bin-prettier.js
   checksum: bc78219e0f8173a808f4c6c8e0a137dd8ebd4fbe013e63fe1a37a82b48612f17b8ae8e18a992adf802ee2cf7428f14f084e7c2846ca5759cf4013c6e54810e1f
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "prettier@npm:2.5.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 21b9408476ea1c544b0e45d51ceb94a84789ff92095abb710942d780c862d0daebdb29972d47f6b4d0f7ebbfb0ffbf56cc2cfa3e3e9d1cca54864af185b15b66
   languageName: node
   linkType: hard
 

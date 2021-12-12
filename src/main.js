@@ -35,7 +35,7 @@ library.add(
   faStickyNote
 )
 
-export default function(Vue, { router, head, isClient }) {
+export default function (Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: 'ko' }
 
   Vue.component('font-awesome', FontAwesomeIcon)

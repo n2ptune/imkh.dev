@@ -3,3 +3,6 @@
 
 echo "Checking forgot executing tree command > "
 yarn tree
+
+echo "Style lint (vue, js, css, html) files"
+yarn lint

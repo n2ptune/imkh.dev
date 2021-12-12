@@ -87,7 +87,7 @@ export default {
       this.searchText = ''
       this.isSearched = false
     },
-    waitSearch: debounce(function() {
+    waitSearch: debounce(function () {
       if (!this.searchText) {
         this.searchResults = []
         this.isSearched = false

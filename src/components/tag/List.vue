@@ -2,9 +2,7 @@
   <div class="mt-3">
     <ul class="space-x-2 space-y-1">
       <li v-for="tag in sortedTags" :key="tag.id" class="tag">
-        <g-link :to="tag.path">
-          #{{ tag.id }}
-        </g-link>
+        <g-link :to="tag.path"> #{{ tag.id }} </g-link>
       </li>
     </ul>
   </div>

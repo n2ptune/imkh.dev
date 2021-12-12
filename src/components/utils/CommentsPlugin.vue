@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-0 mt-24 mx-auto" style="max-width:750px;">
+  <div class="mb-0 mt-24 mx-auto" style="max-width: 750px">
     <Disqus
       ref="disqus"
       shortname="imkh-dev"

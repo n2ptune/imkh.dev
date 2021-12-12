@@ -7,7 +7,7 @@
         <infinite-loading
           @infinite="loadingHandler"
           spinner="bubbles"
-          style="width: 100%;"
+          style="width: 100%"
         >
           <div slot="no-more"></div>
           <div slot="no-results"></div>
