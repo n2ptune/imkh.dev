@@ -6,6 +6,7 @@
         class="search-form__input"
         type="text"
         placeholder="Javascript, Vue..."
+        ref="searchTextRef"
         @input="waitSearch"
       />
       <font-awesome
@@ -80,6 +81,10 @@ export default {
 
   created() {
     this.posts = this.$static.allPost.edges
+  },
+
+  mounted() {
+    this.$refs.searchTextRef.focus()
   },
 
   methods: {
