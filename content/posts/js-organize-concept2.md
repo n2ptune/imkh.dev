@@ -166,9 +166,7 @@ console.log(Animal.prototype)
 
 ```html
 <div class="shadow-container">
-  <button class="primary">
-    Primary
-  </button>
+  <button class="primary">Primary</button>
 </div>
 ```
 

@@ -50,10 +50,10 @@ ng generate module app-routing --flat --module=app
 각 경로에 매핑될 컴포넌트를 `import` 해주어서 사용해야 한다. Vue처럼 비동기 컴포넌트로 구성할 수도 있을 것이다. 원래부터 Angular에 존재했던 기능일 수도 있다.
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { FirstComponent } from './first/first.component'
+import { SecondComponent } from './second/second.component'
 
 const routes: Routes = [
   {
@@ -62,15 +62,15 @@ const routes: Routes = [
     children: [
       {
         path: 'second',
-        component: SecondComponent,
-      },
-    ],
-  },
-];
+        component: SecondComponent
+      }
+    ]
+  }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
 ```
@@ -128,14 +128,13 @@ Vue에서는 `<router-view />` 컴포넌트를 컴포넌트 아래 위치시키�
   </nav>
   <router-outlet></router-outlet>
 </div>
-
 ```
 
 `<router-outlet` 으로 감싼 부분에 우리가 매핑시킨 뷰 컴포넌트로 치환된다.
 
 ## Guard
 
-Vue에서 했던  `beforeRouteLeave`, `beforeRouteEnter` 등을 Angular에서는 `Guard`를 통해 구현할 수 있다. 먼저, 가드를 생성하기 위해 Angular CLI의 도움을 받는다.
+Vue에서 했던 `beforeRouteLeave`, `beforeRouteEnter` 등을 Angular에서는 `Guard`를 통해 구현할 수 있다. 먼저, 가드를 생성하기 위해 Angular CLI의 도움을 받는다.
 
 ```sh
 ng g guard my-guard
@@ -146,6 +145,3 @@ ng g guard my-guard
 ## Router Link
 
 각 경로를 이동하기 위해 Angular에서는 `a` 태그의 `routerLink` 속성을 사용하여 경로를 지정해서 이동하도록 지원한다. 또한 `routerLinkActive` 속성에서 활성화되었을 때의 클래스 지정 등을 활용할 수 있다.
-
-
-

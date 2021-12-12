@@ -4,5 +4,5 @@
 echo "Checking forgot executing tree command > "
 yarn tree
 
-echo "Style lint (vue, js, css, html) files"
+echo "Style lint (vue, js, css, html, md) files"
 yarn lint

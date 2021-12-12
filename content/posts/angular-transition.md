@@ -63,9 +63,7 @@ import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-transition-text',
-  template: `
-    <p>Hello I'm Transition Text (fade)</p>
-  `,
+  template: ` <p>Hello I'm Transition Text (fade)</p> `,
   styles: []
 })
 export class TransitionTextComponent implements OnInit {
@@ -169,9 +167,7 @@ trigger('trans', [
 트랜지션 대상이 될 DOM에 `[@트리거 이름]` 형태로 트랜지션을 적용한다. `active` 값에 의해 트랜지션 상태가 지정된다.
 
 ```html
-<button (click)="handleClick()">
-  Transition {{ active | activeText }}
-</button>
+<button (click)="handleClick()">Transition {{ active | activeText }}</button>
 ```
 
 위는 `active` 값을 조작할 버튼이다. 버튼을 누르면 `active` 값이 트리거된다. 이제 버튼을 누르면 아래 트랜지션 대상이 될 컴포넌트는 빨간색이 되거나 파란색이 되거나 투명도가 있다 없거나하는 트랜지션이 적용되었다.

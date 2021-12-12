@@ -19,7 +19,7 @@
     "explore": "gridsome explore",
     "post": "babel-node helpers/makefile/index.js",
     "serve": "serve -n -l 8887",
-    "lint": "prettier --config ./.prettierrc --write '**/*.{vue,js,css,html}'",
+    "lint": "prettier --config ./.prettierrc --write '**/*.{vue,js,css,html,md}'",
     "tree": "babel-node ./helpers/tree/index.js",
     "postinstall": "husky install"
   },
