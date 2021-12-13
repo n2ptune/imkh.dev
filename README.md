@@ -218,6 +218,7 @@
 - [Vue i18n 간단하게 사용하기](content/posts/vue-i18n.md)
 - [Vue Instance Lifecycle 8단계](content/posts/vue-lifecycle.md)
 - [Vue Masonry Layout 구현하기 (feat. css grid)](content/posts/vue-masonry-layout.md)
+- [Vue 컴포넌트 디자인 패턴](content/posts/vue-patterns.md)
 - [Vue PostCSS 플러그인으로 CSS 크기를 압축시키기](content/posts/vue-postcss-cssnano.md)
 - [Unknown at rule @tailwind 경고 회피하기](content/posts/vue-tailwind-rule.md)
 - [다 된 Vue에 Tailwindcss 뿌리기](content/posts/vue-tailwindcss.md)

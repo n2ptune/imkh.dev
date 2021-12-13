@@ -3,7 +3,7 @@ title: Vue 컴포넌트 디자인 패턴
 date: 2021-12-13T13:51:51.568Z
 published: false
 tags: ['vue']
-cover_image: 
+cover_image:
 description: Vue 컴포넌트를 작성할 때 사용할 수 있는 여러가지 디자인 패턴에 대해서 정리하고 학습하기
 ---
 
@@ -29,23 +29,21 @@ description: Vue 컴포넌트를 작성할 때 사용할 수 있는 여러가지
 
 ```html
 <template>
-  <div class="counter">
-    {{ counter }}
-  </div>
+  <div class="counter">{{ counter }}</div>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    counter: 0
-  })
-}
+  export default {
+    data: () => ({
+      counter: 0
+    })
+  }
 </script>
 
 <style scoped>
-.counter {
-  color: red;
-}
+  .counter {
+    color: red;
+  }
 </style>
 ```
 
