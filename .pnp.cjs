@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gridsome/remark-prismjs", "npm:0.5.0"],
             ["@gridsome/source-filesystem", "npm:0.6.2"],
             ["@gridsome/transformer-remark", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:0.6.4"],
-            ["@microflash/gridsome-plugin-feed", "npm:1.2.1"],
+            ["@microflash/gridsome-plugin-feed", "npm:1.2.2"],
             ["@noxify/gridsome-plugin-remark-embed", "npm:1.3.1"],
             ["autoprefixer", "npm:9.8.6"],
             ["commander", "npm:8.3.0"],
@@ -72,8 +72,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               "@tailwindcss/postcss7-compat",
               "npm:2.2.17"
             ]],
-            ["ts-node", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:9.1.1"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"],
             ["vue-disqus", "npm:4.0.1"],
             ["vue-fuse", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:2.2.1"],
             ["vue-infinite-loading", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:2.4.5"],
@@ -3853,11 +3851,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@microflash/gridsome-plugin-feed", [
-        ["npm:1.2.1", {
-          "packageLocation": "./.yarn/cache/@microflash-gridsome-plugin-feed-npm-1.2.1-b8a1cbadc8-19e68a0f6c.zip/node_modules/@microflash/gridsome-plugin-feed/",
+        ["npm:1.2.2", {
+          "packageLocation": "./.yarn/cache/@microflash-gridsome-plugin-feed-npm-1.2.2-f473b9cf10-3e8cbba83f.zip/node_modules/@microflash/gridsome-plugin-feed/",
           "packageDependencies": [
-            ["@microflash/gridsome-plugin-feed", "npm:1.2.1"],
-            ["dayjs", "npm:1.10.6"],
+            ["@microflash/gridsome-plugin-feed", "npm:1.2.2"],
+            ["dayjs", "npm:1.10.7"],
             ["feed", "npm:4.2.2"]
           ],
           "linkType": "HARD",
@@ -5034,13 +5032,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["arg", [
-        ["npm:4.1.3", {
-          "packageLocation": "./.yarn/cache/arg-npm-4.1.3-1748b966a8-544af8dd3f.zip/node_modules/arg/",
-          "packageDependencies": [
-            ["arg", "npm:4.1.3"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:5.0.1", {
           "packageLocation": "./.yarn/cache/arg-npm-5.0.1-297491f918-9aefbcb120.zip/node_modules/arg/",
           "packageDependencies": [
@@ -7192,15 +7183,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["create-require", [
-        ["npm:1.1.1", {
-          "packageLocation": "./.yarn/cache/create-require-npm-1.1.1-839884ca2e-a9a1503d43.zip/node_modules/create-require/",
-          "packageDependencies": [
-            ["create-require", "npm:1.1.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["cross-spawn", [
         ["npm:5.1.0", {
           "packageLocation": "./.yarn/cache/cross-spawn-npm-5.1.0-a3e220603e-726939c995.zip/node_modules/cross-spawn/",
@@ -7570,10 +7552,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["dayjs", [
-        ["npm:1.10.6", {
-          "packageLocation": "./.yarn/cache/dayjs-npm-1.10.6-c9596cd594-a79af6d19c.zip/node_modules/dayjs/",
+        ["npm:1.10.7", {
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.10.7-34318a8e39-a0a4ca95ab.zip/node_modules/dayjs/",
           "packageDependencies": [
-            ["dayjs", "npm:1.10.6"]
+            ["dayjs", "npm:1.10.7"]
           ],
           "linkType": "HARD",
         }]
@@ -7969,7 +7951,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@gridsome/remark-prismjs", "npm:0.5.0"],
             ["@gridsome/source-filesystem", "npm:0.6.2"],
             ["@gridsome/transformer-remark", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:0.6.4"],
-            ["@microflash/gridsome-plugin-feed", "npm:1.2.1"],
+            ["@microflash/gridsome-plugin-feed", "npm:1.2.2"],
             ["@noxify/gridsome-plugin-remark-embed", "npm:1.3.1"],
             ["autoprefixer", "npm:9.8.6"],
             ["commander", "npm:8.3.0"],
@@ -7992,8 +7974,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               "@tailwindcss/postcss7-compat",
               "npm:2.2.17"
             ]],
-            ["ts-node", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:9.1.1"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"],
             ["vue-disqus", "npm:4.0.1"],
             ["vue-fuse", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:2.2.1"],
             ["vue-infinite-loading", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:2.4.5"],
@@ -8007,15 +7987,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/didyoumean-npm-1.2.2-fd568ec571-d5d98719d5.zip/node_modules/didyoumean/",
           "packageDependencies": [
             ["didyoumean", "npm:1.2.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["diff", [
-        ["npm:4.0.2", {
-          "packageLocation": "./.yarn/cache/diff-npm-4.0.2-73133c7102-f2c09b0ce4.zip/node_modules/diff/",
-          "packageDependencies": [
-            ["diff", "npm:4.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -12211,15 +12182,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["make-dir", "npm:3.1.0"],
             ["semver", "npm:6.3.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["make-error", [
-        ["npm:1.3.6", {
-          "packageLocation": "./.yarn/cache/make-error-npm-1.3.6-ccb85d9458-b86e5e0e25.zip/node_modules/make-error/",
-          "packageDependencies": [
-            ["make-error", "npm:1.3.6"]
           ],
           "linkType": "HARD",
         }]
@@ -17270,34 +17232,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["ts-node", [
-        ["npm:9.1.1", {
-          "packageLocation": "./.yarn/cache/ts-node-npm-9.1.1-4ad31da228-356e2647b8.zip/node_modules/ts-node/",
-          "packageDependencies": [
-            ["ts-node", "npm:9.1.1"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:9.1.1", {
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-30b53c2212/0/cache/ts-node-npm-9.1.1-4ad31da228-356e2647b8.zip/node_modules/ts-node/",
-          "packageDependencies": [
-            ["ts-node", "virtual:0557fbb758ce9f2168fcdd9981feb54b8c0240b096d3c2eca3f8d90b215190741bf8658c449e305db81a62ae8e93c27d5ed044817ceb055dbbbe6f13b04b8f27#npm:9.1.1"],
-            ["@types/typescript", null],
-            ["arg", "npm:4.1.3"],
-            ["create-require", "npm:1.1.1"],
-            ["diff", "npm:4.0.2"],
-            ["make-error", "npm:1.3.6"],
-            ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"],
-            ["yn", "npm:3.1.1"]
-          ],
-          "packagePeers": [
-            "@types/typescript",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["tslib", [
         ["npm:2.3.0", {
           "packageLocation": "./.yarn/cache/tslib-npm-2.3.0-277e75e108-8869694c26.zip/node_modules/tslib/",
@@ -17370,15 +17304,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["typedarray-to-buffer", "npm:3.1.5"],
             ["is-typedarray", "npm:1.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["typescript", [
-        ["patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8", {
-          "packageLocation": "./.yarn/cache/typescript-patch-e9a14bf896-61fc1a2ca5.zip/node_modules/typescript/",
-          "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=ddd1e8"]
           ],
           "linkType": "HARD",
         }]
@@ -18715,15 +18640,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["yauzl", "npm:2.10.0"],
             ["buffer-crc32", "npm:0.2.13"],
             ["fd-slicer", "npm:1.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["yn", [
-        ["npm:3.1.1", {
-          "packageLocation": "./.yarn/cache/yn-npm-3.1.1-8ad4259784-2c487b0e14.zip/node_modules/yn/",
-          "packageDependencies": [
-            ["yn", "npm:3.1.1"]
           ],
           "linkType": "HARD",
         }]
