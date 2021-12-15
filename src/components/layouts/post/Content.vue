@@ -157,6 +157,7 @@ section {
 
   & >>> ul {
     list-style-type: disc;
+    margin-bottom: 2rem;
   }
 
   /* Typography */

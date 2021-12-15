@@ -1,7 +1,7 @@
 ---
 title: Vue 컴포넌트 디자인 패턴
 date: 2021-12-13T13:51:51.568Z
-published: false
+published: true
 tags: ['vue']
 cover_image:
 description: Vue 컴포넌트를 작성할 때 사용할 수 있는 여러가지 디자인 패턴에 대해서 정리하고 학습하기
@@ -73,7 +73,7 @@ Vue.component('counter', {
 
 타입스크립트 지원이 제대로 되지 않는 Vue 2 기반 프로젝트에서 조금 더 나은 타입스크립트 개발 경험을 제공하기 위해 나온 [오픈소스](https://class-component.vuejs.org/)이다. SFC 패턴을 사용하는 것은 일치하지만 타입스크립트의 데코레이터를 적극 사용해 더 나은 타입스크립트 경험을 제공한다.
 
-```tsx
+```js
 <template>
   <div>
     <button v-on:click="decrement">-</button>
@@ -343,3 +343,153 @@ export default {
 ```
 
 `inheritAttrs` 옵션을 `false`로 놓으면 루트 컴포넌트에 자동으로 attribute가 붙지 않는다. 다만 `class`는 예외적으로 붙는 것 같다. `input`에 attribute를 붙이고 싶은 경우 위 처럼 `$attrs` 컴포넌트의 옵션을 통해 태그에 달아줄 수 있다.
+
+## 디렉티브를 통한 조건부 렌더링
+
+내장 디렉티브 중에는 상태 값에 의존, 혹은 외부 데이터에 의존해서 조건부로 렌더링 시킬 수 있는 디렉티브가 존재한다. `v-if`와 `v-else` 그리고 `v-else-if`가 있다. 자바스크립트에서 조건부를 사용했던 것 처럼 비슷하게 사용하면 된다.
+
+```html
+<div>
+  <h1 v-if="bigSize">Big Size Text</h1>
+  <h3 v-else>Medium Size Text</h3>
+</div>
+```
+
+`bigSize` 라는 컴포넌트 내부 상태 값에 의해 `h1` 태그가 렌더링되거나 `h3` 태그가 렌더링된다.
+
+```jsx
+export default {
+  render(h) {
+    return bigSize ? <h1>Big Size Text</h1> : <h3>Medium Size Text</h3>
+  }
+}
+```
+
+`jsx`로는 위와 같이 사용하는데, 조건에 따라 렌더링해야 되는 태그의 종류가 많으면 `jsx`로 작성하는 것이 더 깔끔하다.
+
+```html
+<div v-if="renderType === 'div'">Hello Div</div>
+<span v-else-if="renderType === 'span'">Hello Span</span>
+<ul v-else-if="renderType === 'ul'">
+  Hello Ul
+</ul>
+<footer v-else>Hello Footer</footer>
+```
+
+조건부가 모두 컴포넌트 내부의 `renderType` 값에 의존하는데, 문자열 `'div'`를 가지면 `div` 태그로 렌더링 시킬 수 있고 각 조건에 맞게 렌더링되는 태그를 바꿀 수 있다.
+
+```html
+<template v-if="someConditionValue">
+  <div>Div</div>
+  <span>Span</span>
+  <main>Main</main>
+</template>
+```
+
+때로는 내부 엘리먼트를 감싸는 외부 엘리먼트를 렌더링하고 싶지 않을 때 위와 같이 `<template>...</template>`으로 감싸면 외부 엘리먼트가 없는 상태로 내부 엘리먼트들만 렌더링된다. `template` 역시 `v-else-if`, `v-else` 디렉티브를 사용할 수 있다.
+
+### 번외 v-show 디렉티브
+
+렌더링은 하지만 보여주고 싶지 않을 때가 있다. `v-show` 디렉티브가 그런 상황에 적합하게 사용될 수 있는데, 이 디렉티브는 `display` css 프로퍼티를 `none` 상태로 만들어준다. 해당 엘리먼트는 렌더링되지만 스타일 값에 의해 화면에 표시되진 않는다. 렌더링이 되므로 컴포넌트 내부의 라이프사이클 훅 메소드들을 거친다.
+
+### jsx 심화
+
+리액트에서도 쓸 수 있는 방법으로, 여러 연산자, 반복문을 통해 조건부 렌더링이 가능하다.
+
+```jsx
+export default {
+  render(h) {
+    switch (someValue) {
+      case 'div':
+        return <div>Hello Div</div>
+      case 'span':
+        return <span>Hello Span</span>
+      default:
+        return <main>Hello main(default)</main>
+    }
+  }
+}
+```
+
+`switch ... case`문도 사용 가능하다.
+
+```jsx
+import Span from './Span.vue' // <span></span>
+import Div from './Div.vue' // <div></div>
+import Main from './Main.vue' // <main></main>
+import Fallback from './Fallback.vue' // <h1></h1>
+
+const MAP = {
+  SPAN: Span,
+  DIV: Div,
+  MAIN: Main,
+  FALLBACK: Fallback
+}
+
+export default {
+  data: () => ({
+    componentState: 'SPAN'
+  }),
+  render(h) {
+    const Rendered = MAP[this.componentState || 'FALLBACK']
+
+    return <Rendered />
+  }
+}
+```
+
+위처럼 사용도 가능하다.
+
+```jsx
+export default {
+  render(h) {
+    return this.isLoading ? <Loading /> : <div>Loaded All Data</div>
+  }
+}
+```
+
+삼항 연산자를 통한 조건부 렌더링도 가능하다.
+
+```jsx
+export default {
+  render(h) {
+    return isLoading && <Loading />
+  }
+}
+```
+
+`isLoading`이 truthy한 값이면 `Loading` 컴포넌트가 렌더링된다.
+
+## 동적 컴포넌트
+
+값에 의해 서로 다른 컴포넌트를 보여줘야 되는 상황이면 내장 컴포넌트인 `<component />`를 사용하면 된다.
+
+```html
+<component :is="switchComponent"></component>
+
+<script>
+  import Span from './Span.vue' // <span></span>
+  import Div from './Div.vue' // <div></div>
+  import Main from './Main.vue' // <main></main>
+  import Fallback from './Fallback.vue' // <h1></h1>
+
+  export default {
+    computed: {
+      switchComponent() {
+        switch (this.someSwitch) {
+          case 'span':
+            return Span
+          case 'div':
+            return Div
+          case 'main':
+            return Main
+          default:
+            return Fallback
+        }
+      }
+    }
+  }
+</script>
+```
+
+위처럼 `computed`에서 적절한 컴포넌트를 반환해 조건에 따라 여러 컴포넌트를 렌더링할 수 있게 된다.
