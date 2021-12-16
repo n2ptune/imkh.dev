@@ -493,3 +493,81 @@ export default {
 ```
 
 위처럼 `computed`에서 적절한 컴포넌트를 반환해 조건에 따라 여러 컴포넌트를 렌더링할 수 있게 된다.
+
+### 컴포넌트 유지
+
+`<component>`로 동적 컴포넌트를 구성할 때 `is` 속성에 의해 컴포넌트가 변경되어도 컴포넌트가 유지되어야 하는 상황이 있다.
+
+```html
+<keep-alive>
+  <component :is="switchComponent"></component>
+</keep-alive>
+```
+
+`<keep-alive>`라는 built-in 컴포넌트를 사용해서 동적 컴포넌트를 감싸면 데이터를 유지할 수 있다.
+
+## 함수형 컴포넌트
+
+Vue에서 함수형 컴포넌트는 상태를 가지지 않는 컴포넌트로 정의한다. 버전 2와 3에서 함수형 컴포넌트를 만드는 방법이 서로 다른데, 이는 2에서 함수형 컴포넌트를 만들어 성능상 이점을 얻기 위해 사용한 반면 3에서는 함수형 컴포넌트를 사용해서 컴포넌트를 작성했을 때와 일반적인 방법으로 컴포넌트를 작성했을 때의 성능 차이가 거의 없기 때문에 2에서 함수형 컴포넌트를 만드는 방법이 3에서는 사라졌다.
+
+여기에서는 버전 2로 예시를 작성하고 있으니 버전 2에서의 함수형 컴포넌트를 만드는 방법을 정리한다.
+
+```html
+<template functional>
+  <div>...</div>
+</template>
+```
+
+컴포넌트를 감싸는 `template` 태그에 `functional`이라는 속성을 추가하면 이 컴포넌트는 함수형 컴포넌트가 된다.
+
+```js
+export default {
+  functional: true
+}
+```
+
+`functional` 키를 `true`로 줘도 함수형 컴포넌트가 된다. 해당 컴포넌트는 상태를 가질 수 없으며 단순히 `props`로 받은 데이터를 보여줄 때에 사용할 때 성능상 이점을 얻고 사용할 수 있다. 부모로부터 받은 해당 컴포넌트의 컨텍스트도 사용할 수 있는데, 엘리먼트 속성으로 붇는 `attrs` 혹은 이벤트 리스너가 전달되는 `listeners`를 받을 수 있다.
+
+```html
+<template functional>
+  <button v-bind="{ ...attrs }" :disabled="props.disabled" @click="listerns.click">
+    <slot />
+  <button>
+</template>
+```
+
+위처럼 `props`, `attrs`, `listeners`를 전달받을 수 있다.
+
+## 컴포넌트 믹스인
+
+믹스인이라는 용어는 스타일 관련 라이브러리들에서 많이 들어봤는데, Vue에서 간단히 정의하면 믹스인으로 정의한 어떤 옵션들을 그 믹스인을 사용하는 컴포넌트에 섞을 수 있다고 정리할 수 있다.
+
+```js
+// mixins.js
+import Vue from 'vue'
+
+export default Vue.extend({
+  created() {
+    console.log('i am mixins!')
+  },
+  methods: {
+    mixinMethod() {
+      console.log('mixinMethod')
+    }
+  }
+}) // 컴포넌트 옵션
+
+// component
+import mixins from './mixins'
+
+export default {
+  mixins: [mixins],
+  created() {
+    console.log('i am component that use mixins!')
+  }
+}
+```
+
+믹스인에서 작성한 옵션이 컴포넌트에 병합된다. 라이프사이클 훅 메서드들은 믹스인에서 작성한 것이 먼저 호출되고, `data`에서 반환한 상태 값은 동일한게 있다면 컴포넌트에서 작성한 `data`가 덮어씌워지고 믹스인에서 작성한 것은 무시된다.
+
+이런식으로 병합되는 기능을 커스터마이징할 수 있다.
