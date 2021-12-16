@@ -59,7 +59,7 @@
     "gridsome-plugin-tailwindcss": "^4.1.1",
     "husky": "^7.0.0",
     "js-yaml": "^4.1.0",
-    "postcss": "7.0.35",
+    "postcss": "7.0.36",
     "postcss-import": "^12",
     "postcss-nested": "4.2.1",
     "prettier": "^2.5.1",
