@@ -1,68 +1,18 @@
 {
-  "name": "dev-blog",
-  "private": true,
-  "author": {
-    "email": "vue2598@gmail.com",
-    "name": "n2ptune"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/n2ptune/imkh.dev.git"
-  },
-  "main": "src/main.js",
-  "description": "Personal blog",
-  "license": "MIT",
-  "version": "0.0.1",
+  "name": "imkh.dev-vite",
+  "version": "0.0.0",
   "scripts": {
-    "build": "gridsome build",
-    "dev": "gridsome develop",
-    "explore": "gridsome explore",
-    "post": "babel-node helpers/makefile/index.js",
-    "serve": "serve -n -l 8887",
-    "lint": "prettier --config ./.prettierrc --write '**/*.{vue,js,css,html,md}'",
-    "tree": "babel-node ./helpers/tree/index.js",
-    "postinstall": "husky install"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "0.1.2",
-    "@microflash/gridsome-plugin-feed": "^1.2.2",
-    "gridsome": "^0.7.23",
-    "intersection-observer": "^0.12.0",
-    "lodash.debounce": "^4.0.8",
-    "medium-zoom": "^1.0.6",
-    "postcss-for": "^2.1.1",
-    "prismjs": "^1.23.0",
-    "vue-disqus": "^4.0.1",
-    "vue-fuse": "^2",
-    "vue-infinite-loading": "2.4.5",
-    "vue-runtime-helpers": "^1.1.2"
+    "vue": "^3.2.25"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/node": "^7.14.7",
-    "@babel/preset-env": "^7.14.8",
-    "@babel/preset-flow": "^7.14.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.3",
-    "@fortawesome/free-regular-svg-icons": "^5.12.3",
-    "@fortawesome/free-solid-svg-icons": "^5.12.3",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@gridsome/plugin-sitemap": "^0.4.0",
-    "@gridsome/remark-prismjs": "^0.5.0",
-    "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.6.4",
-    "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
-    "autoprefixer": "^9",
-    "commander": "^8.3.0",
-    "cssnano": "^4.1.10",
-    "flow-bin": "^0.162.1",
-    "gridsome-plugin-tailwindcss": "^4.1.1",
-    "husky": "^7.0.0",
-    "js-yaml": "^4.1.0",
-    "postcss": "7.0.36",
-    "postcss-import": "^12",
-    "postcss-nested": "4.2.1",
-    "prettier": "^2.5.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    "@vitejs/plugin-vue": "^2.0.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vue-tsc": "^0.29.8"
   }
 }
