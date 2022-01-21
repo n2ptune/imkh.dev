@@ -7,5 +7,6 @@ export const createApp = ViteSSG(
   routes,
   ({ app, router, routes, isClient, initialState }) => {
     console.log(app)
-  }
+  },
+  { useHead: true }
 )

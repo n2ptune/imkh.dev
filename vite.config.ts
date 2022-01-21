@@ -1,7 +1,11 @@
-import { defineConfig } from 'vite'
+import { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { ViteSSGOptions } from 'vite-ssg'
 
-// https://vitejs.dev/config/
-export default defineConfig({
+type SSGOptions = UserConfig & ViteSSGOptions
+
+const options: SSGOptions = {
   plugins: [vue()]
-})
+}
+
+export default options
