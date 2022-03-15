@@ -1,6 +1,9 @@
 import { RouterOptions } from 'vite-ssg'
+import { createWebHistory, RouteRecordRaw } from 'vue-router'
+import fileRoutes from '~pages'
 
-export const routes: RouterOptions = {
+const routes: RouterOptions = {
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -8,3 +11,11 @@ export const routes: RouterOptions = {
     }
   ]
 }
+
+console.log(fileRoutes)
+
+// const fr: RouteRecordRaw[] = fileRoutes.map(route => ({ path: route.}))
+
+routes.routes.push()
+
+export { routes }
