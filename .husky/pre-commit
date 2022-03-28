@@ -1,8 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-echo "Checking forgot executing tree command > "
-yarn tree
-
-echo "Style lint (vue, js, css, html, md) files"
-yarn lint

@@ -1,7 +1,0 @@
-.cache
-.husky
-.yarn
-.vscode
-src/.temp/*
-node_modules
-static
