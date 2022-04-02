@@ -1,5 +1,8 @@
 ---
 title: 1234
+layout: posts
 ---
 
-asfasfqwfqwf
+## {title}
+
+asfasf
