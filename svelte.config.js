@@ -7,11 +7,11 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [
-		preprocess(),
+		preprocess({ typescript: {} }),
 		mdsvex({
 			extensions: ['.md', '.svelte'],
 			layout: {
-				posts: './src/lib/components/layouts/posts.svelte'
+				// posts: './src/lib/components/layouts/posts.svelte'
 			}
 		})
 	],

@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script lang="ts">
 	import Main from '$lib/components/layouts/main.svelte'
 </script>
 
