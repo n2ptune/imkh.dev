@@ -1,16 +1,6 @@
 FROM node:16-alpine AS build
 
-RUN apk add --no-cache \
-    build-base \
-    g++ \
-    libpng \
-    libpng-dev \
-    jpeg-dev \
-    pango-dev \
-    cairo-dev \
-    giflib-dev \
-    python \
-    ; \
+RUN apk add --no-cache build-base g++ libpng libpng-dev jpeg-dev pango-dev cairo-dev python3;
 
 WORKDIR /app
 COPY package.json ./
