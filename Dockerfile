@@ -15,10 +15,12 @@ RUN apk add --no-cache \
 WORKDIR /app
 COPY package.json ./
 COPY yarn.lock ./
+COPY . .
 RUN yarn
 RUN yarn build
 
 FROM nginx
+COPY --from=build /app/nginx.conf /etc/nginx/default.conf
 COPY --from=build /app/dist/* /usr/share/nginx/html/
 
 EXPOSE 30999
