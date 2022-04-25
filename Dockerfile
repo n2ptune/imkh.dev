@@ -1,6 +1,6 @@
 FROM node:16-alpine AS build
 
-RUN apk add --no-cache build-base g++ build-essential gcc make libpng libpng-dev jpeg-dev pango-dev cairo-dev python3;
+RUN apk add --no-cache build-base g++ gcc make libpng libpng-dev jpeg-dev pango-dev cairo-dev python3;
 
 WORKDIR /app
 COPY package.json ./
