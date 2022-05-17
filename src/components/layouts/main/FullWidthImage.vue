@@ -15,32 +15,32 @@
   @apply relative w-full;
 
   height: 45rem;
-  background-size: cover;
-  background-position: center 68%;
-  background-repeat: no-repeat;
-  background-image: url(~@/assets/header-cover.jpg);
 
   &::after {
-    @apply absolute block w-full h-full top-0 left-0 z-20 opacity-20;
+    @apply absolute block w-full h-full top-0 left-0 z-20 opacity-70;
 
     background-color: theme('colors.dark.surface');
     content: '';
   }
 
   &::before {
+    background-size: cover;
+    background-position: center 80%;
+    background-repeat: no-repeat;
+    background-image: url(~@/assets/header-cover.jpg);
+    mask-image: linear-gradient(
+      to bottom,
+      theme('colors.dark.surface'),
+      transparent 90%
+    );
     @apply absolute z-10 top-0 left-0 w-full h-full block;
 
     content: '';
-    background: linear-gradient(
-      to bottom,
-      transparent 10%,
-      theme('colors.dark.surface')
-    );
   }
 
   & .inner {
     @apply flex flex-col justify-center items-center relative z-30
-    h-full px-6;
+    h-full px-6 pb-12;
 
     & p {
       @apply text-4xl font-bold text-white-f text-center leading-tight;

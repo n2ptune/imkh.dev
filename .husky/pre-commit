@@ -2,7 +2,7 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "Checking forgot executing tree command > "
-yarn tree
+npm run tree
 
 echo "Style lint (vue, js, css, html, md) files"
-yarn lint
+npm run lint
