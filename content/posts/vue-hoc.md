@@ -99,21 +99,19 @@ export function useCurrentUser() {
 
 ```html
 <template>
-  <div v-if="isLoggedIn">
-    {{ user.name }}
-  </div>
+  <div v-if="isLoggedIn">{{ user.name }}</div>
 </template>
 
 <script lang="ts">
-import { useCurrentUser } from '../hooks/user'
+  import { useCurrentUser } from '../hooks/user'
 
-export default {
-  setup() {
-    const { isLoggedIn, user } = useCurrentUser()
+  export default {
+    setup() {
+      const { isLoggedIn, user } = useCurrentUser()
 
-    return { isLoggedIn, user }
+      return { isLoggedIn, user }
+    }
   }
-}
 </script>
 ```
 
@@ -187,14 +185,14 @@ HOC로 감싼 컴포넌트가 슬롯을 표현해야 하는 경우 렌더링시 
 </template>
 
 <script>
-import Example from './Example'
-import { withComponent } from '../hoc'
+  import Example from './Example'
+  import { withComponent } from '../hoc'
 
-export default {
-  components: {
-    Example: withComponent(Example)
+  export default {
+    components: {
+      Example: withComponent(Example)
+    }
   }
-}
 </script>
 ```
 
