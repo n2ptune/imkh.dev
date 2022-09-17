@@ -28,7 +28,8 @@ import Footer from '@/components/layouts/post/Footer.vue'
 export default {
   metaInfo() {
     return {
-      title: this.$page.post.title,
+      title: '',
+      titleTemplate: this.$page.post.title + ' | imkh.dev',
       meta: [
         {
           key: 'description',
@@ -38,7 +39,7 @@ export default {
         {
           key: 'og:title',
           property: 'og:title',
-          content: this.$page.post.title
+          content: this.$page.post.title + ' | imkh.dev'
         },
         {
           key: 'og:description',

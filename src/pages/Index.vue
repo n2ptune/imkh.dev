@@ -27,7 +27,8 @@ import TagMixins from '@/components/mixins/TagMixins'
 export default {
   metaInfo() {
     return {
-      title: 'Home',
+      title: '',
+      titleTemplate: 'Home | imkh.dev',
       meta: [
         {
           key: 'og:title',

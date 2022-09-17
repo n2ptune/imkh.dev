@@ -9,7 +9,7 @@
       </div>
       <div class="footer-inner__list">
         <div class="footer-inner__list-blog">
-          <div class="text-accent-main text-2xl font-bold">IMKH.DEV</div>
+          <div class="text-accent-main text-2xl font-bold">>_</div>
         </div>
         <div class="item">
           <div class="title">Links</div>

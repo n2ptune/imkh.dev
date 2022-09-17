@@ -31,18 +31,13 @@ module.exports = {
           900: 'rgba(255, 255, 255, 0.16)'
         },
         accent: {
-          main: '#00C896',
-          darker: '#00AF9C',
-          darken: '#009498',
-          darkest: '#007A8B',
-          bg: '#2B382B',
-          bgh: '#00794E',
-          light: '#00FFD2',
-          bgl: '#3a503a'
+          lighter: '#54AAF0',
+          main: '#247CC4',
+          darker: '#0B4B80'
         },
         dark: {
-          surface: '#161616',
-          lighten: '#212121'
+          surface: '#121212',
+          lighten: '#282828'
         },
         white: {
           100: 'rgba(255, 255, 255, 0.1)',

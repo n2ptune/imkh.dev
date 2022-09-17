@@ -25,7 +25,8 @@ import List from '@/components/note/List.vue'
 
 export default {
   metaInfo: () => ({
-    title: 'Note',
+    title: '',
+    titleTemplate: 'Note | imkh.dev',
     meta: [
       {
         key: 'og:title',

@@ -31,10 +31,10 @@ export default {
 <style lang="postcss" scoped>
 .tag {
   @apply inline-block rounded py-1 px-3 text-sm transition-colors duration-300
-  text-accent-main bg-accent-bg;
+  text-white-600 bg-elevation-700;
 
   &:hover {
-    @apply text-accent-light bg-accent-bgl;
+    @apply text-white-700 bg-elevation-800;
   }
 }
 </style>

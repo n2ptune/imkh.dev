@@ -1,26 +1,27 @@
 <template>
   <header :class="isTransparentHeader && 'is-transparent'">
-    <div class="container mx-auto flex items-center w-full">
-      <g-link to="/">
-        <!-- <Avatar class="shadow-2xl object-cover mr-0 lg:mr-2 inline-block" width="40px" /> -->
-        <span
-          class="font-bold text-2xl transition-colors duration-200 text-accent-main hover:text-accent-darker"
-        >
-          Devlog
-        </span>
-      </g-link>
+    <div
+      class="container mx-auto flex md:px-8 justify-center md:justify-between items-center w-full"
+    >
       <ul class="header-list">
         <li>
-          <g-link to="/" exact-active-class="exact-active">Blog</g-link>
+          <g-link to="/" exact-active-class="exact-active">Home</g-link>
         </li>
-        <li>
+        <!-- <li>
           <g-link to="/note" exact-active-class="exact-active"> Note </g-link>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href="https://github.com/n2ptune" target="_blank"> Github </a>
-        </li>
+        </li> -->
       </ul>
-      <div class="ml-auto space-x-4">
+      <g-link to="/">
+        <span
+          class="font-bold text-xl transition-colors duration-200 text-accent-main"
+        >
+          >_
+        </span>
+      </g-link>
+      <div class="hidden md:block space-x-4">
         <a href="https://github.com/n2ptune" target="_blank">
           <font-awesome
             :icon="['fab', 'github']"
@@ -100,11 +101,13 @@ export default {
 <style lang="postcss" scoped>
 header {
   @apply px-2 py-4
-  fixed w-full z-50 top-0 bg-dark-surface bg-opacity-80 transition-colors duration-500;
+  fixed w-full z-50 top-0 transition-colors duration-500;
+
+  background-color: rgba(5, 5, 5, 0.5);
 
   &:not(.is-transparent) {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
   }
 
   &.is-transparent {
@@ -126,7 +129,7 @@ header {
   }
 
   ul.header-list {
-    @apply hidden md:block ml-8 text-sm;
+    @apply hidden md:block text-sm;
 
     & > li {
       @apply inline-block;

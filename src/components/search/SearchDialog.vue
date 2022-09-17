@@ -115,6 +115,9 @@ export default {
   }
 
   &-overlay {
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+
     @apply bg-dark-surface bg-opacity-90;
   }
 
@@ -122,10 +125,8 @@ export default {
     @apply flex justify-center absolute top-0 left-0 h-auto;
 
     &-wrapper {
-      background-color: #3c3c3c;
-
       @apply w-full text-white-f max-w-xs md:max-w-md lg:max-w-2xl rounded p-4 md:p-8
-      mt-36 bg-opacity-100 shadow relative;
+      mt-36 bg-opacity-100 shadow relative bg-dark-lighten;
 
       &__icon-close {
         @apply absolute top-0 right-0 p-4 text-white-400 transition-colors duration-200;

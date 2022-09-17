@@ -6,7 +6,7 @@
 const siteUrl = 'https://imkh.dev'
 
 module.exports = {
-  siteName: `imkh.dev`,
+  siteName: `>_`,
   siteDescription: 'Personal blog for Web Dev/Tech',
   siteUrl,
   port: 8000,
@@ -74,7 +74,7 @@ module.exports = {
           id: siteUrl,
           link: siteUrl,
           language: 'ko',
-          copyright: 'All rights reserved 2020, n2ptune',
+          copyright: 'All rights reserved 2022, n2ptune',
           feedLinks: {
             rss: siteUrl + '/rss.xml'
           }
@@ -131,7 +131,8 @@ module.exports = {
             require('postcss-import'),
             require('postcss-nested'),
             require('cssnano'),
-            require('tailwindcss')
+            require('tailwindcss'),
+            require('postcss-simple-vars')
           ]
         )
 

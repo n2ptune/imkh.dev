@@ -100,7 +100,8 @@ export default {
       }
 
       this.$search(this.searchText, this.posts, {
-        keys: ['node.title', 'node.excerpt', 'node.tags.title']
+        keys: ['node.title', 'node.excerpt', 'node.tags.title'],
+        threshold: 0.3
       }).then(result => {
         this.searchResults = result
       })
