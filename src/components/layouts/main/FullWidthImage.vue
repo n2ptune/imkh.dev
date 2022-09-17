@@ -6,13 +6,13 @@
       </p>
       <p>같이 성장하는 학습 <span class="text-accent-main">블로그</span></p>
     </div> -->
-    <div class="flex flex-col h-full justify-center items-center antialiased text-line">
-      <div
-        class="font-extralight text-lg sm-text"
-      >
-        개발자의
+    <div
+      class="flex flex-col h-full justify-center items-center antialiased text-line"
+    >
+      <div class="font-extralight text-lg sm-text">개발자의</div>
+      <div class="text-4xl font-extrabold bg-accent-main px-2 mt-1 big-text">
+        DEVLOG
       </div>
-      <div class="text-4xl font-extrabold bg-accent-main px-2 mt-1 big-text">DEVLOG</div>
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@
 
   .text-line {
     @apply text-white-f;
-    
+
     .sm-text {
       letter-spacing: 1.5em;
       margin-left: 1.45em;
