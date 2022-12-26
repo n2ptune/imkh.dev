@@ -1,14 +1,8 @@
-import { readPosts } from './file'
-import path from 'node:path'
+import { __POSTS_DIR__, __POSTS_PATTERN__ } from './constants'
+import { readPosts } from './posts'
 
 function getDefaultRoutes(): string[] {
   return ['/']
-}
-
-export function getFileLocalRoute(route: string, post = true): string {
-  const searchRoute = post ? '../../content/posts' : '../../content/notes'
-  const fullPath = path.join(__dirname, searchRoute, route + '.md')
-  return fullPath
 }
 
 export function shouldRenderAllRoutes(): string[] {

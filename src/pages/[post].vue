@@ -1,10 +1,13 @@
 <template>
-  <div>{{ '213' }}</div>
+  <div>{{ data }}</div>
 </template>
 
 <script lang="ts" setup>
-// import { getMarkdown } from '../lib/file';
+import { getMarkdown } from '../lib/file'
 
 const route = useRoute()
-// const markdown = getMarkdown(route.path)
+
+const { data, pending } = useAsyncData('getMarkdown', () =>
+  getMarkdown(route.path)
+)
 </script>
