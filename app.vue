@@ -1,9 +1,5 @@
 <template>
-  <div>
+  <main>
     <NuxtPage />
-  </div>
+  </main>
 </template>
-
-<script lang="ts" setup>
-const v = ref('Hello World')
-</script>
