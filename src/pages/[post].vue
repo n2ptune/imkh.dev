@@ -8,5 +8,7 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({ layout: 'post-layout' })
+
 const route = useRoute()
 </script>

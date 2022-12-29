@@ -13,8 +13,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  // generate: {
-  //   routes: shouldRenderAllRoutes()
-  // },
+  generate: {},
   srcDir: 'src/'
 })
