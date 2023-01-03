@@ -1,14 +1,13 @@
-import { shouldRenderAllRoutes } from './src/lib/route'
 import path from 'node:path'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxt/image-edge'],
   content: {
     sources: {
       post: {
         driver: 'fs',
-        prefix: '/post',
+        prefix: '/',
         base: path.resolve(__dirname, 'content/posts')
       }
     }

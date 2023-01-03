@@ -1,14 +1,13 @@
 <template>
   <div>
-    <ContentDoc v-slot="{ doc }">
-      <h1>{{ doc.title }}</h1>
-      <ContentRenderer :value="doc" />
-    </ContentDoc>
+    <ContentRenderer v-if="post" :value="post" />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useContentByPath } from '../lib/content'
+
 definePageMeta({ layout: 'post-layout' })
 
-const route = useRoute()
+const post = useContentByPath()
 </script>
