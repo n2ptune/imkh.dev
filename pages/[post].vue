@@ -1,19 +1,22 @@
 <script lang="ts" setup>
-const route = useRoute()
-const query = queryContent('posts')
-const content = ref<any>(null)
+definePageMeta({
+  layout: 'post-layout'
+})
 
-query
-  .where({ _path: ('/posts/' + route.params.post) as string })
-  .findOne()
-  .then(result => (content.value = result))
+const route = useRoute()
+
+function log(obj: any) {
+  console.log(obj)
+}
 </script>
 
 <template>
-  <main>
-    <ContentRenderer v-if="content" :value="content" />
-    <div v-else>
-      Not Found
-    </div>
-  </main>
+  <ContentQuery
+    :where="{ _dir: 'posts', _id: `content:posts:${route.params.post}.md` }"
+    v-slot="{ data }"
+    find="one"
+  >
+    {{ log(data) }}
+    <ContentRenderer v-if="data" :value="data" />
+  </ContentQuery>
 </template>

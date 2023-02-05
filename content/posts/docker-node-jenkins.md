@@ -3,13 +3,13 @@ title: Node.js와 Docker 그리고 Jenkins.
 date: 2021-05-22 01:12:16
 published: true
 tags: ['devops', 'nodejs', 'docker']
-cover_image: ./images/docker-thumbnail.jpg
+cover_image: /images/docker-thumbnail.jpg
 description: Node.js 애플리케이션을 Docker 컨테이너 형태로 Github과 연동해서 Jenkins로 자동 빌드하기
 ---
 
 ## 도커와 Node.js 그리고 Jenkins
 
-![flow-image](./images/atlassian-marketplace.png)
+![flow-image](/images/atlassian-marketplace.png)
 
 DevOps의 흐름을 잘 표현해주는 이미지가 있다. 기업에서 서비스를 개발할 때 이미지와 비슷한 흐름을 가진다. 이 흐름을 이해하고자 도커와 Node.js 그리고 Jenkins를 이용해서 개발하고, Github 특정 브랜치에 push가 일어날 때마다 자동으로 배포가 될 수 있도록 설정하며 공부한 내용을 기록한다.
 
