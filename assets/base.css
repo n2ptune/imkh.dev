@@ -1,0 +1,7 @@
+html {
+  @apply text-dark bg-white;
+
+  &.dark {
+    @apply bg-dark text-white;
+  }
+}

@@ -1,7 +1,8 @@
 <template>
   <section class="layout">
-    <section class="prose mx-auto">
+    <CommonHeader />
+    <CommonLayoutBodyWrapper>
       <slot />
-    </section>
+    </CommonLayoutBodyWrapper>
   </section>
 </template>

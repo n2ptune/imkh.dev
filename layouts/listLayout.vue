@@ -1,8 +1,8 @@
 <template>
-  <main class="layout">
-    <header>Header</header>
-    <section>
+  <section class="layout">
+    <CommonHeader />
+    <CommonLayoutBodyWrapper>
       <slot />
-    </section>
-  </main>
+    </CommonLayoutBodyWrapper>
+  </section>
 </template>

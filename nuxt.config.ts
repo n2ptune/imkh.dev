@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
-  css: ['@/assets/font.css'],
+  css: ['@/assets/font.css', '@/assets/base.css'],
   generate: {
-    routes: [].concat(getBaseRoutes(), getGenerateRoutes())
+    routes: ([] as string[]).concat(getBaseRoutes(), getGenerateRoutes())
   }
 })

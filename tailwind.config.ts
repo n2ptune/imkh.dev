@@ -15,6 +15,9 @@ const config: Config = {
       fontFamily: {
         sans,
         mono
+      },
+      colors: {
+        dark: '#161616'
       }
     }
   },
