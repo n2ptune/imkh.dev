@@ -2,6 +2,7 @@ import { getGenerateRoutes, getBaseRoutes } from './scripts/file'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: process.env.NODE_ENV !== 'development',
   modules: [
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',

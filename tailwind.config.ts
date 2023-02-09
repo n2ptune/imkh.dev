@@ -17,7 +17,9 @@ const config: Config = {
         mono
       },
       colors: {
-        dark: '#161616'
+        dark: '#060805',
+        darkw: '#f4ffff',
+        darkh: '#96c9da'
       }
     }
   },
