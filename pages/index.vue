@@ -5,5 +5,9 @@ definePageMeta({
 </script>
 
 <template>
-  <ContentDoc />
+  <section class="w-full">
+    <div v-for="i in 1000" :key="i">
+      {{ i }}
+    </div>
+  </section>
 </template>

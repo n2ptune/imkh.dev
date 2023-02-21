@@ -3,6 +3,7 @@
     <CommonHeader />
     <CommonLayoutBodyWrapper>
       <slot />
+      <CommonStickyTagInfo />
     </CommonLayoutBodyWrapper>
   </section>
 </template>
