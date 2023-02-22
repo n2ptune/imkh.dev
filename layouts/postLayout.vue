@@ -1,8 +1,8 @@
 <template>
   <section class="layout">
     <CommonHeader />
-    <CommonLayoutBodyWrapper>
+    <PostLayoutBody>
       <slot />
-    </CommonLayoutBodyWrapper>
+    </PostLayoutBody>
   </section>
 </template>
