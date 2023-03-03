@@ -11,13 +11,10 @@
           <span class="text-gray-300 dark:text-gray-500 mx-2">|</span>
           <span>개발 블로그</span>
         </div>
-        <div>
+        <div class="space-x-3">
+          <CommonThemeSwitch />
           <a href="https://github.com/n2ptune" target="_blank" class="group">
-            <Icon
-              name="uil:github"
-              size="36"
-              class="transition duration-300 text-black opacity-80 dark:text-white group-hover:opacity-100"
-            />
+            <Icon name="ri:github-line" size="36" class="clickable-icon" />
           </a>
         </div>
       </div>

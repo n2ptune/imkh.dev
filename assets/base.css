@@ -5,3 +5,9 @@ html {
     @apply bg-dark text-white;
   }
 }
+
+.clickable-icon {
+  @apply cursor-pointer transition duration-300
+  text-gray-700 hover:text-black dark:text-gray-200 dark:hover:text-white
+  bg-opacity-80 hover:bg-opacity-100;
+}

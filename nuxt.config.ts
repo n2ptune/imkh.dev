@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     }
   },
   colorMode: {
-    classSuffix: ''
+    classSuffix: '',
+    fallback: 'dark'
   },
   css: ['@/assets/font.css', '@/assets/base.css'],
   generate: {
