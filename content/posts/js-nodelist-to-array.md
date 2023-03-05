@@ -11,7 +11,7 @@ title: HTMLCollection과 NodeList의 차이점과 일반 자바스크립트 배�
 
 일반적으로 **DOM**을 가져오기 위한 메소드로 `querySelector`, `getElementsByClassName` 등이 있다. 단일 원소를 가져오는 것은 해당되지 않는다만 원소 리스트를 가져올 때에 일반적인 자바스크립트 객체 배열의 메소드를 사용할 수 없다. 이유는 원소 리스트가 자바스크립트 객체 배열이 아니기 때문이다.
 
-```html
+```vue
 <div class="container">
   <div class="red"></div>
   <div class="red"></div>
@@ -55,7 +55,7 @@ console.log(reds.item(8), reds[8])
 
 `HTMLCollection` 객체에만 있는 메소드로서 원소에 `name` 속성이 사용가능한 경우에 이 메소드를 이용해서 `name` 속성이 메소드의 인자로 오는 문자열과 일치하는 원소를 반환한다.
 
-```html
+```vue
 <div class="container">
   <div class="red"></div>
   <div class="red"></div>

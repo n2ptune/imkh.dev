@@ -21,7 +21,7 @@ IntersectionObserver API는 생각보다 많은 곳에 쓰일 수 있다. 이 AP
 
 HTML에서 각각 일정한 너비와 높이를 가지고 배경색이 빨간색인 태그가 여러개 있다. 스크롤로 내려가며 이 빨간색 태그들이 실제로 브라우저에 보이게 되면 배경색을 파란색으로 바꾸고 싶다. 이 문제를 해결하기 위해 API를 사용한다.
 
-```html
+```vue
 <div class="container">
   <div class="box"></div>
   <div class="box"></div>
@@ -79,7 +79,7 @@ IntersectionObserver API(줄여서 IO API)를 만들기 위해서는 `new` 연�
 
 페이스북이나 여타 다른 페이지를 보면 스크롤을 내릴 때마다 새로운 컨텐츠들을 계속 볼 수 있다. 이 때 컨텐츠들의 끝을 감지해서 스크롤이 끝까지 내려온다면 서버로부터 새로운 컨텐츠들에 대한 정보를 받아 브라우저에서 렌더링할 수 있다면 가능하다. 간단한 예제를 작성한다.
 
-```html
+```vue
 <div class="container">
   <div class="status-field">
     <div class="status-item">Loaded Item : 4</div>

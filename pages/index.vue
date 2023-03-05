@@ -1,17 +1,21 @@
 <script lang="ts" setup>
-import { ParsedContent } from '@nuxt/content/dist/runtime/types'
-
 definePageMeta({
   layout: 'list-layout'
 })
 
-const __PAGE_SIZE__ = 10
+const __PAGE_SIZE__ = 12
+const __INDEX_POSTS_PROPS__ = [
+  'cover_image',
+  'date',
+  'description',
+  'published',
+  'tags',
+  'title',
+  '_path'
+]
 
 const { data } = await useAsyncData('getPosts', () =>
-  queryContent('posts')
-    .only(['title', 'id', 'excerpt', 'date'])
-    .sort({ date: -1 })
-    .find()
+  queryContent('posts').only(__INDEX_POSTS_PROPS__).sort({ date: -1 }).find()
 )
 
 const currentPage = ref(0)

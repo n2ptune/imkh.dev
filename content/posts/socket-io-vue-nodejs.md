@@ -83,7 +83,7 @@ yarn add socket.io-client
 
 사용법은 서버에서 사용하는 socket.io 서버와 비슷하다.
 
-```html
+```vue
 <template>
   <div>
     <textarea v-model="message" />
@@ -170,17 +170,17 @@ io.on('connection', socket => {
 
 클로져로 간단한 데이터베이스를 흉내낸다. 배열로 해도 되지만 클로져로 작성하는 것이 깔끔해보여서 이 방법으로 했다. 클라이언트로부터 `send` 이벤트를 수신받으면 메세지를 담아놓고 모든 클라이언트에 모든 채팅 내역을 뿌린다.
 
-```html
+```vue
 // Socket.vue
 <script>
-  export default {
-    created() {
-      // 일부만 작성
-      this.socket.on('messages', messages => {
-        this.receivedMessage = messages
-      })
-    }
+export default {
+  created() {
+    // 일부만 작성
+    this.socket.on('messages', messages => {
+      this.receivedMessage = messages
+    })
   }
+}
 </script>
 ```
 

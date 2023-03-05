@@ -97,21 +97,21 @@ export function useCurrentUser() {
 
 위 형태로 파일 단위 hook을 작성한다.
 
-```html
+```vue
 <template>
   <div v-if="isLoggedIn">{{ user.name }}</div>
 </template>
 
 <script lang="ts">
-  import { useCurrentUser } from '../hooks/user'
+import { useCurrentUser } from '../hooks/user'
 
-  export default {
-    setup() {
-      const { isLoggedIn, user } = useCurrentUser()
+export default {
+  setup() {
+    const { isLoggedIn, user } = useCurrentUser()
 
-      return { isLoggedIn, user }
-    }
+    return { isLoggedIn, user }
   }
+}
 </script>
 ```
 
@@ -151,7 +151,7 @@ HOC로 감싼 컴포넌트가 슬롯을 표현해야 하는 경우 렌더링시 
 
 [Discussion](https://github.com/vuejs/vue/issues/6201)을 참고하는 도중에 알아낸 사실은 2.6.0 이전 버전을 사용하는 환경에서는 HOC에서 받은 슬롯을 normalize 처리하는 과정이 필요한데, 여기서는 2.6.0 이전 버전을 사용한다는 고려를 하지 않기 때문에 가장 쉬운 방법을 정리한다.
 
-```html
+```vue
 <template>
   <div>
     <slot name="header">
@@ -169,7 +169,7 @@ HOC로 감싼 컴포넌트가 슬롯을 표현해야 하는 경우 렌더링시 
 
 `header`, `default`, `footer` 세 개의 슬롯을 받는 컴포넌트가 하나 있다. 해당 컴포넌트를 HOC로 감싼다.
 
-```html
+```vue
 <template>
   <div>
     <Example>
@@ -185,14 +185,14 @@ HOC로 감싼 컴포넌트가 슬롯을 표현해야 하는 경우 렌더링시 
 </template>
 
 <script>
-  import Example from './Example'
-  import { withComponent } from '../hoc'
+import Example from './Example'
+import { withComponent } from '../hoc'
 
-  export default {
-    components: {
-      Example: withComponent(Example)
-    }
+export default {
+  components: {
+    Example: withComponent(Example)
   }
+}
 </script>
 ```
 

@@ -2,7 +2,7 @@
 
 <template>
   <header
-    class="sticky top-0 z-50 p-4 border-b h-[72px] dark:border-neutral-900 dark:bg-dark"
+    class="sticky top-0 z-50 p-4 h-[72px] bg-white bg-opacity-40 dark:bg-opacity-80 border-b dark:border-neutral-900 dark:bg-dark backdrop-blur-lg"
   >
     <div class="mx-auto h-full">
       <div class="flex justify-between items-center h-full">

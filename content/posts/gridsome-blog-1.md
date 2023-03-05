@@ -175,7 +175,7 @@ export default {
 
 ## Gridsome 이미지 처리
 
-```html
+```vue
 <template>
   <Layout>
     <!-- Use the built-in Image component
@@ -197,7 +197,7 @@ export default {
 
 ## SEO
 
-```html
+```vue
 <template>
   <Layout>
     <!-- Any .vue file in /src/pages will be a route. -->
@@ -207,12 +207,12 @@ export default {
 </template>
 
 <script>
-  export default {
-    // Use vue-meta to add & customize meta tags
-    metaInfo: {
-      title: 'Hello World'
-    }
+export default {
+  // Use vue-meta to add & customize meta tags
+  metaInfo: {
+    title: 'Hello World'
   }
+}
 </script>
 ```
 

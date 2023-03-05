@@ -43,7 +43,7 @@ npm i -D electron
 
 일렉트론의 진입점은 항상 `package.json`에 명시된 `main` 필드의 파일이다. (부정확)
 
-```html
+```vue
 <!DOCTYPE html>
 <html lang="ko">
   <head>

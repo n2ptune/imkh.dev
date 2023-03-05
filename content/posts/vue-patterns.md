@@ -27,23 +27,23 @@ description: Vue 컴포넌트를 작성할 때 사용할 수 있는 여러가지
 
 **3번**의 경우 잘 쓰이진 않지만 HTML에 대한 전처리기 지원이 미흡한 부분을 SFC 패턴을 통해 해결한다.
 
-```html
+```vue
 <template>
   <div class="counter">{{ counter }}</div>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      counter: 0
-    })
-  }
+export default {
+  data: () => ({
+    counter: 0
+  })
+}
 </script>
 
 <style scoped>
-  .counter {
-    color: red;
-  }
+.counter {
+  color: red;
+}
 </style>
 ```
 
@@ -268,7 +268,7 @@ export default {
 
 자식 컴포넌트에서 `props`를 다양하게 사용할 수 있는 것과 비슷하게 부모 컴포넌트에서 자식 컴포넌트로 `props`를 전달하는 방법도 여러가지 존재한다.
 
-```html
+```vue
 <!-- isOption 이라는 props를 전달 -->
 <child-component is-option />
 <!-- 카멜케이스로도 가능 -->
@@ -277,48 +277,48 @@ export default {
 
 타입이 `Boolean` 형태이면 위와 같이 작성할 수 있다. Vue 3에서는 카멜 케이스로 `props` 이름을 정의하는 것이 권장되는 것 같은데, 하기 나름이며 한 가지 방식을 정해서 사용하는 것이 깔끔하다. 혼재해서 사용하지 말자
 
-```html
+```vue
 <child-component :value="parentValue" />
 
 <script>
-  export default {
-    data: () => ({
-      parentValue: 2
-    })
-  }
+export default {
+  data: () => ({
+    parentValue: 2
+  })
+}
 </script>
 ```
 
 `props` 이름 앞에 콜론을 붙여서 부모 컴포넌트 `state`에 접근할 수 있다.
 
-```html
+```vue
 <child-component v-bind:value="parentValue" />
 ```
 
 원래의 형태는 위와 같이 `v-bind` 라는 디렉티브 오른쪽에 콜론으로 구분해서 `props` 이름을 붙여주는 형태이다. shorthand 방식으로 `v-bind`를 생략하고 `props` 이름만 적어서 전달할 수 있다.
 
-```html
+```vue
 <child-component v-bind="parentObj" />
 
 <script>
-  export default {
-    data: () => ({
-      parentObj: {
-        a: 1,
-        b: '2',
-        c: {
-          d: 1,
-          e: '2'
-        }
+export default {
+  data: () => ({
+    parentObj: {
+      a: 1,
+      b: '2',
+      c: {
+        d: 1,
+        e: '2'
       }
-    })
-  }
+    }
+  })
+}
 </script>
 ```
 
 `props` 이름을 생략하고 `v-bind` 디렉티브에 객체를 던지면 `parentObj` 내 모든 데이터가 자식 컴포넌트의 `props`로 들어가게 된다. 여러가지 `props`를 보낼 때 유용하게 사용할 수 있다.
 
-```html
+```vue
 <child-input placeholder="Some Placeholder" />
 
 <!-- 이렇게 렌더링 된다 -->
@@ -327,7 +327,7 @@ export default {
 
 때로는 위와 같은 HTML Attribute 그대로 넘길 때가 있는데, 위 예시의 `input` 태그 처럼 attribute가 붙어서 렌더링된다. 이것은 사실 자식 컴포넌트의 루트에 자동으로 붙여지는 내부 동작때문인데, 해당 동작을 `inheritAttrs` 옵션으로 제어할 수 있다.
 
-```html
+```vue
 <!-- 자식 컴포넌트 -->
 <!-- attribute가 붙는다면 여기에 붙는다. -->
 <div>
@@ -336,9 +336,9 @@ export default {
 </div>
 
 <script>
-  export default {
-    inheritAttrs: false // 루트 컴포넌트에 attribute가 자동으로 붙는 것을 방지한다.
-  }
+export default {
+  inheritAttrs: false // 루트 컴포넌트에 attribute가 자동으로 붙는 것을 방지한다.
+}
 </script>
 ```
 
@@ -348,7 +348,7 @@ export default {
 
 내장 디렉티브 중에는 상태 값에 의존, 혹은 외부 데이터에 의존해서 조건부로 렌더링 시킬 수 있는 디렉티브가 존재한다. `v-if`와 `v-else` 그리고 `v-else-if`가 있다. 자바스크립트에서 조건부를 사용했던 것 처럼 비슷하게 사용하면 된다.
 
-```html
+```vue
 <div>
   <h1 v-if="bigSize">Big Size Text</h1>
   <h3 v-else>Medium Size Text</h3>
@@ -367,7 +367,7 @@ export default {
 
 `jsx`로는 위와 같이 사용하는데, 조건에 따라 렌더링해야 되는 태그의 종류가 많으면 `jsx`로 작성하는 것이 더 깔끔하다.
 
-```html
+```vue
 <div v-if="renderType === 'div'">Hello Div</div>
 <span v-else-if="renderType === 'span'">Hello Span</span>
 <ul v-else-if="renderType === 'ul'">
@@ -378,7 +378,7 @@ export default {
 
 조건부가 모두 컴포넌트 내부의 `renderType` 값에 의존하는데, 문자열 `'div'`를 가지면 `div` 태그로 렌더링 시킬 수 있고 각 조건에 맞게 렌더링되는 태그를 바꿀 수 있다.
 
-```html
+```vue
 <template v-if="someConditionValue">
   <div>Div</div>
   <span>Span</span>
@@ -464,31 +464,31 @@ export default {
 
 값에 의해 서로 다른 컴포넌트를 보여줘야 되는 상황이면 내장 컴포넌트인 `<component />`를 사용하면 된다.
 
-```html
+```vue
 <component :is="switchComponent"></component>
 
 <script>
-  import Span from './Span.vue' // <span></span>
-  import Div from './Div.vue' // <div></div>
-  import Main from './Main.vue' // <main></main>
-  import Fallback from './Fallback.vue' // <h1></h1>
+import Span from './Span.vue' // <span></span>
+import Div from './Div.vue' // <div></div>
+import Main from './Main.vue' // <main></main>
+import Fallback from './Fallback.vue' // <h1></h1>
 
-  export default {
-    computed: {
-      switchComponent() {
-        switch (this.someSwitch) {
-          case 'span':
-            return Span
-          case 'div':
-            return Div
-          case 'main':
-            return Main
-          default:
-            return Fallback
-        }
+export default {
+  computed: {
+    switchComponent() {
+      switch (this.someSwitch) {
+        case 'span':
+          return Span
+        case 'div':
+          return Div
+        case 'main':
+          return Main
+        default:
+          return Fallback
       }
     }
   }
+}
 </script>
 ```
 
@@ -498,7 +498,7 @@ export default {
 
 `<component>`로 동적 컴포넌트를 구성할 때 `is` 속성에 의해 컴포넌트가 변경되어도 컴포넌트가 유지되어야 하는 상황이 있다.
 
-```html
+```vue
 <keep-alive>
   <component :is="switchComponent"></component>
 </keep-alive>
@@ -512,7 +512,7 @@ Vue에서 함수형 컴포넌트는 상태를 가지지 않는 컴포넌트로 �
 
 여기에서는 버전 2로 예시를 작성하고 있으니 버전 2에서의 함수형 컴포넌트를 만드는 방법을 정리한다.
 
-```html
+```vue
 <template functional>
   <div>...</div>
 </template>
@@ -528,7 +528,7 @@ export default {
 
 `functional` 키를 `true`로 줘도 함수형 컴포넌트가 된다. 해당 컴포넌트는 상태를 가질 수 없으며 단순히 `props`로 받은 데이터를 보여줄 때에 사용할 때 성능상 이점을 얻고 사용할 수 있다. 부모로부터 받은 해당 컴포넌트의 컨텍스트도 사용할 수 있는데, 엘리먼트 속성으로 붇는 `attrs` 혹은 이벤트 리스너가 전달되는 `listeners`를 받을 수 있다.
 
-```html
+```vue
 <template functional>
   <button v-bind="{ ...attrs }" :disabled="props.disabled" @click="listerns.click">
     <slot />

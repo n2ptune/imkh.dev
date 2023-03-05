@@ -160,13 +160,13 @@ trigger('trans', [
 
 아래 `transition` 함수를 추가했고, 모든 상태에서 상태로 이동할 때 `0.3s ease`의 애니메이션을 실행한다. 즉 상태가 변할 때 트랜지션은 0.3초간 실행된다.
 
-```html
+```vue
 <app-transition-text [@trans]="active ? 'open' : 'close'"></app-transition-text>
 ```
 
 트랜지션 대상이 될 DOM에 `[@트리거 이름]` 형태로 트랜지션을 적용한다. `active` 값에 의해 트랜지션 상태가 지정된다.
 
-```html
+```vue
 <button (click)="handleClick()">Transition {{ active | activeText }}</button>
 ```
 
@@ -176,7 +176,7 @@ trigger('trans', [
 
 Vue에서의 트랜지션은 앵귤러에서 적용하는 것 만큼 어렵지 않다.
 
-```html
+```vue
 <template>
   <div>
     <button @click="active = !active"></button>
@@ -187,22 +187,22 @@ Vue에서의 트랜지션은 앵귤러에서 적용하는 것 만큼 어렵지 �
 </template>
 
 <style lang="scss" scoped>
-  .fade {
-    &-enter-active,
-    &-leave-active {
-      transition: opacity 0.3s ease;
-    }
-
-    &-enter,
-    &-leave-to {
-      opacity: 0;
-    }
-
-    &-enter-to,
-    &-leave {
-      opacity: 1;
-    }
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.3s ease;
   }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+  }
+}
 </style>
 ```
 

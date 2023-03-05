@@ -69,13 +69,13 @@ methods: {
 
 `ACCESS_KEY`를 `Authorization` 헤더에 담아 Client-ID라는 문구와 함께 보낸다. 파라미터로 다양한 변수를 함께 보낼 수 있는데, 여기서는 30개를 가져오기 위해 `count=30`을 url과 함께 보낸다. 응답으로 받은 데이터는 컴포넌트의 데이터로 바인딩한다.
 
-```html
+```vue
 <image-card-list :images="images" />
 ```
 
 **ImageCardList** 컴포넌트에 응답으로 받은 데이터를 보내준다.
 
-```html
+```vue
 <template>
   <div class="wrapper">
     <div class="heading">
@@ -110,7 +110,7 @@ methods: {
 
 `justify-content` 같은 속성은 플렉스 레이아웃을 구성했을 때 많이 보던 속성인데, 마찬가지로 그리드에서도 똑같이 사용할 수 있다. 이 경우는 열의 아이템들을 중앙으로 정렬한다. `grid-auto-flow` 속성으로 인해 결과가 바뀔 수가 있다. flex의 `flex-direction` 속성처럼.
 
-```html
+```vue
 <template>
   <div
     class="card"

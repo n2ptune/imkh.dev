@@ -59,21 +59,21 @@ Default(Vue version 2)를 선택하고 프로젝트를 세팅한다. 그 후 외
 
 만들어진 프로젝트는 위와 같은 구조를 가진다. (node_modules 포함)
 
-```html
+```vue
 <!-- ExampleComponent.vue -->
 <template>
   <div>Example Component {{ interval }}</div>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      interval: 0
-    }),
-    created() {
-      setInterval(() => (this.interval += 1), 1000)
-    }
+export default {
+  data: () => ({
+    interval: 0
+  }),
+  created() {
+    setInterval(() => (this.interval += 1), 1000)
   }
+}
 </script>
 ```
 
@@ -182,26 +182,26 @@ npm i -D webpack webpack-cli vue@2.6.12 vue-template-compiler@2.6.12 vue-loader@
 
 빌드에 필요한 의존성을 설치한다. `webpack`과 `webpack-cli`는 우리의 컴포넌트들을 번들링하기 위한 패키지이고, 다른 모든 것은 Vue 컴포넌트를 해석하기 위한 패키지이다.
 
-```html
+```vue
 <template>
   <div>Hello world {{ data }}</div>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      data: 0
-    }),
-    created() {
-      setInterval(() => (this.data += 1), 1000)
-    }
+export default {
+  data: () => ({
+    data: 0
+  }),
+  created() {
+    setInterval(() => (this.data += 1), 1000)
   }
+}
 </script>
 
 <style scoped>
-  div {
-    color: red;
-  }
+div {
+  color: red;
+}
 </style>
 ```
 

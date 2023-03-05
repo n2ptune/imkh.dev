@@ -5,3 +5,6 @@
 src/.temp/*
 node_modules
 static
+.nuxt
+.output
+dist

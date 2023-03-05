@@ -110,7 +110,7 @@ const routes: Routes = [
 
 Vue에서는 `<router-view />` 컴포넌트를 컴포넌트 아래 위치시키면 라우팅 모듈에 매핑시킨 컴포넌트가 렌더링된다. Angular에도 비슷하게 `<router-outlet></router-outlet>` 을 사용하면 동일한 효과를 볼 수 있다.
 
-```html
+```vue
 <div>
   <nav>
     <ul>

@@ -13,28 +13,28 @@ title: 자바스크립트를 이용해서 텍스트를 클립보드에 복사시
 
 그런 기능을 하는 **API**가 `document.execCommand`다. 굵기와 밑줄 등 다양하게 사용할 수 있고 많은 기능을 제공한다. 복사하기 붙여넣기 등이 그 예다. 이 글은 붙여넣기에 대해서 알아본다.
 
-```html
+```vue
 <div id="app">
   <button>dummy 복사하기</button>
 </div>
 
 <script>
-  function copyText() {
-    const temp = document.createElement('textarea')
+function copyText() {
+  const temp = document.createElement('textarea')
 
-    document.body.appendChild(temp)
+  document.body.appendChild(temp)
 
-    temp.value = 'dummy'
-    temp.select()
+  temp.value = 'dummy'
+  temp.select()
 
-    document.execCommand('copy')
-    document.body.removeChild(temp)
+  document.execCommand('copy')
+  document.body.removeChild(temp)
 
-    window.alert('복사 완료')
-  }
+  window.alert('복사 완료')
+}
 
-  const button = document.querySelector('button')
-  button.addEventListener('click', copyText)
+const button = document.querySelector('button')
+button.addEventListener('click', copyText)
 </script>
 ```
 
@@ -88,19 +88,19 @@ button.addEventListener('click', function () {
 
 클립보드를 좀 더 쉽게 다룰 수 있는 자바스크립트 라이브러리, CDN을 통해서 직접 링크로 불러올 수 있고, **NPM**으로 설치할 수도 있다. 아래는 **clipboard.js**를 이용한 예제다.
 
-```html
+```vue
 <div id="app">
   <button class="btn" data-clipboard-text="dummy">dummy 텍스트 복사하기</button>
 </div>
 
 <script>
-  new ClipboardJS('.btn')
+new ClipboardJS('.btn')
 </script>
 ```
 
 스크립트는 단 한줄, `data-` 속성에 원하는 속성을 붙여넣어서 어떤 동작을 하거나 어떤 텍스트를 복사시킬 수 있다. 매우 간단해졌다. `ClipboardJS` 생성자를 이용해서 매개변수에 선택자를 넣어주게 되면 선택자에 맞는 클래스명/아이디/태그명을 가진 태그와 알맞게 결합해서 알맞는 동작을 한다.
 
-```html
+```vue
 <div id="app">
   <input id="something" value="dummy input" />
   <button class="btn" data-clipboard-target="#something">
@@ -109,7 +109,7 @@ button.addEventListener('click', function () {
 </div>
 
 <script>
-  new ClipboardJS('.btn')
+new ClipboardJS('.btn')
 </script>
 ```
 

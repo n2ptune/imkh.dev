@@ -19,7 +19,7 @@ CSS에서 변수는 픽셀을 지정하거나 색을 지정하거나 그 외에 
 
 ## 변수를 지정하고 사용해보기
 
-```html
+```vue
 <div class="container">
   <div class="one"></div>
   <div class="two"></div>

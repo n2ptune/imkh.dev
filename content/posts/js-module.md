@@ -45,7 +45,7 @@ title: 자바스크립트에서 모듈을 가져오고 사용해보자 (js-modul
 
 `index.html`에서 두 자바스크립트 파일(편의상 모듈 a와 모듈 b)을 불러 온다.
 
-```html
+```vue
 <!DOCTYPE html>
 <html lang="en">
   <head>

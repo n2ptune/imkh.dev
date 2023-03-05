@@ -45,7 +45,7 @@ module.exports = {
 
 간단하게는 색 설정을 받아들여 자바스크립트와 **PostCSS**가 이러한 클래스들을 만들어서 집어넣는 행위를 한다.
 
-```html
+```vue
 <div
   class="text-red-500 sm:text-orange-500 md:text-gray-500 lg:text-purple-500"
 >

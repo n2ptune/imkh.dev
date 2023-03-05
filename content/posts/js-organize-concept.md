@@ -146,7 +146,7 @@ var _ = something() // 'something somethingInner'
 
 이벤트 버블링이란 중첩된 요소가 있을 때 제일 하위의 요소로부터 최상위 요소까지 이벤트가 전파되는 걸 말하고, 캡처링은 그 반대로 최상위 요소로부터 하위 요소까지 이벤트 전파가 이루어지는 걸 말한다.
 
-```html
+```vue
 <div class="container">
   <div class="depth-1">
     <div class="depth-2">

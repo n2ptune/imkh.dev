@@ -164,7 +164,7 @@ console.log(Animal.prototype)
 
 `iframe`을 **Shadow DOM**으로 대체하면서 실행하는 예제, 먼저 간단한 태그들을 몇개 만든다.
 
-```html
+```vue
 <div class="shadow-container">
   <button class="primary">Primary</button>
 </div>
