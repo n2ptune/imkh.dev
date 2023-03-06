@@ -27,7 +27,7 @@ description: docker run -p 옵션으로 매핑하는 포트 룰과 Dockerfile에
 
 도커 파일에 아래와 같이 3개의 포트를 개방한다고 가정한다.
 
-```dockerfile
+```docker
 EXPOSE 3000
 EXPOSE 4000
 EXPOSE 5000
@@ -35,7 +35,7 @@ EXPOSE 5000
 
 호스트 OS에서 컨테이너를 실행할 때 매번 포트 룰을 정하는 것은 귀찮은 일이다. 랜덤한 포트를 지정해서 개방된 포트를 런타임에 매핑시킬 수 있다. 이미지를 빌드하고 명령어를 실행할 때, 소문자 p 대신 대문자를 사용하면 된다.
 
-```dockerfile
+```docker
 docker run -it -d -P exposed-ports bash
 37760ccc5da912d1e6baa1e002f73c6f3b5facd50e08c35446b4780751dc82e4
 docker port 37760ccc5da9

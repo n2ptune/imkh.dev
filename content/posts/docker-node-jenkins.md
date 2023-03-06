@@ -174,7 +174,7 @@ app.listen(process.env.PORT, () => {
 
 `pm2.json`으로 지정하고 Dockerfile을 작성한다.
 
-```Dockerfile
+```docker
 FROM keymetrics/pm2:14-alpine
 
 # Bundle APP files

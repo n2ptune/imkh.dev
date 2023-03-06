@@ -41,7 +41,7 @@ Node.js 어플리케이션을 도커 컨테이너 안에서 실행할 수 있도
 
 서버 한 대를 임대받았다고 생각하고 평소에 하던 것처럼 구성하면 된다.
 
-```dockerfile
+```docker
 FROM node:14-alpine
 WORKDIR /app
 

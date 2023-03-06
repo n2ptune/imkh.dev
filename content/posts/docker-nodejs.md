@@ -90,7 +90,7 @@ touch Dockerfile
 
 해당 디렉토리를 노드 프로젝트로 초기화하고 `Dockerfile` 하나를 작성한다. 여기에서는 해당 프로젝트가 도커에 의해 빌드될 때 다양한 옵션을 지정할 수 있다. 예를 들어 해당 프로젝트가 어떤 이미지를 사용해서 그 이미지 위에 띄어져야 하는지, 컨테이너가 띄어지고 나면 그 후에 실행해야할 명령어, 포트 등 다양한 옵션을 여기서 지정할 수 있다. 그리고 `docker run` 명령어 실행시 해당 파일을 읽어들일 수 있도록 설정할 수 있다.
 
-```Dockerfile
+```docker
 FROM node:14-alpine
 WORKDIR /app
 COPY package*.json ./
