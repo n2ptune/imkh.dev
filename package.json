@@ -34,6 +34,11 @@
     "prettier": "^2.8.1"
   },
   "dependencies": {
-    "dayjs": "^1.11.7"
+    "@pinia/nuxt": "^0.4.7",
+    "dayjs": "^1.11.7",
+    "pinia": "^2.0.33"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

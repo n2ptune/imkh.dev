@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@pinia/nuxt'
   ],
   content: {
     highlight: {

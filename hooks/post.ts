@@ -1,0 +1,39 @@
+import { usePageStore } from '~~/store/page'
+
+const __INDEX_POSTS_PROPS__ = [
+  'cover_image',
+  'date',
+  'description',
+  'published',
+  'tags',
+  'title',
+  '_path'
+]
+
+export async function usePost() {
+  const pageStore = usePageStore()
+  const { data } = await useAsyncData('getPosts', async () => {
+    const posts = await queryContent('posts')
+      .only(__INDEX_POSTS_PROPS__)
+      .where({ published: true })
+      .sort({ date: -1 })
+      .find()
+    pageStore.totalCount = posts.length
+    return posts
+  })
+  const postsWithPaging = computed(() => {
+    if (!data.value) return []
+    const [start, end] = pageStore.currentPageRange
+    return data.value.slice(start, end)
+  })
+  const allLoaded = computed(() => {
+    if (!data.value?.length) return false
+    return postsWithPaging.value.length >= data.value.length
+  })
+
+  function loadMore() {
+    pageStore.currentPage++
+  }
+
+  return { posts: data, postsWithPaging, allLoaded, loadMore }
+}
