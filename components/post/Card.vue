@@ -2,6 +2,7 @@
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import dayjs from 'dayjs'
 import { useIconMap } from '~~/hooks/icons'
+import { useObserver } from '~~/hooks/intersection-observer'
 import { useImageStore } from '~~/store/image'
 
 interface Props {
@@ -56,14 +57,26 @@ const pickIcon = computed(() => {
   return iconMap[currentIcon]
 })
 
+const cardRef = ref<HTMLElement | null>(null)
+const { createObserver, removeObserver } = useObserver()
+
 onMounted(() => {
-  if (props.post.cover_image) {
+  if (props.post.cover_image && cardRef.value) {
     const image = new Image()
     image.src = props.post.cover_image
+
     image.onload = () => {
-      coverImageLoaded.value = true
       imageStore.imageMap.set(props.post.cover_image, true)
     }
+
+    createObserver(cardRef.value, entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          coverImageLoaded.value = true
+          removeObserver()
+        }
+      })
+    })
   }
 })
 
@@ -77,7 +90,10 @@ function onAfterEnter() {
 
 <template>
   <NuxtLink :to="goRoutePath">
-    <div class="min-h-[300px] rounded-lg cursor-pointer space-y-4">
+    <div
+      ref="cardRef"
+      class="min-h-[300px] rounded-lg cursor-pointer space-y-4"
+    >
       <div
         v-if="props.post.cover_image"
         class="lazy-image"
@@ -92,13 +108,13 @@ function onAfterEnter() {
           <img
             :src="props.post.cover_image"
             :alt="props.post.cover_image"
-            class="transition-transform duration-100 hover:-translate-y-1 object-cover rounded-lg max-h-[150px] w-full will-change-transform"
+            class="transition-transform duration-100 hover:-translate-y-1 object-cover rounded-lg max-h-[200px] w-full will-change-transform"
             data-lazy-load
           />
         </Transition>
         <div
           v-else
-          class="animate-pulse min-h-[150px] rounded-lg w-full bg-slate-100 dark:bg-neutral-900"
+          class="animate-pulse min-h-[200px] rounded-lg w-full bg-slate-100 dark:bg-neutral-900"
         ></div>
       </div>
       <Icon

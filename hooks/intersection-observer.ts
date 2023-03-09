@@ -6,6 +6,12 @@ export function useObserver(options?: IntersectionObserverInit) {
   const defaultOptions: IntersectionObserverInit = {
     threshold: 1
   }
+  const targetEl = ref<HTMLElement | null>(null)
+  const removeObserver = () => {
+    if (observer.value && targetEl.value) {
+      observer.value.unobserve(targetEl.value)
+    }
+  }
 
   function createObserver(
     el: HTMLElement,
@@ -16,6 +22,7 @@ export function useObserver(options?: IntersectionObserverInit) {
       'IntersectionObserver' in window &&
       el
     ) {
+      targetEl.value = el
       trackFn.value = callback
       observer.value = new IntersectionObserver(
         trackFn.value,
@@ -27,6 +34,7 @@ export function useObserver(options?: IntersectionObserverInit) {
   }
 
   return {
-    createObserver
+    createObserver,
+    removeObserver
   }
 }

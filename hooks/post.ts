@@ -9,6 +9,7 @@ const __INDEX_POSTS_PROPS__ = [
   'title',
   '_path'
 ]
+const __PAGE_DELAY__ = 500
 
 export async function usePost() {
   const pageStore = usePageStore()
@@ -35,5 +36,11 @@ export async function usePost() {
     pageStore.currentPage++
   }
 
-  return { posts: data, postsWithPaging, allLoaded, loadMore }
+  function setDelay() {
+    pageStore.delayLoadPage = true
+
+    setTimeout(() => (pageStore.delayLoadPage = false), __PAGE_DELAY__)
+  }
+
+  return { posts: data, postsWithPaging, allLoaded, loadMore, setDelay }
 }

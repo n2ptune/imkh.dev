@@ -4,17 +4,37 @@ import { useObserver } from '~~/hooks/intersection-observer'
 
 interface Props {
   posts: Pick<ParsedContent, string>[]
+  allLoaded: boolean
+}
+
+interface Emits {
+  (e: 'load-more'): void
 }
 
 const props = defineProps<Props>()
+const emits = defineEmits<Emits>()
 const infRef = ref(null)
-const { createObserver } = useObserver()
+const { createObserver, removeObserver } = useObserver({
+  threshold: 0.2
+})
+
+watch(
+  () => props.allLoaded,
+  loaded => {
+    if (loaded) {
+      removeObserver()
+    }
+  },
+  { immediate: true }
+)
 
 onMounted(() => {
   if (infRef.value) {
     createObserver(infRef.value, entries => {
       entries.forEach(entry => {
-        console.log(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          emits('load-more')
+        }
       })
     })
   }
@@ -25,5 +45,5 @@ onMounted(() => {
   <div class="grid grid-cols-1 gap-y-24 lg:grid-cols-3 lg:gap-12 lg:gap-y-24">
     <PostCard v-for="post in props.posts" :key="post._id" :post="post" />
   </div>
-  <div ref="infRef" class="w-0 h-0 inf"></div>
+  <div ref="infRef" class="w-1 h-1 inf"></div>
 </template>
