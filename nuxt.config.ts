@@ -26,5 +26,8 @@ export default defineNuxtConfig({
   css: ['@/assets/font.css', '@/assets/base.css'],
   generate: {
     routes: ([] as string[]).concat(getBaseRoutes(), getGenerateRoutes())
+  },
+  experimental: {
+    payloadExtraction: false
   }
 })
