@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import { useObserver } from '~~/hooks/intersection-observer'
+import { usePageStore } from '~~/store/page'
 
 interface Props {
   posts: Pick<ParsedContent, string>[]
@@ -14,8 +15,9 @@ interface Emits {
 const props = defineProps<Props>()
 const emits = defineEmits<Emits>()
 const infRef = ref(null)
+const pageStore = usePageStore()
 const { createObserver, removeObserver } = useObserver({
-  threshold: 0.2
+  threshold: 0.05
 })
 
 watch(
@@ -32,7 +34,7 @@ onMounted(() => {
   if (infRef.value) {
     createObserver(infRef.value, entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && pageStore.canLoadPage) {
           emits('load-more')
         }
       })

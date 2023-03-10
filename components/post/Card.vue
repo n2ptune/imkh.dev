@@ -13,12 +13,10 @@ const { iconMap } = useIconMap()
 
 const props = defineProps<Props>()
 const coverImageLoaded = ref(props.post.cover_image ? false : true)
-const coverAnimated = ref(false)
 const imageStore = useImageStore()
 
 if (props.post.cover_image && imageStore.imageMap.get(props.post.cover_image)) {
   coverImageLoaded.value = true
-  coverAnimated.value = true
 }
 
 const goRoutePath = computed(() =>
@@ -79,13 +77,6 @@ onMounted(() => {
     })
   }
 })
-
-/**
- * Track after animate cover image
- */
-function onAfterEnter() {
-  coverAnimated.value = true
-}
 </script>
 
 <template>
@@ -97,25 +88,15 @@ function onAfterEnter() {
       <div
         v-if="props.post.cover_image"
         class="lazy-image"
-        :class="{ 'no-bg': coverAnimated }"
+        :class="{ loaded: coverImageLoaded }"
       >
-        <Transition
-          v-if="coverImageLoaded"
-          name="fade"
-          appear
-          @after-enter="onAfterEnter"
-        >
+        <div class="lazy-image-wrap">
           <img
             :src="props.post.cover_image"
             :alt="props.post.cover_image"
             class="transition-transform duration-100 hover:-translate-y-1 object-cover rounded-lg max-h-[200px] w-full will-change-transform"
-            data-lazy-load
           />
-        </Transition>
-        <div
-          v-else
-          class="animate-pulse min-h-[200px] rounded-lg w-full bg-slate-100 dark:bg-neutral-900"
-        ></div>
+        </div>
       </div>
       <Icon
         v-else-if="hasIcon && pickIcon"
@@ -138,30 +119,29 @@ function onAfterEnter() {
 </template>
 
 <style lang="postcss" scoped>
-.fade {
-  &-enter-active,
-  &-leave-active {
-    @apply transition-opacity duration-500 will-change-auto;
-  }
-
-  &-enter-from,
-  &-leave-to {
-    @apply opacity-0;
-  }
-
-  &-leave-from,
-  &-enter-to {
-    @apply opacity-100;
-  }
-}
-
 .lazy-image {
   @apply relative;
 
-  &::before {
-    content: '';
+  .lazy-image-wrap {
+    @apply transition-opacity duration-300;
+  }
 
-    @apply absolute w-full h-full bg-slate-100 dark:bg-neutral-900 rounded-lg block;
+  &:not(.loaded) {
+    .lazy-image-wrap {
+      @apply opacity-0;
+    }
+
+    &::before {
+      content: '';
+
+      @apply absolute w-full h-full bg-slate-100 dark:bg-neutral-900 rounded-lg block animate-pulse opacity-100;
+    }
+  }
+
+  &.loaded {
+    .lazy-image-wrap {
+      @apply opacity-100;
+    }
   }
 }
 </style>

@@ -9,7 +9,7 @@ const __INDEX_POSTS_PROPS__ = [
   'title',
   '_path'
 ]
-const __PAGE_DELAY__ = 500
+const __PAGE_DELAY__ = 150
 
 export async function usePost() {
   const pageStore = usePageStore()
