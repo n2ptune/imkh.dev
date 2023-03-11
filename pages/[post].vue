@@ -18,5 +18,8 @@ const data = await query
       :tags="(data.tags as string[])"
     />
     <PostProseBody :content="data" />
+    <ClientOnly>
+      <PostComment />
+    </ClientOnly>
   </section>
 </template>
