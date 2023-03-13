@@ -1,6 +1,6 @@
 ---
 description: 벽돌을 쌓아 올려서 만든 느낌을 주는 Masonry Layout을 Vue와 Unsplash API로 구현하는 방법
-cover_image: ./images/vue-masonry-grid-layout-thumbnail.png
+cover_image: /images/vue-masonry-grid-layout-thumbnail.png
 tags: ['vue', 'css']
 published: true
 date: 2020-03-26
@@ -19,13 +19,13 @@ title: Vue Masonry Layout 구현하기 (feat. css grid)
 
 ## Vue 환경설정
 
-![vue-component-structure](./images/vue-masonry-grid-layout.png)
+![vue-component-structure](/images/vue-masonry-grid-layout.png)
 
 위와 같은 컴포넌트 구조로 작성하도록 한다. 처음 접속시 Unsplash API로부터 몇 가지의 이미지 데이터를 요청하고 받은 이미지 데이터를 기반으로 컴포넌트를 구성하고 **Card** 형식으로 뿌려준다.
 
 모든 **ImageCard** 컴포넌트를 감싸는 **ImageCardList** 컴포넌트는 CSS3의 **Grid**로 표시되게 한다. 그리고 행과 열의 간격을 보기좋게 바꾼다.
 
-![vue-basic-view](./images/vue-masonry-grid-layout-2.png)
+![vue-basic-view](/images/vue-masonry-grid-layout-2.png)
 
 위와 같은 형태로 이미지가 표시될 수 있도록 한다. **ImageCard** 컴포넌트의 최대 너비는 이미지 3개와 간격을 담을 수 있을만한 크기의 1250px로 지정한다. 각각의 이미지는 400px의 고정 너비를 가진다고 가정한다.
 
@@ -158,11 +158,11 @@ Unsplash API에서 **small** 사이즈의 이미지는 모두 400px로 고정되
 
 ## 완성과 더 해보면 좋을 것들
 
-![vue-masonry-grid-layout-example.png](./images/vue-masonry-grid-layout-example.png)
+![vue-masonry-grid-layout-example.png](/images/vue-masonry-grid-layout-example.png)
 
 완성된 이미지다. 부족한 모습이 보이긴 하지만 나름대로 **Masonry Layout**처럼 보인다. 이 레이아웃을 다른 프로젝트 혹은 다른 컴포넌트에서도 재사용하려면 다양한 방법이 있을 것 같다. **directive**를 이용한 방법이나, 컴포넌트를 따로 만든다거나, Github에 이런 레이아웃을 구현해서 [vue와 통합한 라이브러리](https://github.com/shershen08/vue-masonry)가 있으니 참고하면 될 것 같다.
 
-![unsplash-example](./images/vue-masonry-layout-example-u.png)
+![unsplash-example](/images/vue-masonry-layout-example-u.png)
 
 unsplash 공식 홈페이지에 들어가보면 해당 이미지에 마우스를 올렸을 때 다양한 정보를 출력하는 걸 볼 수 있다. 이러한 기능도 재밌게 구현이 가능할 것 같다.
 

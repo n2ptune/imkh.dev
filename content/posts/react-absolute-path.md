@@ -3,7 +3,7 @@ title: 리액트 절대 경로 사용하기
 date: 2020-11-30 03:36:58
 published: true
 tags: ['react']
-cover_image: ./images/react-absolute-path-thumbnail.jpg
+cover_image: /images/react-absolute-path-thumbnail.jpg
 description: 리액트에서 절대 경로를 사용하여 임포트 지옥에서 빠져나오기
 ---
 
@@ -40,7 +40,7 @@ import SomeComponent from '@/components/blah/blah-blah/some-directory/component'
 
 위의 6줄만 추가해주면 절대 경로를 리액트에서 사용할 수 있다.
 
-![리액트 절대 경로 예시](./images/react-absolute-path-1.png)
+![리액트 절대 경로 예시](/images/react-absolute-path-1.png)
 
 만약 위와 같은 폴더 구조가 있으면, `App.js`에서 다음과 같은 임포트 구문이 가능해진다.
 

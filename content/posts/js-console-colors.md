@@ -1,6 +1,6 @@
 ---
 description: Nodejs Console에 색상을 입히는 다양한 방법
-cover_image: ./images/js-console-colors-thumbnail.png
+cover_image: /images/js-console-colors-thumbnail.png
 tags: ['nodejs']
 published: true
 date: 2020-04-27
@@ -23,13 +23,13 @@ console.log('\x1b[31m%s', 'Hello World')
 
 예를 들어서 위의 `\x1b[31m` 이라는 이스케이프 시퀀스를 주게 되면 콘솔에서 이를 처리해서 다음에 오는 문자열을 이스케이프 시퀀스에 맞는 서식, 글씨 색, 배경 색으로 처리한다. 아래는 위의 코드로 출력 된 문자열이다.
 
-![js-console-red](./images/js-console-colors-example-1.png)
+![js-console-red](/images/js-console-colors-example-1.png)
 
 Hello World라는 문자열이 빨강색으로 출력된 걸 볼 수 있다. 이렇듯 이스케이프 시퀀스를 이용하면 다양한 문자열 처리를 할 수 있다.
 
 ## 서식을 바꿀 수 있는 이스케이프 시퀀스
 
-![js-console-t](./images/js-console-colors-example-2.png)
+![js-console-t](/images/js-console-colors-example-2.png)
 
 다양한 서식을 지정할 수 있는 이스케이프 시퀀스가 있다.
 
@@ -71,11 +71,11 @@ console.log(
 )
 ```
 
-![colors](./images/js-console-colors-example-3.png)
+![colors](/images/js-console-colors-example-3.png)
 
 사용하고 있는 에디터가 VSCode인데, 테마가 다크 테마라 검은색이 잘 보이지 않는다. 그 외 색상들은 매우 잘 변경되어 있는걸 볼 수 있다. 30번부터 37번까지는 글씨 색상에 대한 코드이고 40번부터 47번까지는 배경색에 관한 코드이니 배경색을 한번 바꿔본다.
 
-![background-colors](./images/js-console-colors-example-4.png)
+![background-colors](/images/js-console-colors-example-4.png)
 
 배경색도 마찬가지로 변경이 아주 잘 된다.
 

@@ -1,6 +1,6 @@
 ---
 description: 자바스크립트로 작성된 기존의 레거시 코드들은 자바스크립트가 발전하고 이를 실행하는 엔진이 표준 규격인 ECMAScript 사양에 따라 추가되거나 변경되는 부분들에 있어서 호환이 제대로 되지 않는 부분이 분명 있을 것이다. 이를 방지하기 위해서 큰 변화가 있었던 ES6부터의 변경사항은 ES5의 기본 모드에서는 활성화되지 않도록 설계되었다. 이 변경사항을 적용시키려면 어떻게 해야되는지를 알아보고 엄격 모드에 대해서 정리한다.
-cover_image: ./images/js-strict-mode.png
+cover_image: /images/js-strict-mode.png
 tags: ['javascript', 'es6']
 published: true
 date: 2020-03-08

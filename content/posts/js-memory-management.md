@@ -1,6 +1,6 @@
 ---
 description: 자바스크립트같은 동적 프로그래밍 언어에서 메모리 관리가 어떻게 되고 있는지 알고, 메모리 관리를 누가, 어느 시점에서 하는지에 대해서 정리해본다.
-cover_image: ./images/js-memory-management.jpg
+cover_image: /images/js-memory-management.jpg
 tags: ['javascript']
 published: true
 date: 2020-03-20

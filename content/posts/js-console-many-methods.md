@@ -1,6 +1,6 @@
 ---
 description: 평소 자주 사용하던 console에 대해 다양한 함수들을 정리
-cover_image: ./images/js-console-object.png
+cover_image: /images/js-console-object.png
 tags: ['javascript']
 published: true
 date: 2020-03-14
@@ -112,11 +112,11 @@ printWithLabel('Kim')
 
 때로 크롬 개발자 도구에서 `document.querySelector` 혹은 DOM을 조작하기 위해 해당 DOM을 선택하고 변수에 저장해서 `console.log`로 띄우면 다음과 같이 표시될 때가 있다.
 
-![js-console-object-example](./images/js-console-object-example.png)
+![js-console-object-example](/images/js-console-object-example.png)
 
 실질적으로 이 DOM이 가지고 있는 속성이나 함수를 알지 못하기 때문에 불편함이 있다. `console.dir`은 이런 문제를 해결하기 위한 좋은 대안이다.
 
-![js-console-object-example-2](./images/js-console-object-example-2.png)
+![js-console-object-example-2](/images/js-console-object-example-2.png)
 
 `document.querySelector`로 DOM을 잡고 변수에 할당한 뒤에 `console.dir`로 뿌려준 결과다. 이렇게하면 DOM이 가지고 있는 모든 속성이나 함수 값을 콘솔에서 확인할 수 있다.
 
@@ -176,7 +176,7 @@ console.groupEnd() // level-1 그룹을 빠져나온다
 console.log('Outer Console Group End')
 ```
 
-![js-console-object-example-3](./images/js-console-object-example-3.png)
+![js-console-object-example-3](/images/js-console-object-example-3.png)
 
 이렇게 계층적으로 그룹을 만든다. 현재 이 코드를 그대로 실행하면 모두 펼쳐있는 상태로 출력이 되는데, `console.groupCollapsed`를 사용하게 되면 모두 접혀있는 상태로 출력이 된다. 이 후의 사용법은 `console.group`과 동일하다.
 

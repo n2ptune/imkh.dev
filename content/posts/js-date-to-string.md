@@ -3,7 +3,7 @@ title: toLocaleDateString과 toDateString 비교, (Chrome과 Safari)
 date: 2021-03-18 02:12:13
 published: true
 tags: ['javascript']
-cover_image: ./images/date-thumbnail.jpg
+cover_image: /images/date-thumbnail.jpg
 description: toLocaleDateString과 toDateString에 대해서 알아보고 비교, 크롬과 사파리에서 일어날 수 있는 이슈에 대한 정리
 ---
 

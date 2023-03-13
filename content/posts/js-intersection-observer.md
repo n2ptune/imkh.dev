@@ -69,7 +69,7 @@ IntersectionObserver API(줄여서 IO API)를 만들기 위해서는 `new` 연�
 
 이제 실행해본다.
 
-![intersection-observer-api-example-gif](./images/intersection-observer-api-example.gif)
+![intersection-observer-api-example-gif](/images/intersection-observer-api-example.gif)
 
 완벽하게 보이진 않지만 뷰포트에 들어올 때 빨간색이였던 박스가 파란색으로 바뀌는 걸 볼 수 있다. 아래에서 Codepen 예제를 볼 수 있다.
 

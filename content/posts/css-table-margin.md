@@ -67,6 +67,6 @@ table tbody tr td {
 
 위의 방법들과 다른점은, 행에 스타일을 입히는 것이 아니라 한 행에 포함된 열들에 스타일을 입힌다.
 
-![table margin](./images/table-margin-example1.png)
+![table margin](/images/table-margin-example1.png)
 
 실제로는 행에 있는 아이템들의 위 아래 테두리 두께를 조정하는 것이므로 빨갛게 칠한다면 위의 사진과 같이 표시된다.

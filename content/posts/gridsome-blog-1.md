@@ -3,7 +3,7 @@ title: Nuxt에서 Gridsome으로 블로그 전환한 이유
 date: 2020-02-28
 published: true
 tags: ['vue']
-cover_image: ./images/gridsome-thumbnail.png
+cover_image: /images/gridsome-thumbnail.png
 description: Nuxt에서 Gridsome으로 블로그를 전환한 이유, 그리고 "블로그"라는 목적을 가지고 개발할 때, Nuxt보다 Gridsome이 더 쉬운 이유
 ---
 

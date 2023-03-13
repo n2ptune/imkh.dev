@@ -3,7 +3,7 @@ title: Vue Instance Lifecycle 8단계
 date: 2019-12-02
 published: true
 tags: ['vue']
-cover_image: ./images/vue-instance-life-cycle.png
+cover_image: /images/vue-instance-life-cycle.png
 description: 뷰에서는 인스턴스의 상태에 따라 호출할 수 있는 속성이 있습니다. 이 속성들을 '라이프 사이클'이라고 하며, 우리 말로는 '생명 주기'라고 합니다.
 ---
 
@@ -76,4 +76,4 @@ description: 뷰에서는 인스턴스의 상태에 따라 호출할 수 있는 
 
 ## 참고 이미지
 
-![뷰 인스턴스 라이프 사이클 8단계](./images/vue-instance-life-cycle.png)
+![뷰 인스턴스 라이프 사이클 8단계](/images/vue-instance-life-cycle.png)

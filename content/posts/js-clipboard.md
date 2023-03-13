@@ -1,6 +1,6 @@
 ---
 description: 자바스크립트에서 Clipboard를 사용하여 텍스트를 복사하는 여러 방법
-cover_image: ./images/js-clipboard.png
+cover_image: /images/js-clipboard.png
 tags: ['javascript']
 published: true
 date: 2020-03-09

@@ -1,6 +1,6 @@
 ---
 description: Function.prototype.call 함수에 대해서 어디에 쓰일지와 기능에 대해서 알아보고 사용해보기
-cover_image: ./images/js-function-prototype-call.png
+cover_image: /images/js-function-prototype-call.png
 tags: ['javascript']
 published: true
 date: 2020-03-12

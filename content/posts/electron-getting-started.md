@@ -3,7 +3,7 @@ title: 일렉트론 톺아보기
 date: 2021-07-22 05:31:05
 published: true
 tags: ['electron']
-cover_image: ./images/electron-getting-started-thumbnail.jpg
+cover_image: /images/electron-getting-started-thumbnail.jpg
 description: 일렉트론 설치부터 빌드까지, 공식 문서 보며 차근차근 톺아보기
 ---
 
@@ -135,7 +135,7 @@ npm start
 
 정상적으로 모든 파일을 작성했다면 아래 사진처럼 일렉트론 어플리케이션이 구동된다.
 
-![Electron Example](./images/electron-getting-started-1.png)
+![Electron Example](/images/electron-getting-started-1.png)
 
 ### 빌드
 

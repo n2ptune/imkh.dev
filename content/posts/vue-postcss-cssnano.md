@@ -3,7 +3,7 @@ title: Vue PostCSS 플러그인으로 CSS 크기를 압축시키기
 date: 2020-01-15
 published: true
 tags: ['vue', 'postcss']
-cover_image: ./images/postcss-logo.png
+cover_image: /images/postcss-logo.png
 description: PostCSS는 일상적인 CSS 동작을 자동화하기 위해 자바스크립트 기반 플러그인을 사용하는 소프트웨어 개발 도구이다. 이 도구는 위키백과, 페이스북, 깃허브의 코드를 개발하기 위해 사용되어 왔다. PostCSS는 npm 사용자들 간에 가장 선호되는 CSS 도구이다.
 ---
 
@@ -64,11 +64,11 @@ module.exports = {
 
 ## 결과
 
-![before-cssnano](./images/before-cssnano.png)
+![before-cssnano](/images/before-cssnano.png)
 
 (cssnano 적용 전)
 
-![after-cssnano](./images/after-cssnano.png)
+![after-cssnano](/images/after-cssnano.png)
 
 (cssnano 적용 후)
 

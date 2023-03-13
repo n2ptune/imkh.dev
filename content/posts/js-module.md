@@ -1,6 +1,6 @@
 ---
 description: Nodejs가 어떻게 모듈을 내보내고 가져오는지에 대한 정리
-cover_image: ./images/js-module-thumbnail.png
+cover_image: /images/js-module-thumbnail.png
 tags: ['nodejs', 'javascript']
 published: true
 date: 2020-04-11

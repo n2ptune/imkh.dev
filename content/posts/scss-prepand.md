@@ -3,7 +3,7 @@ title: SCSS Loader prepandData와 additionalData 정리
 date: 2021-11-10T04:53:44.727Z
 published: true
 tags: ['scss']
-cover_image: ./images/scss-prepand-thumbnail.jpg
+cover_image: /images/scss-prepand-thumbnail.jpg
 description: 웹팩 SASS(SCSS) Loader의 prepandData와 additionalData 옵션에 대해서 정리
 ---
 

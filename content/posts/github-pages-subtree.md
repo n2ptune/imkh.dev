@@ -3,7 +3,7 @@ title: github pages 특정 폴더만 배포 시키기 (subtree)
 date: 2020-02-01
 published: true
 tags: ['git', 'github']
-cover_image: ./images/gh-pages.jpeg
+cover_image: /images/gh-pages.jpeg
 description: github pages 특정 폴더만 배포 시키는 방법
 ---
 

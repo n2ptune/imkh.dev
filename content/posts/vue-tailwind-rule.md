@@ -3,7 +3,7 @@ title: Unknown at rule @tailwind 경고 회피하기
 date: 2020-12-30 13:18:26
 published: true
 tags: ['vue']
-cover_image: ./images/vscode-custom-data-thumbnail.png
+cover_image: /images/vscode-custom-data-thumbnail.png
 description: tailwind 구문을 CSS 파일에서 사용했을 때 나타나는 경고 문구 회피하기
 ---
 
@@ -30,7 +30,7 @@ createApp(App).mount('#app')
 
 물론, 빌드 혹은 개발 서버를 시작할 때에는 웹팩에서 해당 CSS파일을 `postcss-loader`와 다른 로더를 사용해 처리하므로 `@tailwind` 라는 키워드는 CSS에 없는 구문이지만 정상적으로 처리가 된다.
 
-![vscode warning for unknown rule](./images/vscode-custom-data-thumbnail.png)
+![vscode warning for unknown rule](/images/vscode-custom-data-thumbnail.png)
 
 VSCode 기준으로는 위와 같은 경고 문구가 뜨게된다. `@tailwind` 키워드를 알 수 없는 키워드로 분류한다. 정상적인 흐름이고 로더를 사용하지 않는다면 이 파일은 반드시 오류를 뱉게된다. 우리는 로더를 사용해서 해당 CSS파일을 처리하므로 경고 문구에 대해 신경 쓸 필요가 없다. 이 문구를 지울 수 있는 방법이 여러가지가 있다.
 

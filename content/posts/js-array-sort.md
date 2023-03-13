@@ -1,6 +1,6 @@
 ---
 description: 자바스크립트 기본 제공 함수를 이용해 배열 내 원소를 정렬하는 방법
-cover_image: ./images/js-array-sort.png
+cover_image: /images/js-array-sort.png
 tags: ['javascript']
 published: true
 date: 2020-03-16

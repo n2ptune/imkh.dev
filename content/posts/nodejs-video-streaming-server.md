@@ -3,7 +3,7 @@ title: 5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들�
 date: 2020-03-02
 published: true
 tags: ['nodejs', 'express']
-cover_image: ./images/nodejs-video-streaming-thumbnail.png
+cover_image: /images/nodejs-video-streaming-thumbnail.png
 description: nodejs의 내장 모듈 'fs'와 외장 모듈인 'express', 'ejs' 등을 통해 간단한 영상을 스트리밍하는 매우 간단하고 기초적인 비디오 스트리밍 서버를 만든다.
 ---
 
@@ -247,7 +247,7 @@ if (range) {
 
 아래 사진은 `views/example`로 접속한 결과
 
-![nodejs-video-streaming](./images/nodejs-video-streaming-thumbnail-2.png)
+![nodejs-video-streaming](/images/nodejs-video-streaming-thumbnail-2.png)
 
 정상적으로 요청과 206 응답이 완료되었고 매우 간단한 영상 하나를 스트리밍해서 내보낼 수 있게 되었다.
 

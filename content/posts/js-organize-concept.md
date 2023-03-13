@@ -183,7 +183,7 @@ var _ = something() // 'something somethingInner'
 
 각각의 크기와 바탕색을 다르게 한다. 위와 같이 지정하면 아래와 같은 구성으로 나오게 된다.
 
-![depth example](./images/depth-example.png)
+![depth example](/images/depth-example.png)
 
 위 구성요소는 전부 중첩되어 있고 컨테이너 요소로부터 총 3개의 요소가 있다. 각각의 요소에 클릭 이벤트를 넣어본다.
 

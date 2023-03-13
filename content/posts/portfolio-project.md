@@ -3,7 +3,7 @@ title: 신입 개발자 포트폴리오용 협업 프로젝트 회고록
 date: 2021-03-07 09:55:53
 published: true
 tags: ['react']
-cover_image: ./images/tripbnb-thumbnail.jpg
+cover_image: /images/tripbnb-thumbnail.jpg
 description: 신입 개발자가 포트폴리오에 넣을 프로젝트를 개발하고 팀원들과 협업하면서 있었던 일들과 어떻게 진행했는지, 아쉬웠던 점을 기록
 ---
 
@@ -106,11 +106,11 @@ Context API를 이용해서 내부 컴포넌트 깊이를 생각할 필요 없�
 
 API에서 데이터를 가져오는 부분은 모두 로딩중인 상태를 유저에게 보여주기 위해 많은 방법이 있는데, 이번 프로젝트에서는 스켈레톤 로딩을 채택했다.
 
-![skeleton loading in youtube](./images/skeleton-example-youtube.png)
+![skeleton loading in youtube](/images/skeleton-example-youtube.png)
 
 좋은 UI/UX 개념이라고 생각되서 앞으로 모든 프로젝트에 이런 부분을 채택하려고 한다.
 
-![skeleton loading in tripnbnb](./images/tripbnb-skeleton.png)
+![skeleton loading in tripnbnb](/images/tripbnb-skeleton.png)
 
 모든 부분에 이런 스켈레톤 로딩 UI를 구성하여 좀 더 깔끔하게 보이기 위해 노력했다.
 
@@ -118,7 +118,7 @@ API에서 데이터를 가져오는 부분은 모두 로딩중인 상태를 유�
 
 지역의 이미지를 가져오기 위해서 다른 외부 API를 연결하기로 했다. 원래 계획은 인스타그램에서 지역의 키워드로 해당 키워드를 가진 인스타그램 태그 게시글에서 이미지를 긁어와 노출하려고 했지만 인스타그램 API가 다소 어려운 부분이 있어 이 부분은 협의했던 대로 진행되지 않았다. 대신 네이버 검색 API에서 키워드로 이미지를 가져오는 걸로 대체했다.
 
-![image-tripnbnb](./images/image-tripnbnb.png)
+![image-tripnbnb](/images/image-tripnbnb.png)
 
 다만 장소를 특정하면 이미지를 가져오는게 어려워진다. 예를 들어 '리츠호텔'이라는 호텔은 전국에 해당 리츠호텔을 제외하고 더 존재할 수 있으며 그 수가 2개, 3개 혹은 셀 수 없을 만큼 있을 수도 있다. 따라서 '서울 명동 리츠호텔' 이런식으로 검색하면 좀 더 자세한 이미지를 얻을 수 있으나 이미지를 얻지 못하는 경우도 있을 수 있기 때문에 이런 상황에서는 따로 지역을 붙이지 않고 이미지를 검색하도록 했다.
 
@@ -130,7 +130,7 @@ AI를 사용하는 것도 아니기 때문에 해당 이미지가 박지성인�
 
 숙박 시설은 예약할 수 있어야 한다. 팀 내에서 결정된 기능이다.
 
-![image-tripnbnb-reservation](./images/reservation-tripnbnb.png)
+![image-tripnbnb-reservation](/images/reservation-tripnbnb.png)
 
 예약하기 버튼을 누르면 해당 숙박 시설에 대해서 예약할 수 있는 팝업이 뜬다. 실제 숙박 시설의 데이터를 가지고 있는게 아니기 때문에 예약이라는 기능을 흉내내기만 하였다. 숙박 시설이 예약 관련 데이터에 대한 전산 시스템이 있다면 숙박 시설에서 API를 연결해 예약 데이터를 핸들링할 수 있을 것 같다.
 

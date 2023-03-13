@@ -3,7 +3,7 @@ title: 자바스크립트로 모바일 기기 감지하는 여러 방법
 date: 2020-11-02 08:01:17
 published: true
 tags: ['javascript', 'web']
-cover_image: ./images/js-detect-mobile-detect-thumbnail.jpg
+cover_image: /images/js-detect-mobile-detect-thumbnail.jpg
 description: 자바스크립트로 모바일 기기를 감지하는 여러 방법에 대해서 조사해보고 정리하기
 ---
 

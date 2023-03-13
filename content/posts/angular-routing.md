@@ -3,7 +3,7 @@ title: Angular Routing 이해하기
 date: 2021-07-16 04:20:14
 published: true
 tags: ['angular']
-cover_image: ./images/angular-routing-thumbnail.jpg
+cover_image: /images/angular-routing-thumbnail.jpg
 description: Angular Routing에 대해 간단히 알아보고 정리해보기
 ---
 

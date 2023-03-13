@@ -3,7 +3,7 @@ title: Vue 3에서 Vuex와 타입스크립트 같이 사용하기
 date: 2021-05-04 12:10:17
 published: true
 tags: ['vue', 'typescript']
-cover_image: ./images/vue3-vuex-typescript-thumbnail.jpg
+cover_image: /images/vue3-vuex-typescript-thumbnail.jpg
 description: Vue 3 환경에서 Vue 전용 상태 관리 에코 시스템 Vuex와 타입스크립트로 프로젝트 구축하기
 ---
 

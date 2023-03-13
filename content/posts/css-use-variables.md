@@ -1,6 +1,6 @@
 ---
 description: CSS의 사용자 지정 속성을 변경하여 CSS에서 사용할 수 있는 변수를 만드는 법
-cover_image: ./images/css-variables-thumbnail.png
+cover_image: /images/css-variables-thumbnail.png
 tags: ['javascript', 'css']
 published: true
 date: 2020-03-17

@@ -3,7 +3,7 @@ title: Git Hooks를 내 프로젝트에 통합해주는 Husky
 date: 2021-08-01T15:41:23.607Z
 published: true
 tags: ['git']
-cover_image: ./images/husky-thumbnail.jpg
+cover_image: /images/husky-thumbnail.jpg
 description: Git Hooks에 대해서 알아보고 이를 손쉽게 사용할 수 있도록 도와주는 Husky라는 오픈 소스에 대해서 정리하고 이해하기
 ---
 

@@ -3,7 +3,7 @@ title: 자바스크립트 논리 연산자와 참, 거짓으로 평가되는 값
 date: 2021-02-10 15:43:33
 published: true
 tags: ['javascript']
-cover_image: ./images/js-falsy-truthy-thumbnail.jpg
+cover_image: /images/js-falsy-truthy-thumbnail.jpg
 description: 자바스크립트 논리 연산자와 참, 거짓으로 평가되는 값들에 대해서 알아보고 학습해보기
 ---
 

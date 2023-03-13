@@ -1,4 +1,8 @@
-import { getGenerateRoutes, getBaseRoutes } from './scripts/file'
+import {
+  getGenerateRoutes,
+  getBaseRoutes,
+  getRoutesByTags
+} from './scripts/file'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -25,9 +29,13 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/font.css', '@/assets/base.css'],
   generate: {
-    routes: ([] as string[]).concat(getBaseRoutes(), getGenerateRoutes())
+    routes: ([] as string[]).concat(
+      getBaseRoutes(),
+      getGenerateRoutes(),
+      getRoutesByTags()
+    )
   },
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: true
   }
 })

@@ -1,6 +1,6 @@
 ---
 description: HTMLCollection 인터페이스와 NodeList 인터페이스의 차이점과 특징, 그리고 이러한 유사 배열을 일반 자바스크립트 배열 객체로 변환하는 방법을 서로의 특징을 이해하고 정리한 뒤 사용해보기
-cover_image: ./images/js-nodelist-to-array-thumbnail.png
+cover_image: /images/js-nodelist-to-array-thumbnail.png
 tags: ['javascript']
 published: true
 date: 2020-04-25

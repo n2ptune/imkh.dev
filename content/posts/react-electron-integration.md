@@ -3,7 +3,7 @@ title: 리액트와 일렉트론으로 데스크탑 애플리케이션 만들기
 date: 2021-07-23 01:53:40
 published: true
 tags: ['react', 'electron']
-cover_image: ./images/react-electron-inte-thumbnail.jpg
+cover_image: /images/react-electron-inte-thumbnail.jpg
 description: 리액트와 일렉트론으로 프로젝트를 초기 구성해보고 데스크탑 애플리케이션을 만들어보기
 ---
 

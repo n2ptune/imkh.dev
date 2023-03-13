@@ -150,11 +150,11 @@ console.log(Animal.prototype)
 
 많은 페이지들을 보다보면 어떤 기업의 페이스북 페이지 좋아요 수나 이 글을 페이스북에 공유하기 이런 버튼을 많이 보았다. 이런 버튼들은 자칫 잘못하면 다른 스타일과 겹쳐 의도치않은 스타일이 입혀질 수 있는데 어떤 방법으로 모두 동일하게 보이게 될까 궁금했던 적이 있었다.
 
-![facebook-share-example](./images/example-shadow-dom.png)
+![facebook-share-example](/images/example-shadow-dom.png)
 
 이런 버튼들이 `iframe` 요소를 이용해 만들어졌다는 걸 안게 비교적 최근이다. 실제로 이런 `iframe` 요소가 삽입되면 이 요소 안에 HTML 문서로 보이는 문서가 삽입된다.
 
-![facebook-share-example2](./images/example-shadow-dom2.png)
+![facebook-share-example2](/images/example-shadow-dom2.png)
 
 이런 방법이 HTML 문서 내 글로벌로 적용된 스타일에 영향받지 않고 따로 스타일을 구현할 수 있는 방법이라고 한다. 하지만 이런 방법에는 [사용하면 안되는 여러가지 이유](https://syudal.tistory.com/entry/html-iframe%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%A7%80-%EB%A7%90%EC%95%84%EC%95%BC-%ED%95%A0-%EC%9D%B4%EC%9C%A0-%EB%8B%A8%EC%A0%90)가 존재한다.
 
@@ -179,7 +179,7 @@ const shadowDOM = shadowContainer.attachShadow({ mode: 'open' })
 
 컨테이너 요소를 선택하고 이 요소의 `attchShadow` 메서드를 사용하면 컨테이너 안에 빈 **Shadow Root**를 생성한다.
 
-![example-shadow-dom](./images/example-shadow-dom3.png)
+![example-shadow-dom](/images/example-shadow-dom3.png)
 
 보는 바와 같이 더이상 HTML 문서에서 버튼이 보이지 않게 변했고, 개발자 도구로 열어보니 컨테이너 안에 새로운 **Shadow Root**가 생겼다. 이 공간은 **Shadow DOM**의 시작점이다. 기본 HTML 문서가 `<html>`로 시작해서 `</html>`로 끝난다면 이 **Shadow Root**는 시작점을 의미한다.
 
@@ -214,7 +214,7 @@ shadowDOM.appendChild(styles)
 
 스타일을 조금 입히고 마찬가지로 `appendChild` 메소드를 이용해서 **Shadow Root**에 이어붙인다.
 
-![example-shadow-dom4](./images/example-shadow-dom4.png)
+![example-shadow-dom4](/images/example-shadow-dom4.png)
 
 버튼이 한개 튀어나왔다. 이제 원래 HTML 문서에서 이와 똑같은 클래스 선택자로 스타일을 입혀본다.
 

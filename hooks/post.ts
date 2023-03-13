@@ -1,6 +1,6 @@
 import { usePageStore } from '~~/store/page'
 
-const __INDEX_POSTS_PROPS__ = [
+export const __INDEX_POSTS_PROPS__ = [
   'cover_image',
   'date',
   'description',
@@ -9,6 +9,7 @@ const __INDEX_POSTS_PROPS__ = [
   'title',
   '_path'
 ]
+
 const __PAGE_DELAY__ = 150
 
 export async function usePost() {
@@ -19,6 +20,7 @@ export async function usePost() {
       .where({ published: true })
       .sort({ date: -1 })
       .find()
+    pageStore.allPosts = posts as any[]
     pageStore.totalCount = posts.length
     return posts
   })

@@ -19,7 +19,7 @@ SPA와 대립되는 개념인 MPA(Multi Page Application)가 있다. 말 그대�
 
 ### SPA 동작 방식
 
-![spa-draw-example](./images/spa-draw.png)
+![spa-draw-example](/images/spa-draw.png)
 
 맨 처음 서버에서 필요한 자원을 요청해서 모두 받는다. (HTML, CSS, 자바스크립트) 이 파일들이 모두 받아지고 브라우저에서 자바스크립트를 실행하게 되면 내부적으로 DOM을 매우 효율적으로 조작하여 페이지의 다양한 부분을 구성한다.
 

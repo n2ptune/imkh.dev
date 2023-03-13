@@ -3,7 +3,7 @@ title: Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cl
 date: 2019-12-25
 published: true
 tags: ['firebase', 'vue']
-cover_image: ./images/vue-firebase-logo.png
+cover_image: /images/vue-firebase-logo.png
 description: 파이어베이스(Firebase)는 2011년 파이어베이스(Firebase, Inc)사가 개발하고 2014년 구글에 인수된 모바일 및 웹 애플리케이션 개발 플랫폼이다. - 출처 위키백과
 ---
 
@@ -39,7 +39,7 @@ vue create test-app
 
 ## Firebase 프로젝트 만들기
 
-![Firebase Make Project](./images/firebase-make-project.png)
+![Firebase Make Project](/images/firebase-make-project.png)
 
 프로젝트 추가 부분을 눌러 간단한 양식을 작성하고 프로젝트를 만들면 준비 끝입니다. 옵션에 따라 구글이 제공하는 애널리틱스 기능을 간단히 사용할 수 있고 기존의 애널리틱스와 통합 기능을 제공합니다.
 
@@ -69,7 +69,7 @@ firebase init
 
 Firebase CLI를 제대로 설치하였다면 아래 사진과 같이 뜨게 됩니다.
 
-![Firebase Init](./images/firebase-init.png)
+![Firebase Init](/images/firebase-init.png)
 
 `Cloud Functions`와 `Hosting`을 사용하기 위해 스페이스바를 눌러 기능을 체크하고 엔터 눌러서 다음 단계로 갑니다.
 
@@ -115,7 +115,7 @@ firebase deploy
 
 명령어 하나면 알아서 지정한 폴더의 정적 콘텐츠를 CDN에 올려줍니다. (dist/) 배포하기 전 Vue 프로젝트를 빌드하세요.
 
-![Firebase Domain](./images/firebase-domain.png)
+![Firebase Domain](/images/firebase-domain.png)
 
 Firebase Hosting 탭을 눌러서 호스팅 부분을 들어오니 자동으로 호스팅되고 Firebase에서 기본으로 제공하는 도메인과 연결되어 있습니다. 해당 주소로 입력해서 들어가면 우리가 빌드한 애플리케이션이 뜹니다.
 

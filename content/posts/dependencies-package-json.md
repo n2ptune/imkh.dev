@@ -3,7 +3,7 @@ title: package.json의 dependencies와 devDependencies의 차이점에 대한 �
 date: 2021-06-17 12:02:29
 published: true
 tags: ['nodejs']
-cover_image: ./images/dependencies-cover.jpg
+cover_image: /images/dependencies-cover.jpg
 description: dependencies와 devDependencies의 추상적인 차이점과 실제로 체감이될만한 차이점을 정리하고 이해하기
 ---
 

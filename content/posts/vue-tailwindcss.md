@@ -3,7 +3,7 @@ title: 다 된 Vue에 Tailwindcss 뿌리기
 date: 2020-03-03
 published: true
 tags: ['vue', 'postcss']
-cover_image: ./images/vue-tailwindcss.png
+cover_image: /images/vue-tailwindcss.png
 description: Vue 프로젝트에 tailwindcss 초기 환경설정 하기
 ---
 

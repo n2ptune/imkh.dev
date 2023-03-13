@@ -3,7 +3,7 @@ title: 리액트 Context API와 useContext()
 date: 2020-12-02 08:29:43
 published: true
 tags: ['react']
-cover_image: ./images/react-context-api-thumbnail.jpg
+cover_image: /images/react-context-api-thumbnail.jpg
 description: 리액트에서 Context API와 useContext()를 사용해서 부모에서 자식으로 데이터 넘겨주기
 ---
 
@@ -15,7 +15,7 @@ description: 리액트에서 Context API와 useContext()를 사용해서 부모�
 
 만약 부모와 자식 컴포넌트 사이의 컴포넌트가 그 `props`에 대해 알 필요가 없으며 해당 컴포넌트에서 사용하지 않을 데이터라면 `props`로 받을 필요가 없다. 이런 문제를 해결하기 위해 리액트에서는 **Context API**를 제공한다.
 
-![Component Depth](./images/component-depth.png)
+![Component Depth](/images/component-depth.png)
 
 ## Context 만들기
 

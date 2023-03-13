@@ -3,7 +3,7 @@ title: 라즈베리 파이 4 Model B 환경 구성하기(시작하기)
 date: 2021-08-28T08:56:30.523Z
 published: true
 tags: ['raspberrypi']
-cover_image: ./images/raspberrypi-getting-started-thumbnail.jpg
+cover_image: /images/raspberrypi-getting-started-thumbnail.jpg
 description: 라즈베리 파이 4 Model B SSH 환경 구성과 HDMI 없이 라즈베리 파이 4 제어하기
 ---
 

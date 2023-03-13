@@ -3,7 +3,7 @@ title: Angular에서 Transition 사용법과 이해
 date: 2021-07-28 02:28:19
 published: true
 tags: ['angular']
-cover_image: ./images/angular-transition-thumbnail.jpg
+cover_image: /images/angular-transition-thumbnail.jpg
 description: Angular에서 Transition을 사용하는 방법과 동작하는 방식을 이해하기 - 공식 문서
 ---
 

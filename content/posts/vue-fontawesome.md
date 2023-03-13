@@ -3,7 +3,7 @@ title: Vue 프로젝트에서 Font Awesome Icon 사용하기
 date: 2020-02-27
 published: true
 tags: ['vue']
-cover_image: ./images/vue-fontawesome-thumbnail.png
+cover_image: /images/vue-fontawesome-thumbnail.png
 description: CSS/LESS를 기반으로 하는 아이콘 툴킷 Font Awesome을 Vue Component 형식으로 래핑된 라이브러리를 쉽게 vue-cli 기반 프로젝트에 적용하는 방법
 ---
 
@@ -104,7 +104,7 @@ dom.watch()
 
 먼저 아이콘 종류를 다른 라이브러리로 쪼갠 이유는 모든 아이콘 종류에 동일한 아이콘이 있기 때문이다.
 
-![fontawesome](./images/fontawesome-circle.png)
+![fontawesome](/images/fontawesome-circle.png)
 
 예를 들어 **circle**이라는 아이콘이 4개씩이나 있다. 그런데 모두 분류가 다르다. 왼쪽부터 순서대로 Solid, Regular, Light, Duotone이다. 이렇게 아이콘이 4개 전부 다 다르지만 이름은 전부 똑같아서 라이브러리를 종류별로 나눴다. 라는 이야기 같다.
 

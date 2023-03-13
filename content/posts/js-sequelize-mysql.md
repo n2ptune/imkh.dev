@@ -172,7 +172,7 @@ module.exports = router
 
 `findOne` 메소드는 `findAll`과 사용법이 비슷하나 `LIMIT 1` 쿼리가 뒤에 붙어 데이터들 중 하나만 가져온다. 인자로 옵션을 주게 되면 다양한 쿼리를 보낼 수 있다. `/user/:id` 부분에서는 \_id가 요청 파라미터로 들어온 id값과 일치한 유저를 모델 데이터에서 찾아서 내보낸다.
 
-![sequelize-example](./images/sequelize-example.png)
+![sequelize-example](/images/sequelize-example.png)
 
 크롬 확장 프로그램을 사용해서 JSON이 이쁘게 보인다. 결과는 이런식이다.
 
@@ -253,7 +253,7 @@ module.exports = {
 sequelize db:seed:all
 ```
 
-![sequelize-example2](./images/sequelize-example2.png)
+![sequelize-example2](/images/sequelize-example2.png)
 
 이제 시드를 취소시켜 없애보자.
 

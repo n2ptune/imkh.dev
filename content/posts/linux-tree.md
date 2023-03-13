@@ -3,7 +3,7 @@ title: Linux tree 명령어로 폴더 구조를 텍스트로 변환하기
 date: 2020-02-17
 published: true
 tags: ['linux']
-cover_image: ./images/tree.jpg
+cover_image: /images/tree.jpg
 description: Linux tree 명령어는 ls 명령어와 비슷한 일을 하지만 tree는 폴더의 구조를 트리와 같은 형태로 나열해주거나 표시해주는 리눅스 명령어다. 폴더의 하위 폴더 구조 혹은 전체적인 폴더의 구조를 파악하는 데에 유용하다.
 ---
 
@@ -267,7 +267,7 @@ tree -f -h -D
 tree -o tree.txt
 ```
 
-![linux-tree-options](./images/linux-tree-o-options.png)
+![linux-tree-options](/images/linux-tree-o-options.png)
 
 `-I` 옵션은 가장 유용할 것이라 생각한다. 뒤에 오는 와일드 카드 패턴을 Ignore해서 표시해준다. 다음은 **node_modules** 폴더와 **\*.txt** 확장자를 Ignore 하는 방법이다.
 

@@ -3,7 +3,7 @@ title: Vue 컴포넌트 빌드 전략 롤업과 웹팩 비교
 date: 2021-06-20 11:23:01
 published: true
 tags: ['vue']
-cover_image: ./images/vue-rollup-cover.jpg
+cover_image: /images/vue-rollup-cover.jpg
 description: Vue 컴포넌트를 외부로 배포하기 위해 사용하는 번들링 툴 웹팩과 롤업을 사용해보고 비교해서 정리하기
 ---
 
