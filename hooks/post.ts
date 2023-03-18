@@ -12,7 +12,7 @@ export const __INDEX_POSTS_PROPS__ = [
 
 const __PAGE_DELAY__ = 150
 
-export async function usePost() {
+export async function usePost(tag?: string) {
   const pageStore = usePageStore()
   const { data } = await useAsyncData('getPosts', async () => {
     const posts = await queryContent('posts')
@@ -20,8 +20,18 @@ export async function usePost() {
       .where({ published: true })
       .sort({ date: -1 })
       .find()
-    pageStore.allPosts = posts as any[]
+    pageStore.allPosts = posts
     pageStore.totalCount = posts.length
+
+    if (tag) {
+      return posts.filter(post => {
+        if (post.tags && post.tags.length) {
+          return post.tags.includes(tag)
+        }
+        return false
+      })
+    }
+
     return posts
   })
   const postsWithPaging = computed(() => {

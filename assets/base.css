@@ -11,3 +11,7 @@ html {
   text-gray-700 hover:text-black dark:text-gray-200 dark:hover:text-white
   bg-opacity-80 hover:bg-opacity-100;
 }
+
+* {
+  @apply scrollbar-thin scrollbar-thumb-gray-100 dark:scrollbar-thumb-[#111];
+}

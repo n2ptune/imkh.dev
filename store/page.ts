@@ -5,6 +5,7 @@ interface PageState {
   totalCount: number
   scrollY: number
   delayLoadPage: boolean
+  allPosts: Record<string, any>[]
 }
 
 const __PAGE_SIZE__ = 12
@@ -14,7 +15,8 @@ export const usePageStore = defineStore('pageStore', {
     currentPage: 0,
     totalCount: 0,
     scrollY: 0,
-    delayLoadPage: false
+    delayLoadPage: false,
+    allPosts: []
   }),
   getters: {
     currentPageRange(state) {
