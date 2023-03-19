@@ -15,3 +15,16 @@ const props = defineProps<Props>()
     <ContentRenderer :value="props.content" />
   </section>
 </template>
+
+<style lang="postcss" scoped>
+.prose {
+  :deep() {
+    code {
+      &::before,
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
+</style>

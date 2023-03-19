@@ -36,11 +36,19 @@ const tags = computed<TagMapItem[]>(() => {
 </script>
 
 <template>
-  <aside class="hidden space-y-6 lg:block sticky top-28 max-h-[500px] min-w-[250px]">
+  <aside
+    class="hidden space-y-6 lg:block sticky top-28 max-h-[500px] min-w-[250px]"
+  >
     <h2 class="text-xl font-bold">태그 ({{ tags.length }})</h2>
-    <ul class="overflow-y-auto space-y-4 max-h-full">
-      <li v-for="tag in tags" :key="tag.tagName" class="text-lg">
-        {{ tag.tagName }} ({{ tag.count }})
+    <ul class="overflow-y-auto space-y-1 max-h-full pr-4 hover:scrollbar-thin">
+      <li
+        v-for="tag in tags"
+        :key="tag.tagName"
+        class="px-4 transition-all duration-300 hover:translate-x-1 hover:opacity-100 font-semibold rounded-lg opacity-50 cursor-pointer"
+      >
+        <NuxtLink :to="`/tag/${tag.tagName}`"
+          >{{ tag.tagName }} / {{ tag.count }}</NuxtLink
+        >
       </li>
     </ul>
   </aside>

@@ -4,5 +4,6 @@
     <PostLayoutBody>
       <slot />
     </PostLayoutBody>
+    <PostLayoutFooter />
   </section>
 </template>

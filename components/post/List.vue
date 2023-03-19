@@ -48,4 +48,10 @@ onMounted(() => {
     <PostCard v-for="post in props.posts" :key="post._id" :post="post" />
   </div>
   <div ref="infRef" class="w-1 h-1 inf"></div>
+  <div
+    v-if="allLoaded"
+    class="text-center text-4xl font-black py-36 text-gray-300 dark:text-[#444]"
+  >
+    EOF
+  </div>
 </template>

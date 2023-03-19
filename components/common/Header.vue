@@ -7,7 +7,9 @@
     <div class="mx-auto h-full">
       <div class="flex justify-between items-center h-full">
         <div class="text-base lg:text-lg xl:text-x">
-          <span>DEVLOG</span>
+          <NuxtLink to="/">
+            <span>DEVLOG</span>
+          </NuxtLink>
           <span class="text-gray-300 dark:text-gray-500 mx-2">|</span>
           <span>개발 블로그</span>
         </div>

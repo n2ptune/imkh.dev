@@ -13,5 +13,5 @@ html {
 }
 
 * {
-  @apply scrollbar-thin scrollbar-thumb-gray-100 dark:scrollbar-thumb-[#111];
+  @apply scrollbar-thin scrollbar-thumb-gray-100 dark:scrollbar-thumb-[#111] scrollbar-thumb-rounded-xl hover:scrollbar-thumb-gray-300 dark:hover:scrollbar-thumb-[#333];
 }
