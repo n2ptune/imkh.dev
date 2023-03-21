@@ -15,9 +15,16 @@ useHead({
 
 const route = useRoute()
 const query = queryContent('posts')
-const data = await query
-  .where({ _id: `content:posts:${route.params.post}.md` })
-  .findOne()
+const getData = async () => {
+  try {
+    return await query
+      .where({ _id: `content:posts:${route.params.post}.md` })
+      .findOne()
+  } catch (error) {
+    throw createError({ statusCode: 404, statusMessage: '404' })
+  }
+}
+const data = await getData()
 </script>
 
 <template>
