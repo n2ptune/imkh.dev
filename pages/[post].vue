@@ -14,6 +14,7 @@ useHead({
 })
 
 const route = useRoute()
+const router = useRouter()
 const query = queryContent('posts')
 const getData = async () => {
   try {
@@ -21,6 +22,7 @@ const getData = async () => {
       .where({ _id: `content:posts:${route.params.post}.md` })
       .findOne()
   } catch (error) {
+    router.replace({ path: '/404' })
     throw createError({ statusCode: 404, statusMessage: '404' })
   }
 }
