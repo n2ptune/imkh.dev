@@ -16,17 +16,20 @@ useHead({
 const route = useRoute()
 const router = useRouter()
 const query = queryContent('posts')
+const data = ref<any>(null)
 const getData = async () => {
   try {
-    return await query
+    const result = await query
       .where({ _id: `content:posts:${route.params.post}.md` })
       .findOne()
+    return result
   } catch (error) {
     router.replace({ path: '/404' })
     throw createError({ statusCode: 404, statusMessage: '404' })
   }
 }
-const data = await getData()
+
+getData().then(result => (data.value = result))
 </script>
 
 <template>
@@ -41,4 +44,5 @@ const data = await getData()
       <PostComment />
     </ClientOnly>
   </section>
+  <PostLoadingPlaceholder v-else />
 </template>
