@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { usePost } from '~~/hooks/post'
+import { usePostAction } from '~~/hooks/post'
 import { usePageStore } from '~~/store/page'
 
 definePageMeta({
   layout: 'list-layout'
 })
 
-const { postsWithPaging, allLoaded, loadMore, setDelay } = await usePost()
+const { loadMore, setDelay } = usePostAction()
 const pageStore = usePageStore()
 
 function onPostLoadMore() {
@@ -18,10 +18,11 @@ function onPostLoadMore() {
 
 <template>
   <section class="w-full">
-    <PostList
-      :all-loaded="allLoaded"
-      :posts="(postsWithPaging as any[])"
-      @load-more="onPostLoadMore"
-    />
+    <Suspense>
+      <template #fallback>
+        <PostListLoadingPlaceholder />
+      </template>
+      <PostList @load-more="onPostLoadMore" />
+    </Suspense>
   </section>
 </template>

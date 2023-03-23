@@ -12,6 +12,25 @@ export const __INDEX_POSTS_PROPS__ = [
 
 const __PAGE_DELAY__ = 150
 
+export function usePostAction() {
+  const pageStore = usePageStore()
+  
+  function loadMore() {
+    pageStore.currentPage++
+  }
+
+  function setDelay() {
+    pageStore.delayLoadPage = true
+
+    setTimeout(() => (pageStore.delayLoadPage = false), __PAGE_DELAY__)
+  }
+  
+  return {
+    loadMore,
+    setDelay
+  }
+}
+
 export async function usePost(tag?: string) {
   const pageStore = usePageStore()
   const { data } = await useAsyncData('getPosts', async () => {
@@ -44,15 +63,7 @@ export async function usePost(tag?: string) {
     return postsWithPaging.value.length >= data.value.length
   })
 
-  function loadMore() {
-    pageStore.currentPage++
-  }
+  
 
-  function setDelay() {
-    pageStore.delayLoadPage = true
-
-    setTimeout(() => (pageStore.delayLoadPage = false), __PAGE_DELAY__)
-  }
-
-  return { posts: data, postsWithPaging, allLoaded, loadMore, setDelay }
+  return { posts: data, postsWithPaging, allLoaded }
 }
