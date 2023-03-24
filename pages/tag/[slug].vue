@@ -13,6 +13,11 @@ const { params } = useRoute()
 //     .sort({ date: -1 })
 //     .find()
 // )
+
+useHeadSafe({
+  title: `Tag (${params.slug})`
+})
+
 const { posts } = await usePost(params.slug as string)
 </script>
 

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useObserver } from '~~/hooks/intersection-observer'
 import { usePost } from '~~/hooks/post'
+import { useScroll } from '~~/hooks/scroll';
 import { usePageStore } from '~~/store/page'
 
 interface Emits {
@@ -14,6 +15,7 @@ const { createObserver, removeObserver } = useObserver({
   threshold: 0.05
 })
 const { allLoaded, postsWithPaging: posts } = await usePost()
+const scroll = useScroll()
 
 watch(
   () => allLoaded,

@@ -3,20 +3,10 @@ definePageMeta({
   layout: 'post-layout'
 })
 
-useHead({
-  script: [
-    {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441377677018772',
-      async: true,
-      crossorigin: 'anonymous'
-    }
-  ]
-})
-
 const route = useRoute()
 const router = useRouter()
 const query = queryContent('posts')
-const data = ref<any>(null)
+// const data = ref<any>(null)
 const getData = async () => {
   try {
     const result = await query
@@ -29,10 +19,15 @@ const getData = async () => {
   }
 }
 
-getData().then(result => (data.value = result))
+const data = await getData()
+
+useHeadSafe({
+  title: data.title
+})
 </script>
 
 <template>
+  <!-- 여기 Suspense 감싸는 걸로 바꿔야함 하위 모든 컴포넌트를 감싸는 wrapper 컴포넌트 필요 -->
   <section v-if="data">
     <PostTitleSection
       :title="(data.title as string)"
