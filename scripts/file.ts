@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-const postPath = resolve(__dirname, '../content/posts')
+const postPath = resolve(__dirname, '../src/content/posts')
 const postDir = readdirSync(postPath)
 
 export function getBaseRoutes(): string[] {

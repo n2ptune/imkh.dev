@@ -9,7 +9,7 @@ mono.unshift('"JetBrains Mono"')
 
 const config: Config = {
   darkMode: 'class',
-  content: ['./content/**/*.md', './components/**/*.{ts,vue,html}'],
+  content: ['./content/**/*.md', './src/components/**/*.{ts,vue,html}'],
   theme: {
     extend: {
       fontFamily: {

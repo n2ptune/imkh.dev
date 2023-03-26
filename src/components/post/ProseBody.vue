@@ -2,7 +2,7 @@
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
 interface Props {
-  content: ParsedContent
+  content: Pick<ParsedContent, string>
 }
 
 const props = defineProps<Props>()

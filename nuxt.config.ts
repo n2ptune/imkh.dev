@@ -3,9 +3,15 @@ import {
   getBaseRoutes,
   getRoutesByTags
 } from './scripts/file'
+import * as path from 'node:path'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
+  },
   modules: [
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
@@ -36,5 +42,10 @@ export default defineNuxtConfig({
   },
   experimental: {
     payloadExtraction: true
+  },
+  srcDir: path.resolve(__dirname, 'src'),
+  alias: {
+    '~~': path.resolve(__dirname, 'src'),
+    '@@': path.resolve(__dirname, 'src')
   }
 })

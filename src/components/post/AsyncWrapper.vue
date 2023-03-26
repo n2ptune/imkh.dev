@@ -1,13 +1,8 @@
 <script lang="ts" setup>
-definePageMeta({
-  layout: 'post-layout'
-})
-
 const route = useRoute()
 const router = useRouter()
 const query = queryContent('posts')
-// const data = ref<any>(null)
-const getData = async () => {
+const { data } = await useAsyncData('post', async () => {
   try {
     const result = await query
       .where({ _id: `content:posts:${route.params.post}.md` })
@@ -17,17 +12,22 @@ const getData = async () => {
     router.replace({ path: '/404' })
     throw createError({ statusCode: 404, statusMessage: '404' })
   }
-}
+})
 
-const data = await getData()
-
-useHeadSafe({
-  title: data.title
+useSeoMeta({
+  title: data?.value?.title,
+  ogTitle: () => withTitleTemplate(data?.value?.title),
+  ogDescription: data?.value?.description,
+  ogImage: data?.value?.cover_image
+    ? withUrl(data?.value?.cover_image, false)
+    : '',
+  ogImageWidth: 400,
+  ogImageHeight: 200,
+  ogUrl: withUrl((data?.value?._path as string).replace('/posts/', ''))
 })
 </script>
 
 <template>
-  <!-- 여기 Suspense 감싸는 걸로 바꿔야함 하위 모든 컴포넌트를 감싸는 wrapper 컴포넌트 필요 -->
   <section v-if="data">
     <PostTitleSection
       :title="(data.title as string)"
@@ -39,5 +39,4 @@ useHeadSafe({
       <PostComment />
     </ClientOnly>
   </section>
-  <PostLoadingPlaceholder v-else />
 </template>

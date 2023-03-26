@@ -4,8 +4,11 @@ import LocalizeFormat from 'dayjs/plugin/localizedFormat'
 
 dayjs.extend(LocalizeFormat)
 
-useHeadSafe({
-  titleTemplate: str => (str ? `${str} | imkh.dev` : 'imkh.dev')
+useSeoMeta({
+  titleTemplate: str => (str ? `${str} | imkh.dev` : 'imkh.dev'),
+  googleSiteVerification: 'Apvl3CGBeJfNwha8SQ4DbDVYem4yZTHeLQ-ckfH4FSw',
+  robots: 'All',
+  ogType: 'website'
 })
 
 useHead({
