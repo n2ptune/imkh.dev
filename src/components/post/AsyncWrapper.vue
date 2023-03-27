@@ -2,7 +2,7 @@
 const route = useRoute()
 const router = useRouter()
 const query = queryContent('posts')
-const { data } = await useAsyncData('post', async () => {
+const { data } = await useAsyncData('post' + route?.params?.post, async () => {
   try {
     const result = await query
       .where({ _id: `content:posts:${route.params.post}.md` })
