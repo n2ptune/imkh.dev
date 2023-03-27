@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-import dayjs from 'dayjs'
-import LocalizeFormat from 'dayjs/plugin/localizedFormat'
-
-dayjs.extend(LocalizeFormat)
-
 useSeoMeta({
   titleTemplate: str => (str ? `${str} | imkh.dev` : 'imkh.dev'),
   googleSiteVerification: 'Apvl3CGBeJfNwha8SQ4DbDVYem4yZTHeLQ-ckfH4FSw',

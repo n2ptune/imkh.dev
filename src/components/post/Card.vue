@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
-import dayjs from 'dayjs'
 import { useIconMap } from '~~/hooks/icons'
 import { useObserver } from '~~/hooks/intersection-observer'
 import { useImageStore } from '~~/store/image'
@@ -9,6 +8,7 @@ interface Props {
   post: Pick<ParsedContent, string>
 }
 
+const { $dayjs } = useNuxtApp()
 const { iconMap } = useIconMap()
 
 const props = defineProps<Props>()
@@ -22,7 +22,7 @@ if (props.post.cover_image && imageStore.imageMap.get(props.post.cover_image)) {
 const goRoutePath = computed(() =>
   (props.post._path as string).replace('/posts', '')
 )
-const dateFormat = computed(() => dayjs(props.post.date).format('LLL'))
+const dateFormat = computed(() => $dayjs(props.post.date).format('LLL'))
 const hasIcon = computed(() => {
   const icons = Object.keys(iconMap)
   const tags = props.post.tags

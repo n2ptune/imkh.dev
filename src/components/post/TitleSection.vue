@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import dayjs from 'dayjs'
-
 interface Props {
   title: string
   created_at: string | number
   tags: string[]
 }
 
+const { $dayjs } = useNuxtApp()
+
 const props = defineProps<Props>()
 const dateFormat = computed(() =>
-  dayjs(new Date(props.created_at)).format('LLL')
+  $dayjs(new Date(props.created_at)).format('LLL')
 )
 </script>
 
