@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { usePostAction } from '~~/hooks/post'
 import { usePageStore } from '~~/store/page'
-
+// 2
 definePageMeta({
   layout: 'list-layout'
 })
