@@ -28,7 +28,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/glob": "^8.0.0",
     "glob": "^8.0.3",
-    "nuxt": "^3.3.1",
+    "nuxt": "^3.3.2",
     "nuxt-icon": "^0.3.3",
     "prettier": "^2.8.1",
     "sitemap": "^7.1.1",
