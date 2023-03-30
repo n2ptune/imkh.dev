@@ -14,7 +14,7 @@ const __PAGE_DELAY__ = 150
 
 export function usePostAction() {
   const pageStore = usePageStore()
-  
+
   function loadMore() {
     pageStore.currentPage++
   }
@@ -24,7 +24,7 @@ export function usePostAction() {
 
     setTimeout(() => (pageStore.delayLoadPage = false), __PAGE_DELAY__)
   }
-  
+
   return {
     loadMore,
     setDelay
@@ -33,7 +33,7 @@ export function usePostAction() {
 
 export async function usePost(tag?: string) {
   const pageStore = usePageStore()
-  const { data } = await useAsyncData('getPosts', async () => {
+  const { data } = await useAsyncData('getPosts' + tag, async () => {
     const posts = await queryContent('posts')
       .only(__INDEX_POSTS_PROPS__)
       .where({ published: true })
@@ -62,8 +62,6 @@ export async function usePost(tag?: string) {
     if (!data.value?.length) return false
     return postsWithPaging.value.length >= data.value.length
   })
-
-  
 
   return { posts: data, postsWithPaging, allLoaded }
 }

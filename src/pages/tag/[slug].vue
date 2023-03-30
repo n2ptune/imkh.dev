@@ -1,24 +1,13 @@
 <script lang="ts" setup>
-import { usePost, __INDEX_POSTS_PROPS__ } from '@/hooks/post'
-
 definePageMeta({
   layout: 'list-layout'
 })
 
 const { params } = useRoute()
-// const { data } = await useAsyncData('getPostsByTag', async () =>
-//   queryContent('posts')
-//     .only(__INDEX_POSTS_PROPS__)
-//     .where({ tags: { $in: [params.slug as string] } })
-//     .sort({ date: -1 })
-//     .find()
-// )
 
 useHeadSafe({
   title: `Tag (${params.slug})`
 })
-
-const { posts } = await usePost(params.slug as string)
 </script>
 
 <template>
@@ -28,6 +17,6 @@ const { posts } = await usePost(params.slug as string)
       <span class="mx-2 text-gray-200 font-light dark:text-gray-700">/</span>
       {{ params.slug }}
     </section>
-    <PostList all-loaded :posts="(posts as any[])" />
+    <PostList :tag="(params.slug as string)" />
   </section>
 </template>
