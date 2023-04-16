@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { useHeadSafe } from 'unhead'
+
 useSeoMeta({
-  titleTemplate: str => (str ? `${str} | imkh.dev` : 'imkh.dev'),
+  titleTemplate: (str: string) => (str ? `${str} | imkh.dev` : 'imkh.dev'),
   googleSiteVerification: 'Apvl3CGBeJfNwha8SQ4DbDVYem4yZTHeLQ-ckfH4FSw',
   robots: 'All',
   ogType: 'website'
@@ -13,7 +15,10 @@ useHead({
       async: true,
       crossorigin: 'anonymous'
     }
-  ],
+  ]
+})
+
+useHeadSafe({
   link: [
     {
       rel: 'apple-touch-icon',
@@ -41,9 +46,5 @@ useHead({
 </script>
 
 <template>
-  <main class="text-black dark:text-white">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </main>
+  <slot />
 </template>

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useHeadSafe } from 'unhead'
+
 definePageMeta({
   layout: 'list-layout'
 })

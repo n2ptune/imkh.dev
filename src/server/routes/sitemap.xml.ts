@@ -11,7 +11,7 @@ export default defineEventHandler(async event => {
   for (const doc of docs) {
     sitemap.write({
       url: doc._path?.includes('/posts/')
-        ? doc._path.replace('/posts', '')
+        ? doc._path.replace('/posts', '') + '/'
         : doc._path,
       changefreq: 'monthly'
     })
