@@ -16,7 +16,7 @@ const { data } = await useAsyncData('post' + route?.params?.post, async () => {
 
 useSeoMeta({
   title: data?.value?.title,
-  ogTitle: () => withTitleTemplate(data?.value?.title),
+  ogTitle: () => withTitleTemplate(data?.value?.title || ''),
   ogDescription: data?.value?.description,
   ogImage: data?.value?.cover_image
     ? withUrl(data?.value?.cover_image, false)
@@ -34,8 +34,12 @@ useSeoMeta({
       :created_at="(data.date as string | number)"
       :tags="(data.tags as string[])"
     />
+    <ClientOnly>
+      <AdsArticleAds />
+    </ClientOnly>
     <PostProseBody :content="data" />
     <ClientOnly>
+      <AdsArticleAds />
       <PostComment />
     </ClientOnly>
   </section>
