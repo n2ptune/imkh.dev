@@ -17,7 +17,7 @@ node.js에서는 많은 웹 소켓 구현체가 있다. [socket.io](https://gith
 
 먼저, 웹 소켓의 처음 시작 방식은, 기존에 HTTP를 이용해 통신하는 것과 다르지 않다. 웹 소켓은 HTTP와 HTTPS 두 개의 프로토콜과 잘 호환될 수 있도록 설계되었다. 따라서 서버에 요청시 헤더 몇 개를 추가하면 HTTP/HTTPS 프로토콜에서 웹 소켓 프로토콜로 변환된다.
 
-```plain
+```sh
 Connection: upgrade
 Upgrade: websocket
 ```

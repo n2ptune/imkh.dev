@@ -15,7 +15,7 @@ description: nodejs의 내장 모듈 'fs'와 외장 모듈인 'express', 'ejs' �
 
 다음은 `ejs`와 `pug`의 문법적인 차이점이다.
 
-```ejs
+```html
 # ejs (default html5 template)
 
 <!DOCTYPE html>
@@ -164,7 +164,7 @@ app.listen(3000)
 
 `views/video.ejs`로 파일을 작성하고 수정한다.
 
-```ejs
+```html
 <!DOCTYPE html>
 <html lang="ko">
   <head>

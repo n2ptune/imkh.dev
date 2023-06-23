@@ -35,7 +35,7 @@ title: Vue Masonry Layout 구현하기 (feat. css grid)
 
 발급받은 API Key를 `.env` 파일에 저장한다.
 
-```text
+```sh
 VUE_APP_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 VUE_APP_SECRET_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 VUE_APP_URL=https://api.unsplash.com/

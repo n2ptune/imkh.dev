@@ -23,7 +23,7 @@ description: 라즈베리 파이 4 Model B SSH 환경 구성과 HDMI 없이 라�
 
 라즈베리 파이에 꽂혀 있던 SD카드를 다시 해제하고 노트북에 연결시킨다. OS 드라이브로 들어가 `wpa_supplicant.conf` 파일을 작성한다.
 
-```conf
+```sh
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=KR
