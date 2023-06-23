@@ -6,7 +6,7 @@ onMounted(() => {
 
 <template>
   <ins
-    class="adsbygoogle"
+    class="adsbygoogle animate-pulse my-12 sk prose lg:prose-lg mx-auto"
     style="display: block; text-align: center"
     data-ad-layout="in-article"
     data-ad-format="fluid"
