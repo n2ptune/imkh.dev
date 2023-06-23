@@ -17,7 +17,7 @@ onMounted(() => {
 
 <style lang="postcss" scoped>
 ins.adsbygoogle {
-  @apply rounded-lg my-12 prose lg:prose-lg mx-auto;
+  @apply rounded-lg my-12 prose lg:prose-lg mx-auto max-h-[200px];
 
   &:not([data-ad-status='filled']) {
     @apply animate-pulse bg-slate-100 dark:bg-neutral-900;
