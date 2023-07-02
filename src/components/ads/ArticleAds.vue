@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 onMounted(() => {
+  // @ts-ignore
   ;(adsbygoogle = window.adsbygoogle || []).push({})
 })
 </script>

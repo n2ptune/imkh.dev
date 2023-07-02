@@ -1,15 +1,15 @@
 ---
-title: 라즈베리 파이 4 Model B 환경 구성하기(시작하기)
+title: 라즈베리파이 4 Model B 환경 구성하기(시작하기)
 date: 2021-08-28T08:56:30.523Z
 published: true
 tags: ['raspberrypi']
 cover_image: /images/raspberrypi-getting-started-thumbnail.jpg
-description: 라즈베리 파이 4 Model B SSH 환경 구성과 HDMI 없이 라즈베리 파이 4 제어하기
+description: 라즈베리파이 4 Model B SSH 환경 구성과 HDMI 없이 라즈베리파이 4 제어하기
 ---
 
-# 라즈베리 파이 4 시작하기
+# 라즈베리파이 4 시작하기
 
-라즈베리 파이 4 Model B (스타터 키트) 구입처: 쿠팡
+라즈베리파이 4 Model B (스타터 키트) 구입처: 쿠팡
 
 ## OS 설치
 
@@ -21,7 +21,7 @@ description: 라즈베리 파이 4 Model B SSH 환경 구성과 HDMI 없이 라�
 
 ### WI-FI 자동 연결
 
-라즈베리 파이에 꽂혀 있던 SD카드를 다시 해제하고 노트북에 연결시킨다. OS 드라이브로 들어가 `wpa_supplicant.conf` 파일을 작성한다.
+라즈베리파이에 꽂혀 있던 SD카드를 다시 해제하고 노트북에 연결시킨다. OS 드라이브로 들어가 `wpa_supplicant.conf` 파일을 작성한다.
 
 ```sh
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -34,7 +34,7 @@ network={
 }
 ```
 
-라즈베리 파이 3B+ 모델 이후 `country` 속성이 필수라고 한다. 여기서는 KR로 적는다. 이 파일을 작성하면 라즈베리 파이가 부팅될 때 해당 네트워크를 자동으로 잡는다.
+라즈베리파이 3B+ 모델 이후 `country` 속성이 필수라고 한다. 여기서는 KR로 적는다. 이 파일을 작성하면 라즈베리파이가 부팅될 때 해당 네트워크를 자동으로 잡는다.
 
 ### SSH 구성
 
@@ -48,7 +48,7 @@ PuTTY 같은 SSH 클라이언트를 사용해서 SSH 연결을 시도한다. 호
 
 ## 원격 데스크톱 연결 (Windows)
 
-윈도우의 원격 데스크톱 연결이라는 어플리케이션을 통해 GUI를 보면서 초기 구성을 진행할 수 있다. 먼저 라즈베리 파이 쉘에서 아래 명령어로 `xrdp`를 설치한다.
+윈도우의 원격 데스크톱 연결이라는 어플리케이션을 통해 GUI를 보면서 초기 구성을 진행할 수 있다. 먼저 라즈베리파이 쉘에서 아래 명령어로 `xrdp`를 설치한다.
 
 ```sh
 sudo apt-get install xrdp

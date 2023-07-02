@@ -169,8 +169,8 @@
 
 ### raspberrypi
 
-- [라즈베리 파이 4에 Docker를 설치하고 Node.js 어플리케이션 실행하기](content\posts\raspberry-docker-nodejs.md)
-- [라즈베리 파이 4 Model B 환경 구성하기(시작하기)](content\posts\raspberry-getting-started.md)
+- [라즈베리파이 4에 Docker를 설치하고 Node.js 어플리케이션 실행하기](content\posts\raspberry-docker-nodejs.md)
+- [라즈베리파이 4 Model B 환경 구성하기(시작하기)](content\posts\raspberry-getting-started.md)
 
 ### react
 
