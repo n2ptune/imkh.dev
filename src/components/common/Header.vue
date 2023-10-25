@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const iconSize = ref('26')
+</script>
 
 <template>
   <header
@@ -14,10 +16,16 @@
           <span>개발 블로그</span>
         </div>
         <div class="space-x-3">
-          <CommonThemeSwitch />
-          <a href="https://github.com/n2ptune" target="_blank" class="group">
-            <Icon name="ri:github-line" size="36" class="clickable-icon" />
-          </a>
+          <ClientOnly>
+            <CommonThemeSwitch :icon-size="iconSize" />
+            <a href="https://github.com/n2ptune" target="_blank" class="group">
+              <Icon
+                name="ri:github-line"
+                :size="iconSize"
+                class="clickable-icon"
+              />
+            </a>
+          </ClientOnly>
         </div>
       </div>
     </div>

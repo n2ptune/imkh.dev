@@ -13,26 +13,40 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    '@nuxt/content',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
-    '@nuxt/content',
     '@pinia/nuxt'
   ],
   content: {
     highlight: {
       theme: {
-        default: 'github-light',
-        dark: 'github-dark'
+        default: 'vitesse-light',
+        dark: 'vitesse-dark'
       },
-      preload: ['jsx', 'tsx', 'vue']
+      preload: [
+        'css',
+        'dockerfile',
+        'html',
+        'js',
+        'json',
+        'jsx',
+        'python',
+        'sh',
+        'shell',
+        'tsx',
+        'rust',
+        'vue-html',
+        'vue'
+      ]
     }
   },
   colorMode: {
     classSuffix: '',
     fallback: 'dark'
   },
-  css: ['@/assets/font.css', '@/assets/base.css'],
+  css: ['@/assets/font.css', '@/assets/base.postcss'],
   generate: {
     routes: ([] as string[]).concat(
       getBaseRoutes(),

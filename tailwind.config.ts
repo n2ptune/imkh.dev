@@ -1,4 +1,4 @@
-import { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 const sans = [...defaultTheme.fontFamily.sans]
@@ -17,9 +17,11 @@ const config: Config = {
         mono
       },
       colors: {
-        dark: '#060805',
+        dark: '#080808',
         darkw: '#f4ffff',
-        darkh: '#96c9da'
+        darkh: '#96c9da',
+        darkl: '#0f0f0f',
+        'dark-border': '#080808'
       }
     }
   },

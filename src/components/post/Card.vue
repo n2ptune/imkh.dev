@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 import { useIconMap } from '~~/hooks/icons'
 import { useObserver } from '~~/hooks/intersection-observer'
 import { useImageStore } from '~~/store/image'
