@@ -35,11 +35,11 @@ useSeoMeta({
       :tags="(data.tags as string[])"
     />
     <ClientOnly>
-      <AdsArticleAds />
+      <AdsArticleAds place="top" />
     </ClientOnly>
     <PostProseBody :content="data" />
     <ClientOnly>
-      <AdsArticleAds />
+      <AdsArticleAds place="bottom" />
       <PostComment />
     </ClientOnly>
   </section>

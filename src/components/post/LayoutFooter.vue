@@ -4,8 +4,8 @@
   >
     <section class="container mx-auto">
       <section class="grid-wrap text-center lg:text-left">
-        <section class="col-span-4 text-xl lg:text-2xl space-y-3">
-          <p>DEVLOG 개발 블로그</p>
+        <section class="col-span-4 text-xl lg:text-2xl space-y-2">
+          <p class="font-bold">DEVLOG 개발 블로그</p>
           <p class="text-sm">Copyright © 2023 imkh.dev</p>
         </section>
         <section
@@ -14,7 +14,7 @@
           <p class="head">Contact</p>
           <ul>
             <li>
-              <a href="mailto:vue2598@gmail.com"> 이메일 </a>
+              <a href="mailto:vue2598@gmail.com"> Email </a>
             </li>
             <li>
               <a
@@ -22,16 +22,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                깃허브
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://imkh.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                블로그
+                Github
               </a>
             </li>
             <li>
@@ -40,7 +31,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                포트폴리오
+                Portfolio
               </a>
             </li>
           </ul>
@@ -49,7 +40,7 @@
     </section>
     <section class="mt-6 pt-6 border-t border-gray-200 dark:border-dark text-center">
       <a href="https://nuxt.com" target="_blank" rel="noopener noreferrer">
-        Powered By <Icon name="logos:nuxt-icon" size="24" /> Nuxt 3
+        Powered By <Icon name="logos:nuxt-icon" size="24" /> <strong class="font-bold">Nuxt 3</strong>
       </a>
     </section>
   </footer>
@@ -60,7 +51,7 @@
   @apply lg:grid lg:grid-cols-12;
 
   p.head {
-    @apply mx-auto lg:mx-0 mb-1 text-gray-400 dark:text-neutral-500 font-bold;
+    @apply mx-auto lg:mx-0 mb-1 text-gray-400 dark:text-neutral-500 font-bold text-sm;
   }
 
   ul {
