@@ -6,7 +6,7 @@
       <section class="grid-wrap text-center lg:text-left">
         <section class="col-span-4 text-xl lg:text-2xl space-y-2">
           <p class="font-bold">DEVLOG 개발 블로그</p>
-          <p class="text-sm">Copyright © 2023 imkh.dev</p>
+          <p class="text-sm">Copyright © 2024 imkh.dev</p>
         </section>
         <section
           class="mt-12 lg:mt-0 col-span-8 flex flex-col flex-wrap items-end"
