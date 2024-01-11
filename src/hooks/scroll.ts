@@ -17,7 +17,7 @@ export function useScroll() {
 
   onMounted(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', onScroll)
+      document.addEventListener('scroll', onScroll)
     }
     nextTick(() => {
       if (pageStore.scrollY > 0) {
@@ -38,6 +38,6 @@ export function useScroll() {
   })
 
   onBeforeUnmount(() => {
-    window.removeEventListener('scroll', onScroll)
+    document.removeEventListener('scroll', onScroll)
   })
 }
