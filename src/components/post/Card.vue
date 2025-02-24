@@ -1,31 +1,37 @@
 <script lang="ts" setup>
-import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
+import type { PostCollectionItem } from '@nuxt/content'
 import { useIconMap } from '~~/hooks/icons'
 import { useObserver } from '~~/hooks/intersection-observer'
 import { useImageStore } from '~~/store/image'
 
 interface Props {
-  post: Pick<ParsedContent, string>
+  post: PostCollectionItem
 }
 
 const { $dayjs } = useNuxtApp()
 const { iconMap } = useIconMap()
 
 const props = defineProps<Props>()
-const coverImageLoaded = ref(props.post.cover_image ? false : true)
 const imageStore = useImageStore()
 
-if (props.post.cover_image && imageStore.imageMap.get(props.post.cover_image)) {
+const coverImage = computed(
+  () => (props.post.meta.cover_image as string | null) ?? ''
+)
+const coverImageLoaded = ref(coverImage.value ? false : true)
+
+if (coverImage.value && imageStore.imageMap.get(coverImage.value as string)) {
   coverImageLoaded.value = true
 }
 
 const goRoutePath = computed(() =>
-  (props.post._path as string).replace('/posts', '')
+  (props.post.path as string).replace('/posts', '')
 )
-const dateFormat = computed(() => $dayjs(props.post.date).format('LLL'))
+const dateFormat = computed(() =>
+  $dayjs(props.post.meta.date as string).format('LLL')
+)
 const hasIcon = computed(() => {
   const icons = Object.keys(iconMap)
-  const tags = props.post.tags
+  const tags = props.post.meta.tags as string[]
 
   let flag = false
 
@@ -35,7 +41,7 @@ const hasIcon = computed(() => {
     })
   })
 
-  return props.post.tags && flag
+  return props.post.meta.tags && flag
 })
 const pickIcon = computed(() => {
   if (!hasIcon.value) return null
@@ -44,7 +50,7 @@ const pickIcon = computed(() => {
 
   Object.keys(iconMap).forEach(icon => {
     if (currentIcon) return
-    props.post.tags.forEach((tag: string) => {
+    ;(props.post.meta.tags as string[]).forEach((tag: string) => {
       if (tag === icon) {
         currentIcon = tag
         return
@@ -59,12 +65,12 @@ const cardRef = ref<HTMLElement | null>(null)
 const { createObserver, removeObserver } = useObserver()
 
 onMounted(() => {
-  if (props.post.cover_image && cardRef.value) {
+  if (coverImage.value && cardRef.value) {
     const image = new Image()
-    image.src = props.post.cover_image
+    image.src = coverImage.value as string
 
     image.onload = () => {
-      imageStore.imageMap.set(props.post.cover_image, true)
+      imageStore.imageMap.set(coverImage.value as string, true)
     }
 
     createObserver(cardRef.value, entries => {
@@ -77,6 +83,8 @@ onMounted(() => {
     })
   }
 })
+
+const { $colorMode } = useNuxtApp()
 </script>
 
 <template>
@@ -86,14 +94,14 @@ onMounted(() => {
       class="min-h-[300px] rounded-lg cursor-pointer space-y-4"
     >
       <div
-        v-if="props.post.cover_image"
+        v-if="coverImage"
         class="lazy-image"
         :class="{ loaded: coverImageLoaded }"
       >
         <div class="lazy-image-wrap">
           <img
-            :src="props.post.cover_image"
-            :alt="props.post.cover_image"
+            :src="coverImage"
+            :alt="coverImage"
             class="transition-transform duration-100 hover:-translate-y-1 object-cover rounded-lg max-h-[200px] w-full will-change-transform"
           />
         </div>

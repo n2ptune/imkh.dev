@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import { usePostAction } from '~~/hooks/post'
-import { usePageStore } from '~~/store/page'
-// 2
 definePageMeta({
   layout: 'list-layout'
 })
@@ -14,23 +11,11 @@ useSeoMeta({
   ogUrl: 'https://imkh.dev'
 })
 
-const { loadMore, setDelay } = usePostAction()
-const pageStore = usePageStore()
-
-function onPostLoadMore() {
-  if (!pageStore.canLoadPage) return
-  loadMore()
-  setDelay()
-}
+const { data: posts } = await useAsyncData(() => queryCollection('post').all())
 </script>
 
 <template>
   <section class="w-full">
-    <Suspense>
-      <template #fallback>
-        <PostListLoadingPlaceholder />
-      </template>
-      <PostList @load-more="onPostLoadMore" />
-    </Suspense>
+    <PostList v-if="posts" :posts="posts" />
   </section>
 </template>

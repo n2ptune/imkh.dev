@@ -8,7 +8,6 @@ import SEOWrapper from './SEOWrapper.vue'
       <CommonHeader />
       <CommonLayoutBodyWrapper>
         <slot />
-        <CommonStickyTagInfo />
       </CommonLayoutBodyWrapper>
     </section>
   </SEOWrapper>

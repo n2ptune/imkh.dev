@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useHeadSafe } from 'unhead'
-
 useSeoMeta({
   /** @ts-ignore */
   titleTemplate: (str: string) => (str ? `${str} | imkh.dev` : 'imkh.dev'),
