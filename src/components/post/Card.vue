@@ -106,11 +106,13 @@ const { $colorMode } = useNuxtApp()
           />
         </div>
       </div>
-      <Icon
-        v-else-if="hasIcon && pickIcon"
-        :name="$colorMode.value === 'dark' ? pickIcon.dark : pickIcon.light"
-        size="40"
-      />
+      <div v-else class="min-h-[200px] flex items-end">
+        <Icon
+          v-if="hasIcon && pickIcon"
+          :name="$colorMode.value === 'dark' ? pickIcon.dark : pickIcon.light"
+          size="40"
+        />
+      </div>
       <div class="space-y-2">
         <div class="text-xs font-light text-slate-700 dark:text-gray-400">
           {{ dateFormat }}

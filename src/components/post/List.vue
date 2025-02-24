@@ -9,7 +9,9 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-y-24 lg:grid-cols-3 lg:gap-12 lg:gap-y-24">
-    <PostCard v-for="post in props.posts" :key="post._id" :post="post" />
+  <div
+    class="grid grid-cols-1 gap-y-24 md:grid-cols-2 md:gap-8 md:gap-y-8 xl:grid-cols-4 xl:gap-4 xl:gap-y-8"
+  >
+    <PostCard v-for="post in props.posts" :key="post.id" :post="post" />
   </div>
 </template>
