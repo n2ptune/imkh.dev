@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const iconSize = ref('26')
+const iconSize = ref('20')
 </script>
 
 <template>
   <header
-    class="sticky top-0 z-50 p-4 h-[72px] bg-white bg-opacity-40 dark:bg-opacity-80 border-b dark:border-neutral-900 dark:bg-dark backdrop-blur-lg"
+    class="container sticky top-0 z-50 p-4 h-[72px] bg-white bg-opacity-40 dark:bg-opacity-80 border-b dark:border-neutral-900 dark:bg-dark backdrop-blur-lg"
   >
     <div class="mx-auto h-full">
       <div class="flex justify-between items-center h-full">
