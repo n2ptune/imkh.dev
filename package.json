@@ -19,7 +19,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "post": "ts-node --dir ./scripts file.ts"
   },
   "devDependencies": {
     "@nuxt/content": "^2.12.1",
@@ -28,6 +29,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/glob": "^8.0.0",
     "glob": "^8.0.3",
+    "inquirer": "^12.5.2",
     "nuxt": "^3.11.2",
     "nuxt-icon": "^0.4.0",
     "prettier": "^2.8.1",

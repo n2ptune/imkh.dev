@@ -2,7 +2,9 @@
   "extends": "./.nuxt/tsconfig.json",
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "preserveValueImports": false,
+      "module": "CommonJS",
+      "verbatimModuleSyntax": false
     }
   }
 }
