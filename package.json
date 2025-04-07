@@ -20,7 +20,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "post": "ts-node --dir ./scripts file.ts"
+    "newpost": "ts-node --dir ./scripts file.ts"
   },
   "devDependencies": {
     "@nuxt/content": "^2.12.1",
