@@ -4,7 +4,7 @@ published: true
 date: 2025-04-07T08:58:26.635Z
 cover_image:
 description: 타입스크립트 satisfies 연산자에 대해 학습하고 정리하기
-tags: typescript
+tags: ['typescript']
 ---
 
 ## 사전적 의미
