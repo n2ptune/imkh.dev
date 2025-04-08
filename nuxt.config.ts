@@ -13,9 +13,9 @@ export default defineNuxtConfig({
   //   }
   // },
   modules: [
+    '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@nuxt/icon'
   ],
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
 
-  css: ['@/assets/font.css', '@/assets/base.postcss'],
+  css: ['@/assets/font.css', '@/assets/base.css'],
 
   // generate: {
   //   routes: ([] as string[]).concat(
@@ -47,5 +47,10 @@ export default defineNuxtConfig({
     '@@': path.resolve(__dirname, 'src')
   },
 
-  compatibilityDate: '2025-02-24'
+  compatibilityDate: '2025-02-24',
+
+  dir: {
+    layouts: 'widgets/layouts',
+    public: '../public'
+  }
 })
