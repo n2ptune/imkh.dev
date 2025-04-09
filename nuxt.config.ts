@@ -52,5 +52,7 @@ export default defineNuxtConfig({
   dir: {
     layouts: 'widgets/layouts',
     public: '../public'
-  }
+  },
+
+  ssr: false
 })

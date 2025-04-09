@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
+@plugin '@tailwindcss/typography';
+
 @theme {
   --font-sans:
     'Pretendard Variable', ui-sans-serif, system-ui, sans-serif,

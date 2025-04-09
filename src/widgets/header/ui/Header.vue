@@ -1,16 +1,45 @@
 <script setup lang="ts">
 import { TextLogo } from '~/entities/logo'
+import { ToggleTheme } from '~/features/theme-toggle'
+import { LinkGithub } from '~/shared/icon-button'
+
+const links = [
+  {
+    to: '/',
+    label: '포스트'
+  },
+  {
+    to: '/short',
+    label: '메모'
+  }
+]
 </script>
 
 <template>
   <header
-    class="py-8 px-4 mb-8 flex border-b border-gray-300 dark:border-neutral-800"
+    class="py-8 px-4 mb-8 flex border-b border-gray-200 dark:border-neutral-800"
   >
     <div class="flex container-center justify-between items-center">
-      <TextLogo />
+      <!-- <TextLogo /> -->
 
-      <div class="flex flex-nowrap space-x-2">
-        
+      <div class="flex flex-nowrap items-center space-x-1">
+        <UButton
+          v-for="link in links"
+          :key="link.to"
+          variant="link"
+          color="neutral"
+          size="xl"
+          :to="link.to"
+          active-class="font-bold"
+          active-color="primary"
+        >
+          {{ link.label }}
+        </UButton>
+
+        <ClientOnly>
+          <ToggleTheme />
+        </ClientOnly>
+        <LinkGithub />
       </div>
     </div>
   </header>
