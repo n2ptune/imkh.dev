@@ -8,11 +8,10 @@ const activeItem = ref<HTMLElement | null>(null)
 
 function scrollToActiveItem() {
   if (container.value && activeItem.value) {
-    console.log(container.value, activeItem.value)
     container.value.scrollTo({
       left: 0,
       behavior: 'smooth',
-      top: (activeItem.value.offsetTop * 0.9) || 0
+      top: activeItem.value.offsetTop * 0.9 || 0
     })
   }
 }

@@ -10,5 +10,9 @@ definePageMeta({
 </script>
 
 <template>
-  <ContentRenderer v-if="data" :value="data" class="prose prose-zinc dark:prose-invert" />
+  <ContentRenderer
+    v-if="data"
+    :value="data"
+    class="prose prose-zinc dark:prose-invert"
+  />
 </template>

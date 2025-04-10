@@ -20,7 +20,19 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
-  content: {},
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'github-light',
+            dark: 'github-dark',
+            light: 'github-light'
+          }
+        }
+      }
+    }
+  },
 
   colorMode: {
     classSuffix: '',
