@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { SEOWrapper } from '../seo'
 import { Header } from '../header'
+import { LayoutMain } from '../main'
 </script>
 
 <template>
   <SEOWrapper>
     <Header />
-    <main class="container-center">
+    <LayoutMain>
       <slot />
-    </main>
+    </LayoutMain>
   </SEOWrapper>
 </template>

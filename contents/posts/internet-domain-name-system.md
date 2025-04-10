@@ -1,7 +1,7 @@
 ---
 description: 도메인 네임 시스템(Domain Name System, DNS)에 대해서 알아보고 작동 원리에 대해 정리해보자
 cover_image: /images/Tree_domain.png
-tags: ['web', 'internet', 'dns']
+tags: ['web']
 published: true
 date: 2020-03-25
 title: DNS와 작동 원리 (Domain Name System)

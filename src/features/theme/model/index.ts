@@ -15,8 +15,6 @@ export function useTheme() {
       : 'i-material-symbols:dark-mode'
   })
 
-  console.log(cm)
-
   return {
     isDark,
     icon

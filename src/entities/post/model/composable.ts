@@ -26,6 +26,7 @@ export function usePosts() {
 
   return {
     sortedData,
+    data,
     error,
     status,
     isPending,
@@ -36,7 +37,7 @@ export function usePosts() {
 
 export function usePost(title: string) {
   const { data, status, error } = useAsyncData('post-' + title, () =>
-    queryCollection('post').where('title', '=', title).first()
+    queryCollection('post').where('stem', '=', title).first()
   )
   const isPending = computed(() => status.value === 'pending')
 

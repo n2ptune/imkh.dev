@@ -17,10 +17,10 @@ const links = [
 
 <template>
   <header
-    class="py-8 px-4 mb-8 flex border-b border-gray-200 dark:border-neutral-800"
+    class="h-24 sm:backdrop-blur-xl sm:backdrop-opacity-95 fixed top-0 left-0 w-full py-8 px-4 flex border-b border-gray-200 dark:border-neutral-800"
   >
     <div class="flex container-center justify-between items-center">
-      <!-- <TextLogo /> -->
+      <TextLogo />
 
       <div class="flex flex-nowrap items-center space-x-1">
         <UButton

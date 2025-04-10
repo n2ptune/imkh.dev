@@ -2,7 +2,7 @@
 title: github repository(원격 저장소)에 license 추가하기
 date: 2020-02-25
 published: true
-tags: ['github']
+tags: ['git']
 cover_image: /images/mit-license.png
 description: github repository(원격 저장소)에 license 추가하는 방법 소개
 ---

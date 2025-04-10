@@ -1,7 +1,7 @@
 ---
 description: 응답과 요청에 부가적인 정보를 넣을 수 있는 "헤더"에 관한 내용을 이해하고 정리하기
 cover_image:
-tags: ['http', 'web', 'internet']
+tags: ['web']
 published: true
 date: 2020-05-20
 title: HTTP HEADER에 대한 정리

@@ -12,7 +12,7 @@ function onClickCard() {
   return navigateTo({
     name: 'id',
     params: {
-      id: post.title
+      id: post.stem
     }
   })
 }
