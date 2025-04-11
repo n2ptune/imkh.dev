@@ -13,9 +13,17 @@ export function useTags() {
     () => (tag: string) => tags.value.find(_tag => _tag.tagName === tag)
   )
 
+  function tagNameToPrettyName(tagName: string) {
+    const tag = findTag.value(tagName)
+    if (!tag) return ''
+
+    return tag.label
+  }
+
   return {
     data,
     tags,
-    findTag
+    findTag,
+    tagNameToPrettyName
   }
 }

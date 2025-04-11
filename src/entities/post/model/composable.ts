@@ -35,11 +35,25 @@ export function usePosts() {
   }
 }
 
-export function usePost(title: string) {
-  const { data, status, error } = useAsyncData('post-' + title, () =>
-    queryCollection('post').where('stem', '=', title).first()
+export function usePost() {
+  const route = useRoute()
+  if (!route.params.id) throw new Error('not found parameter "id"')
+
+  const { data, status, error, refresh } = useAsyncData(
+    'post-' + route.params.id,
+    () =>
+      queryCollection('post')
+        .where('stem', '=', route.params.id)
+        .first() as Promise<CustomPostCollectionItem | null>
   )
   const isPending = computed(() => status.value === 'pending')
+
+  watch(
+    () => route.params.id,
+    () => {
+      refresh()
+    }
+  )
 
   return {
     data,

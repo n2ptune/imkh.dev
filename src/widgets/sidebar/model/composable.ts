@@ -1,4 +1,4 @@
-import { usePosts } from '~/entities/post'
+import { usePost, usePosts } from '~/entities/post'
 import { useTags } from '~/entities/tag'
 import type { CustomPostCollectionItem } from '~/shared/types'
 import type { PostTagInfo, PostWithTagItem } from './type'
@@ -36,5 +36,20 @@ export function usePostsWithTag() {
 
   return {
     mappedData
+  }
+}
+
+export function usePostWithTag() {
+  const { data } = usePost()
+  const { mappedData } = usePostsWithTag()
+
+  return {
+    filteredMappedData: computed(() => {
+      if (!data.value) return []
+
+      return mappedData.value.filter(
+        mapData => mapData[0].tagName === data.value?.meta.tags[0]
+      )
+    })
   }
 }

@@ -17,7 +17,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@vueuse/nuxt'
   ],
 
   content: {
@@ -66,5 +67,9 @@ export default defineNuxtConfig({
     public: '../public'
   },
 
-  ssr: false
+  ssr: false,
+  
+  imports: {
+    dirs: ['shared/composables']
+  }
 })
