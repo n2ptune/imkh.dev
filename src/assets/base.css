@@ -8,6 +8,7 @@
   --font-sans:
     'Pretendard Variable', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --color-red-500-rgb: #fb2c36;
 }
 
 .container-center {

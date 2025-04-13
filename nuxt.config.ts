@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@nuxt/icon',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'motion-v/nuxt'
   ],
 
   content: {
@@ -64,7 +65,8 @@ export default defineNuxtConfig({
 
   dir: {
     layouts: 'widgets/layouts',
-    public: '../public'
+    public: '../public',
+    plugins: 'shared/plugins'
   },
 
   ssr: false,

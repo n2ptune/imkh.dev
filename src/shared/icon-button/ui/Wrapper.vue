@@ -1,22 +1,46 @@
 <script setup lang="ts">
-interface Props {
-  cursorPointer?: boolean
-  tooltip?: boolean
-  tooltipText?: string
+import type { WrapperProps as Props } from '../model/type'
+
+type Emits = {
+  click: []
 }
 
-const { cursorPointer = false } = defineProps<Props>()
+const {
+  cursorPointer = false,
+  tooltip = false,
+  tooltipText = '',
+  to = undefined,
+  target = undefined
+} = defineProps<Props>()
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
+
+const emits = defineEmits<Emits>()
 </script>
 
 <template>
-  <UButton
-    variant="link"
-    color="neutral"
-    size="md"
-    square
-    :class="[cursorPointer && 'cursor-pointer']"
+  <DefineTemplate>
+    <UButton
+      :to="to"
+      :target="target"
+      variant="link"
+      color="neutral"
+      size="md"
+      square
+      :class="[cursorPointer && 'cursor-pointer']"
+      @click="emits('click')"
+    >
+      <slot />
+    </UButton>
+  </DefineTemplate>
+
+  <UTooltip
+    v-if="tooltip"
+    :text="tooltipText"
+    :delay-duration="0"
+    disable-closing-trigger
   >
-    <slot />
-  </UButton>
+    <ReuseTemplate />
+  </UTooltip>
+
+  <ReuseTemplate v-else />
 </template>

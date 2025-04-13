@@ -10,10 +10,7 @@ function onClickSwitch() {
 </script>
 
 <template>
-  <Wrapper
-    @click="onClickSwitch"
-    class="hover:cursor-pointer"
-  >
+  <Wrapper cursor-pointer @click="onClickSwitch">
     <Icon :name="icon" class="text-2xl" />
   </Wrapper>
 </template>

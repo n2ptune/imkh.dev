@@ -37,7 +37,6 @@ export function usePosts() {
 
 export function usePost() {
   const route = useRoute()
-  if (!route.params.id) throw new Error('not found parameter "id"')
 
   const { data, status, error, refresh } = useAsyncData(
     'post-' + route.params.id,

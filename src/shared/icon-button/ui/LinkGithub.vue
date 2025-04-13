@@ -5,7 +5,7 @@ const githubLink = 'https://github.com/n2ptune'
 </script>
 
 <template>
-  <Wrapper :to="githubLink" target="_blank">
+  <Wrapper cursor-pointer :to="githubLink" target="_blank">
     <Icon name="i-akar-icons-github-fill" class="text-2xl" />
   </Wrapper>
 </template>

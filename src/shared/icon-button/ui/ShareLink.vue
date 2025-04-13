@@ -11,7 +11,12 @@ const { link } = defineProps<Props>()
 </script>
 
 <template>
-  <Wrapper cursor-pointer @click="copy(link)">
+  <Wrapper
+    tooltip
+    tooltip-text="링크 공유하기"
+    cursor-pointer
+    @click="copy(link)"
+  >
     <Icon name="i-tabler-flag-filled" class="text-2xl" />
   </Wrapper>
 </template>
