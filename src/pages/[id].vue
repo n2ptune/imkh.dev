@@ -12,6 +12,6 @@ definePageMeta({
   <ContentRenderer
     v-if="data"
     :value="data"
-    class="prose prose-zinc dark:prose-invert"
+    class="prose prose-zinc dark:prose-invert prose-pre:bg-neutral-50 dark:prose-pre:bg-neutral-950 prose-headings:prose-a:no-underline prose-headings:prose-a:hover:underline"
   />
 </template>

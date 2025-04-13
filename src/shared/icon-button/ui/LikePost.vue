@@ -12,7 +12,7 @@ const pressed = ref(false)
     tooltip-text="이 글이 도움이 되었어요"
     @click="pressed = !pressed"
   >
-    <div class="text-2xl space-x-1">
+    <div class="flex text-2xl space-x-1">
       <Motion
         as-child
         :while-hover="{ color: 'var(--color-red-500-rgb)', scale: 1.1 }"
@@ -24,7 +24,7 @@ const pressed = ref(false)
               ? 'i-material-symbols-favorite'
               : 'i-material-symbols-favorite-outline'
           "
-          class="text-2xl"
+          class="text-inherit text-2xl"
           :class="pressed && '!text-red-500'"
         />
       </Motion>

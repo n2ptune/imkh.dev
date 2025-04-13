@@ -23,7 +23,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="[--shadow-color:white] dark:[--shadow-color:var(--color-neutral-900)] after:content-['_'] after:block after:absolute after:bottom-24 after:w-full after:h-24 after:bg-[linear-gradient(to_top,var(--shadow-color),transparent)] after:pointer-events-none overflow-y-hidden"
+    class="[--shadow-color:white] dark:[--shadow-color:var(--color-neutral-900)] after:content-['_'] after:block after:absolute after:bottom-0 after:w-full after:h-24 after:bg-[linear-gradient(to_top,var(--shadow-color),transparent)] after:pointer-events-none overflow-y-hidden relative"
     ref="container"
   >
     <div class="space-y-4 scrollbar scrollbar-active:z-50 overflow-y-auto max-h-[500px] pb-12">

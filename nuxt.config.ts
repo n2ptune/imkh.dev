@@ -27,9 +27,9 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           theme: {
-            default: 'github-light',
-            dark: 'github-dark',
-            light: 'github-light'
+            default: 'vitesse-dark',
+            dark: 'vitesse-dark',
+            light: 'vitesse-light'
           }
         }
       }
@@ -43,13 +43,8 @@ export default defineNuxtConfig({
 
   css: ['@/assets/font.css', '@/assets/base.css'],
 
-  // generate: {
-  //   routes: ([] as string[]).concat(
-  //     getBaseRoutes(),
-  //     getGenerateRoutes(),
-  //     getRoutesByTags()
-  //   )
-  // },
+  generate: {},
+
   experimental: {
     payloadExtraction: true
   },
@@ -70,7 +65,7 @@ export default defineNuxtConfig({
   },
 
   ssr: false,
-  
+
   imports: {
     dirs: ['shared/composables']
   }
