@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { useToc } from '~/entities/post'
 import { Header } from '../header'
 import { LayoutMain } from '../main'
 import { SEOWrapper } from '../seo'
 import { PostListWithTag, PostSummary, TableContents } from '../sidebar'
+import { TypeDivider } from '../divider'
+
+const { toc } = useToc()
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import { PostListWithTag, PostSummary, TableContents } from '../sidebar'
         class="hidden lg:block lg:col-span-3 sticky top-32 max-h-[calc(80vh-(var(--spacing)*32))] text-sm space-y-12"
       >
         <PostSummary />
-        <div class="h-px w-full bg-neutral-200 dark:bg-neutral-800"></div>
+        <TypeDivider type="horizontal" />
         <PostListWithTag />
       </aside>
       <article class="col-span-12 lg:col-span-6">
@@ -23,7 +27,7 @@ import { PostListWithTag, PostSummary, TableContents } from '../sidebar'
       <aside
         class="hidden lg:block lg:col-span-3 sticky top-32 max-h-[calc(80vh-(var(--spacing)*32))]"
       >
-        <TableContents />
+        <TableContents :level="0" :links="toc" />
       </aside>
     </LayoutMain>
   </SEOWrapper>

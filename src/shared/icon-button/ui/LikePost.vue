@@ -25,7 +25,7 @@ const pressed = ref(false)
               : 'i-material-symbols-favorite-outline'
           "
           class="text-inherit text-2xl"
-          :class="pressed && '!text-red-500'"
+          :class="pressed && '!text-red-500-rgb'"
         />
       </Motion>
     </div>

@@ -61,3 +61,14 @@ export function usePost() {
     isPending
   }
 }
+
+export function useToc() {
+  const { data } = usePost()
+
+  return {
+    toc: computed(() => {
+      if (!data.value) return []
+      return data.value.body.toc?.links || []
+    })
+  }
+}
