@@ -2,7 +2,7 @@
   <UApp>
     <TooltipProvider>
       <NuxtLayout>
-        <NuxtPage class="font-sans" />
+        <NuxtPage />
       </NuxtLayout>
     </TooltipProvider>
   </UApp>

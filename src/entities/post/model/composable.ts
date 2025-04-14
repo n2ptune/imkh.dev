@@ -11,11 +11,20 @@ export function usePosts() {
     if (!data.value || !data.value.length || isPending.value || error.value)
       return []
 
+    const sortFn = (
+      a: CustomPostCollectionItem,
+      b: CustomPostCollectionItem
+    ) => {
+      if (sortOption.value === 'latest') {
+        return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
+      } else if (sortOption.value === 'name') {
+        return b.title > a.title ? -1 : b.title < a.title ? 1 : 0
+      }
+      return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
+    }
+
     const shouldBeSort = data.value.slice(0) as CustomPostCollectionItem[]
-    shouldBeSort.sort(
-      (a, b) =>
-        new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
-    )
+    shouldBeSort.sort((a, b) => sortFn(a, b))
 
     return shouldBeSort
   })

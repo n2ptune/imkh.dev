@@ -11,4 +11,4 @@ export interface CustomPostCollectionItem extends PageCollectionItemBase {
   meta: PostMeta
 }
 
-export type SortOption = 'latest' | 'oldest' | 'name' | 'name-reverse'
+export type SortOption = 'latest' | 'name'

@@ -20,7 +20,7 @@ function onClickCard() {
 
 <template>
   <div
-    class="group min-h-[400px] max-h-[400px] rounded-lg cursor-pointer space-y-2 transition-transform will-change-transform hover:-translate-y-3 duration-300"
+    class="group min-h-[400px] max-h-[400px] rounded-lg cursor-pointer space-y-2 transition-transform will-change-transform hover:-translate-y-1.5 duration-300"
     @click="onClickCard"
   >
     <LazyImage v-if="post.meta.cover_image" :image="post.meta.cover_image" />
