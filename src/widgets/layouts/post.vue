@@ -5,6 +5,7 @@ import { LayoutMain } from '../main'
 import { SEOWrapper } from '../seo'
 import { PostListWithTag, PostSummary, TableContents } from '../sidebar'
 import { TypeDivider } from '../divider'
+import { Footer } from '../footer'
 
 const { toc } = useToc()
 </script>
@@ -30,5 +31,6 @@ const { toc } = useToc()
         <TableContents :level="0" :links="toc" />
       </aside>
     </LayoutMain>
+    <Footer />
   </SEOWrapper>
 </template>

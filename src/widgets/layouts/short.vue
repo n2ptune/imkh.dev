@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Footer } from '../footer'
 import { Header } from '../header'
 import { LayoutMain } from '../main'
 import { SEOWrapper } from '../seo'
@@ -14,5 +15,6 @@ import { SEOWrapper } from '../seo'
         <slot />
       </article>
     </LayoutMain>
+    <Footer />
   </SEOWrapper>
 </template>

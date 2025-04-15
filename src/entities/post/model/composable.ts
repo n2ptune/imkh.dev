@@ -1,8 +1,9 @@
+import type { PostCollectionItem } from '@nuxt/content'
 import { type SortOption, type CustomPostCollectionItem } from '~/shared/types'
 
 export function usePosts() {
   const { data, status, error } = useAsyncData('posts', () =>
-    queryCollection('post').all()
+    queryCollection('post').where('published', '=', true).all()
   )
   const isPending = computed(() => status.value === 'pending')
   const sortOption = ref<SortOption>('latest')
@@ -11,19 +12,16 @@ export function usePosts() {
     if (!data.value || !data.value.length || isPending.value || error.value)
       return []
 
-    const sortFn = (
-      a: CustomPostCollectionItem,
-      b: CustomPostCollectionItem
-    ) => {
+    const sortFn = (a: PostCollectionItem, b: PostCollectionItem) => {
       if (sortOption.value === 'latest') {
-        return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
+        return new Date(b.date).getTime() - new Date(a.date).getTime()
       } else if (sortOption.value === 'name') {
         return b.title > a.title ? -1 : b.title < a.title ? 1 : 0
       }
-      return new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime()
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
     }
 
-    const shouldBeSort = data.value.slice(0) as CustomPostCollectionItem[]
+    const shouldBeSort = data.value.slice(0)
     shouldBeSort.sort((a, b) => sortFn(a, b))
 
     return shouldBeSort
@@ -49,10 +47,7 @@ export function usePost() {
 
   const { data, status, error, refresh } = useAsyncData(
     'post-' + route.params.id,
-    () =>
-      queryCollection('post')
-        .where('stem', '=', route.params.id)
-        .first() as Promise<CustomPostCollectionItem | null>
+    () => queryCollection('post').where('stem', '=', route.params.id).first()
   )
   const isPending = computed(() => status.value === 'pending')
 

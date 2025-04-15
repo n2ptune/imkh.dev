@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { PostCollectionItem } from '@nuxt/content'
 import { LazyImage } from '~/entities/image'
-import type { CustomPostCollectionItem } from '~/shared/types'
 
 interface Props {
-  post: CustomPostCollectionItem
+  post: PostCollectionItem
 }
 
 const { post } = defineProps<Props>()
@@ -23,7 +23,7 @@ function onClickCard() {
     class="group min-h-[400px] max-h-[400px] rounded-lg cursor-pointer space-y-2 transition-transform will-change-transform hover:-translate-y-1.5 duration-300"
     @click="onClickCard"
   >
-    <LazyImage v-if="post.meta.cover_image" :image="post.meta.cover_image" />
+    <LazyImage v-if="post.cover_image" :image="post.cover_image" />
 
     <h1 class="text-xl font-bold">{{ post.title }}</h1>
 

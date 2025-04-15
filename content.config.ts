@@ -9,7 +9,13 @@ export default defineContentConfig({
         cwd: path.resolve(__dirname, 'contents/posts'),
         include: '**/*.md',
         prefix: '/'
-      }
+      },
+      schema: z.object({
+        published: z.boolean(),
+        tags: z.array(z.string()),
+        cover_image: z.string(),
+        date: z.string()
+      })
     }),
     short: defineCollection({
       type: 'page',

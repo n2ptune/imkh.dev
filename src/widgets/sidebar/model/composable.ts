@@ -1,6 +1,5 @@
 import { usePost, usePosts } from '~/entities/post'
 import { useTags } from '~/entities/tag'
-import type { CustomPostCollectionItem } from '~/shared/types'
 import type { PostTagInfo, PostWithTagItem } from './type'
 
 export function usePostsWithTag() {
@@ -12,8 +11,8 @@ export function usePostsWithTag() {
     const map = new Map<string, PostWithTagItem[]>()
 
     data.value.forEach(_post => {
-      const post = _post as CustomPostCollectionItem
-      const tag = post.meta.tags[0]
+      const post = _post
+      const tag = post.tags[0]
 
       if (!tag) return
 
@@ -48,7 +47,7 @@ export function usePostWithTag() {
       if (!data.value) return []
 
       return mappedData.value.filter(
-        mapData => mapData[0].tagName === data.value?.meta.tags[0]
+        mapData => mapData[0].tagName === data.value?.tags[0]
       )
     })
   }

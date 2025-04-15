@@ -19,10 +19,10 @@ const tables = computed(() => {
     {
       id: 'createdAt',
       title: '작성일자',
-      label: data.value.meta.date
-        ? dayjs().to(dayjs(data.value.meta.date))
+      label: data.value.date
+        ? dayjs().to(dayjs(data.value.date))
         : '알 수 없음',
-      help: dayjs(data.value.meta.date).format('YYYY-MM-DD HH:mm:ss')
+      help: dayjs(data.value.date).format('YYYY-MM-DD HH:mm:ss')
     },
     {
       id: 'tags',
@@ -51,7 +51,7 @@ const tables = computed(() => {
           <template v-if="item.slot === 'tags'">
             <div class="flex justify-start">
               <UBadge
-                v-for="tag in data?.meta.tags || []"
+                v-for="tag in data?.tags || []"
                 color="neutral"
                 variant="outline"
                 size="md"
