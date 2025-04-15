@@ -1,17 +1,13 @@
-// import {
-//   getGenerateRoutes,
-//   getBaseRoutes,
-//   getRoutesByTags
-// } from './scripts/file'
 import * as path from 'node:path'
+import { getPostRoutes, getStaticRoutes } from './scripts/file'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // nitro: {
-  //   prerender: {
-  //     routes: ['/sitemap.xml']
-  //   }
-  // },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml', ...getStaticRoutes(), ...getPostRoutes()]
+    }
+  },
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
@@ -43,7 +39,9 @@ export default defineNuxtConfig({
 
   css: ['@/assets/font.css', '@/assets/base.css'],
 
-  generate: {},
+  generate: {
+    routes: [...getStaticRoutes(), ...getPostRoutes()]
+  },
 
   experimental: {
     payloadExtraction: true
