@@ -17,7 +17,7 @@ const links = [
 
 <template>
   <header
-    class="h-24 sm:backdrop-blur-xl fixed top-0 left-0 w-full py-8 px-4 flex border-b border-gray-200 dark:border-neutral-800 z-50"
+    class="h-24 sm:backdrop-blur-xl fixed top-0 left-0 w-full py-8 px-4 flex border-b border-neutral-200 dark:border-neutral-800 z-50"
   >
     <div class="flex container-center justify-between items-center">
       <TextLogo />

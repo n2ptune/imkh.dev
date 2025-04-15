@@ -2,6 +2,7 @@
 import { SEOWrapper } from '../seo'
 import { Header } from '../header'
 import { LayoutMain } from '../main'
+import { Footer } from '../footer'
 </script>
 
 <template>
@@ -10,5 +11,6 @@ import { LayoutMain } from '../main'
     <LayoutMain>
       <slot />
     </LayoutMain>
+    <Footer />
   </SEOWrapper>
 </template>
