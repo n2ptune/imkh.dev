@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 useSeoMeta({
-  /** @ts-ignore */
-  titleTemplate: (str: string) => (str ? `${str} | imkh.dev` : 'imkh.dev'),
+  titleTemplate(str) {
+    return `${str} | imkh.dev`
+  },
   googleSiteVerification: 'Apvl3CGBeJfNwha8SQ4DbDVYem4yZTHeLQ-ckfH4FSw',
   robots: 'All',
   ogType: 'website'
