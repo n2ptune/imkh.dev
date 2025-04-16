@@ -1,10 +1,12 @@
 import * as path from 'node:path'
 import { getPostRoutes, getStaticRoutes } from './scripts/file'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   nitro: {
     prerender: {
+      crawlLinks: true,
       routes: ['/sitemap.xml', ...getStaticRoutes(), ...getPostRoutes()]
     }
   },
@@ -23,10 +25,27 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           theme: {
-            default: 'vitesse-dark',
-            dark: 'vitesse-dark',
+            default: 'vitesse-light',
+            dark: 'vitesse-black',
             light: 'vitesse-light'
-          }
+          },
+          themes: ['vitesse-light', 'vitesse-dark', 'vitesse-black'],
+          langs: [
+            'js',
+            'jsx',
+            'json',
+            'ts',
+            'tsx',
+            'vue',
+            'css',
+            'html',
+            'vue',
+            'bash',
+            'md',
+            'mdc',
+            'yaml',
+            'rust'
+          ]
         }
       }
     }
@@ -62,9 +81,13 @@ export default defineNuxtConfig({
     plugins: 'shared/plugins'
   },
 
-  ssr: false,
+  ssr: true,
 
   imports: {
     dirs: ['shared/composables']
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
   }
 })

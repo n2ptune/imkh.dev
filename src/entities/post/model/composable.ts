@@ -53,9 +53,12 @@ export function usePost() {
 
   watch(
     () => route.params.id,
-    () => {
-      refresh()
-    }
+    id => {
+      if (id) {
+        refresh()
+      }
+    },
+    { immediate: true }
   )
 
   return {
