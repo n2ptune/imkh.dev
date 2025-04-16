@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', ...getStaticRoutes(), ...getPostRoutes()]
+      routes: [...getStaticRoutes(), ...getPostRoutes()]
     }
   },
   modules: [
