@@ -19,7 +19,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "newcontent": "ts-node -P scripts/tsconfig.json scripts/add_post"
   },
   "devDependencies": {
     "@iconify-json/akar-icons": "^1.2.2",

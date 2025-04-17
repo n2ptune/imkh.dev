@@ -20,10 +20,15 @@ export default defineContentConfig({
     short: defineCollection({
       type: 'page',
       source: {
-        cwd: path.resolve(__dirname, 'contents/note'),
+        cwd: path.resolve(__dirname, 'contents/shorts'),
         include: '**/*.md',
         prefix: '/s'
-      }
+      },
+      schema: z.object({
+        published: z.boolean(),
+        tags: z.array(z.string()),
+        date: z.string()
+      })
     }),
     tag: defineCollection({
       type: 'data',
