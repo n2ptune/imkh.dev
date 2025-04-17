@@ -2,6 +2,9 @@
 title: 메모 끄적이기
 date: 2021-08-01T16:13:05.915Z
 description: 얼마나 현저하게 것은 것이다. 이상의 낙원을 끓는 끓는다. 이상 피에 황금시대를 그리하였는가? 꾸며 장식하는 투명하되 그것은 것이다.
+published: false
+tags:
+  - typescript
 ---
 
 ## 하나

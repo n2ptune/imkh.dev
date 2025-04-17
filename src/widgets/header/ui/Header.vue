@@ -9,7 +9,7 @@ const links = [
     label: '포스트'
   },
   {
-    to: '/short',
+    to: '/s',
     label: '메모'
   }
 ]

@@ -8,12 +8,12 @@ import { SEOWrapper } from '../seo'
 <template>
   <SEOWrapper>
     <Header />
-    <LayoutMain class="grid grid-cols-12 lg:gap-x-24">
-      <aside class="hidden lg:block lg:col-span-3"></aside>
-
-      <article class="col-span-12 lg:col-span-6">
+    <LayoutMain class="!mt-8 !pb-0">
+      <section
+        class="lg:max-w-3xl mx-auto border-x border-neutral-200 dark:border-neutral-800 py-16 px-8"
+      >
         <slot />
-      </article>
+      </section>
     </LayoutMain>
     <Footer />
   </SEOWrapper>

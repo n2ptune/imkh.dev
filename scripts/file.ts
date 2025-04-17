@@ -5,7 +5,7 @@ const postPath = resolve(__dirname, '../contents/posts')
 const postDir = readdirSync(postPath)
 
 export function getStaticRoutes() {
-  return ['/', '/short']
+  return ['/', '/s']
 }
 
 export function getPostRoutes() {

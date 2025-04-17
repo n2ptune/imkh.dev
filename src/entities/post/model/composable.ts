@@ -1,5 +1,6 @@
 import type { PostCollectionItem } from '@nuxt/content'
-import { type SortOption, type CustomPostCollectionItem } from '~/shared/types'
+import { type SortOption } from '~/shared/types'
+import { useCollectionByOne } from '~/shared/composables/useCollectionByOne'
 
 export function usePosts() {
   const { data, status, error } = useAsyncData('posts', () =>
@@ -43,30 +44,7 @@ export function usePosts() {
 }
 
 export function usePost() {
-  const route = useRoute()
-
-  const { data, status, error, refresh } = useAsyncData(
-    'post-' + route.params.id,
-    () => queryCollection('post').where('stem', '=', route.params.id).first()
-  )
-  const isPending = computed(() => status.value === 'pending')
-
-  watch(
-    () => route.params.id,
-    id => {
-      if (id) {
-        refresh()
-      }
-    },
-    { immediate: true }
-  )
-
-  return {
-    data,
-    status,
-    error,
-    isPending
-  }
+  return useCollectionByOne<PostCollectionItem>('post')
 }
 
 export function useToc() {

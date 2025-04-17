@@ -41,14 +41,15 @@ export function usePostsWithTag() {
 export function usePostWithTag() {
   const { data } = usePost()
   const { mappedData } = usePostsWithTag()
+  const filteredMappedData = computed(() => {
+    if (!data.value) return []
+
+    return mappedData.value.filter(
+      mapData => mapData[0].tagName === data.value?.tags[0]
+    )
+  })
 
   return {
-    filteredMappedData: computed(() => {
-      if (!data.value) return []
-
-      return mappedData.value.filter(
-        mapData => mapData[0].tagName === data.value?.tags[0]
-      )
-    })
+    filteredMappedData
   }
 }
