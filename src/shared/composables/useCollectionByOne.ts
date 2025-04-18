@@ -7,7 +7,7 @@ export function useCollectionByOne<T>(collectionName: keyof Collections) {
     collectionName + '-' + route.path,
     () =>
       queryCollection(collectionName)
-        // .where('published', '=', true)
+        .where('published', '=', true)
         .where('path', '=', route.path)
         .first() as Promise<T | null>
   )

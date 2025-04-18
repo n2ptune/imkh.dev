@@ -13,6 +13,10 @@ usePostSeo()
 definePageMeta({
   layout: 'post'
 })
+
+useHead({
+  title: () => data.value?.title
+})
 </script>
 
 <template>

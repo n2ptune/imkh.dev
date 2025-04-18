@@ -17,6 +17,10 @@ watch(
     changeSort(sortOption)
   }
 )
+
+useHead({
+  title: '홈 - 포스트'
+})
 </script>
 
 <template>
