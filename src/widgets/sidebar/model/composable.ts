@@ -44,9 +44,16 @@ export function usePostWithTag() {
   const filteredMappedData = computed(() => {
     if (!data.value) return []
 
-    return mappedData.value.filter(
+    const filtered = mappedData.value.filter(
       mapData => mapData[0].tagName === data.value?.tags[0]
     )
+    if (filtered.length) {
+      const posts = filtered[0][1].slice(0)
+      posts.sort((a, b) => (b.label > a.label ? -1 : 1))
+      filtered[0][1] = posts
+    }
+
+    return filtered
   })
 
   return {

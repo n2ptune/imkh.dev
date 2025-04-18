@@ -16,7 +16,7 @@ const { toc } = useToc()
     <Header />
     <LayoutMain class="grid grid-cols-12 lg:gap-x-24">
       <aside
-        class="hidden lg:block lg:col-span-3 sticky top-32 max-h-[calc(80vh-(var(--spacing)*32))] text-sm space-y-12"
+        class="hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:max-h-[calc(80vh-(var(--spacing)*32))] lg:text-sm lg:space-y-12"
       >
         <PostSummary />
         <TypeDivider type="horizontal" />
@@ -26,7 +26,7 @@ const { toc } = useToc()
         <slot />
       </article>
       <aside
-        class="hidden lg:block lg:col-span-3 sticky top-32 max-h-[calc(80vh-(var(--spacing)*32))]"
+        class="hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:max-h-[calc(80vh-(var(--spacing)*32))]"
       >
         <TableContents :level="0" :links="toc" />
       </aside>
