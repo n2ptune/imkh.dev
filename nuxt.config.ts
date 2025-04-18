@@ -11,6 +11,8 @@ export default defineNuxtConfig({
     }
   },
   modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@nuxt/ui',
     '@nuxt/content',
     '@nuxtjs/color-mode',
@@ -19,6 +21,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'motion-v/nuxt'
   ],
+
+  site: {
+    enabled: true,
+    url: 'https://imkh.dev'
+  },
 
   content: {
     build: {
