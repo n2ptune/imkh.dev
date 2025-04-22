@@ -15,7 +15,7 @@ const { tagNameToPrettyName } = useTags()
       v-for="tag in tags"
       :key="tag"
       variant="outline"
-      color="neutral"
+      color="primary"
       size="md"
     >
       {{ tagNameToPrettyName(tag) }}

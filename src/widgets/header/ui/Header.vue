@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TextLogo } from '~/entities/logo'
+import { ContentSearch } from '~/features/content-search'
 import { ToggleTheme } from '~/features/theme-toggle'
 import { LinkGithub } from '~/shared/icon-button'
 
@@ -21,6 +22,8 @@ const links = [
   >
     <div class="flex container-center justify-between items-center">
       <TextLogo />
+
+      <ContentSearch class="hidden lg:block" />
 
       <div class="flex flex-nowrap items-center space-x-1">
         <UButton
@@ -46,26 +49,25 @@ const links = [
 </template>
 
 <style lang="postcss" scoped>
-@media (width >= 64rem) {
+/* @media (width >= 64rem) {
   header {
     &::before {
       --size: 480px;
-      top: 0;
-      left: calc(50% - var(--size) / 2);
+      top: calc(50% - var(--size) / 2);
+      left: 0;
 
       content: '';
       display: block;
-      width: var(--size);
+      width: 200vh;
       height: var(--size);
       border-radius: 9999px;
-      filter: blur(calc(var(--size) / 7));
-      background: -webkit-linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
-      background: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
-      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      filter: blur(calc(var(--size) / 1.15));
+      background: -webkit-linear-gradient(to right, #b24592, #f15f79);
+      background: linear-gradient(to right, #b24592, #f15f79);
       z-index: -60;
       position: absolute;
       animation: rotate 35s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
-      opacity: 1;
+      opacity: 0.25;
     }
   }
 }
@@ -77,5 +79,5 @@ const links = [
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 </style>

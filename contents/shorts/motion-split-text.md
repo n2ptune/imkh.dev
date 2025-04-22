@@ -1,10 +1,11 @@
 ---
 title: Motion으로 splitText 구현하기
-published: false
+published: true
 date: 2025-04-21T08:22:33.434Z
 cover_image:
 description: Motion 라이브러리를 이용해 splitText 애니메이션 구현하고 정리하기
-tags: javascript
+tags:
+  - javascript
 ---
 
 ## splitText 애니메이션
@@ -63,3 +64,35 @@ function splitText(container, text) {
 ```
 
 텍스트는 `ABC ABC ABC\nABCD ABCDE ABC` 형태로 받고, 줄바꿈 문자 단위로 라인별 문자열을 배열에 담고 있다가, 라인별로 단어 사이를 잘라 단어 단위로 애니메이션 적용을 하는 걸로 선회했다. (철자 단위 애니메이션은 뭔가 조잡하고 내용이 애니메이션에 치우친 느낌이라 전달하고자 하는 내용이 확실히 전달되지 못하는 느낌이 든다. 음... 내용을 깔끔하고 모던하게 전달하는게 아니라, 내가 만든 애니메이션을 한번 볼래? 라는 느낌?) 그리고 단어 단위 엘리먼트를 만들어 라인 단위 엘리먼트 하위에 넣는다. 이러면 단어 단위의 엘리먼트에 애니메이션을 적용하면 문서에 있는 애니메이션과 비슷한 느낌을 구현할 수 있을 것 같다.
+
+```js
+const text =
+  'Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit. Vestibulum imperdiet mauris\nornare turpis semper, non egestas leo ultricies.\nPraesent sed laoreet ex. In eget orci arcu.'
+const { animate, stagger } = Motion
+
+function animateText() {
+  return animate(splitText(document.querySelector('.container'), text))
+}
+```
+
+애니메이션 실행 함수까지 만들어주면 준비는 끝났다. `stagger` 메서드는 앞서 말했듯 애니메이션 대상이 복수개인 경우 상대적인 딜레이(앞 애니메이션이 실행되고 지연 시간)를 할당할 수 있게 해주는 유틸리티다. 이 기능이 해당 이펙트의 핵심 유틸리티다.
+
+## 애니메이션 심화
+
+`inView` 유틸리티는 HTML `Intersection API`를 활용해 애니메이션 대상이 viewport에 진입했는지 여부에 따라 애니메이션 실행 여부 결정을 관리할 수 있다. 제작한 애니메이션에 이 유틸리티를 적용해본다.
+
+```js
+const { motion, stagger, inView } = Motion
+
+inView(document.querySelector('.container'), el => {
+  animateText()
+
+  return leaving => {
+    animate(document.querySelector('.container'), { opacity: 0 })
+  }
+})
+```
+
+첫번째 인자로 애니메이션 대상을 넘기고, 두번째 인자로 콜백 함수를 넘기면 엘리먼트가 viewport에 진입했을 때 애니메이션이 수행된다. 그리고, viewport에서 엘리먼트가 벗어나면 리턴한 콜백 함수가 실행된다. 즉, 여기서 viewport 벗어남 애니메이션을 수행하면 적절하다.
+
+<CodepenEmbed />

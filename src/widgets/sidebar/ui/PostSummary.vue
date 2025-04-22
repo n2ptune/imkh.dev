@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { usePost } from '~/entities/post'
-import { useTags } from '~/entities/tag'
+import { TagGroup } from '~/entities/tag'
 import { ShareLink, LikePost } from '~/shared/icon-button'
 
 const { data } = usePost()
-const { tagNameToPrettyName } = useTags()
 const dayjs = useDayjs()
 
 const tables = computed(() => {
@@ -50,14 +49,7 @@ const tables = computed(() => {
         <template v-if="item.slot">
           <template v-if="item.slot === 'tags'">
             <div class="flex justify-start">
-              <UBadge
-                v-for="tag in data?.tags || []"
-                color="neutral"
-                variant="outline"
-                size="md"
-              >
-                {{ tagNameToPrettyName(tag) }}
-              </UBadge>
+              <TagGroup :tags="data?.tags || []" />
             </div>
           </template>
 
