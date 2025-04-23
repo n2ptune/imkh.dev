@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/icon',
     '@vueuse/nuxt',
-    'motion-v/nuxt'
+    'motion-v/nuxt',
+    '@nuxt/scripts'
   ],
 
   site: {
@@ -96,5 +97,7 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  components: [{ path: '~/features/content-render/ui', pathPrefix: false }]
 })

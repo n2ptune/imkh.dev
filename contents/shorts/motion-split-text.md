@@ -95,4 +95,5 @@ inView(document.querySelector('.container'), el => {
 
 첫번째 인자로 애니메이션 대상을 넘기고, 두번째 인자로 콜백 함수를 넘기면 엘리먼트가 viewport에 진입했을 때 애니메이션이 수행된다. 그리고, viewport에서 엘리먼트가 벗어나면 리턴한 콜백 함수가 실행된다. 즉, 여기서 viewport 벗어남 애니메이션을 수행하면 적절하다.
 
-<CodepenEmbed />
+::codepen-embed{hash="azzBWYE" user="n2ptune"}
+::
