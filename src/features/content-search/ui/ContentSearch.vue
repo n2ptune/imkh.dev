@@ -6,6 +6,7 @@ import { LoadingIcon } from '~/shared/icon-button'
 const model = defineModel({ type: String, default: '' })
 const focused = ref(false)
 const debouncing = ref(false)
+const navigating = ref(false)
 
 const onFocus = (_: FocusEvent) => {
   focused.value = true
@@ -32,10 +33,12 @@ const animateStyle = computed(() => {
   }
 })
 
-const onClickSearchItem = (
+const onClickSearchItem = async (
   item: UnwrapRef<typeof searchResultToMenu>[number]
 ) => {
-  return navigateTo(item.id)
+  navigating.value = true
+  await navigateTo(item.id)
+  navigating.value = false
 }
 
 const { search } = useContentSearch()
@@ -79,8 +82,9 @@ watchDebounced(
   <Motion as-child :animate="{ ...animateStyle }">
     <UInputMenu
       v-model:search-term="model"
-      :loading="debouncing"
+      :loading="debouncing || navigating"
       :items="searchResultToMenu"
+      :disabled="navigating"
       label-key="title"
       size="xl"
       variant="soft"
@@ -95,7 +99,7 @@ watchDebounced(
       @update:model-value="onClickSearchItem"
     >
       <template #empty>
-        <span v-if="!debouncing">검색 결과가 없습니다.</span>
+        <span v-if="!debouncing && !navigating">검색 결과가 없습니다.</span>
         <LoadingIcon v-else class="text-xl" />
       </template>
     </UInputMenu>
