@@ -3,6 +3,9 @@ export default defineAppConfig({
     colors: {
       neutral: 'zinc',
       primary: 'purple-heart',
+    },
+    icons: {
+      loading: 'i-mdi-loading'
     }
   }
 })
