@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { basicSetup } from 'codemirror'
 import { EditorView } from '@codemirror/view'
-import { EditorState } from '@codemirror/state'
 
 const el = useCurrentElement()
 const view = ref<EditorView | null>(null)
