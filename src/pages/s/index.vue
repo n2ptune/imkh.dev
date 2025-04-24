@@ -6,7 +6,8 @@ definePageMeta({
 })
 
 useHead({
-  title: '홈 - 메모'
+  title: '홈 - 메모',
+  meta: [{ name: 'description', content: '짧은 글, 메모 리스트' }]
 })
 
 const { data: shorts } = useShorts()

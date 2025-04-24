@@ -15,7 +15,8 @@ definePageMeta({
 })
 
 useHead({
-  title: () => data.value?.title
+  title: () => data.value?.title,
+  meta: [{ name: 'description', content: data.value?.description }]
 })
 </script>
 

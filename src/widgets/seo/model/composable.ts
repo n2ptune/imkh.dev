@@ -1,9 +1,16 @@
 import { usePost } from '~/entities/post'
 
 export function usePostSeo() {
-  // const { data } = usePost()
+  const { data } = usePost()
 
-  return {}
+  return useHead({
+    meta: [
+      { name: 'description', content: data.value?.description },
+      { property: 'og:title', content: data.value?.title },
+      { property: 'og:description', content: data.value?.description },
+      { property: 'og:type', content: 'article' }
+    ]
+  })
 
   // return useSeoMeta({
   //   applicationName: 'imkh.dev',

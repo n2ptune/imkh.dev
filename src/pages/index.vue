@@ -19,7 +19,8 @@ watch(
 )
 
 useHead({
-  title: '홈 - 포스트'
+  title: '홈 - 포스트',
+  meta: [{ name: 'description', content: '긴 글, 포스트 리스트' }]
 })
 </script>
 
