@@ -95,5 +95,7 @@ inView(document.querySelector('.container'), el => {
 
 첫번째 인자로 애니메이션 대상을 넘기고, 두번째 인자로 콜백 함수를 넘기면 엘리먼트가 viewport에 진입했을 때 애니메이션이 수행된다. 그리고, viewport에서 엘리먼트가 벗어나면 리턴한 콜백 함수가 실행된다. 즉, 여기서 viewport 벗어남 애니메이션을 수행하면 적절하다.
 
-::codepen-embed{hash="azzBWYE" user="n2ptune"}
+::codepen-embed{hash="azzBWYE" user="n2ptune" title="splitText" :defaultTab='["result"]' description="새 탭을 열어서 확인"}
 ::
+
+글씨 크기가 커서 작은 화면에서는 이상하게 보이는데, 큰 화면에서는 제대로 보인다. 얼추 예상한 것과 비슷하게 동작하므로 만족한다. 이 구현 과정을 통해 motion 라이브러리의 각각의 애니메이션 대상에 상대적인 딜레이를 넣을 수 있는 유틸리티인 `stagger`에 대해서 알게되었고, `inView` 메서드를 통해 Intersection API를 쉽게 활용할 수 있는 방법도 알게 되었다. 그리고 심화 과정을 통해, `stagger`의 딜레이를 조정하면 좀 더 다양한 애니메이션을 구현할 수 있는 걸 알게 되었다.
