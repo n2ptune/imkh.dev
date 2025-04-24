@@ -13,7 +13,7 @@ const { data, hasDivider = false } = defineProps<Props>()
 </script>
 
 <template>
-  <ShortSummary :data="data" class="mb-12" />
+  <ShortSummary :data="data" class="mb-12" :class="$attrs.class" />
 
   <ContentRender :data="data" />
 

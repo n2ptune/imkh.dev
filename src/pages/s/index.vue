@@ -17,7 +17,6 @@ const { data: shorts } = useShorts()
   <article class="space-y-12">
     <ShortContent
       v-for="(short, index) in shorts"
-      :key="short.id"
       :data="short"
       :has-divider="shorts.length - 1 !== index"
       class="col-span-1"

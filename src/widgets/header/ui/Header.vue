@@ -21,7 +21,7 @@ const links = [
     class="h-24 lg:backdrop-blur-xl bg-white dark:bg-neutral-900 lg:bg-transparent lg:dark:bg-transparent fixed top-0 left-0 w-full py-8 px-4 flex border-b border-neutral-200 dark:border-neutral-800 z-50 overflow-hidden"
   >
     <div class="flex container-center justify-between items-center">
-      <TextLogo />
+      <TextLogo is-link />
 
       <ContentSearch class="hidden lg:block" />
 
