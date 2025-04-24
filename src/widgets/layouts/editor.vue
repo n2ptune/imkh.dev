@@ -8,7 +8,7 @@ import { Footer } from '../footer'
 <template>
   <SEOWrapper class="flex flex-col h-screen overflow-y-hidden">
     <Header />
-    <LayoutMain :container="false" class="pt-8 pb-0 flex-1">
+    <LayoutMain :container="false" class="pt-8 pb-0 flex-1 overflow-hidden">
       <slot />
     </LayoutMain>
     <Footer />
