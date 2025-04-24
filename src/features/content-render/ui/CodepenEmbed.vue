@@ -50,7 +50,7 @@ useScript({
     </p>
     <p
       v-if="description"
-      class="text-center text-neutral-600 dark:text-neutral-500"
+      class="text-center text-neutral-600 dark:text-neutral-500 italic"
     >
       {{ description }}
     </p>
