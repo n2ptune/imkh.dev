@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs'
-import { join, basename, normalize } from 'node:path'
+import { join, basename } from 'node:path'
 import { globSync } from 'glob'
 import fm from 'front-matter'
 import yaml from 'js-yaml'

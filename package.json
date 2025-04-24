@@ -17,7 +17,7 @@
     "format": "prettier --config ./.prettierrc --write **/*.{vue,js,css,html,md}",
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate --dotenv",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "newcontent": "ts-node -P scripts/tsconfig.json scripts/add_post",

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
+      ignore: ['/editor'],
       routes: [...getStaticRoutes(), ...getPostRoutes()]
     }
   },
@@ -86,7 +87,8 @@ export default defineNuxtConfig({
   dir: {
     layouts: 'widgets/layouts',
     public: '../public',
-    plugins: 'shared/plugins'
+    plugins: 'shared/plugins',
+    middleware: 'app/middlewares'
   },
 
   ssr: true,
