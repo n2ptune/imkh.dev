@@ -29,8 +29,10 @@ export function useContentSearch() {
       }[]
     ).concat(
       // @ts-expect-error
-      shorts.map(short => mapType(short, 'short')),
-      posts.map(post => mapType(post, 'post'))
+      shorts
+        .filter(short => short.level === 1)
+        .map(short => mapType(short, 'short')),
+      posts.filter(post => post.level === 1).map(post => mapType(post, 'post'))
     )
     const fuse = new Fuse(mixed, {
       keys: ['title', 'content'],

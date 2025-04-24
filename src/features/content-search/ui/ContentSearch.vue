@@ -69,6 +69,7 @@ watchDebounced(
   text => {
     if (text) {
       searchResult.value = search(text)
+      console.log(searchResult.value)
     } else {
       searchResult.value = []
     }
