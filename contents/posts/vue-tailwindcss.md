@@ -2,7 +2,7 @@
 title: Vue에서 Tailwindcss 사용하기
 date: 2020-03-03
 published: true
-tags: ['vue', 'postcss']
+tags: ['vue', 'css']
 cover_image: /images/vue-tailwindcss.png
 description: Vue 프로젝트에 tailwindcss 초기 환경설정 하기
 ---
