@@ -21,14 +21,14 @@ useHead({
 
 <template>
   <ClientOnly>
-    <section class="px-4 lg:px-8">
+    <section class="px-4 xl:px-8">
       <InPostAd place="top" />
     </section>
   </ClientOnly>
 
-  <PostSummary class="block lg:hidden" />
+  <PostSummary class="block xl:hidden" />
 
-  <TypeDivider class="block lg:hidden my-12" type="horizontal" />
+  <TypeDivider class="block xl:hidden my-12" type="horizontal" />
 
   <ContentRender :data="data" />
 </template>

@@ -44,5 +44,5 @@
 html,
 body {
   @apply font-sans scrollbar scrollbar-track-white scrollbar-thumb-neutral-300 dark:scrollbar-track-neutral-900 dark:scrollbar-thumb-neutral-700
-  overflow-x-hidden lg:overflow-x-visible;
+  overflow-x-hidden xl:overflow-x-visible;
 }

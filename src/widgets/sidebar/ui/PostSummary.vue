@@ -61,7 +61,7 @@ const link = computed(() => {
 
           <template v-else-if="item.slot === 'actions'">
             <div class="space-x-1">
-              <ShareLink link="" />
+              <ShareLink :link="link" />
 
               <LikePost />
             </div>

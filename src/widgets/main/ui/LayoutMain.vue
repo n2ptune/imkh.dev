@@ -8,7 +8,7 @@ const { container = true } = defineProps<Props>()
 
 <template>
   <main
-    class="px-4 mt-16 py-16 sm:px-0"
+    class="px-4 mt-16 py-16 xl:px-8"
     :class="container && 'container-center'"
   >
     <slot />

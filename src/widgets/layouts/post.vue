@@ -14,19 +14,19 @@ const { toc } = useToc()
   <!-- @apply 동작 안해서 클래스 중복 https://github.com/tailwindlabs/tailwindcss/discussions/16429 -->
   <SEOWrapper>
     <Header />
-    <LayoutMain class="grid grid-cols-12 lg:gap-x-24">
+    <LayoutMain class="grid grid-cols-12 xl:gap-x-24">
       <aside
-        class="hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:max-h-[calc(80vh-(var(--spacing)*32))] lg:text-sm lg:space-y-12"
+        class="hidden xl:block xl:col-span-3 xl:sticky xl:top-32 xl:max-h-[calc(80vh-(var(--spacing)*32))] xl:text-sm xl:space-y-12"
       >
         <PostSummary />
         <TypeDivider type="horizontal" />
         <PostListWithTag />
       </aside>
-      <article class="col-span-12 lg:col-span-6">
+      <article class="col-span-12 xl:col-span-6">
         <slot />
       </article>
       <aside
-        class="hidden lg:block lg:col-span-3 lg:sticky lg:top-32 lg:max-h-[calc(80vh-(var(--spacing)*32))]"
+        class="hidden xl:block xl:col-span-3 xl:sticky xl:top-32 xl:max-h-[calc(80vh-(var(--spacing)*32))]"
       >
         <TableContents :level="0" :links="toc" />
       </aside>
