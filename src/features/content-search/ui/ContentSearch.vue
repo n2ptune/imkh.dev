@@ -8,12 +8,15 @@ const focused = ref(false)
 const debouncing = ref(false)
 const navigating = ref(false)
 
+const searchTemp = ref<any>(null)
+
 const onFocus = (_: FocusEvent) => {
   focused.value = true
 }
 
 const onBlur = (_: FocusEvent) => {
   focused.value = false
+  searchTemp.value = null
 }
 
 const openWidth = '400px'
@@ -39,6 +42,7 @@ const onClickSearchItem = async (
   navigating.value = true
   await navigateTo(item.id)
   navigating.value = false
+  searchTemp.value = null
 }
 
 const { search } = useContentSearch()
@@ -82,6 +86,7 @@ watchDebounced(
 <template>
   <Motion as-child :animate="{ ...animateStyle }">
     <UInputMenu
+      v-model="searchTemp"
       v-model:search-term="model"
       :loading="debouncing || navigating"
       :items="searchResultToMenu"
