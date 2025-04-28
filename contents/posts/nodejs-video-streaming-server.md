@@ -1,5 +1,5 @@
 ---
-title: 5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)
+title: 5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기
 date: 2020-03-02
 published: true
 tags: ['nodejs']

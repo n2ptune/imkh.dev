@@ -11,12 +11,12 @@
 - [Git Hooks를 내 프로젝트에 통합해주는 Husky](./contents/posts/what-is-husky.md)
 - [github pages 특정 폴더만 배포 시키기](./contents/posts/github-pages-subtree.md)
 - [github repository(원격 저장소)에 license 추가하기](./contents/posts/github-license.md)
-- [원본 저장소의 내용을 최신화 시키기 (git-sync-original-repository)](./contents/posts/git-sync-fork-repository.md)
+- [원본 저장소의 내용을 최신화 시키기](./contents/posts/git-sync-fork-repository.md)
 
 ### Web
 
 - [CSR vs SSR (클라이언트 사이드 렌더링과 서버사이드 렌더링)](./contents/posts/csr-ssr.md)
-- [DNS와 작동 원리 (Domain Name System)](./contents/posts/internet-domain-name-system.md)
+- [DNS와 작동 원리](./contents/posts/internet-domain-name-system.md)
 - [HTTP HEADER에 대한 정리](./contents/posts/http-header.md)
 - [HTTP에 대한 이해와 정리](./contents/posts/what-is-http.md)
 
@@ -38,6 +38,7 @@
 
 ### CSS
 
+- [CSS에서 변수 사용하기](./contents/posts/css-use-variables.md)
 - [Masonry Layout 구현하기](./contents/posts/vue-masonry-layout.md)
 - [Unknown at rule @tailwind 경고 회피하기](./contents/posts/vue-tailwind-rule.md)
 - [테이블 아이템에 여백을 주는 여러가지 방법](./contents/posts/css-table-margin.md)
@@ -51,7 +52,7 @@
 
 ### Nodejs
 
-- [5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기 (nodejs video streaming server)](./contents/posts/nodejs-video-streaming-server.md)
+- [5분만에 매우 간단한 영상(비디오) 스트리밍 서버 만들기](./contents/posts/nodejs-video-streaming-server.md)
 - [Nodejs Console Color를 바꿔보자](./contents/posts/js-console-colors.md)
 - [Nodejs v17 이상 버전에서 OpenSSL 관련 에러 해결하기](./contents/posts/nodejs-error-ssl-provider.md)
 - [Nodejs(Express)와 Sequelize를 같이 사용하기](./contents/posts/js-sequelize-mysql.md)
@@ -85,7 +86,6 @@
 
 ### 자바스크립트
 
-- [CSS에서 변수 사용하기 (use-variables-in-css)](./contents/posts/css-use-variables.md)
 - [Function.prototype.call 학습하기](./contents/posts/js-object-prototype-call.md)
 - [HTMLCollection과 NodeList의 차이점과 일반 자바스크립트 배열로 바꾸기](./contents/posts/js-nodelist-to-array.md)
 - [JSDoc 알고 사용하기](./contents/posts/jsdoc.md)
@@ -107,7 +107,7 @@
 - [자바스크립트 프로토타입, 클래스에 대한 개념 이해](./contents/posts/js-classes.md)
 - [자바스크립트로 IntersectionObserver API 다루기](./contents/posts/js-intersection-observer.md)
 - [자바스크립트로 모바일 기기 감지하는 여러 방법](./contents/posts/js-detect-mobile-device.md)
-- [자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법 (Copy text to clipboard with javascript)](./contents/posts/js-clipboard.md)
+- [자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법](./contents/posts/js-clipboard.md)
 - [자바스크립트에서 모듈을 가져오고 사용해보자](./contents/posts/js-module.md)
 - [자바스크립트에서의 메모리 관리](./contents/posts/js-memory-management.md)
 - [자바스크립트의 에러와 처리 방법에 대해서 알아보기](./contents/posts/js-error.md)

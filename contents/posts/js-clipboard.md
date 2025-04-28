@@ -4,7 +4,7 @@ cover_image: /images/js-clipboard.png
 tags: ['javascript']
 published: true
 date: 2020-03-09
-title: 자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법 (Copy text to clipboard with javascript)
+title: 자바스크립트를 이용해서 텍스트를 클립보드에 복사시키는 여러 방법
 ---
 
 ## document.execCommand 이용
