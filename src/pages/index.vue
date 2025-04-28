@@ -1,36 +1,33 @@
-<script lang="ts" setup>
-import { usePostAction } from '~~/hooks/post'
-import { usePageStore } from '~~/store/page'
-// 2
-definePageMeta({
-  layout: 'list-layout'
+<script setup lang="ts">
+import { PostCard, PostGrid, SortTabs, usePosts } from '~/entities/post'
+import type { SortOption } from '~/shared/types'
+
+const sortTabIndex = ref('0')
+const sortOptionByTabIndex = computed(() => {
+  return ({
+    '0': 'latest',
+    '1': 'name'
+  }[sortTabIndex.value] || 'latest') as SortOption
 })
+const { sortedData, changeSort } = usePosts()
 
-useSeoMeta({
-  title: 'Home',
-  description: '프론트엔드 개발자의 개발 블로그',
-  ogTitle: () => withTitleTemplate('Home'),
-  ogDescription: '프론트엔드 개발자의 개발 블로그',
-  ogUrl: 'https://imkh.dev'
+watch(
+  () => sortOptionByTabIndex.value,
+  sortOption => {
+    changeSort(sortOption)
+  }
+)
+
+useHead({
+  title: '홈 - 포스트',
+  meta: [{ name: 'description', content: '긴 글, 포스트 리스트' }]
 })
-
-const { loadMore, setDelay } = usePostAction()
-const pageStore = usePageStore()
-
-function onPostLoadMore() {
-  if (!pageStore.canLoadPage) return
-  loadMore()
-  setDelay()
-}
 </script>
 
 <template>
-  <section class="w-full">
-    <Suspense>
-      <template #fallback>
-        <PostListLoadingPlaceholder />
-      </template>
-      <PostList @load-more="onPostLoadMore" />
-    </Suspense>
-  </section>
+  <SortTabs v-model="sortTabIndex" class="mb-12" />
+
+  <PostGrid>
+    <PostCard v-for="post in sortedData" :key="post.id" :post="post" />
+  </PostGrid>
 </template>

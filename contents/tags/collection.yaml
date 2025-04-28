@@ -1,0 +1,64 @@
+tags:
+  javascript:
+    label: '자바스크립트'
+    description: ''
+  algorithm:
+    label: '알고리즘'
+    description: ''
+  python:
+    label: 'Python'
+    description: ''
+  angular:
+    label: 'Angular'
+    description: ''
+  web:
+    label: 'Web'
+    description: ''
+  css:
+    label: 'CSS'
+    description: ''
+  nodejs:
+    label: 'Nodejs'
+    description: ''
+  docker:
+    label: 'Docker'
+    description: ''
+  devops:
+    label: 'DevOps'
+    description: ''
+  electron:
+    label: 'Electron'
+    description: ''
+  firebase:
+    label: 'Firebase'
+    description: ''
+  git:
+    label: 'Git'
+    description: ''
+  graphql:
+    label: 'GraphQL'
+    description: ''
+  vue:
+    label: 'Vue'
+    description: ''
+  linux:
+    label: 'Linux'
+    description: ''
+  mysql:
+    label: 'MySQL'
+    description: ''
+  react:
+    label: 'React'
+    description: ''
+  raspberrypi:
+    label: 'RaspberryPi'
+    description: ''
+  rust:
+    label: 'Rust'
+    description: ''
+  scss:
+    label: 'SCSS'
+    description: ''
+  typescript:
+    label: '타입스크립트'
+    description: ''

@@ -1,9 +1,19 @@
 import { writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 import inq from 'inquirer'
+
+const postPath = resolve(__dirname, '../contents/posts')
+const shortPath = resolve(__dirname, '../contents/shorts')
 
 inq
   .prompt([
+    {
+      message: 'Content type',
+      name: 'contentType',
+      type: 'select',
+      default: 'post',
+      choices: ['post', 'short']
+    },
     {
       message: 'File name',
       name: 'filename',
@@ -26,12 +36,14 @@ inq
     }
   ])
   .then(answers => {
-    const { published, tags, title, description, filename } = answers
+    const { published, tags, title, description, filename, contentType } =
+      answers
     const cover_image = ''
     const date = new Date().toISOString()
+    const writePath = contentType === 'post' ? postPath : shortPath
 
     writeFileSync(
-      join(postPath, filename + '.md'),
+      join(writePath, filename + '.md'),
       `---
 title: ${title}
 published: ${published}
