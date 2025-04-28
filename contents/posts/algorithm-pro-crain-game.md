@@ -2,7 +2,7 @@
 title: 프로그래머스 크레인 인형뽑기 게임 파이썬 풀이
 date: 2021-01-19 13:33:15
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 프로그래머스 크레인 인형뽑기 게임을 파이썬을 풀어보자
 ---

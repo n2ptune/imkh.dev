@@ -1,10 +1,10 @@
 ---
 description: 테이블 아이템에 여백을 주는 여러가지 방법
 cover_image:
-tags: ['css', 'html5']
+tags: ['css']
 published: true
 date: 2020-06-04 14:00:58
-title: 테이블 아이템에 여백을 주는 여러가지 방법 (css-table-margin)
+title: 테이블 아이템에 여백을 주는 여러가지 방법
 ---
 
 ## 테이블 아이템에 여백

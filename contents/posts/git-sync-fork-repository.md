@@ -4,7 +4,7 @@ cover_image:
 tags: ['git']
 published: true
 date: 2020-04-01
-title: 원본 저장소의 내용을 최신화 시키기 (git-sync-original-repository)
+title: 원본 저장소의 내용을 최신화 시키기
 ---
 
 ## Fork 뜬 저장소를 최신화 시켜야 되는 이유

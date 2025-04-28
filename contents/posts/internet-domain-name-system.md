@@ -4,7 +4,7 @@ cover_image: /images/Tree_domain.png
 tags: ['web']
 published: true
 date: 2020-03-25
-title: DNS와 작동 원리 (Domain Name System)
+title: DNS와 작동 원리
 ---
 
 ## DNS(Domain Name System)
