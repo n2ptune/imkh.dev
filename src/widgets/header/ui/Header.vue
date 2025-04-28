@@ -47,37 +47,3 @@ const links = [
     </div>
   </header>
 </template>
-
-<style lang="postcss" scoped>
-/* @media (width >= 64rem) {
-  header {
-    &::before {
-      --size: 480px;
-      top: calc(50% - var(--size) / 2);
-      left: 0;
-
-      content: '';
-      display: block;
-      width: 200vh;
-      height: var(--size);
-      border-radius: 9999px;
-      filter: blur(calc(var(--size) / 1.15));
-      background: -webkit-linear-gradient(to right, #b24592, #f15f79);
-      background: linear-gradient(to right, #b24592, #f15f79);
-      z-index: -60;
-      position: absolute;
-      animation: rotate 35s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite;
-      opacity: 0.25;
-    }
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-</style>
