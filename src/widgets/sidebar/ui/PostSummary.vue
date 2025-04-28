@@ -34,6 +34,12 @@ const tables = computed(() => {
     }
   ]
 })
+
+const link = computed(() => {
+  if (!data.value) return ''
+
+  return `https://imkh.dev${data.value.path}`
+})
 </script>
 
 <template>
