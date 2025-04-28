@@ -1,7 +1,7 @@
 ---
 description: 데이터베이스의 데이터들을 객체로 매핑해주는 ORM을 이해하고 자바스크립트에서 ORM을 위한 라이브러리를 이용해서 실제 데이터베이스에 접속해서 간단한 서버를 만들어 보기
 cover_image:
-tags: ['nodejs', 'javascript', 'express', 'sequelize']
+tags: ['nodejs', 'javascript']
 published: true
 date: 2020-04-15
 title: Nodejs(Express)와 Sequelize를 같이 사용하기

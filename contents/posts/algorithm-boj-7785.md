@@ -1,8 +1,8 @@
 ---
-title: (Python) 백준 7785번 회사에 있는 사람 문제
+title: 백준 7785번 회사에 있는 사람 문제
 date: 2020-12-11 05:00:18
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 백준 7785번 회사에 있는 사람 문제 파이썬 풀이
 ---

@@ -4,7 +4,7 @@ cover_image: /images/js-function-prototype-call.png
 tags: ['javascript']
 published: true
 date: 2020-03-12
-title: Function.prototype.call가 뭐죠?
+title: Function.prototype.call 학습하기
 ---
 
 ## 기본 사용

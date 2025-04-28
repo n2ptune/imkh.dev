@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 디자인 패턴 (중재자 패턴, js-mediator-pattern)
+title: 자바스크립트 디자인 패턴 - 중재자 패턴
 date: 2020-10-11 02:43:33
 published: true
 tags: ['javascript']

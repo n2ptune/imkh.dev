@@ -1,8 +1,8 @@
 ---
-title: (Node.js) 백준 10820번 문자열 분석 문제
+title: 백준 10820번 문자열 분석 문제
 date: 2020-11-13 06:52:44
 published: true
-tags: ['javascript', 'algorithm']
+tags: ['algorithm', 'javascript']
 cover_image:
 description: 백준 10820번 문자열 분석 문제 솔루션
 ---

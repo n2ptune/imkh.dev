@@ -4,7 +4,7 @@ cover_image:
 tags: ['javascript']
 published: true
 date: 2020-04-02
-title: 자바스크립트 기본 개념(호이스팅, 이벤트 버블링 기타 등) 이해하고 정리하기 (js-organize-concept)
+title: 자바스크립트 기본 개념 이해하기 - 호이스팅, 이벤트 버블링 등
 ---
 
 ## 자바스크립트 기본 개념

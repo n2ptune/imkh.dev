@@ -1,10 +1,10 @@
 ---
 description: 벽돌을 쌓아 올려서 만든 느낌을 주는 Masonry Layout을 Vue와 Unsplash API로 구현하는 방법
 cover_image: /images/vue-masonry-grid-layout-thumbnail.png
-tags: ['vue', 'css']
+tags: ['css']
 published: true
 date: 2020-03-26
-title: Vue Masonry Layout 구현하기 (feat. css grid)
+title: Masonry Layout 구현하기
 ---
 
 ## Unsplash API

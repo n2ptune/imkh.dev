@@ -1,5 +1,5 @@
 ---
-title: Firebase로 Vue(SPA)를 배포하고 커스텀 도메인 연결하기 +Cloud Functions
+title: Firebase로 Vue를 배포하고 커스텀 도메인 연결하기
 date: 2019-12-25
 published: true
 tags: ['firebase', 'vue']

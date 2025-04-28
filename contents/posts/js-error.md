@@ -1,10 +1,10 @@
 ---
 description: 자바스크립트에서 에러란 어떤 것이고 기본 내장되어 있는 에러 객체 외에 에러 객체를 커스텀해서 특별한 에러 객체를 만들고 에러 객체의 특성에 대해서 알아본다.
 cover_image:
-tags: ['javascript', 'nodejs', 'es6']
+tags: ['javascript', 'nodejs']
 published: true
 date: 2020-05-08
-title: 자바스크립트의 에러와 처리 방법에 대해서 알아보기 (js-error)
+title: 자바스크립트의 에러와 처리 방법에 대해서 알아보기
 ---
 
 ## Error

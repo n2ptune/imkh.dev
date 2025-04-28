@@ -2,7 +2,7 @@
 title: 최소공배수와 최대공약수 알고리즘 (유클리드 호제법)
 date: 2020-10-29 14:33:19
 published: true
-tags: ['javascript', 'algorithm']
+tags: ['algorithm', 'javascript']
 cover_image: /images/gcd-lcm-thumbnail.jpg
 description: 유클리드 호제법을 이용해서 최소공배수와 최대공약수를 쉽게 구하는 알고리즘을 구현
 ---

@@ -4,7 +4,7 @@ cover_image: /images/js-memory-management.jpg
 tags: ['javascript']
 published: true
 date: 2020-03-20
-title: 자바스크립트에서의 메모리 관리 (memory-management-in-javascript)
+title: 자바스크립트에서의 메모리 관리
 ---
 
 ## 메모리

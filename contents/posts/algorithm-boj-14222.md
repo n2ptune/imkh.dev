@@ -1,5 +1,5 @@
 ---
-title: (Python) 백준 14222번 배열과 연산 문제
+title: 백준 14222번 배열과 연산 문제
 date: 2020-12-01 05:51:45
 published: true
 tags: ['algorithm', 'python']

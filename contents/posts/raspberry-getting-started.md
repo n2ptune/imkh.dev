@@ -1,5 +1,5 @@
 ---
-title: 라즈베리파이 4 Model B 환경 구성하기(시작하기)
+title: 라즈베리파이 4 Model B 환경 구성하기
 date: 2021-08-28T08:56:30.523Z
 published: true
 tags: ['raspberrypi']

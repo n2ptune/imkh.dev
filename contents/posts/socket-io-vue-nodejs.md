@@ -2,7 +2,7 @@
 title: Socket.io 5분만에 배우기
 date: 2021-03-13 14:03:01
 published: true
-tags: ['vue', 'nodejs']
+tags: ['nodejs']
 cover_image: /images/web-socket-thumbnail.jpg
 description: HTML5 API 중 하나인 웹 소켓에 대해서 알아보고 웹 소켓을 좀 더 깔끔하게 사용할 수 있는 라이브러리인 Socket.io를 사용하는 방법을 정리하기
 ---

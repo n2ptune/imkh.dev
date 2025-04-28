@@ -4,7 +4,7 @@ cover_image: /images/js-strict-mode.png
 tags: ['javascript', 'es6']
 published: true
 date: 2020-03-08
-title: 자바스크립트 엄격한 모드 (js strict mode)
+title: 자바스크립트 엄격한 모드 - use strict
 ---
 
 ## 자바스크립트의 큰 변화와 하위 호환성 이슈

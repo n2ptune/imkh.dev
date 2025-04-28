@@ -1,10 +1,10 @@
 ---
-title: React와 Firebase 프로젝트 초기 환경설정
+title: 리액트와 Firebase 프로젝트 초기 환경설정
 date: 2020-12-05 15:19:02
 published: true
 tags: ['react', 'firebase']
 cover_image: /images/thumbnail-phone.jpg
-description: React에서 Firebase를 사용하기 위해서 애플리케이션을 초기화 하기
+description: 리액트에서 Firebase를 사용하기 위해서 애플리케이션을 초기화 하기
 ---
 
 ## Firebase

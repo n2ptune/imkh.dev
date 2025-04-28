@@ -1,5 +1,5 @@
 ---
-title: 다 된 Vue에 Tailwindcss 뿌리기
+title: Vue에서 Tailwindcss 사용하기
 date: 2020-03-03
 published: true
 tags: ['vue', 'postcss']

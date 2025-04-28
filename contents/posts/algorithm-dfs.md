@@ -1,8 +1,8 @@
 ---
-title: (Python) 그래프 깊이 우선 탐색 DFS, 백준 2606번 바이러스 문제
+title: 그래프 깊이 우선 탐색 DFS, 백준 2606번 바이러스 문제
 date: 2021-01-06 14:29:42
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 그래프를 탐색하는 알고리즘 중 하나인 DFS에 대해서 알아보고 실전 알고리즘 문제에 적용하기
 ---

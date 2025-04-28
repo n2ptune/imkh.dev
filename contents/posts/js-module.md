@@ -1,10 +1,10 @@
 ---
 description: Nodejs가 어떻게 모듈을 내보내고 가져오는지에 대한 정리
 cover_image: /images/js-module-thumbnail.png
-tags: ['nodejs', 'javascript']
+tags: ['javascript', 'nodejs']
 published: true
 date: 2020-04-11
-title: 자바스크립트에서 모듈을 가져오고 사용해보자 (js-module)
+title: 자바스크립트에서 모듈을 가져오고 사용해보자
 ---
 
 ## 배우기 전에

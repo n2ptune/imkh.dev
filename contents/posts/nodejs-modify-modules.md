@@ -1,5 +1,5 @@
 ---
-title: node_modules modify dependency 의존성 패키지 수정하기
+title: node_modules에 설치된 외부 라이브러리 수정하기
 date: 2020-10-02 17:45:31
 published: true
 tags: ['nodejs']

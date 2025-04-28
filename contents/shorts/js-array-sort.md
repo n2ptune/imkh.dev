@@ -4,7 +4,7 @@ cover_image: /images/js-array-sort.png
 tags: ['javascript']
 published: true
 date: 2020-03-16
-title: 자바스크립트 배열 원소 정렬 (js-array-sort)
+title: 간단한 자바스크립트 배열 원소 정렬
 ---
 
 ## 일반적인 배열 정렬

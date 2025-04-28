@@ -1,8 +1,8 @@
 ---
-title: (Python) 백준 1978, 2581, 1929번 소수 구하기, 소수 찾기
+title: 백준 1978, 2581, 1929번 소수 구하기, 소수 찾기
 date: 2020-11-20 15:56:13
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 백준 1978, 2581, 1929번 소수 구하기, 소수 찾기 문제 파이썬 풀이
 ---

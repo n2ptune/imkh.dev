@@ -1,8 +1,8 @@
 ---
-title: GraphQL 서버 환경설정 With GraphQL-Yoga
+title: GraphQL 서버 환경설정
 date: 2020-02-14
 published: true
-tags: ['graphql', 'nodejs', 'express']
+tags: ['graphql', 'nodejs']
 cover_image: /images/graphql-yoga-cover.png
 description: GraphQL은 쿼리 언어이다. 서버와 클라이언트 중간에 위치해서 클라이언트는 서버로부터 정말 필요한 데이터만 받을 수 있게 하고, 서버는 클라이언트가 필요로 하는 데이터만 내보낸다. (Over-Fetching 극복) 또한 기존의 REST로 구성 된 서버에서 여러 개의 데이터를 내보낼 때에는 클라이언트에서 서버로 여러번 요청하여 데이터를 받아낼 수 있겠지만은 GraphQL은 한 개의 쿼리로 여러 개의 데이터를 내가 갖고 싶은 데이터만을 서버에 요청할 수 있다.
 ---

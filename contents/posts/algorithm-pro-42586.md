@@ -1,5 +1,5 @@
 ---
-title: (Python) 프로그래머스 스택/큐 기능 개발
+title: 프로그래머스 스택/큐 기능 개발
 date: 2020-11-30 07:30:22
 published: true
 tags: ['algorithm', 'python']

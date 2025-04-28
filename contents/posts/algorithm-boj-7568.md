@@ -1,8 +1,8 @@
 ---
-title: (Python) 백준 7568번 덩치 문제
+title: 백준 7568번 덩치 문제
 date: 2020-12-05 07:24:37
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 백준 7568번 덩치 문제 파이썬 풀이
 ---

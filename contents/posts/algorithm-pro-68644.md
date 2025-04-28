@@ -1,5 +1,5 @@
 ---
-title: (Python) 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제
+title: 프로그래머스 두 개 뽑아서 더하기 알고리즘 문제
 date: 2020-11-24 08:56:33
 published: true
 tags: ['algorithm', 'python']

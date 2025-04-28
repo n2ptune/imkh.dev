@@ -1,5 +1,5 @@
 ---
-title: toLocaleDateString과 toDateString 비교, (Chrome과 Safari)
+title: 크롬과 사파리에서 toLocaleDateString과 toDateString 비교
 date: 2021-03-18 02:12:13
 published: true
 tags: ['javascript']

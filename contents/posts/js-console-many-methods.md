@@ -4,7 +4,7 @@ cover_image: /images/js-console-object.png
 tags: ['javascript']
 published: true
 date: 2020-03-14
-title: Javascript Console Object(자바스크립트 콘솔 객체)
+title: 자바스크립트 콘솔의 유용한 함수들
 ---
 
 ## Window.console

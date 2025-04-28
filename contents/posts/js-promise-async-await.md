@@ -1,10 +1,10 @@
 ---
 description: 비동기 작업을 유연하게 다루기 위해 Promise를 사용하는 방법과 Promise가 나온 배경, Promise에 대한 문제점, 이를 해결하기 위한 방안 등을 정리
 cover_image: /images/js-promise-async-await.jpg
-tags: ['javascript', 'es6']
+tags: ['javascript']
 published: true
 date: 2020-03-21
-title: 자바스크립트 프로미스 정리 (js-promise)
+title: 자바스크립트 프로미스 정리
 ---
 
 ## 비동기 / 동기

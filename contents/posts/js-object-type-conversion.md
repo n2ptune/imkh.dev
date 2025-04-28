@@ -1,10 +1,10 @@
 ---
 description: 자바스크립트 객체의 타입을 변환시켜 원시 자료형 값과 더하거나 원하는 출력 형식으로 출력하는 방법
 cover_image:
-tags: ['javascript', 'es6']
+tags: ['javascript']
 published: true
 date: 2020-03-27
-title: 자바스크립트 객체의 타입 형변환 (js-object-type-conversion)
+title: 자바스크립트 객체의 타입 형변환
 ---
 
 ## 객체의 자료형

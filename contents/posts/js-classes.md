@@ -1,8 +1,8 @@
 ---
-title: 자바스크립트 프로토타입, 클래스에 대한 개념 이해 (js-classes)
+title: 자바스크립트 프로토타입, 클래스에 대한 개념 이해
 date: 2020-08-07 04:29:26
 published: true
-tags: ['javascript', 'es6']
+tags: ['javascript']
 cover_image:
 description: 생성자 함수를 통해 객체를 생성하고 프로토타입을 이용해서 객체와 객체 간의 상속을 구현해본 다음 ES6 이후 문법인 클래스를 이용해 생성자 함수와 프로토타입 방식과 비교해보기
 ---

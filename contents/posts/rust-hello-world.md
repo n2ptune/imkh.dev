@@ -1,5 +1,5 @@
 ---
-title: 러스트(Rust) 프로그래밍 언어를 설치해보고 Hello World 출력하기
+title: Hello World, Rust
 date: 2021-03-21 08:58:02
 published: true
 tags: ['rust']

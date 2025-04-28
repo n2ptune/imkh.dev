@@ -1,5 +1,5 @@
 ---
-title: (Python) 프로그래머스 완주하지 못한 선수
+title: 프로그래머스 완주하지 못한 선수
 date: 2020-11-25 05:21:21
 published: true
 tags: ['algorithm', 'python']

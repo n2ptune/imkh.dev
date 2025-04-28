@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 디자인 패턴, 모듈 패턴과 옵저버 패턴 (js design patterns)
+title: 자바스크립트 디자인 패턴 - 모듈 패턴, 옵저버 패턴
 date: 2020-10-04 02:41:58
 published: true
 tags: ['javascript']

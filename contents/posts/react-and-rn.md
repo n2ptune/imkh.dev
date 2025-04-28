@@ -2,7 +2,7 @@
 title: 리액트와 리액트 네이티브
 date: 2021-05-26 13:00:48
 published: true
-tags: ['react', 'react-native']
+tags: ['react']
 cover_image:
 description: 리액트와 리액트 네이티브에 대해서 알아보고 리액트 네이티브의 특징에 대해서 정리
 ---

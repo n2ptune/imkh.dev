@@ -1,8 +1,8 @@
 ---
-title: (Python) 백준 2947번 나무 조각 문제
+title: 백준 2947번 나무 조각 문제
 date: 2020-11-13 07:49:15
 published: true
-tags: ['python', 'algorithm']
+tags: ['algorithm', 'python']
 cover_image:
 description: 백준 2947번 나무 조각 문제 파이썬 풀이
 ---
