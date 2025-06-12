@@ -2,6 +2,7 @@
 import { usePost } from '~/entities/post'
 import { TagGroup } from '~/entities/tag'
 import { ShareLink, LikePost } from '~/shared/icon-button'
+import { LoadingShield, SkeletonBlock } from '~/widgets/loading'
 
 const { data } = usePost()
 const dayjs = useDayjs()
@@ -43,38 +44,49 @@ const link = computed(() => {
 </script>
 
 <template>
-  <ul class="space-y-4 text-left">
-    <li v-for="item in tables" :key="item.id">
-      <div class="space-y-1">
-        <div
-          v-if="item.title"
-          class="text-base text-neutral-500 dark:text-neutral-400"
-        >
-          {{ item.title }}
-        </div>
-        <template v-if="item.slot">
-          <template v-if="item.slot === 'tags'">
-            <div class="flex justify-start">
-              <TagGroup :tags="data?.tags || []" />
-            </div>
-          </template>
+  <LoadingShield :condition="!!data">
+    <ul v-bind="$attrs" class="space-y-4 text-left">
+      <li v-for="item in tables" :key="item.id">
+        <div class="space-y-1">
+          <div
+            v-if="item.title"
+            class="text-base text-neutral-500 dark:text-neutral-400"
+          >
+            {{ item.title }}
+          </div>
+          <template v-if="item.slot">
+            <template v-if="item.slot === 'tags'">
+              <div class="flex justify-start">
+                <TagGroup :tags="data?.tags || []" />
+              </div>
+            </template>
 
-          <template v-else-if="item.slot === 'actions'">
-            <div class="space-x-1">
-              <ShareLink :link="link" />
+            <template v-else-if="item.slot === 'actions'">
+              <div class="space-x-1">
+                <ShareLink :link="link" />
 
-              <LikePost />
-            </div>
+                <LikePost />
+              </div>
+            </template>
           </template>
-        </template>
-        <div
-          v-else-if="item.label"
-          class="font-bold text-3xl whitespace-pre-wrap pr-2 break-words"
-          :title="item.help"
-        >
-          {{ item.label }}
+          <div
+            v-else-if="item.label"
+            class="font-bold text-3xl whitespace-pre-wrap pr-2 break-words"
+            :title="item.help"
+          >
+            {{ item.label }}
+          </div>
         </div>
+      </li>
+    </ul>
+
+    <template #loading>
+      <div v-bind="$attrs" class="space-y-2">
+        <SkeletonBlock class="w-full h-[30px]" />
+        <SkeletonBlock class="ml-8 h-[30px]" />
+        <SkeletonBlock class="w-[calc(100%-120px)] h-[30px]" />
+        <SkeletonBlock class="mr-8 h-[30px]" />
       </div>
-    </li>
-  </ul>
+    </template>
+  </LoadingShield>
 </template>

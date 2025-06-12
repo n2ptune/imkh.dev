@@ -3,6 +3,7 @@ import { usePost } from '~/entities/post'
 import { ContentRender } from '~/features/content-render'
 import { InPostAd } from '~/widgets/ad'
 import { TypeDivider } from '~/widgets/divider'
+import { LoadingShield, SkeletonBlock } from '~/widgets/loading'
 import { usePostSeo } from '~/widgets/seo'
 import { PostSummary } from '~/widgets/sidebar'
 
@@ -30,5 +31,24 @@ useHead({
 
   <TypeDivider class="block xl:hidden my-12" type="horizontal" />
 
-  <ContentRender :data="data" />
+  <LoadingShield :condition="!!data">
+    <ContentRender :data="data" />
+
+    <template #loading>
+      <div class="space-y-16">
+        <div class="space-y-2">
+          <SkeletonBlock class="w-full h-[30px]" />
+          <SkeletonBlock class="ml-8 h-[30px]" />
+          <SkeletonBlock class="w-[calc(100%-120px)] h-[30px]" />
+          <SkeletonBlock class="mr-8 h-[30px]" />
+        </div>
+        <div class="space-y-2">
+          <SkeletonBlock class="w-full h-[30px]" />
+          <SkeletonBlock class="mr-8 h-[30px]" />
+          <SkeletonBlock class="w-[calc(100%-40px)] h-[30px]" />
+          <SkeletonBlock class="ml-8 h-[30px]" />
+        </div>
+      </div>
+    </template>
+  </LoadingShield>
 </template>

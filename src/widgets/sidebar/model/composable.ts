@@ -57,6 +57,7 @@ export function usePostWithTag() {
   })
 
   return {
-    filteredMappedData
+    filteredMappedData,
+    condition: computed(() => !!data.value)
   }
 }
