@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { PostCollectionItem } from '@nuxt/content'
-import { LazyImage } from '~/entities/image'
+import { LazyImage, ThumbnailPlaceholder } from '~/entities/image'
+import { TagGroup } from '~/entities/tag'
+import { truncate } from '~/shared/utils'
 
 interface Props {
   post: PostCollectionItem
@@ -24,8 +26,13 @@ function onClickCard() {
     @click="onClickCard"
   >
     <LazyImage v-if="post.cover_image" :image="post.cover_image" />
+    <ThumbnailPlaceholder v-else />
 
-    <h1 class="text-xl font-bold">{{ post.title }}</h1>
+    <TagGroup :tags="post.tags" class="!mt-3" />
+
+    <h1 class="text-xl font-bold break-all">
+      {{ truncate(post.title, 50, true) }}
+    </h1>
 
     <p class="text-base overflow-hidden line-clamp-3">
       {{ post.description }}

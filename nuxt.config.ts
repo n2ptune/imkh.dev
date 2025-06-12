@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@vueuse/nuxt',
     'motion-v/nuxt',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    'nuxt-svgo'
   ],
 
   site: {
@@ -53,7 +54,8 @@ export default defineNuxtConfig({
             'md',
             'mdc',
             'yaml',
-            'rust'
+            'rust',
+            'sh'
           ]
         }
       }
