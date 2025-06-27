@@ -7,6 +7,9 @@ cover_image: /images/react-absolute-path-thumbnail.jpg
 description: 리액트에서 절대 경로를 사용하여 임포트 지옥에서 빠져나오기
 ---
 
+::outdated-alert{date="2020-11-30"}
+::
+
 ## 절대 경로
 
 한 파일에서 다른 파일을 가져오기 위해서 자바스크립트에서는 `import` 구문 혹은 `require`을 사용한다. 리액트(Creact React App)에서는 웹팩과 바벨 설정을 기본적으로 해주어 `import` 구문을 사용할 수 있게 해준다. 이 때 가져오려는 파일과 현재 위치가 매우 멀다면 끔찍한 임포트 지옥을 맛보게 된다.
