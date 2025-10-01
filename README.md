@@ -22,6 +22,7 @@
 
 ### Vue
 
+- [Nuxt 4 패치 변경점 살펴보기](./contents/posts/nuxt-4-intro.md)
 - [Nuxt에서 Gridsome으로 블로그 전환한 이유](./contents/posts/gridsome-blog-1.md)
 - [Vue 3 훑어보기](./contents/posts/vue3-preview.md)
 - [Vue 3에서 Vuex와 타입스크립트 같이 사용하기](./contents/posts/vue3-vuex-typescript.md)
@@ -45,6 +46,7 @@
 
 ### 타입스크립트
 
+- [TypeScript erasableSyntaxOnly에 대한 학습과 정리](./contents/shorts/typescript-erasable-syntax-only.md)
 - [타입스크립트 satisfies 연산자](./contents/posts/typescript-satisfies.md)
 - [타입스크립트 유틸리티 타입과 타입 챌린지로 실력 올리기](./contents/posts/ts-challenges.md)
 - [타입스크립트 인터페이스 아주 간단하게 살펴보기](./contents/posts/ts-interface.md)
