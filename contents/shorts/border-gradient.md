@@ -4,14 +4,15 @@ published: true
 date: 2026-01-13T06:22:24.926Z
 cover_image:
 description: border 에 gradient 적용한 느낌 부여하기
-tags: ['CSS']
+tags: ['css']
 ---
 
 ## border 에 gradient 적용하기
 
 요즘 LLM을 활용한 도구 및 화려한 웹 서비스들을 보면 프리미엄 버튼이라고 해서 눈에 띄는 UI 적인 버튼 요소들이 많이 보이는데, 주로 border 에 gradient 효과를 적용시킨 버튼들이 많이 보인다. 이런 효과를 적용시킬 수 있는 CSS 속성에 대해서 알아보고 정리한다.
 
-<https://codepen.io/n2ptune-the-styleful/pen/wBWoWxo>
+::codepen-embed{hash="wBWoWxo" user="n2ptune" title="border gradient" :defaultTab='["result"]' description="새 탭을 열어서 확인"}
+::
 
 뚝딱 해버렸는데, 핵심은 그라데이션 적용 영역을 `border-width` 로 주고, `transparent` 투명색으로 칠한다.
 
