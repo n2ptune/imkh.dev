@@ -13,37 +13,36 @@ export function useContentSearch() {
     })
   )
 
-  function search(keyword: string) {
+  const searchData = computed(() => {
     const shorts = shortSearch.value || []
     const posts = postSearch.value || []
 
     const mapType = (o: Record<string, any>, type: string) => ({ ...o, type })
-    const mixed = (
-      [] as {
-        id: string
-        title: string
-        titles: string
-        level: number
-        content: string
-        type: string
-      }[]
-    ).concat(
-      // @ts-expect-error
-      shorts
+
+    return [
+      ...shorts
         .filter(short => short.level === 1)
         .map(short => mapType(short, 'short')),
-      posts.filter(post => post.level === 1).map(post => mapType(post, 'post'))
-    )
-    const fuse = new Fuse(mixed, {
+      ...posts.filter(post => post.level === 1).map(post => mapType(post, 'post'))
+    ]
+  })
+
+  // Fuse 인스턴스 메모이제이션
+  const fuse = computed(() => {
+    return new Fuse(searchData.value, {
       keys: ['title', 'content'],
       threshold: 0.2,
       includeMatches: true,
       includeScore: true,
       shouldSort: true,
-      sortFn: (a, b) => b.score - a.score
+      sortFn: (a, b) => (b.score || 0) - (a.score || 0)
     })
+  })
 
-    return fuse.search(keyword)
+  // 검색 실행 함수
+  function search(keyword: string) {
+    if (!keyword) return []
+    return fuse.value.search(keyword)
   }
 
   return {

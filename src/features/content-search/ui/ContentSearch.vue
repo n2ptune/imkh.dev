@@ -96,7 +96,7 @@ watchDebounced(
       variant="soft"
       leading-icon="i-tabler-search"
       trailing-icon=""
-      placeholder="무엇을 찾고싶으신가요?"
+      placeholder="포스트 및 메모 검색..."
       class="min-w-inherit"
       :ui="{ base: '!min-w-[inherit] !max-w-[inherit]' }"
       @focus.native="onFocus"
