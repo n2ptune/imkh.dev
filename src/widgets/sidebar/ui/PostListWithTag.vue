@@ -32,7 +32,7 @@ onMounted(() => {
       ref="container"
     >
       <div
-        class="space-y-4 scrollbar scrollbar-active:z-50 overflow-y-auto max-h-[500px] pb-12"
+        class="space-y-4 scrollbar scrollbar-active:z-50 overflow-y-auto max-h-[300px] pb-12"
       >
         <div class="sticky top-0 w-full bg-white dark:bg-neutral-900 py-2">
           <h4 class="font-bold text-base sticky top-0">같은 태그의 다른 글</h4>
