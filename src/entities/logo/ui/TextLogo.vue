@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SymbolLogoDark from '~/assets/imkh_symbolic_logo_inverted.svg'
 import SymbolLogoLight from '~/assets/imkh_symbolic_logo.svg'
-import { useTheme } from '~/features/theme';
+import { useTheme } from '~/features/theme'
 
 interface Props {
   isLink?: boolean

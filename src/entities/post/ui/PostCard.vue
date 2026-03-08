@@ -26,7 +26,7 @@ function onClickCard() {
     @click="onClickCard"
   >
     <LazyImage v-if="post.cover_image" :image="post.cover_image" />
-    <ThumbnailPlaceholder v-else />
+    <ThumbnailPlaceholder v-else :post="post" />
 
     <TagGroup :tags="post.tags" class="!mt-3" />
 

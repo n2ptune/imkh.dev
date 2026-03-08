@@ -1,54 +1,54 @@
 <script setup lang="ts">
 import { usePost } from '~/entities/post'
-import { ContentRender } from '~/features/content-render'
+import { ContentRender, OutdatedAlert } from '~/features/content-render'
 import { InPostAd } from '~/widgets/ad'
-import { TypeDivider } from '~/widgets/divider'
-import { LoadingShield, SkeletonBlock } from '~/widgets/loading'
-import { usePostSeo } from '~/widgets/seo'
 import { PostSummary } from '~/widgets/sidebar'
 
-const { data } = usePost()
-
-usePostSeo()
+const { data, status } = usePost()
 
 definePageMeta({
   layout: 'post'
 })
 
 useHead({
-  title: () => data.value?.title
+  title: () => (data.value ? `${data.value.title} | imkh.dev` : '로딩 중...'),
+  meta: [
+    {
+      name: 'description',
+      content: () => data.value?.description || '포스트 상세 페이지'
+    }
+  ]
 })
 </script>
 
 <template>
-  <ClientOnly>
-    <section class="px-4 xl:px-8">
-      <InPostAd place="top" />
-    </section>
-  </ClientOnly>
+  <div v-if="status === 'pending'" class="py-20">
+    <!-- 로딩 상태 UI (필요시 추가) -->
+  </div>
 
-  <PostSummary class="block xl:hidden" />
+  <div v-else-if="data" class="max-w-none prose dark:prose-invert">
+    <!-- 1. 본문 상단 헤더 (제목, 날짜, 태그 등) -->
+    <PostSummary />
 
-  <TypeDivider class="block xl:hidden my-12" type="horizontal" />
+    <!-- 2. 오래된 포스트 알림 (있는 경우) -->
+    <OutdatedAlert class="mb-8" />
 
-  <LoadingShield :condition="!!data">
+    <!-- 3. 메인 콘텐츠 -->
     <ContentRender :data="data" />
 
-    <template #loading>
-      <div class="space-y-16">
-        <div class="space-y-2">
-          <SkeletonBlock class="w-full h-[30px]" />
-          <SkeletonBlock class="ml-8 h-[30px]" />
-          <SkeletonBlock class="w-[calc(100%-120px)] h-[30px]" />
-          <SkeletonBlock class="mr-8 h-[30px]" />
-        </div>
-        <div class="space-y-2">
-          <SkeletonBlock class="w-full h-[30px]" />
-          <SkeletonBlock class="mr-8 h-[30px]" />
-          <SkeletonBlock class="w-[calc(100%-40px)] h-[30px]" />
-          <SkeletonBlock class="ml-8 h-[30px]" />
-        </div>
-      </div>
-    </template>
-  </LoadingShield>
+    <InPostAd place="bottom" />
+  </div>
+
+  <div v-else class="py-20 text-center text-neutral-500">
+    포스트를 찾을 수 없습니다.
+  </div>
 </template>
+
+<style scoped>
+/* 본문 폰트 및 가독성 최적화 */
+:deep(.prose) {
+  max-width: none;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+</style>

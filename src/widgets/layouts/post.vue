@@ -3,32 +3,34 @@ import { useToc } from '~/entities/post'
 import { Header } from '../header'
 import { LayoutMain } from '../main'
 import { SEOWrapper } from '../seo'
-import { PostListWithTag, PostSummary, TableContents } from '../sidebar'
-import { TypeDivider } from '../divider'
+import { TableContents } from '../sidebar'
 import { Footer } from '../footer'
 
 const { toc } = useToc()
 </script>
 
 <template>
-  <!-- @apply 동작 안해서 클래스 중복 https://github.com/tailwindlabs/tailwindcss/discussions/16429 -->
   <SEOWrapper>
     <Header />
-    <LayoutMain class="grid grid-cols-12 xl:gap-x-24">
-      <aside
-        class="hidden xl:block xl:col-span-3 xl:sticky xl:top-32 xl:max-h-[calc(80vh-(var(--spacing)*32))] xl:text-sm xl:space-y-12"
-      >
-        <PostSummary />
-        <TypeDivider type="horizontal" />
-        <PostListWithTag />
-      </aside>
-      <article class="col-span-12 xl:col-span-6">
+    <LayoutMain class="grid grid-cols-12 gap-x-0 xl:gap-x-12">
+      <!-- 본문 영역: 좌측 사이드바가 없어졌으므로 그리드 비중 확대 -->
+      <article class="col-span-12 xl:col-span-9 2xl:col-span-8 2xl:col-start-2">
         <slot />
       </article>
+
+      <!-- 우측 목차: 포스트 읽을 때 유용하므로 유지하되, 디자인에 맞춰 배치 -->
       <aside
-        class="hidden xl:block xl:col-span-3 xl:sticky xl:top-32 xl:max-h-[calc(80vh-(var(--spacing)*32))]"
+        class="hidden xl:block xl:col-span-3 2xl:col-span-2 xl:sticky xl:top-32 xl:max-h-[calc(80vh-(var(--spacing)*32))]"
       >
-        <TableContents :level="0" :links="toc" />
+        <div class="border-l border-neutral-100 dark:border-neutral-800">
+          <div
+            class="flex items-center gap-2 mb-4 pl-8 text-neutral-400 font-bold text-xs uppercase tracking-widest"
+          >
+            <Icon name="i-tabler-list" />
+            목차
+          </div>
+          <TableContents :level="0" :links="toc as any" />
+        </div>
       </aside>
     </LayoutMain>
     <Footer />

@@ -1,9 +1,11 @@
 <template>
   <footer
-    class="w-full p-4 border-t border-neutral-200 dark:border-neutral-800"
+    class="w-full p-8 border-t border-neutral-100 dark:border-neutral-800 mt-24"
   >
-    <section class="container-center text-center">
-      <p class="text-sm">Copyright © 2025 imkh.dev</p>
+    <section class="text-center">
+      <p class="text-xs text-neutral-400 dark:text-neutral-500 font-medium tracking-wider uppercase">
+        Copyright © 2026 imkh.dev All rights reserved.
+      </p>
     </section>
   </footer>
 </template>

@@ -7,85 +7,67 @@ import { LoadingShield, SkeletonBlock } from '~/widgets/loading'
 const { data } = usePost()
 const dayjs = useDayjs()
 
-const tables = computed(() => {
-  if (!data.value) return []
+const formattedDate = computed(() => {
+  if (!data.value?.date) return '알 수 없음'
+  return dayjs(data.value.date).format('YYYY년 MM월 DD일')
+})
 
-  return [
-    {
-      id: 'title',
-      title: '제목',
-      label: data.value.title
-    },
-    {
-      id: 'createdAt',
-      title: '작성일자',
-      label: data.value.date
-        ? dayjs().to(dayjs(data.value.date))
-        : '알 수 없음',
-      help: dayjs(data.value.date).format('YYYY-MM-DD HH:mm:ss')
-    },
-    {
-      id: 'tags',
-      title: '태그',
-      slot: 'tags'
-    },
-    {
-      id: 'actions',
-      slot: 'actions'
-    }
-  ]
+const relativeDate = computed(() => {
+  if (!data.value?.date) return ''
+  return dayjs().to(dayjs(data.value.date))
 })
 
 const link = computed(() => {
   if (!data.value) return ''
-
   return `https://imkh.dev${data.value.path}`
 })
 </script>
 
 <template>
   <LoadingShield :condition="!!data">
-    <ul v-bind="$attrs" class="space-y-4 text-left">
-      <li v-for="item in tables" :key="item.id">
-        <div class="space-y-1">
-          <div
-            v-if="item.title"
-            class="text-base text-neutral-500 dark:text-neutral-400"
-          >
-            {{ item.title }}
+    <header
+      class="space-y-6 pb-12 mb-12 border-b border-neutral-100 dark:border-neutral-800"
+    >
+      <!-- 포스트 제목 -->
+      <h1
+        class="text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 leading-tight"
+      >
+        {{ data?.title }}
+      </h1>
+
+      <!-- 메타 정보 (날짜, 태그, 액션) -->
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div
+          class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400"
+        >
+          <!-- 날짜 -->
+          <div class="flex items-center gap-2" :title="formattedDate">
+            <Icon name="i-tabler-calendar" class="text-lg" />
+            <span class="font-medium">{{ relativeDate }}</span>
           </div>
-          <template v-if="item.slot">
-            <template v-if="item.slot === 'tags'">
-              <div class="flex justify-start">
-                <TagGroup :tags="data?.tags || []" />
-              </div>
-            </template>
 
-            <template v-else-if="item.slot === 'actions'">
-              <div class="space-x-1">
-                <ShareLink :link="link" />
-
-                <LikePost />
-              </div>
-            </template>
-          </template>
-          <div
-            v-else-if="item.label"
-            class="font-bold text-3xl whitespace-pre-wrap pr-2 break-words"
-            :title="item.help"
-          >
-            {{ item.label }}
+          <!-- 태그 -->
+          <div class="flex items-center gap-2">
+            <Icon name="i-tabler-tags" class="text-lg" />
+            <TagGroup :tags="data?.tags || []" />
           </div>
         </div>
-      </li>
-    </ul>
+
+        <!-- 소셜 액션 -->
+        <div class="flex items-center gap-2">
+          <ShareLink :link="link" />
+          <LikePost />
+        </div>
+      </div>
+    </header>
 
     <template #loading>
-      <div v-bind="$attrs" class="space-y-2">
-        <SkeletonBlock class="w-full h-[30px]" />
-        <SkeletonBlock class="ml-8 h-[30px]" />
-        <SkeletonBlock class="w-[calc(100%-120px)] h-[30px]" />
-        <SkeletonBlock class="mr-8 h-[30px]" />
+      <div class="space-y-4 pb-12 mb-12">
+        <SkeletonBlock class="w-3/4 h-12" />
+        <div class="flex gap-4">
+          <SkeletonBlock class="w-32 h-6" />
+          <SkeletonBlock class="w-48 h-6" />
+        </div>
       </div>
     </template>
   </LoadingShield>

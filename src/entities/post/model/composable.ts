@@ -43,6 +43,7 @@ export function usePosts() {
   }
 }
 
+// 싱글톤 패턴으로 상태 공유
 export function usePost() {
   return useCollectionByOne<PostCollectionItem>('post')
 }
