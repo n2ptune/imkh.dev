@@ -13,8 +13,10 @@ const { toc } = useToc()
   <SEOWrapper>
     <Header />
     <LayoutMain class="grid grid-cols-12 gap-x-0 xl:gap-x-12">
-      <!-- 본문 영역: 좌측 사이드바가 없어졌으므로 그리드 비중 확대 -->
-      <article class="col-span-12 xl:col-span-9 2xl:col-span-8 2xl:col-start-2">
+      <!-- 본문 영역: 좌측 사이드바 영역만큼 비워두고 시작 (xl:col-start-3) -->
+      <article
+        class="col-span-12 xl:col-span-7 xl:col-start-3 2xl:col-span-7 2xl:col-start-3"
+      >
         <slot />
       </article>
 

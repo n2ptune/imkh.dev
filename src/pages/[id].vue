@@ -3,6 +3,7 @@ import { usePost } from '~/entities/post'
 import { ContentRender, OutdatedAlert } from '~/features/content-render'
 import { InPostAd } from '~/widgets/ad'
 import { PostSummary } from '~/widgets/sidebar'
+import { SkeletonBlock } from '~/widgets/loading'
 
 const { data, status } = usePost()
 
@@ -22,8 +23,25 @@ useHead({
 </script>
 
 <template>
-  <div v-if="status === 'pending'" class="py-20">
-    <!-- 로딩 상태 UI (필요시 추가) -->
+  <div v-if="status === 'pending'">
+    <!-- 포스트 로딩 스켈레톤 -->
+    <div
+      class="space-y-6 pb-12 mb-12 border-b border-neutral-100 dark:border-neutral-800"
+    >
+      <SkeletonBlock class="w-3/4 h-12" />
+      <div class="flex gap-4">
+        <SkeletonBlock class="w-32 h-6" />
+        <SkeletonBlock class="w-48 h-6" />
+      </div>
+    </div>
+    <div class="space-y-4">
+      <SkeletonBlock class="w-full h-4" />
+      <SkeletonBlock class="w-full h-4" />
+      <SkeletonBlock class="w-5/6 h-4" />
+      <SkeletonBlock class="w-full h-4" />
+      <SkeletonBlock class="w-4/5 h-4" />
+      <SkeletonBlock class="w-3/4 h-4" />
+    </div>
   </div>
 
   <div v-else-if="data" class="max-w-none prose dark:prose-invert">
