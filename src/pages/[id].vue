@@ -4,8 +4,15 @@ import { ContentRender, OutdatedAlert } from '~/features/content-render'
 import { InPostAd } from '~/widgets/ad'
 import { PostSummary } from '~/widgets/sidebar'
 import { SkeletonBlock } from '~/widgets/loading'
+import { useDayjs } from '~/shared/composables/useDayjs'
 
 const { data, status } = usePost()
+const dayjs = useDayjs()
+
+const isOutdated = computed(() => {
+  if (!data.value?.date) return false
+  return dayjs().diff(dayjs(data.value.date), 'year') >= 3
+})
 
 definePageMeta({
   layout: 'post'
@@ -49,7 +56,7 @@ useHead({
     <PostSummary />
 
     <!-- 2. 오래된 포스트 알림 (있는 경우) -->
-    <OutdatedAlert class="mb-8" />
+    <OutdatedAlert v-if="isOutdated" :date="data.date" class="mb-8" />
 
     <!-- 3. 메인 콘텐츠 -->
     <ContentRender :data="data" />
