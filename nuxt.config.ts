@@ -4,6 +4,27 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ko'
+      },
+      titleTemplate: '%s | imkh.dev',
+      charset: 'utf-16',
+      viewport: 'width=device-width, initial-scale=1',
+      meta: [
+        { name: 'format-detection', content: 'telephone=no' },
+        { property: 'og:site_name', content: 'imkh.dev' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
+      ]
+    }
+  },
+
   nitro: {
     prerender: {
       crawlLinks: true,

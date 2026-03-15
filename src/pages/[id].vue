@@ -18,14 +18,54 @@ definePageMeta({
   layout: 'post'
 })
 
+const route = useRoute()
+const postUrl = computed(() => `https://imkh.dev/${route.params.id}`)
+
 useHead({
-  title: () => (data.value ? `${data.value.title} | imkh.dev` : '로딩 중...'),
-  meta: [
+  link: [
     {
-      name: 'description',
-      content: () => data.value?.description || '포스트 상세 페이지'
+      rel: 'canonical',
+      href: () => postUrl.value
+    }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: computed(() => {
+        if (!data.value) return null
+        return JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: data.value.title,
+          description: data.value.description,
+          datePublished: data.value.date,
+          author: {
+            '@type': 'Person',
+            name: 'n2ptune'
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': postUrl.value
+          },
+          image: data.value.cover_image
+        })
+      })
     }
   ]
+})
+
+useServerSeoMeta({
+  title: () => data.value?.title || '로딩 중...',
+  ogTitle: () => data.value?.title || 'imkh.dev',
+  description: () => data.value?.description || '포스트 상세 페이지',
+  ogDescription: () => data.value?.description || '포스트 상세 페이지',
+  ogType: 'article',
+  ogUrl: () => postUrl.value,
+  ogImage: () => data.value?.cover_image || '/android-chrome-512x512.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => data.value?.title || 'imkh.dev',
+  twitterDescription: () => data.value?.description || '포스트 상세 페이지',
+  twitterImage: () => data.value?.cover_image || '/android-chrome-512x512.png'
 })
 </script>
 

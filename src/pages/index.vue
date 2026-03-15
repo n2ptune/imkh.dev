@@ -18,9 +18,14 @@ watch(
   }
 )
 
-useHead({
-  title: '홈 - 포스트',
-  meta: [{ name: 'description', content: '긴 글, 포스트 리스트' }]
+useServerSeoMeta({
+  title: '홈',
+  ogTitle: 'imkh.dev - 포스트',
+  description: '개발 지식과 경험을 공유하는 개인 기술 블로그입니다.',
+  ogDescription: '개발 지식과 경험을 공유하는 개인 기술 블로그입니다.',
+  ogUrl: 'https://imkh.dev',
+  ogType: 'website',
+  twitterCard: 'summary_large_image'
 })
 </script>
 
