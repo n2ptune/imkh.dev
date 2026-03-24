@@ -62,3 +62,6 @@ tags:
   typescript:
     label: '타입스크립트'
     description: ''
+  ai:
+    label: 'AI'
+    description: ''

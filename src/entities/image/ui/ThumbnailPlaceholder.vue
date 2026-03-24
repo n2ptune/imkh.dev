@@ -46,7 +46,8 @@ const tagConfig: Record<string, { icon: string; color: string }> = {
   electron: {
     icon: 'mdi:electron-framework',
     color: 'from-cyan-400/20 to-blue-400/20'
-  }
+  },
+  ai: { icon: 'mdi:robot', color: 'from-purple-400/20 to-purple-600/20' }
 }
 
 const firstTag = computed(() => post.tags?.[0]?.toLowerCase() || 'default')
