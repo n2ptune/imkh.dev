@@ -2,50 +2,51 @@ import type { Collections } from '@nuxt/content'
 
 export function useCollectionByOne<T>(collectionName: keyof Collections) {
   const route = useRoute()
-  const id = computed(() => route.params.id as string)
 
-  // 전역 상태를 사용하여 중복 패칭 및 무한 루프 방지
+  // route.path를 기준으로 쿼리: post는 /slug, short는 /s/slug 형태로 path가 stem과 일치
+  const currentPath = computed(() => route.path)
+
   const data = useState<T | null>(`${collectionName}-shared-data`, () => null)
   const status = useState<'idle' | 'pending' | 'success' | 'error'>(`${collectionName}-shared-status`, () => 'idle')
+  const error = useState<Error | null>(`${collectionName}-shared-error`, () => null)
 
-  const fetchData = async (targetId: string) => {
-    if (!targetId || status.value === 'pending') return
-    
-    // 이미 같은 데이터를 가지고 있다면 스킵 (캐싱)
-    if (data.value && (data.value as any).stem === targetId) return
+  const fetchData = async (targetPath: string) => {
+    if (!targetPath || status.value === 'pending') return
+
+    // 이미 같은 경로의 데이터를 가지고 있다면 스킵 (캐싱)
+    if (data.value && (data.value as any).path === targetPath) return
 
     status.value = 'pending'
+    error.value = null
     try {
       const result = await queryCollection(collectionName)
-        .where('stem', '=', targetId)
+        .where('path', '=', targetPath)
         .first() as T | null
-      
+
       data.value = result
       status.value = 'success'
     } catch (e) {
       status.value = 'error'
+      error.value = e instanceof Error ? e : new Error(String(e))
       console.error(`Fetch error [${collectionName}]:`, e)
     }
   }
 
-  // 클라이언트/서버 공통: ID 변경 시 데이터 패칭
-  // watch를 직접 사용하여 useAsyncData의 내부 watch 루프 간섭을 제거
   if (import.meta.server) {
-    // SSR 시점 실행
     onServerPrefetch(async () => {
-      await fetchData(id.value)
+      await fetchData(currentPath.value)
     })
   } else {
-    // 클라이언트 시점 실행
-    watch(id, (newId) => {
-      fetchData(newId)
+    watch(currentPath, (newPath) => {
+      fetchData(newPath)
     }, { immediate: true })
   }
 
   return {
     data: readonly(data),
     status: readonly(status),
+    error: readonly(error),
     isPending: computed(() => status.value === 'pending'),
-    refresh: () => fetchData(id.value)
+    refresh: () => fetchData(currentPath.value)
   }
 }

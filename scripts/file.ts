@@ -4,6 +4,9 @@ import { resolve } from 'node:path'
 const postPath = resolve(__dirname, '../contents/posts')
 const postDir = readdirSync(postPath)
 
+const shortPath = resolve(__dirname, '../contents/shorts')
+const shortDir = readdirSync(shortPath)
+
 export function getStaticRoutes() {
   return ['/', '/s']
 }
@@ -13,6 +16,13 @@ export function getPostRoutes() {
     const routeName =
       '/' + (file.endsWith('.md') ? file.slice(0, file.length - 3) : file)
     return routeName
+  })
+}
+
+export function getShortRoutes() {
+  return shortDir.map(file => {
+    const slug = file.endsWith('.md') ? file.slice(0, file.length - 3) : file
+    return `/s/${slug}`
   })
 }
 

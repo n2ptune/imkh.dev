@@ -1,5 +1,5 @@
 import * as path from 'node:path'
-import { getPostRoutes, getStaticRoutes } from './scripts/file'
+import { getPostRoutes, getShortRoutes, getStaticRoutes } from './scripts/file'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       ignore: ['/editor'],
-      routes: [...getStaticRoutes(), ...getPostRoutes()]
+      routes: [...getStaticRoutes(), ...getPostRoutes(), ...getShortRoutes()]
     }
   },
   modules: [
@@ -45,6 +45,36 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     'nuxt-svgo'
   ],
+
+  icon: {
+    serverBundle: {
+      collections: ['akar-icons', 'material-symbols', 'mdi', 'solar', 'tabler']
+    },
+    clientBundle: {
+      // 정적 분석으로 감지되는 아이콘 자동 포함
+      scan: true,
+      // 동적으로 사용되어 스캔으로 감지되지 않는 아이콘 명시 포함
+      icons: [
+        'mdi:vuejs',
+        'mdi:react',
+        'mdi:language-javascript',
+        'mdi:language-typescript',
+        'mdi:nodejs',
+        'mdi:angular',
+        'mdi:language-css3',
+        'mdi:language-rust',
+        'mdi:docker',
+        'mdi:git',
+        'tabler:binary-tree',
+        'solar:document-bold-duotone',
+        'akar-icons:github-fill',
+        'material-symbols:favorite',
+        'material-symbols:favorite-outline',
+        'material-symbols:light-mode',
+        'material-symbols:dark-mode'
+      ]
+    }
+  },
 
   site: {
     enabled: true,
@@ -91,7 +121,7 @@ export default defineNuxtConfig({
   css: ['@/assets/font.css', '@/assets/base.css'],
 
   generate: {
-    routes: [...getStaticRoutes(), ...getPostRoutes()]
+    routes: [...getStaticRoutes(), ...getPostRoutes(), ...getShortRoutes()]
   },
 
   experimental: {

@@ -51,6 +51,6 @@ watch(
 }
 
 .utterances-frame {
-  @apply !m-0;
+  margin: 0 !important;
 }
 </style>
