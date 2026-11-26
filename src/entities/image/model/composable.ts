@@ -30,17 +30,24 @@ export function useLazyImage(
   )
 
   function load() {
-    if (loading.value) return
+    if (loading.value || imageLoaded.value) return
     loading.value = true
 
     const image = new Image()
 
-    image.src = src
     image.onload = function () {
       imageLoaded.value = true
+      loading.value = false
     }
+    image.onerror = function () {
+      loading.value = false
+    }
+    image.src = src
 
-    loading.value = false
+    if (image.complete && image.naturalWidth > 0) {
+      imageLoaded.value = true
+      loading.value = false
+    }
   }
 
   onBeforeUnmount(() => {

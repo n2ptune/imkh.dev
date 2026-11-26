@@ -139,7 +139,7 @@ export default defineNuxtConfig({
 
   dir: {
     layouts: 'widgets/layouts',
-    public: '../public',
+    public: path.resolve(__dirname, 'public'),
     plugins: 'shared/plugins',
     middleware: 'app/middlewares'
   },
