@@ -101,7 +101,7 @@ useServerSeoMeta({
     <!-- 3. 메인 콘텐츠 -->
     <ContentRender :data="data" />
 
-    <InPostAd place="bottom" />
+    <InPostAd :key="route.fullPath" place="bottom" />
   </div>
 
   <div v-else class="py-20 text-center text-neutral-500">

@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+interface Props {
+  enableAds?: boolean
+}
+
+const { enableAds = true } = defineProps<Props>()
+
 useSeoMeta({
   titleTemplate(str) {
     return str ? `${str} | imkh.dev` : 'imkh.dev'
@@ -8,14 +14,21 @@ useSeoMeta({
   ogType: 'website'
 })
 
-useHead({
+useHead(() => ({
   script: [
+    ...(enableAds
+      ? [
+          {
+            key: 'adsense-script',
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441377677018772',
+            async: true,
+            crossorigin: 'anonymous' as const,
+            'data-overlays': 'bottom'
+          }
+        ]
+      : []),
     {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441377677018772',
-      async: true,
-      crossorigin: 'anonymous'
-    },
-    {
+      key: 'gtm-script',
       innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -24,10 +37,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       tagPosition: 'head'
     },
     {
+      key: 'gtag-lib',
       async: true,
       src: 'https://www.googletagmanager.com/gtag/js?id=G-J1LYTZVE92'
     },
     {
+      key: 'gtag-config',
       innerHTML: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -36,7 +51,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       tagPosition: 'head'
     }
   ]
-})
+}))
 
 useHeadSafe({
   link: [

@@ -46,3 +46,8 @@ body {
   @apply font-sans scrollbar scrollbar-track-white scrollbar-thumb-neutral-300 dark:scrollbar-track-neutral-900 dark:scrollbar-thumb-neutral-700
   overflow-x-hidden xl:overflow-x-visible;
 }
+
+/* Google AdSense 공식 권장: 미채움(unfilled) 광고 영역을 빈 공간으로 남기지 않고 축소 */
+ins.adsbygoogle[data-ad-status='unfilled'] {
+  display: none !important;
+}
